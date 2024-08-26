@@ -1,5 +1,5 @@
 import React from 'react';
-import ParallaxSection from '../../layout/ParallaxSection';
+import ParallaxSection from './ParallaxSection';
 
 const BioSection = () => {
   return (
@@ -8,8 +8,8 @@ const BioSection = () => {
         <div style={styles.cardContainer}>
           <div style={styles.imageContainer}>
             <img 
-              src={`${process.env.PUBLIC_URL}/Images/background.jpg`} 
-              alt="John Doe Profile" 
+              src={`${process.env.PUBLIC_URL}/Images/lauren.png`} 
+              alt="Lauren Martyn Profile" 
               style={styles.image} 
             />
           </div>

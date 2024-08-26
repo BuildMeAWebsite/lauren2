@@ -1,21 +1,23 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
-import Splitting from 'splitting'; 
-import ParallaxSection from '../Components/Home/ParallaxSection';
+import Splitting from 'splitting'; // Importing Splitting for text effects
+import ParallaxSection from '../Home/ParallaxSection';
 
 const SplittingImageText = () => {
   useEffect(() => {
+    // Splitting.js
     Splitting();
 
+    // Intersection Observer and GSAP
     const options = {
-      root: null,
-      rootMargin: "0px",
+      root: null, // use the document's viewport as the container
+      rootMargin: "0px", // % or px - offsets added to each side of the intersection
       threshold: 0.1
     };
 
     const itemDelay = 0.1;
 
-    const fadeupCallback = (entries, self) => {
+    let fadeupCallback = (entries, self) => {
       let itemLoad = 0;
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -24,6 +26,7 @@ const SplittingImageText = () => {
           tl.from(entry.target, {
             duration: 1,
             y: 200,
+            skewY: 40,
             autoAlpha: 0,
             delay: itemLoad * itemDelay,
             ease: "power3.out"
@@ -34,12 +37,13 @@ const SplittingImageText = () => {
       });
     };
 
-    const fadeupObserver = new IntersectionObserver(fadeupCallback, options);
+    let fadeupObserver = new IntersectionObserver(fadeupCallback, options);
 
     document.querySelectorAll("h1 span, img").forEach((fadeup) => {
       fadeupObserver.observe(fadeup);
     });
 
+    // Clean up the observer on component unmount
     return () => {
       fadeupObserver.disconnect();
     };

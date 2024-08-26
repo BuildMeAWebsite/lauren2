@@ -13,18 +13,32 @@ import ListItemText from '@mui/material/ListItemText';
 const NavigationMenuBar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 700);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 700);
     };
 
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+      setLastScrollTop(scrollTop);
+    };
+
     window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [lastScrollTop]);
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -44,8 +58,8 @@ const NavigationMenuBar = () => {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        {['Home', 'About', 'Contact', 'Book Now'].map((text) => (
-          <ListItem button key={text}>
+        {['Home', 'About', 'Contact', 'Book Now'].map((text, index) => (
+          <ListItem button key={text} component="a" href={index === 0 ? '/' : `/${text.toLowerCase().replace(/\s/g, '')}`}>
             <ListItemText primary={text} />
           </ListItem>
         ))}
@@ -58,23 +72,25 @@ const NavigationMenuBar = () => {
       <AppBar
         position="fixed"
         style={{
-          backgroundColor: 'transparent',
+          backgroundColor: showHeader ? 'transparent' : 'rgba(255, 255, 255, 0.9)',
           backdropFilter: 'blur(10px)',
-          padding: '20px',
-          boxShadow: 'none',
-          transition: 'background-color 0.3s ease',
+          padding: '5px',
+          boxShadow: showHeader ? 'none' : '0px 2px 5px rgba(0, 0, 0, 0.2)',
+          transition: 'all 0.4s ease',
+          transform: showHeader ? 'translateY(0)' : 'translateY(-100%)',
+          zIndex: 1100,
         }}
       >
-        <Toolbar style={{ display: 'flex', justifyContent: 'space-between', padding: '0 25px' }}> {/* Increased padding */}
+        <Toolbar style={{ display: 'flex', justifyContent: 'space-between', padding: '0 25px' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <IconButton
               edge="start"
-              style={{ marginRight: '20px', transform: 'scale(1.25)' }} // Increased icon size by 25%
-              color="inherit"
+              style={{ marginRight: '20px', transform: 'scale(1.25)' }}
+              color="#01796F"
               aria-label="menu"
               onClick={toggleDrawer(true)}
             >
-              <MenuIcon style={{ color: 'black' }} />
+              <MenuIcon style={{ color: '#01796F' }} />
             </IconButton>
             {!isMobile && (
               <Typography
@@ -82,8 +98,8 @@ const NavigationMenuBar = () => {
                 style={{
                   fontFamily: "Libre Baskerville, serif",
                   fontWeight: 600,
-                  fontSize: '1.5rem', // Increased font size by 25%
-                  color: 'black',
+                  fontSize: '1rem',
+                  color: '#01796F',
                   flexGrow: 0,
                 }}
               >
@@ -95,13 +111,15 @@ const NavigationMenuBar = () => {
           {!isMobile && (
             <div style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', display: 'flex' }}>
               <Button
+                href="/"
                 style={{
                   fontFamily: "Libre Baskerville, serif",
-                  fontWeight: 300,
-                  fontSize: '1.5rem', // Increased font size by 25%
-                  color: 'black',
+                  borderRadius: '0px',
+                  fontWeight: 100,
+                  fontSize: '1rem',
+                  color: '#01796F',
                   textTransform: 'none',
-                  marginLeft: '12px', // Slightly increased margin
+                  marginLeft: '12px',
                   transition: 'color 0.3s ease',
                 }}
                 color="inherit"
@@ -109,13 +127,14 @@ const NavigationMenuBar = () => {
                 Home
               </Button>
               <Button
+                href="/about"
                 style={{
                   fontFamily: "Libre Baskerville, serif",
                   fontWeight: 300,
-                  fontSize: '1.5rem', // Increased font size by 25%
-                  color: 'black',
+                  fontSize: '1rem',
+                  color: '#01796F',
                   textTransform: 'none',
-                  marginLeft: '12px', // Slightly increased margin
+                  marginLeft: '12px',
                   transition: 'color 0.3s ease',
                 }}
                 color="inherit"
@@ -123,13 +142,14 @@ const NavigationMenuBar = () => {
                 About
               </Button>
               <Button
+                href="/contact"
                 style={{
                   fontFamily: "Libre Baskerville, serif",
                   fontWeight: 300,
-                  fontSize: '1.5rem', // Increased font size by 25%
-                  color: 'black',
+                  fontSize: '1rem',
+                  color: '#01796F',
                   textTransform: 'none',
-                  marginLeft: '12px', // Slightly increased margin
+                  marginLeft: '12px',
                   transition: 'color 0.3s ease',
                 }}
                 color="inherit"
@@ -141,16 +161,18 @@ const NavigationMenuBar = () => {
 
           {!isMobile && (
             <Button
+              href="/booking"
               style={{
                 fontFamily: "Libre Baskerville, serif",
                 fontWeight: 500,
-                fontSize: '1.125rem', // Increased font size by 25%
-                color: 'black',
+                fontSize: '1rem',
+                color: '#01796F', // Changed text color
                 textTransform: 'none',
-                marginLeft: '12px', // Slightly increased margin
+                marginLeft: '12px',
                 transition: 'color 0.3s ease',
-                border: '1px solid black',
-                padding: '6px 18px', // Increased padding
+                border: '1px solid #3a3a3a',
+                padding: '6px 18px',
+                borderRadius: '0px', // Removed border-radius for sharp edges
               }}
               color="inherit"
             >
@@ -164,8 +186,8 @@ const NavigationMenuBar = () => {
               style={{
                 fontFamily: "Libre Baskerville, serif",
                 fontWeight: 600,
-                fontSize: '1.5rem', // Increased font size by 25%
-                color: 'black',
+                fontSize: '1rem',
+                color: '#01796F',
                 position: 'absolute',
                 left: '50%',
                 transform: 'translateX(-50%)',
