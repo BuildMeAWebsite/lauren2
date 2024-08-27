@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
-import Splitting from 'splitting'; // Importing Splitting for text effects
-import ParallaxSection from '../Home/ParallaxSection';
+import Splitting from 'splitting';
+import ContactFormPopout from './ContactFormPopout'; // Import the contact form component
 
 const SplittingImageText = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   useEffect(() => {
-    // Splitting.js
     Splitting();
 
-    // Intersection Observer and GSAP
     const options = {
-      root: null, // use the document's viewport as the container
-      rootMargin: "0px", // % or px - offsets added to each side of the intersection
+      root: null,
+      rootMargin: "0px",
       threshold: 0.1
     };
 
@@ -43,32 +43,39 @@ const SplittingImageText = () => {
       fadeupObserver.observe(fadeup);
     });
 
-    // Clean up the observer on component unmount
     return () => {
       fadeupObserver.disconnect();
     };
   }, []);
 
-  return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background.jpg`}>
+  const handleFormOpen = (e) => {
+    e.preventDefault();
+    setIsFormOpen(true);
+  };
 
-      <div style={styles.body}>
-        <div style={styles.gridContainer}>
-          <div style={styles.item2}>
-            <img
-              src={`${process.env.PUBLIC_URL}/Images/couch.jpg`} 
-              alt="Overlap"
-              style={styles.image}
-            />
-          </div>
-          <div style={styles.item1}>
-            <h1 data-splitting="lines" style={styles.heading}>
-              Overlap image & text using CSS grid
-            </h1>
-          </div>
+  const handleFormClose = () => {
+    setIsFormOpen(false);
+  };
+
+  return (
+    <div style={styles.body}>
+      <div style={styles.gridContainer}>
+        <div style={styles.item2}>
+          <img
+            src={`${process.env.PUBLIC_URL}/Images/couch.jpg`} 
+            alt="Overlap"
+            style={styles.image}
+          />
+        </div>
+        <div style={styles.item1}>
+          <h1 data-splitting="lines" style={styles.heading}>
+            Click <a href="#" onClick={handleFormOpen} style={styles.link}>here</a> to schedule a 15 minute call
+          </h1>
         </div>
       </div>
-    </ParallaxSection>
+
+      {isFormOpen && <ContactFormPopout onClose={handleFormClose} />}
+    </div>
   );
 };
 
@@ -85,10 +92,10 @@ const styles = {
     maxWidth: '600px',
     margin: '0 auto',
     overflow: 'hidden',
-    minHeight: '50vh',
+    minHeight: '70vh',
   },
   item1: {
-    gridColumn: 'col 6 / span 7', // Text on the right
+    gridColumn: 'col 6 / span 7',
     gridRow: 'row 2 / span 4',
     zIndex: 2,
     display: 'flex',
@@ -98,7 +105,7 @@ const styles = {
     color: 'white',
   },
   item2: {
-    gridColumn: 'col 2 / span 5', // Image on the left
+    gridColumn: 'col 2 / span 5',
     gridRow: 'row 1 / span 6',
     zIndex: 1,
     display: 'flex',
@@ -114,13 +121,24 @@ const styles = {
     maxHeight: 'calc(60vh - 100px)',
   },
   heading: {
-    fontSize: '3rem',
+    fontSize: '2rem', // Adjusted font size to fit the text
     fontFamily: "Libre Baskerville, serif",
     textTransform: 'lowercase',
     overflow: 'hidden',
     display: 'block',
     lineHeight: 1.1,
   },
+  link: {
+    color: '#ffffff',
+    textDecoration: 'none',
+    borderBottom: '1px solid #ffffff', // Border underline instead of text underline
+    cursor: 'pointer',
+    transition: 'all 0.3s ease',
+  },
+  linkHover: {
+    color: '#ffffff',
+    borderBottom: '1px solid #ffffff',
+  }
 };
 
 export default SplittingImageText;

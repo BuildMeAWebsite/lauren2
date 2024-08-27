@@ -4,26 +4,95 @@ import ParallaxSection from './ParallaxSection';
 const Hero = () => {
   useEffect(() => {
     const textCard = document.querySelector('.textCard');
-    textCard.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
-    textCard.style.transform = 'translateX(0)'; // Slide in to the original position
-    textCard.style.opacity = '1';
+    const imageContainer = document.querySelector('.imageContainer');
+    const caret = document.querySelector('.caret');
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    };
+
+    const observerCallback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.style.opacity = '1';
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    [textCard, imageContainer, caret].forEach((element) => {
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      [textCard, imageContainer, caret].forEach((element) => {
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
   }, []);
 
+  const scrollToHome3Boxes = () => {
+    const home3BoxesSection = document.querySelector('.home3Boxes');
+    if (home3BoxesSection) {
+      home3BoxesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background.jpg`}>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/couch.jpg`}>
       <div style={styles.heroContainer}>
+        {/* Inline style for the keyframes */}
+        <style>
+          {`
+            @keyframes fadeInOut {
+              0%, 100% {
+                opacity: 0;
+              }
+              50% {
+                opacity: 1;
+              }
+            }
+
+            @keyframes slideIn {
+              from {
+                transform: translateY(100%);
+              }
+              to {
+                transform: translateY(0);
+              }
+            }
+          `}
+        </style>
+
         <div style={styles.cardContainer}>
-          <div className="textCard" style={{...styles.textCard, ...styles.hidden}}>
+          <div className="imageContainer" style={{ ...styles.imageContainer, ...styles.hidden }}>
+            <img
+              src={`${process.env.PUBLIC_URL}/Images/lauren.png`}
+              alt="Decorative"
+              style={styles.image}
+            />
+          </div>
+          <div className="textCard" style={{ ...styles.textCard, ...styles.hidden }}>
             <h2 style={styles.subtitle}>LAUREN MARTYN PSYCHOTHERAPY</h2>
-            <h1 style={styles.title}>Hello and <em>welcome</em>.</h1>
-            <p style={styles.text}>
-              If you are reading this you have already taken the biggest step in the therapeutic journey. My name is Lauren Martyn, I am a registered psychotherapist and I have dedicated myself to supporting school-aged children, youth, and young adults as they navigate life’s challenges. I currently offer virtual counselling to those residing in Ontario, Canada. Explore my website to learn more about me and if you feel it’s a good fit, let's continue this therapeutic journey together.
-            </p>
+            <h1 style={styles.title}>To be seen,
+to be heard,
+and to be  <em>understood</em>.</h1>
             <div style={styles.buttonContainer}>
               <a href="/contact" style={styles.contactButton}>Contact</a>
             </div>
           </div>
         </div>
+     
       </div>
     </ParallaxSection>
   );
@@ -32,97 +101,122 @@ const Hero = () => {
 const styles = {
   heroContainer: {
     display: 'flex',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
-    padding: '1rem 1rem',
-    backgroundColor: 'transparent',
+    flexDirection: 'column',
+    backgroundColor: 'transparent', // Add a semi-transparent background
     boxSizing: 'border-box',
     width: '100%',
-    minHeight: '100vh',
+    minHeight: '90vh',
     color: '#3a3a3a',
     position: 'relative',
+    overflow: 'hidden',
+    padding: '4rem 5rem',
   },
   cardContainer: {
-    maxWidth: '700px',
-    width: '100%',
-    padding: '0 50px',
-    boxSizing: 'border-box',
+    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
+    maxWidth: '800px',
+    width: '100%',
   },
   textCard: {
+    flex: 1,
     padding: '10px 0',
     backgroundColor: 'transparent',
     boxSizing: 'border-box',
-    opacity: 1, // Initially visible but hidden by transform
-    transform: 'translateX(0)',
+    opacity: 1,
+    transform: 'translateY(100%)',
+    animation: 'slideIn 1s ease-in-out forwards',
   },
   hidden: {
-    transform: 'translateX(100%)', // Start off-screen to the right
+    transform: 'translateY(100%)',
     opacity: 0,
   },
   subtitle: {
     fontFamily: "Libre Baskerville, serif",
     fontSize: '1rem',
     fontWeight: 'normal',
-    color: '#01796F',
+    color: '#3a3a3a',
     textTransform: 'uppercase',
     letterSpacing: '2px',
   },
   title: {
-    fontFamily: "Libre Baskerville, serif",
-    fontSize: '3rem',
-    fontWeight: '600',
-    color: '#3a3a3a',
-    margin: '0 auto',
+    fontFamily: "PT Sans, sans-serif",
+    fontSize: '2.5rem',
+    fontWeight: '400',
+    color: '#01796f',
+    margin: '0',
     lineHeight: '1',
-  },
-  text: {
-    fontFamily: "Libre Baskerville, serif",
-    fontSize: '1rem',
-    fontWeight: 'normal',
-    textShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-    color: '#01796F',
-    lineHeight: '1.5rem',
-    marginBottom: '20px',
   },
   buttonContainer: {
     display: 'flex',
-    justifyContent: 'flex-end', // Align button to the right
+    margin: '2rem 0',
+    justifyContent: 'flex-start',
   },
   contactButton: {
     padding: '10px 20px',
-    fontFamily: "Libre Baskerville, serif",
+    fontFamily: "PT Sans, sans-serif",
     fontWeight: 'normal',
     textTransform: 'uppercase',
     letterSpacing: '1px',
     cursor: 'pointer',
     fontSize: '1rem',
-    backgroundColor: '#333',
-    color: '#fff',
+    backgroundColor: '#3a3a3a',
+    color: '#fcfaf4',
     textDecoration: 'none',
-    borderRadius: '0px', // No border radius for sharp edges
+    borderRadius: '0px',
   },
-  '@media (max-width: 800px)': {
-    heroContainer: {
-      padding: '2rem 1rem',
-      minHeight: '80vh',
-    },
+  imageContainer: {
+    flex: 1,
+    paddingRight: '1rem',
+    display: 'flex',
+    margin: '0 auto',
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden',
+    animation: 'slideIn 1s ease-in-out forwards',
+  },
+  image: {
+    maxWidth: '90%',
+    height: 'auto',
+    borderRadius: '10px',
+    objectFit: 'contain',
+  },
+  caret: {
+    fontSize: '5rem',
+    color: '#3a3a3a',
+    animation: 'fadeInOut 2s ease-in-out 2, slideIn 1s ease-in-out forwards',
+    cursor: 'pointer',
+    transition: 'transform 0.3s ease-in-out',
+    opacity: 0,
+  },
+  '@media (max-width: 1024px)': {
     cardContainer: {
-      width: '100%',
-      marginLeft: 'auto',
-      marginRight: 'auto',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    imageContainer: {
+      paddingRight: '0',
+      paddingBottom: '0px',
+      order: 2,
+    },
+    textCard: {
+      order: 1,
     },
     title: {
       fontSize: '2.5rem',
     },
-    text: {
-      fontSize: '1rem',
-      marginBottom: '10px',
-    },
-    contactButton: {
-      fontSize: '0.9rem',
+    caret: {
+      marginTop: '0px',
     },
   },
+};
+
+// Add hover effect
+styles.caret['&:hover'] = {
+  transform: 'scale(1.1)',
 };
 
 export default Hero;

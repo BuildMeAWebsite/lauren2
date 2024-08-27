@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import Splitting from 'splitting'; // Importing Splitting for text effects
-import ParallaxSection from './ParallaxSection';
+import TextBanner from './TextBanner';
 
 const SplittingImageText = () => {
   useEffect(() => {
@@ -65,7 +65,18 @@ const SplittingImageText = () => {
   ];
 
   return (
-    <div style={styles.body}>
+    <>
+<div style={styles.body}>
+<TextBanner
+  text="I can assist you or your child who are seeking support with:"
+  fontSize="2rem"
+  padding="2rem 1rem"
+  backgroundColor="#fcfaf4"
+  textColor="#01796F"
+  textAlign="left"
+  fontFamily="PT Sans, Sans-serif"
+/>
+
       <div style={styles.gridContainer}>
         <div style={styles.item1}>
           <div style={styles.listContainer}>
@@ -78,29 +89,34 @@ const SplittingImageText = () => {
         </div>
         <div style={styles.item2}>
           <img
-            src={`${process.env.PUBLIC_URL}/Images/couch.jpg`} 
+            src={`${process.env.PUBLIC_URL}/Images/background.jpg`} 
             alt="Overlap"
             style={styles.image}
           />
         </div>
       </div>
     </div>
+    </>
+  
   );
 };
 
 const styles = {
   body: {
-    backgroundColor: '#01796F',
-    padding: '40px 5vw',
+    backgroundColor: '#fcfaf4',
+    fontFamily: "PT Sans, sans-serif",
+    paddingTop: '0px',
+    marginTop: '0px',
+    padding: '1rem 1rem',
+    minHeight: '100%',
   },
   gridContainer: {
     display: 'grid',
     gridTemplate: 'repeat(6, [row] 1fr) / repeat(12, [col] 1fr)',
     gridGap: '20px',
-    maxWidth: '700px',
+    maxWidth: '600px',
     margin: '0 auto',
     overflow: 'hidden',
-    minHeight: '70vh',
   },
   item1: {
     gridColumn: 'col 2 / span 7',
@@ -110,14 +126,14 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     lineHeight: 1,
-    color: '#fcfaf4',
-    textShadow: '0 2px 5px rgba(0, 0, 0, 0.2)',
+    color: '#01796F',
+    textShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
   },
   listContainer: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
-    gap: '10px', // Space between bullet items
+    gap: '2px', // Space between bullet items
   },
   bulletItem: {
     fontSize: '1.25rem',
@@ -140,7 +156,7 @@ const styles = {
     objectFit: 'cover',
     filter: 'brightness(0.95)',
     visibility: 'hidden',
-    maxHeight: 'calc(60vh - 100px)',
+    maxHeight: 'calc(60vh - 50px)',
   },
 };
 

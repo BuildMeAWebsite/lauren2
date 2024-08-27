@@ -58,7 +58,7 @@ const styles = {
     padding: '20px 0',
   },
   subtitle: {
-    fontFamily: "'Poppins', sans-serif",
+    fontFamily: "PT Sans, sans-serif",
     fontSize: '1.2rem',  // Slightly larger font size for better readability
     fontWeight: '600',  // Increased weight for prominence
     color: '#555',  // Darker shade for a more refined look

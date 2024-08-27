@@ -73,8 +73,8 @@ const NavigationMenuBar = () => {
         position="fixed"
         style={{
           backgroundColor: showHeader ? 'transparent' : 'rgba(255, 255, 255, 0.9)',
-          backdropFilter: 'blur(10px)',
-          padding: '5px',
+          backdropFilter: 'blur(20px)',
+          padding: '10px',
           boxShadow: showHeader ? 'none' : '0px 2px 5px rgba(0, 0, 0, 0.2)',
           transition: 'all 0.4s ease',
           transform: showHeader ? 'translateY(0)' : 'translateY(-100%)',
@@ -96,9 +96,9 @@ const NavigationMenuBar = () => {
               <Typography
                 variant="h6"
                 style={{
-                  fontFamily: "Libre Baskerville, serif",
-                  fontWeight: 600,
-                  fontSize: '1rem',
+                  fontFamily: 'PT Sans, sans-serif',
+                  fontWeight: 500,
+                  fontSize: '1.25rem',
                   color: '#01796F',
                   flexGrow: 0,
                 }}
@@ -113,10 +113,10 @@ const NavigationMenuBar = () => {
               <Button
                 href="/"
                 style={{
-                  fontFamily: "Libre Baskerville, serif",
+                  fontFamily: 'PT Sans, sans-serif',
                   borderRadius: '0px',
                   fontWeight: 100,
-                  fontSize: '1rem',
+                  fontSize: '1.25rem',
                   color: '#01796F',
                   textTransform: 'none',
                   marginLeft: '12px',
@@ -129,9 +129,9 @@ const NavigationMenuBar = () => {
               <Button
                 href="/about"
                 style={{
-                  fontFamily: "Libre Baskerville, serif",
+                  fontFamily: 'PT Sans, sans-serif',
                   fontWeight: 300,
-                  fontSize: '1rem',
+                  fontSize: '1.25rem',
                   color: '#01796F',
                   textTransform: 'none',
                   marginLeft: '12px',
@@ -144,9 +144,9 @@ const NavigationMenuBar = () => {
               <Button
                 href="/contact"
                 style={{
-                  fontFamily: "Libre Baskerville, serif",
+                  fontFamily: 'PT Sans, sans-serif',
                   fontWeight: 300,
-                  fontSize: '1rem',
+                  fontSize: '1.25rem',
                   color: '#01796F',
                   textTransform: 'none',
                   marginLeft: '12px',
@@ -163,12 +163,12 @@ const NavigationMenuBar = () => {
             <Button
               href="/booking"
               style={{
-                fontFamily: "Libre Baskerville, serif",
+                fontFamily: 'PT Sans, sans-serif',
                 fontWeight: 500,
-                fontSize: '1rem',
+                fontSize: '1.25rem',
                 color: '#01796F', // Changed text color
                 textTransform: 'none',
-                marginLeft: '12px',
+                marginRight: '10px',
                 transition: 'color 0.3s ease',
                 border: '1px solid #3a3a3a',
                 padding: '6px 18px',
@@ -184,7 +184,7 @@ const NavigationMenuBar = () => {
             <Typography
               variant="h6"
               style={{
-                fontFamily: "Libre Baskerville, serif",
+                fontFamily: 'PT Sans, sans-serif',
                 fontWeight: 600,
                 fontSize: '1rem',
                 color: '#01796F',
@@ -200,7 +200,17 @@ const NavigationMenuBar = () => {
         </Toolbar>
       </AppBar>
 
-      <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+      <Drawer
+        anchor="left"
+        open={drawerOpen}
+        onClose={toggleDrawer(false)}
+        PaperProps={{
+          style: {
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            backdropFilter: 'blur(20px)',
+          },
+        }}
+      >
         {list()}
       </Drawer>
     </div>

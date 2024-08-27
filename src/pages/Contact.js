@@ -1,122 +1,221 @@
-import React, { useEffect } from 'react';
-import gsap from 'gsap';
-import Splitting from 'splitting'; 
+import React, { useState } from 'react';
 import ParallaxSection from '../Components/Home/ParallaxSection';
+import WhatToExpectComponent from '../Components/Contact/WhatToExpect';
+import SplittingImageText from '../Components/Contact/ContactOverlapSection';
 
-const SplittingImageText = () => {
-  useEffect(() => {
-    Splitting();
+const Contact = () => {
+  const [showModal, setShowModal] = useState(false);
 
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.1
-    };
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
 
-    const itemDelay = 0.1;
-
-    const fadeupCallback = (entries, self) => {
-      let itemLoad = 0;
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-          tl.set(entry.target, { visibility: "visible" });
-          tl.from(entry.target, {
-            duration: 1,
-            y: 200,
-            autoAlpha: 0,
-            delay: itemLoad * itemDelay,
-            ease: "power3.out"
-          });
-          itemLoad++;
-          self.unobserve(entry.target);
-        }
-      });
-    };
-
-    const fadeupObserver = new IntersectionObserver(fadeupCallback, options);
-
-    document.querySelectorAll("h1 span, img").forEach((fadeup) => {
-      fadeupObserver.observe(fadeup);
-    });
-
-    return () => {
-      fadeupObserver.disconnect();
-    };
-  }, []);
+  const handleOverlayClick = (e) => {
+    // Close the modal if the user clicks outside the modal content
+    if (e.target === e.currentTarget) {
+      setShowModal(false);
+    }
+  };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background.jpg`}>
+    <>
+      <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background.jpg`}>
+       <SplittingImageText/>
+          <WhatToExpectComponent /> {/* Add WhatToExpect component */}
+     
+      </ParallaxSection>
 
-      <div style={styles.body}>
-        <div style={styles.gridContainer}>
-          <div style={styles.item2}>
-            <img
-              src={`${process.env.PUBLIC_URL}/Images/couch.jpg`} 
-              alt="Overlap"
-              style={styles.image}
-            />
-          </div>
-          <div style={styles.item1}>
-            <h1 data-splitting="lines" style={styles.heading}>
-              Overlap image & text using CSS grid
-            </h1>
+      {showModal && (
+        <div style={styles.modalOverlay} onClick={handleOverlayClick}>
+          <div style={styles.modal}>
+            <h2 style={styles.modalHeader}>Book an Appointment</h2>
+            <form style={styles.form}>
+              <div style={styles.formGroup}>
+                <label style={styles.label}>Full Name</label>
+                <input type="text" style={styles.input} required />
+              </div>
+              <div style={styles.formGroup}>
+                <label style={styles.label}>Email</label>
+                <input type="email" style={styles.input} required />
+              </div>
+              <div style={styles.formGroup}>
+                <label style={styles.label}>Phone Number</label>
+                <input type="tel" style={styles.input} required />
+              </div>
+              <div style={styles.formGroup}>
+                <label style={styles.label}>Preferred Date & Time</label>
+                <input type="datetime-local" style={styles.input} required />
+              </div>
+              <div style={styles.formGroup}>
+                <label style={styles.label}>Additional Notes</label>
+                <textarea style={styles.textarea}></textarea>
+              </div>
+              
+              {/* Payment & Insurance Info */}
+              <div style={styles.disclaimerContainer}>
+                <h3 style={styles.subHeader}>Payment & Insurance Information</h3>
+                <p style={styles.text}>
+                  E-transfer is the preferred payment method to be paid at the time the session is held. A credit card will also be saved to your file at the start of therapy, as an alternative method and for any outstanding fees. Receipts are sent promptly by email. I do not bill insurance companies. My therapist’s license number is on the receipt for insurance purposes. Insurance plans differ in what they cover, so please contact your specific provider to verify your coverage for Registered Psychotherapist, for coverage details, and claim procedures.
+                </p>
+                <h3 style={styles.subHeader}>Cancellation Policy</h3>
+                <p style={styles.text}>
+                  I have a 24-hour cancellation policy. Appointments can be cancelled or rescheduled via email or through the booking software. Providing less than 24 hours notice will result in being charged the full session fee. This fee may be waived in emergency situations.
+                </p>
+              </div>
+
+              <div style={styles.buttonContainer}>
+                <button type="submit" style={styles.submitButton}>Submit</button>
+                <button type="button" onClick={toggleModal} style={styles.cancelButton}>Cancel</button>
+              </div>
+            </form>
           </div>
         </div>
-      </div>
-    </ParallaxSection>
+      )}
+    </>
   );
 };
 
 const styles = {
-  body: {
-    background: '#01796F',
-    padding: '1rem 10vw',
-  },
-  gridContainer: {
-    display: 'grid',
-    gridTemplate: 'repeat(6, [row] 1fr) / repeat(12, [col] 1fr)',
-    gridGap: '20px',
-    background: '#01796F',
-    maxWidth: '600px',
+  container: {
+    backgroundColor: 'transparent',
+    padding: '100px 20px',
+    maxWidth: '1200px',
     margin: '0 auto',
-    overflow: 'hidden',
-    minHeight: '50vh',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+    borderRadius: '8px',
   },
-  item1: {
-    gridColumn: 'col 6 / span 7', // Text on the right
-    gridRow: 'row 2 / span 4',
-    zIndex: 2,
+  header: {
+    fontFamily: 'Libre Baskerville, serif',
+    fontSize: '2rem',
+    color: '#333',
+    marginBottom: '20px',
+    textAlign: 'center',
+  },
+  subHeader: {
+    fontFamily: 'Libre Baskerville, serif',
+    fontSize: '1.5rem',
+    color: '#333',
+    marginBottom: '10px',
+  },
+  text: {
+    fontFamily: 'Libre Baskerville, serif',
+    fontSize: '1.2rem',
+    color: '#333',
+    lineHeight: '1.8',
+    marginBottom: '20px',
+  },
+  infoSection: {
+    marginBottom: '30px',
+  },
+  buttonContainer: {
+    textAlign: 'center',
+    marginBottom: '30px',
+  },
+  bookNowButton: {
+    padding: '15px 30px',
+    fontSize: '1.2rem',
+    color: '#fff',
+    backgroundColor: '#3b83f6',
+    borderRadius: '5px',
+    border: 'none',
+    cursor: 'pointer',
+    fontFamily: 'Libre Baskerville, serif',
+    transition: 'background-color 0.3s',
+  },
+  disclaimerContainer: {
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    padding: '20px',
+    borderRadius: '8px',
+    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+  },
+  modalOverlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     display: 'flex',
-    alignItems: 'center',
     justifyContent: 'center',
-    lineHeight: 1,
-    color: 'white',
+    alignItems: 'center',
+    zIndex: 1000,
+    paddingTop: '20vh', // Increased top padding to ensure the modal is positioned further down
   },
-  item2: {
-    gridColumn: 'col 2 / span 5', // Image on the left
-    gridRow: 'row 1 / span 6',
-    zIndex: 1,
+
+  modal: {
+    backgroundColor: '#fff',
+    padding: '40px',
+    borderRadius: '8px',
+    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
+    maxWidth: '600px',
+    width: '100%',
+    maxHeight: '80vh', // Set a maximum height
+    overflowY: 'auto', // Enable vertical scrolling if content overflows
+    boxSizing: 'border-box',
+    margin: '0 20px', 
+  },
+
+  // Adjust input fields to reduce size if needed
+  input: {
+    padding: '8px',
+    fontSize: '1rem',
+    borderRadius: '5px',
+    border: '1px solid #ddd',
+    width: '100%',
+  },
+
+  textarea: {
+    padding: '8px',
+    fontSize: '1rem',
+    borderRadius: '5px',
+    border: '1px solid #ddd',
+    width: '100%',
+    height: '80px', // Adjust height for better fit
+    resize: 'none',
+  },
+
+  form: {
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'column',
   },
-  image: {
-    maxWidth: '400px',
-    height: 'auto',
-    objectFit: 'cover',
-    filter: 'brightness(0.95)',
-    visibility: 'hidden',
-    maxHeight: 'calc(60vh - 100px)',
+  formGroup: {
+    marginBottom: '20px',
   },
-  heading: {
-    fontSize: '3rem',
-    fontFamily: "Libre Baskerville, serif",
-    textTransform: 'lowercase',
-    overflow: 'hidden',
-    display: 'block',
-    lineHeight: 1.1,
+  label: {
+    fontFamily: 'Libre Baskerville, serif',
+    fontSize: '1.2rem',
+    color: '#333',
+    marginBottom: '5px',
+  },
+
+
+  submitButton: {
+    padding: '10px 20px',
+    fontSize: '1.2rem',
+    color: '#fff',
+    backgroundColor: '#3b83f6',
+    borderRadius: '5px',
+    border: 'none',
+    cursor: 'pointer',
+    fontFamily: 'Libre Baskerville, serif',
+    transition: 'background-color 0.3s',
+    marginRight: '10px',
+  },
+  cancelButton: {
+    padding: '10px 20px',
+    fontSize: '1.2rem',
+    color: '#333',
+    backgroundColor: '#ddd',
+    borderRadius: '5px',
+    border: 'none',
+    cursor: 'pointer',
+    fontFamily: 'Libre Baskerville, serif',
+    transition: 'background-color 0.3s',
+    marginLeft: '10px',
   },
 };
 
-export default SplittingImageText;
+
+export default Contact;
+

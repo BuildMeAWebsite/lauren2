@@ -1,24 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Collapse from '@mui/material/Collapse';
 
 const CounselingServices = () => {
+  const [expanded, setExpanded] = useState({});
+
+  const handleExpandClick = (index) => {
+    setExpanded((prevExpanded) => ({
+      ...prevExpanded,
+      [index]: !prevExpanded[index],
+    }));
+  };
+
   const services = [
     {
-      title: 'Individual Counseling',
-      description: "It's like a physical trainer, but for your soul.",
-      backgroundColor: '#01796F', // Main color
+      title: 'Client-Centered Approaches',
+      therapies: [
+        { name: 'Person-Centred Therapy', description: 'Focuses on the individual’s self-worth and values.' },
+        { name: 'Strength-Based Therapy', description: 'Identifies and builds on client strengths.' },
+        { name: 'Psychodynamic Therapy', description: 'Explores unconscious patterns influencing behavior.' },
+      ],
+      backgroundColor: '#01796F', // Teal
+      textColor: '#ffffff', // White text for teal background
     },
     {
-      title: 'Anxiety',
-      description: 'Learn to live in the moment instead of dwelling on the past or worrying about the future.',
-      backgroundColor: '#339991', // Lighter shade
+      title: 'Cognitive and Behavioural Approaches',
+      therapies: [
+        { name: 'Cognitive Behavioural Therapy', description: 'Changes unhelpful thinking and behavior.' },
+        { name: 'Dialectical Behavioural Therapy', description: 'Combines CBT with mindfulness techniques.' },
+        { name: 'Acceptance and Commitment Therapy', description: 'Encourages acceptance of thoughts and feelings.' },
+      ],
+      backgroundColor: '#66B3A4', // Mid-teal
+      textColor: '#ffffff', // White text for mid-teal background
     },
     {
-      title: 'Depression',
-      description: 'Regain your energy, your happiness, and your life.',
-      backgroundColor: '#66B3A4', // Lightest shade
+      title: 'Emotion and Trauma-Focused Approaches',
+      therapies: [
+        { name: 'Emotion-Focused Therapy', description: 'Focuses on emotion as the key to change.' },
+        { name: 'Compassion-Focused Therapy', description: 'Develops self-compassion to manage emotions.' },
+        { name: 'Trauma-Informed Therapy', description: 'Understands and responds to the impact of trauma.' },
+      ],
+      backgroundColor: '#88C9BB', // Neutral green
+      textColor: '#ffffff', // White text for neutral green background
+    },
+    {
+      title: 'Creative and Expressive Approaches',
+      therapies: [
+        { name: 'Play Therapy', description: 'Uses play to help children express themselves.' },
+        { name: 'Art Therapy', description: 'Uses art as a means of communication and expression.' },
+        { name: 'Narrative Therapy', description: 'Helps clients rewrite their life stories.' },
+      ],
+      backgroundColor: '#F0EFE6', // Pastel yellow
+      textColor: '#01796F', // Teal text for pastel yellow background
     },
   ];
 
@@ -28,54 +63,58 @@ const CounselingServices = () => {
         <Grid
           item
           xs={12}
-          sm={4}
+          sm={6}
+          md={6}
+          lg={3}
           key={index}
           style={{
             backgroundColor: service.backgroundColor,
-            padding: '50px 30px',
+            padding: '1rem 1rem',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            minHeight: '400px',
+            minHeight: '500px',
           }}
         >
           <Typography
-            variant="h4"
+            fontSize= '1.25rem'
             align="center"
             style={{
-              fontFamily: 'Libre Baskerville, serif',
+              fontFamily: 'PT Sans, sans-serif',
               marginBottom: '20px',
-              color: '#ffffff', // Text color white for contrast
+              color: service.textColor, // Adjusted text color
             }}
           >
             {service.title}
           </Typography>
-          <Typography
-            variant="body1"
-            align="center"
-            style={{
-              fontFamily: 'Libre Baskerville, serif',
-              marginBottom: '40px',
-              fontSize: '1.2rem',
-              color: '#ffffff', // Text color white for contrast
-            }}
-          >
-            {service.description}
-          </Typography>
           <Button
-            href="#"
+            onClick={() => handleExpandClick(index)}
             style={{
-              fontFamily: 'Libre Baskerville, serif',
+              fontFamily: 'PT Sans, sans-serif',
               fontSize: '1rem',
-              color: '#ffffff', // Text color white for contrast
+              color: service.textColor, // Adjusted text color
               textTransform: 'none',
-              borderBottom: '2px solid #ffffff', // White bottom border
+              borderBottom: `1px solid ${service.textColor}`, // Adjusted border color
               borderRadius: '0px',
             }}
           >
-            Read More
+            {expanded[index] ? 'Hide' : 'View'}
           </Button>
+          <Collapse in={expanded[index]} timeout="auto" unmountOnExit>
+            <ul style={{ marginTop: '20px', color: service.textColor }}>
+              {service.therapies.map((therapy, i) => (
+                <li key={i} style={{ marginBottom: '10px' }}>
+                  <Typography variant="body1" style={{ color: service.textColor }}>
+                    {therapy.name}
+                  </Typography>
+                  <Typography variant="body2" style={{ marginLeft: '20px', fontStyle: 'italic', color: service.textColor }}>
+                    {therapy.description}
+                  </Typography>
+                </li>
+              ))}
+            </ul>
+          </Collapse>
         </Grid>
       ))}
     </Grid>

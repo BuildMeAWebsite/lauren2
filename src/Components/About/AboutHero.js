@@ -1,84 +1,98 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ParallaxSection from '../Home/ParallaxSection';
 
 const Hero = () => {
-  const [activeAccordion, setActiveAccordion] = useState(null);
-
   useEffect(() => {
     const textCard = document.querySelector('.textCard');
-    textCard.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
-    textCard.style.transform = 'translateX(0)';
-    textCard.style.opacity = '1';
+    const imageContainer = document.querySelector('.imageContainer');
+    const caret = document.querySelector('.caret');
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    };
+
+    const observerCallback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.style.opacity = '1';
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    [textCard, imageContainer, caret].forEach((element) => {
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      [textCard, imageContainer, caret].forEach((element) => {
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
   }, []);
 
-  const toggleAccordion = (index) => {
-    setActiveAccordion(index === activeAccordion ? null : index);
+  const scrollToHome3Boxes = () => {
+    const home3BoxesSection = document.querySelector('.home3Boxes');
+    if (home3BoxesSection) {
+      home3BoxesSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
-  const therapyApproaches = [
-    "Person-Centred Therapy",
-    "Strength-Based Therapy",
-    "Psychodynamic Therapy",
-  ];
-
-  const topics = [
-    {
-      title: "Client-Centered Approaches",
-      content: therapyApproaches,
-    },
-    {
-      title: "Cognitive and Behavioural Approaches",
-      content: therapyApproaches,
-    },
-    {
-      title: "Emotion and Trauma-Focused Approaches",
-      content: therapyApproaches,
-    },
-    {
-      title: "Creative and Expressive Approaches",
-      content: therapyApproaches,
-    }
-  ];
-
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background.jpg`}>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/couch.jpg`}>
       <div style={styles.heroContainer}>
+        {/* Inline style for the keyframes */}
+        <style>
+          {`
+            @keyframes fadeInOut {
+              0%, 100% {
+                opacity: 0;
+              }
+              50% {
+                opacity: 1;
+              }
+            }
+
+            @keyframes slideIn {
+              from {
+                transform: translateY(100%);
+              }
+              to {
+                transform: translateY(0);
+              }
+            }
+          `}
+        </style>
+
         <div style={styles.cardContainer}>
-          <div className="textCard" style={styles.textCard}>
-            <h1 style={styles.title}>A little more<em> about </em> me.</h1>
-            <div style={styles.accordionContainer}>
-              {topics.map((topic, index) => (
-                <div key={index} style={styles.accordionItem}>
-                  <div 
-                    style={styles.accordionHeader}
-                    onClick={() => toggleAccordion(index)}
-                  >
-                    {topic.title}
-                    <span style={styles.accordionArrow}>
-                      {activeAccordion === index ? '▲' : '▼'}
-                    </span>
-                  </div>
-                  <div 
-                    style={{
-                      ...styles.accordionContent,
-                      maxHeight: activeAccordion === index ? '100px' : '0',
-                      opacity: activeAccordion === index ? 1 : 0,
-                    }}
-                  >
-                    <ul>
-                      {topic.content.map((approach, i) => (
-                        <li key={i}>{approach}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="imageContainer" style={{ ...styles.imageContainer, ...styles.hidden }}>
+            <img
+              src={`${process.env.PUBLIC_URL}/Images/lauren.png`}
+              alt="Decorative"
+              style={styles.image}
+            />
+          </div>
+          <div className="textCard" style={{ ...styles.textCard, ...styles.hidden }}>
+            <h2 style={styles.subtitle}>LAUREN MARTYN PSYCHOTHERAPY</h2>
+            <h1 style={styles.title}>To be seen,
+to be heard,
+and to be  <em>understood</em>.</h1>
             <div style={styles.buttonContainer}>
               <a href="/contact" style={styles.contactButton}>Contact</a>
             </div>
           </div>
         </div>
+     
       </div>
     </ParallaxSection>
   );
@@ -87,112 +101,122 @@ const Hero = () => {
 const styles = {
   heroContainer: {
     display: 'flex',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
-    padding: '1rem 1rem',
-    backgroundColor: 'transparent',
+    flexDirection: 'column',
+    backgroundColor: 'transparent', // Add a semi-transparent background
     boxSizing: 'border-box',
     width: '100%',
-    minHeight: '100vh',
+    minHeight: '90vh',
     color: '#3a3a3a',
     position: 'relative',
+    overflow: 'hidden',
+    padding: '4rem 5rem',
   },
   cardContainer: {
-    maxWidth: '700px',
-    width: '100%',
-    padding: '0 50px',
-    boxSizing: 'border-box',
+    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
+    maxWidth: '800px',
+    width: '100%',
   },
   textCard: {
+    flex: 1,
     padding: '10px 0',
     backgroundColor: 'transparent',
     boxSizing: 'border-box',
     opacity: 1,
-    transform: 'translateX(0)',
+    transform: 'translateY(100%)',
+    animation: 'slideIn 1s ease-in-out forwards',
+  },
+  hidden: {
+    transform: 'translateY(100%)',
+    opacity: 0,
+  },
+  subtitle: {
+    fontFamily: "Libre Baskerville, serif",
+    fontSize: '1rem',
+    fontWeight: 'normal',
+    color: '#3a3a3a',
+    textTransform: 'uppercase',
+    letterSpacing: '2px',
   },
   title: {
-    fontFamily: "Libre Baskerville, serif",
-    fontSize: '3rem',
-    fontWeight: '600',
-    color: '#3a3a3a',
-    margin: '0 auto',
+    fontFamily: "PT Sans, sans-serif",
+    fontSize: '2.5rem',
+    fontWeight: '400',
+    color: '#01796f',
+    margin: '0',
     lineHeight: '1',
-  },
-  accordionContainer: {
-    margin: '20px 0',
-  },
-  accordionItem: {
-    marginBottom: '10px',
-    overflow: 'hidden',
-    transition: 'max-height 0.3s ease, opacity 0.3s ease',
-  },
-  accordionHeader: {
-    fontFamily: "Libre Baskerville, serif",
-    fontSize: '1.2rem',
-    fontWeight: 'normal',
-    color: '#01796F',
-    cursor: 'pointer',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '10px',
-    backgroundColor: '#e6e6e6',
-    borderRadius: '5px',
-  },
-  accordionArrow: {
-    fontSize: '1rem',
-  },
-  accordionContent: {
-    fontFamily: "Libre Baskerville, serif",
-    fontSize: '1rem',
-    color: '#3a3a3a',
-    paddingLeft: '10px',
-    borderLeft: '2px solid #01796F',
-    transition: 'max-height 0.3s ease, opacity 0.3s ease',
-    maxHeight: '0',
-    opacity: 0,
   },
   buttonContainer: {
     display: 'flex',
-    justifyContent: 'flex-end',
+    margin: '2rem 0',
+    justifyContent: 'flex-start',
   },
   contactButton: {
     padding: '10px 20px',
-    fontFamily: "Libre Baskerville, serif",
+    fontFamily: "PT Sans, sans-serif",
     fontWeight: 'normal',
     textTransform: 'uppercase',
     letterSpacing: '1px',
     cursor: 'pointer',
     fontSize: '1rem',
-    backgroundColor: '#333',
-    color: '#fff',
+    backgroundColor: '#3a3a3a',
+    color: '#fcfaf4',
     textDecoration: 'none',
     borderRadius: '0px',
   },
-  '@media (max-width: 800px)': {
-    heroContainer: {
-      padding: '2rem 1rem',
-      minHeight: '80vh',
-    },
+  imageContainer: {
+    flex: 1,
+    paddingRight: '1rem',
+    display: 'flex',
+    margin: '0 auto',
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden',
+    animation: 'slideIn 1s ease-in-out forwards',
+  },
+  image: {
+    maxWidth: '90%',
+    height: 'auto',
+    borderRadius: '10px',
+    objectFit: 'contain',
+  },
+  caret: {
+    fontSize: '5rem',
+    color: '#3a3a3a',
+    animation: 'fadeInOut 2s ease-in-out 2, slideIn 1s ease-in-out forwards',
+    cursor: 'pointer',
+    transition: 'transform 0.3s ease-in-out',
+    opacity: 0,
+  },
+  '@media (max-width: 1024px)': {
     cardContainer: {
-      width: '100%',
-      marginLeft: 'auto',
-      marginRight: 'auto',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    imageContainer: {
+      paddingRight: '0',
+      paddingBottom: '0px',
+      order: 2,
+    },
+    textCard: {
+      order: 1,
     },
     title: {
       fontSize: '2.5rem',
     },
-    accordionHeader: {
-      fontSize: '1rem',
-    },
-    accordionContent: {
-      fontSize: '0.9rem',
-    },
-    contactButton: {
-      fontSize: '0.9rem',
+    caret: {
+      marginTop: '0px',
     },
   },
+};
+
+// Add hover effect
+styles.caret['&:hover'] = {
+  transform: 'scale(1.1)',
 };
 
 export default Hero;

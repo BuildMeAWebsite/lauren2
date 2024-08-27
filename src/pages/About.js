@@ -1,35 +1,45 @@
 import React from 'react';
+import Grid from '@mui/material/Grid';
 import Hero from '../Components/About/AboutHero';
 import QuoteSection from '../Components/About/AboutSectionQuote';
-import FAQ from '../Components/About/FAQSection';
 import TherapeuticModalities from '../Components/About/Modalities';
 import ServicesOffered from '../Components/About/ServicesOffered';
+import TextBanner from '../Components/About/TextBanner';
+import FAQComponent from '../Components/About/FAQSection';
+import IssuesComponent from '../Components/About/Issues';
 
 const About = () => {
   return (
-    <>
-    <Hero />
-      <QuoteSection />
-      <ServicesOffered/>
-      <TherapeuticModalities />  
-      <div style={styles.faqContainer}>
-        <FAQ />
-      </div>
-  
-     
-    </>
-  );
-};
+    <Grid container spacing={0}>
+      <Grid item xs={12}>
+        <Hero />
+      </Grid>
 
-const styles = {
-  faqContainer: {
-    padding: '40px 20px', // Add padding around the FAQ section
-    margin: '40px auto',  // Center the FAQ section and add top and bottom margin
-    maxWidth: '1000px',   // Limit the maximum width of the FAQ section
-    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)', // Add a shadow to give it a card-like effect
-    backgroundColor: 'rgba(255, 255, 255, 0.9)', // Optional: Add a semi-transparent background
-    borderRadius: '8px',  // Round the corners to complete the card look
-  },
+      <Grid item xs={12}>
+        <QuoteSection />
+      </Grid>
+
+      <Grid item xs={12} >
+        <IssuesComponent />
+      </Grid>
+
+      <Grid item xs={12}>
+        <TextBanner text="Therapeutic Modalities" />
+      </Grid>
+
+      <Grid item xs={12}>
+        <ServicesOffered />
+      </Grid>
+
+      <Grid item xs={12}>
+        <TextBanner text="Frequently Asked Questions" />
+      </Grid>
+
+      <Grid item xs={12}>
+        <FAQComponent questionFontSize="1.5rem" answerFontSize="1rem" />
+      </Grid>
+    </Grid>
+  );
 };
 
 export default About;

@@ -2,10 +2,9 @@ import React from 'react';
 
 const QuoteSection = () => {
   return (
-    
     <div style={styles.quoteContainer}>
       <blockquote style={styles.quote}>
-        "This is an inspirational quote that sets the tone for the website."
+        I have experience working with a variety of concerns and types of clients across the lifespan. You may know exactly what you want to work on or not be sure where to start. You are in the driver seat, and I am your passenger. Whenever you are ready, we can begin to move forward. We can take the long way, go slow, or change directions towards your destination of a life worth living. Counseling provides a space where we can explore challenges, growth, healing, and everything in between.
       </blockquote>
     </div>
   );
@@ -16,17 +15,19 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '40px 20px',
-    backgroundColor: 'transparent',
+    padding: '2rem',    
+    backgroundColor: '#01796F',
+    flexDirection: 'column', // Ensures the text is centered
+    width: '100%',
   },
   quote: {
-    fontFamily: "'Poppins', sans-serif",
-    fontSize: '1.5rem',
-    fontStyle: 'italic',
-    color: '#666',
+    fontFamily: "PT Sans, sans-serif",
+    fontSize: '1.25rem',
+    color: '#fcfaf4',
     maxWidth: '800px',
-    textAlign: 'center',
-    lineHeight: '1.8',
+    textAlign: 'left',
+    lineHeight: '1.75',
+    margin: 0, // Removes default margin from blockquote
   },
 };
 

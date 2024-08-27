@@ -1,18 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const QuoteSection = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const quote = document.querySelector('.quote');
+      const quotePosition = quote.getBoundingClientRect().top;
+      const screenPosition = window.innerHeight / 1.2;
+
+      if (quotePosition < screenPosition) {
+        quote.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
+        quote.style.transform = 'translateY(0)';
+        quote.style.opacity = '1';
+        window.removeEventListener('scroll', handleScroll); // Remove the event listener once the animation is triggered
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div style={styles.quoteContainer}>
-      <blockquote style={styles.quote}>
-      My therapeutic approach is rooted in compassionate, non-blaming empathy. I believe the most important part of the therapeutic process is building a safe, trusting, collaborative, and genuine bond. From there, we can deepen the understanding of your lived experience and emotions. Together, we work to re-frame your story with an emphasis on strengths, hope, and solutions to help you towards their full potential.
-      </blockquote>
-      <div style={styles.imageContainer}>
-        <img 
-          src={`${process.env.PUBLIC_URL}/Images/lauren.png`} 
-          alt="Lauren Martyn" 
-          style={styles.image} 
-        />
-      </div>
+      <blockquote className="quote" style={{ ...styles.quote, ...styles.hidden }}>
+      If you are reading this you have already taken the biggest step in the therapeutic journey. My name is Lauren Martyn, I am a registered psychotherapist and I have dedicated myself to supporting school-aged children, youth, and young adults as they navigate life’s challenges. I currently offer virtual counselling to those residing in Ontario, Canada. Explore my website to learn more about me and if you feel it’s a good fit, let's continue this therapeutic journey together.      </blockquote>
     </div>
   );
 };
@@ -20,44 +33,28 @@ const QuoteSection = () => {
 const styles = {
   quoteContainer: {
     display: 'flex',
-    minHeight: '60vh',
+    minHeight: '40vh',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '10px 5rem',
-    backgroundColor: '#01796F',
-    flexDirection: 'row', // Ensures the image is placed next to the text
-    flexWrap: 'wrap', // Allows wrapping on smaller screens
+    margin: '0 auto',
+    backgroundColor: '#FCFAF4',
   },
   quote: {
-    fontFamily: "Libre Baskerville, serif",
+    fontFamily: "PT Sans, sans-serif",
     backgroundColor: "transparent",
-    fontSize: '1.5rem',
+    fontSize: '1.25rem',
     fontStyle: 'italic',
-    color: '#FFFACD',
-    maxWidth: '1000px',
+    color: '#01796F',
+    maxWidth: '900px',
     textAlign: 'left',
-    lineHeight: '1.25',
-    marginRight: '20px', // Adds space between the text and image
-    flex: 1, // Ensures the text takes up available space
+    lineHeight: '1.5',
+    margin: '0', // Remove margin to eliminate spacing around text
+    opacity: 1,
+    transform: 'translateY(0)',
   },
-  imageContainer: {
-    flexShrink: 0, // Prevents the image from shrinking
-  },
-  image: {
-    width: '300px', // Controls the image size
-    height: 'auto',
-    borderRadius: '8px',
-    boxSizing: 'border-box',
-  },
-  '@media (max-width: 800px)': {
-    quoteContainer: {
-      flexDirection: 'column', // Stacks text and image vertically on small screens
-      alignItems: 'center',
-    },
-    image: {
-      width: '150px', // Adjusts image size on smaller screens
-      marginTop: '10px', // Adds space above the image
-    },
+  hidden: {
+    transform: 'translateY(100%)', // Start off-screen at the bottom
+    opacity: 0,
   },
 };
 
