@@ -71,8 +71,8 @@ const SplittingImageText = () => {
   text="I can assist you or your child who are seeking support with:"
   fontSize="2rem"
   padding="2rem 1rem"
-  backgroundColor="#fcfaf4"
-  textColor="#01796F"
+  backgroundColor="#01796F"
+  textColor="#fcfaf4"
   textAlign="left"
   fontFamily="PT Sans, Sans-serif"
 />
@@ -103,7 +103,7 @@ const SplittingImageText = () => {
 
 const styles = {
   body: {
-    backgroundColor: '#fcfaf4',
+    backgroundColor: '#01796F',
     fontFamily: "PT Sans, sans-serif",
     paddingTop: '0px',
     marginTop: '0px',
@@ -112,6 +112,8 @@ const styles = {
   },
   gridContainer: {
     display: 'grid',
+        backgroundColor: '#01796F',
+
     gridTemplate: 'repeat(6, [row] 1fr) / repeat(12, [col] 1fr)',
     gridGap: '20px',
     maxWidth: '600px',
@@ -126,7 +128,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     lineHeight: 1,
-    color: '#01796F',
+    color: '#fcfaf4',
     textShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
   },
   listContainer: {

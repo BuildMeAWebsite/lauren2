@@ -11,14 +11,17 @@ const Home3Boxes = () => {
     {
       title: 'About My Practice',
       backgroundColor: '#FCFAF4', // Light cream color for the left box
+      href: '/about', // Link to the top of the about page
     },
     {
       title: 'My Approaches',
       backgroundColor: '#339991', // Teal-green for the middle box
+      href: '/approaches', // Link to the specific section on the about page
     },
     {
       title: 'FAQs',
       backgroundColor: '#01796F', // Deep teal for the right box
+      href: '/frequently-asked-questions', // Link to the FAQ section on the about page
     },
   ];
 
@@ -62,9 +65,8 @@ const Home3Boxes = () => {
       {services.map((service, index) => (
         <Grid
           item
-          xs={12}
-          sm={6}
-          md={4}
+          xs={12} // Always full width on small screens
+          md={4} // 3 items across on medium and larger screens
           key={index}
           style={{
             backgroundColor: service.backgroundColor,
@@ -73,7 +75,7 @@ const Home3Boxes = () => {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            minHeight: '500px',
+            minHeight: '400px',
           }}
         >
           <Typography
@@ -90,22 +92,8 @@ const Home3Boxes = () => {
           >
             {service.title}
           </Typography>
-          <Typography
-            ref={(el) => (textRefs.current[index + services.length] = el)}
-            variant="body1"
-            align="center"
-            style={{
-              fontFamily: "PT Sans, sans-serif",
-              fontSize: '1rem',
-              color: service.backgroundColor === '#FCFAF4' ? '#01796F' : '#ffffff', // Text color based on background
-              transform: 'translateY(100%)', // Start off-screen at the bottom
-              opacity: 0, // Start invisible
-            }}
-          >
-            {service.description}
-          </Typography>
           <Button
-            href="#"
+            href={service.href} // Different href for each button
             style={{
               fontFamily: "PT Sans, sans-serif",
               fontSize: '1rem',

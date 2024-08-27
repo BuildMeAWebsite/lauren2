@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -93,18 +92,15 @@ const NavigationMenuBar = () => {
               <MenuIcon style={{ color: '#01796F' }} />
             </IconButton>
             {!isMobile && (
-              <Typography
-                variant="h6"
+              <img
+                src={`${process.env.PUBLIC_URL}/Images/logo.png`}  // Adjusted path to use public folder
+                alt="Logo"
                 style={{
-                  fontFamily: 'PT Sans, sans-serif',
-                  fontWeight: 500,
-                  fontSize: '1.25rem',
-                  color: '#01796F',
-                  flexGrow: 0,
+                  height: '150px',
+                  width: '300px',
+                  objectFit: 'contain',
                 }}
-              >
-                Lauren Martyn
-              </Typography>
+              />
             )}
           </div>
 
@@ -181,21 +177,17 @@ const NavigationMenuBar = () => {
           )}
 
           {isMobile && (
-            <Typography
-              variant="h6"
+            <img
+              src={`${process.env.PUBLIC_URL}/Images/logo.jpg`}  // Adjusted path to use public folder
+              alt="Logo"
               style={{
-                fontFamily: 'PT Sans, sans-serif',
-                fontWeight: 600,
-                fontSize: '1rem',
-                color: '#01796F',
+             
+                objectFit: 'contain',
                 position: 'absolute',
                 left: '50%',
                 transform: 'translateX(-50%)',
-                textAlign: 'center',
               }}
-            >
-              Lauren Martyn
-            </Typography>
+            />
           )}
         </Toolbar>
       </AppBar>

@@ -36,6 +36,7 @@ const styles = {
     minHeight: '40vh',
     justifyContent: 'center',
     alignItems: 'center',
+    padding: '2rem 2rem',
     margin: '0 auto',
     backgroundColor: '#FCFAF4',
   },
@@ -45,7 +46,7 @@ const styles = {
     fontSize: '1.25rem',
     fontStyle: 'italic',
     color: '#01796F',
-    maxWidth: '900px',
+    maxWidth: '700px',
     textAlign: 'left',
     lineHeight: '1.5',
     margin: '0', // Remove margin to eliminate spacing around text

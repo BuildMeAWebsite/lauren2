@@ -15,16 +15,16 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '2rem',    
-    backgroundColor: '#01796F',
+    padding: '2rem 2rem',    
+    backgroundColor: '#fcfaf4',
     flexDirection: 'column', // Ensures the text is centered
     width: '100%',
   },
   quote: {
     fontFamily: "PT Sans, sans-serif",
     fontSize: '1.25rem',
-    color: '#fcfaf4',
-    maxWidth: '800px',
+    color: '#01796F',
+    maxWidth: '700px',
     textAlign: 'left',
     lineHeight: '1.75',
     margin: 0, // Removes default margin from blockquote

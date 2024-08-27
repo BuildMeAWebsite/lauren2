@@ -8,12 +8,17 @@ import TextBanner from '../Components/About/TextBanner';
 import FAQComponent from '../Components/About/FAQSection';
 import IssuesComponent from '../Components/About/Issues';
 
-const About = () => {
+const ApproachesPageComponent = () => {
   return (
     <Grid container spacing={0}>
-      <Grid item xs={12} id="top">
-        <Hero />
+            <Grid item xs={12}>
+        <TextBanner text="Therapeutic Modalities" />
       </Grid>
+          <Grid item xs={12} id="services-offered">
+        <ServicesOffered />
+      </Grid>
+      
+  
 
       <Grid item xs={12}>
         <QuoteSection />
@@ -23,23 +28,22 @@ const About = () => {
         <IssuesComponent />
       </Grid>
 
-      <Grid item xs={12}>
-        <TextBanner text="Therapeutic Modalities" />
-      </Grid>
+  
 
-      <Grid item xs={12} id="services-offered">
-        <ServicesOffered />
-      </Grid>
+    
 
       <Grid item xs={12}>
         <TextBanner text="Frequently Asked Questions" />
       </Grid>
-
       <Grid item xs={12} id="faq">
         <FAQComponent questionFontSize="1.5rem" answerFontSize="1rem" />
+      </Grid>
+
+      <Grid item xs={12} id="top">
+        <Hero />
       </Grid>
     </Grid>
   );
 };
 
-export default About;
+export default ApproachesPageComponent;
