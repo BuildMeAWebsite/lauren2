@@ -10,7 +10,9 @@ import IssuesComponent from '../Components/About/Issues';
 
 const ApproachesPageComponent = () => {
   return (
-    <Grid container spacing={0}>
+    <Grid container spacing={0}
+    style = {{padding: '5rem 0' }}>
+    
             <Grid item xs={12}>
         <TextBanner text="Therapeutic Modalities" />
       </Grid>

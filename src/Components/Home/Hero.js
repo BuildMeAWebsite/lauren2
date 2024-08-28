@@ -16,14 +16,6 @@ const slideInFromBottom = keyframes`
 `;
 
 const Hero = () => {
-  useEffect(() => {
-    const slideInElements = document.querySelectorAll('.slideInFromBottom');
-    
-    slideInElements.forEach((element) => {
-      element.style.animation = `slideInFromBottom 1.5s ease-in-out forwards`;
-    });
-  }, []);
-
   return (
     <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background1.jpg`}>
       <Grid
@@ -34,14 +26,14 @@ const Hero = () => {
         css={styles.heroContainer}
         spacing={3}
       >
-        <Grid item xs={12} md={6} className="slideInFromBottom" css={styles.slideIn}>
+        <Grid item xs={12} md={6} css={styles.slideIn}>
           <img
             src={`${process.env.PUBLIC_URL}/Images/h.jpg`}
             alt="Lauren Martyn Headshot"
             css={styles.image}
           />
         </Grid>
-        <Grid item xs={12} md={6} className="slideInFromBottom" css={styles.slideIn}>
+        <Grid item xs={12} md={6} css={styles.slideIn}>
           <h2 css={styles.subtitle}>ONTARIO PSYCHOTHERAPY</h2>
           <h1 css={styles.title}>
             To be seen, to be heard, and to be <em>understood</em>.

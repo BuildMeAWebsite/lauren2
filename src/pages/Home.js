@@ -18,9 +18,6 @@ const Home = () => {
       </Grid>
     
 
-      <Grid item xs={12}>
-        <TextBanner text = "Hello and welcome, " fontSize = '1.25rem' textAlign= 'left'/>
-        </Grid>
 
       <Grid item xs={12}>
         <QuoteSection />

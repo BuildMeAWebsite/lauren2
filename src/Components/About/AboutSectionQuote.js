@@ -13,22 +13,25 @@ const QuoteSection = () => {
 const styles = {
   quoteContainer: {
     display: 'flex',
+    minHeight: '30vh',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '2rem ', 
-    margin: '0 auto',   
-    backgroundColor: '#fcfaf4',
-    flexDirection: 'column', // Ensures the text is centered
-    width: '100%',
+    margin: '0 auto',
+    backgroundColor: '#FCFAF4',
   },
   quote: {
     fontFamily: "PT Sans, sans-serif",
+    backgroundColor: "transparent",
     fontSize: '1.25rem',
+    fontStyle: 'italic',
     color: '#01796F',
-    maxWidth: '700px',
+    maxWidth: '600px',
     textAlign: 'left',
-    lineHeight: '1.75',
-    margin: 0, // Removes default margin from blockquote
+    lineHeight: '1.5',
+    margin: '0',
+    padding: '2rem 3rem', // Add padding to the left and right
+    opacity: 1,
+    transform: 'translateY(0)',
   },
 };
 

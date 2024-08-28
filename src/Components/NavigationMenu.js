@@ -99,9 +99,9 @@ const NavigationMenuBar = () => {
               <MenuIcon style={{ color: textColor }} /> {/* Adjust the color dynamically */}
             </IconButton>
             {!isMobile && (
-              <Link to="/" style={{ textDecoration: 'none' }}> {/* Add a Link to the homepage */}
+              <Link to="/" style={{ textDecoration: 'none' }}>
                 <img
-                  src={logoSrc}  // Adjusted path to dynamically change logo
+                  src={logoSrc}
                   alt="Logo"
                   style={{
                     height: '5rem',
@@ -122,7 +122,7 @@ const NavigationMenuBar = () => {
                   borderRadius: '0px',
                   fontWeight: 100,
                   fontSize: '1.25rem',
-                  color: textColor, // Adjust the color dynamically
+                  color: textColor,
                   textTransform: 'none',
                   marginLeft: '12px',
                   transition: 'color 0.3s ease',
@@ -137,7 +137,7 @@ const NavigationMenuBar = () => {
                   fontFamily: 'PT Sans, sans-serif',
                   fontWeight: 300,
                   fontSize: '1.25rem',
-                  color: textColor, // Adjust the color dynamically
+                  color: textColor,
                   textTransform: 'none',
                   marginLeft: '12px',
                   transition: 'color 0.3s ease',
@@ -152,7 +152,7 @@ const NavigationMenuBar = () => {
                   fontFamily: 'PT Sans, sans-serif',
                   fontWeight: 300,
                   fontSize: '1.25rem',
-                  color: textColor, // Adjust the color dynamically
+                  color: textColor,
                   textTransform: 'none',
                   marginLeft: '12px',
                   transition: 'color 0.3s ease',
@@ -171,13 +171,13 @@ const NavigationMenuBar = () => {
                 fontFamily: 'PT Sans, sans-serif',
                 fontWeight: 500,
                 fontSize: '1.25rem',
-                color: textColor, // Adjust the color dynamically
+                color: textColor,
                 textTransform: 'none',
                 marginRight: '10px',
                 transition: 'color 0.3s ease',
-                border: `1px solid ${textColor}`, // Adjust the border color dynamically
+                border: `1px solid ${textColor}`,
                 padding: '6px 18px',
-                borderRadius: '0px', // Removed border-radius for sharp edges
+                borderRadius: '0px',
               }}
               color="inherit"
             >
@@ -186,17 +186,14 @@ const NavigationMenuBar = () => {
           )}
 
           {isMobile && (
-            <Link to="/" style={{ textDecoration: 'none' }}> {/* Add a Link to the homepage */}
+            <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img
-                src={logoSrc}  // Adjusted path to dynamically change logo
+                src={logoSrc}
                 alt="Logo"
                 style={{
-                  height: '7.5rem',
-                  width: '15rem',
+                  height: '5rem',  // Adjust the height for smaller screens
+                  width: 'auto',
                   objectFit: 'contain',
-                  position: 'absolute',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
                 }}
               />
             </Link>
@@ -222,4 +219,3 @@ const NavigationMenuBar = () => {
 };
 
 export default NavigationMenuBar;
-
