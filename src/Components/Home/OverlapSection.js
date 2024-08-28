@@ -1,51 +1,41 @@
 import React, { useEffect } from 'react';
-import gsap from 'gsap';
 import Splitting from 'splitting'; // Importing Splitting for text effects
-import ParallaxSection from './ParallaxSection';
 
 const SplittingImageText = () => {
   useEffect(() => {
     // Splitting.js
     Splitting();
 
-    // Intersection Observer and GSAP
+    // Intersection Observer for fade-in animation
     const options = {
-      root: null, // use the document's viewport as the container
-      rootMargin: "0px", // % or px - offsets added to each side of the intersection
-      threshold: 0.1
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
     };
 
-    const itemDelay = 0.1;
-
-    let fadeupCallback = (entries, self) => {
-      let itemLoad = 0;
+    const fadeInCallback = (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-          tl.set(entry.target, { visibility: "visible" });
-          tl.from(entry.target, {
-            duration: 1,
-            y: 200,
-            skewY: 40,
-            autoAlpha: 0,
-            delay: itemLoad * itemDelay,
-            ease: "power3.out"
-          });
-          itemLoad++;
-          self.unobserve(entry.target);
+          entry.target.style.visibility = "visible";
+          entry.target.style.transition = "opacity 1.5s ease-in-out, transform 1.5s ease-in-out";
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateY(0)";
+          observer.unobserve(entry.target);
         }
       });
     };
 
-    let fadeupObserver = new IntersectionObserver(fadeupCallback, options);
+    const fadeInObserver = new IntersectionObserver(fadeInCallback, options);
 
-    document.querySelectorAll(".bullet-item, img").forEach((fadeup) => {
-      fadeupObserver.observe(fadeup);
+    document.querySelectorAll(".bullet-item, img").forEach((element) => {
+      element.style.opacity = 0;
+      element.style.transform = "translateY(100px)";
+      fadeInObserver.observe(element);
     });
 
     // Clean up the observer on component unmount
     return () => {
-      fadeupObserver.disconnect();
+      fadeInObserver.disconnect();
     };
   }, []);
 
@@ -71,7 +61,7 @@ const SplittingImageText = () => {
           <div style={styles.listContainer}>
             {items.map((item, index) => (
               <div key={index} className="bullet-item" style={styles.bulletItem}>
-                 {item}
+                {item}
               </div>
             ))}
           </div>
@@ -125,6 +115,8 @@ const styles = {
     textTransform: 'lowercase',
     lineHeight: 1,
     visibility: 'hidden', // Initially hidden for animation
+    opacity: 0,
+    transform: 'translateY(100px)',
   },
   item2: {
     gridColumn: 'col 5 / span 8',
@@ -140,6 +132,8 @@ const styles = {
     objectFit: 'cover',
     filter: 'brightness(0.95)',
     visibility: 'hidden',
+    opacity: 0,
+    transform: 'translateY(100px)',
     maxHeight: 'calc(60vh - 100px)',
   },
 };

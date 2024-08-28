@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Assuming you're using react-router-dom for routing
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
@@ -98,15 +99,17 @@ const NavigationMenuBar = () => {
               <MenuIcon style={{ color: textColor }} /> {/* Adjust the color dynamically */}
             </IconButton>
             {!isMobile && (
-              <img
-                src={logoSrc}  // Adjusted path to dynamically change logo
-                alt="Logo"
-                style={{
-                  height: '5rem',
-                  width: '12rem',
-                  objectFit: 'contain',
-                }}
-              />
+              <Link to="/" style={{ textDecoration: 'none' }}> {/* Add a Link to the homepage */}
+                <img
+                  src={logoSrc}  // Adjusted path to dynamically change logo
+                  alt="Logo"
+                  style={{
+                    height: '5rem',
+                    width: '12rem',
+                    objectFit: 'contain',
+                  }}
+                />
+              </Link>
             )}
           </div>
 
@@ -183,18 +186,20 @@ const NavigationMenuBar = () => {
           )}
 
           {isMobile && (
-            <img
-              src={logoSrc}  // Adjusted path to dynamically change logo
-              alt="Logo"
-              style={{
-                height: '7.5rem',
-                width: '15rem',
-                objectFit: 'contain',
-                position: 'absolute',
-                left: '50%',
-                transform: 'translateX(-50%)',
-              }}
-            />
+            <Link to="/" style={{ textDecoration: 'none' }}> {/* Add a Link to the homepage */}
+              <img
+                src={logoSrc}  // Adjusted path to dynamically change logo
+                alt="Logo"
+                style={{
+                  height: '7.5rem',
+                  width: '15rem',
+                  objectFit: 'contain',
+                  position: 'absolute',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                }}
+              />
+            </Link>
           )}
         </Toolbar>
       </AppBar>
@@ -217,3 +222,4 @@ const NavigationMenuBar = () => {
 };
 
 export default NavigationMenuBar;
+

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import gsap from 'gsap';
 import Splitting from 'splitting';
 
 const SplittingImageText = () => {
@@ -14,36 +13,28 @@ const SplittingImageText = () => {
       threshold: 0.1,
     };
 
-    const itemDelay = 0.1;
-
-    const fadeupCallback = (entries, self) => {
-      let itemLoad = 0;
+    const fadeInCallback = (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-          tl.set(entry.target, { visibility: "visible" });
-          tl.from(entry.target, {
-            duration: 1,
-            y: 200,
-            skewY: 40,
-            autoAlpha: 0,
-            delay: itemLoad * itemDelay,
-            ease: "power3.out",
-          });
-          itemLoad++;
-          self.unobserve(entry.target);
+          entry.target.style.visibility = "visible";
+          entry.target.style.transition = "opacity 1.5s ease-in-out, transform 1.5s ease-in-out";
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateY(0)";
+          observer.unobserve(entry.target);
         }
       });
     };
 
-    const fadeupObserver = new IntersectionObserver(fadeupCallback, options);
+    const fadeInObserver = new IntersectionObserver(fadeInCallback, options);
 
-    document.querySelectorAll("h1 span, img").forEach((fadeup) => {
-      fadeupObserver.observe(fadeup);
+    document.querySelectorAll("h1 span, img").forEach((element) => {
+      element.style.opacity = 0;
+      element.style.transform = "translateY(100px)";
+      fadeInObserver.observe(element);
     });
 
     return () => {
-      fadeupObserver.disconnect();
+      fadeInObserver.disconnect();
     };
   }, []);
 
@@ -65,10 +56,8 @@ const SplittingImageText = () => {
             alt="Overlap"
             style={styles.image}
           />
-        </div>
-        <div style={styles.item1}>
           <h1 data-splitting="lines" style={styles.heading}>
-            Click <a href="#" onClick={handleFormOpen} style={styles.link}>here</a> to schedule a 15 minute call
+            Click <a href="#" onClick={handleFormOpen} style={styles.link}> <em style={{ fontSize: '2.5rem' }}>here </em></a> to schedule a 15 minute call
           </h1>
         </div>
       </div>
@@ -80,7 +69,7 @@ const SplittingImageText = () => {
             <iframe
               src="https://docs.google.com/forms/d/e/1FAIpQLSf7NaBdfNFzRTJF17ZdeR0fbMFKArZfW7uQl9ODmGF5sGsEGA/viewform?embedded=true"
               width="100%"
-              height="600px"
+              height="500px"
               frameBorder="0"
               marginHeight="0"
               marginWidth="0"
@@ -98,56 +87,54 @@ const SplittingImageText = () => {
 
 const styles = {
   body: {
-    background: '#01796F',
-    padding: '1rem 10vw',
+    background: '#fcfaf4',
+    padding: '1rem 2rem',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '100vh',
   },
   gridContainer: {
-    display: 'grid',
-    gridTemplate: 'repeat(6, [row] 1fr) / repeat(12, [col] 1fr)',
-    gridGap: '20px',
-    background: '#01796F',
-    maxWidth: '600px',
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    background: '#fcfaf4',
+    maxWidth: '800px',
     margin: '0 auto',
     overflow: 'hidden',
-    minHeight: '70vh',
-  },
-  item1: {
-    gridColumn: 'col 6 / span 7',
-    gridRow: 'row 2 / span 4',
-    zIndex: 2,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    lineHeight: 1,
-    color: '#fcfFAF4',
   },
   item2: {
-    gridColumn: 'col 2 / span 5',
-    gridRow: 'row 1 / span 6',
-    zIndex: 1,
+    position: 'relative',
     display: 'flex',
-    alignItems: 'center',
     justifyContent: 'center',
-    color: '#fcfFAF4',
-
+    alignItems: 'center',
   },
   image: {
-    maxWidth: '500px',
+    maxWidth: '100%',
     height: 'auto',
     objectFit: 'cover',
     filter: 'brightness(0.95)',
-    visibility: 'hidden',
-    maxHeight: 'calc(60vh - 100px)',
+    visibility: 'hidden', // Initially hidden for animation
+    maxHeight: 'calc(60vh - 10px)',
+    transform: 'translateY(100px)',
+    opacity: 0,
   },
   heading: {
+    position: 'absolute',
     fontSize: '2rem',
     fontFamily: "PT Sans, sans-serif",
     textTransform: 'lowercase',
     overflow: 'hidden',
     display: 'block',
     lineHeight: 1.1,
-    color: '#fcfFAF4',
-
+    color: '#fcfaf4',
+    textAlign: 'center',
+    padding: '0 50px',
+    textShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+    visibility: 'hidden', // Initially hidden for animation
+    transform: 'translateY(100px)',
+    opacity: 0,
   },
   link: {
     color: '#ffffff',
@@ -155,8 +142,7 @@ const styles = {
     borderBottom: '1px solid #ffffff',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
-    color: '#fcfFAF4',
-
+    color: '#fcFAF4',
   },
   overlay: {
     position: 'fixed',

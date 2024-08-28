@@ -1,38 +1,27 @@
 import React, { useEffect } from 'react';
-import gsap from 'gsap';
 import Splitting from 'splitting'; // Importing Splitting for text effects
 import TextBanner from './TextBanner';
 
 const SplittingImageText = () => {
   useEffect(() => {
-    // Splitting.js
+    // Splitting.js for text effects
     Splitting();
 
-    // Intersection Observer and GSAP
+    // Intersection Observer for handling the fade-in effect
     const options = {
       root: null, // use the document's viewport as the container
       rootMargin: "0px", // % or px - offsets added to each side of the intersection
       threshold: 0.1
     };
 
-    const itemDelay = 0.1;
-
-    let fadeupCallback = (entries, self) => {
-      let itemLoad = 0;
+    let fadeupCallback = (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-          tl.set(entry.target, { visibility: "visible" });
-          tl.from(entry.target, {
-            duration: 1,
-            y: 200,
-            skewY: 40,
-            autoAlpha: 0,
-            delay: itemLoad * itemDelay,
-            ease: "power3.out"
-          });
-          itemLoad++;
-          self.unobserve(entry.target);
+          entry.target.style.visibility = 'visible';
+          entry.target.style.transition = 'opacity 1.5s ease-in-out, transform 1.5s ease-in-out';
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)'; // Animate sliding into view
+          observer.unobserve(entry.target); // Stop observing once the animation is triggered
         }
       });
     };
@@ -66,38 +55,36 @@ const SplittingImageText = () => {
 
   return (
     <>
-<div style={styles.body}>
-<TextBanner
-  text="I can assist you or your child who are seeking support with:"
-  fontSize="2rem"
-  padding="2rem 1rem"
-  backgroundColor="#01796F"
-  textColor="#fcfaf4"
-  textAlign="left"
-  fontFamily="PT Sans, Sans-serif"
-/>
-
-      <div style={styles.gridContainer}>
-        <div style={styles.item1}>
-          <div style={styles.listContainer}>
-            {items.map((item, index) => (
-              <div key={index} className="bullet-item" style={styles.bulletItem}>
-                 {item}
-              </div>
-            ))}
+      <div style={styles.body}>
+        <TextBanner
+          text="I can assist you or your child who are seeking support with:"
+          fontSize="2rem"
+          padding="2rem 1rem"
+          backgroundColor="#01796F"
+          textColor="#fcfaf4"
+          textAlign="left"
+          fontFamily="PT Sans, Sans-serif"
+        />
+        <div style={styles.gridContainer}>
+          <div style={styles.item1}>
+            <div style={styles.listContainer}>
+              {items.map((item, index) => (
+                <div key={index} className="bullet-item" style={styles.bulletItem}>
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div style={styles.item2}>
+            <img
+              src={`${process.env.PUBLIC_URL}/Images/background.jpg`} 
+              alt="Overlap"
+              style={styles.image}
+            />
           </div>
         </div>
-        <div style={styles.item2}>
-          <img
-            src={`${process.env.PUBLIC_URL}/Images/background.jpg`} 
-            alt="Overlap"
-            style={styles.image}
-          />
-        </div>
       </div>
-    </div>
     </>
-  
   );
 };
 
@@ -112,8 +99,7 @@ const styles = {
   },
   gridContainer: {
     display: 'grid',
-        backgroundColor: '#01796F',
-
+    backgroundColor: '#01796F',
     gridTemplate: 'repeat(6, [row] 1fr) / repeat(12, [col] 1fr)',
     gridGap: '20px',
     maxWidth: '600px',
@@ -142,7 +128,9 @@ const styles = {
     fontFamily: "PT Sans, sans-serif",
     textTransform: 'lowercase',
     lineHeight: 1,
-    visibility: 'hidden', // Initially hidden for animation
+    opacity: 0, // Initially hidden for animation
+    transform: 'translateY(20px)', // Slide in from below
+    visibility: 'hidden', // Initially hidden
   },
   item2: {
     gridColumn: 'col 5 / span 8',
@@ -157,7 +145,7 @@ const styles = {
     height: '100%',
     objectFit: 'cover',
     filter: 'brightness(0.95)',
-    visibility: 'hidden',
+    visibility: 'hidden', // Initially hidden for animation
     maxHeight: 'calc(60vh - 50px)',
   },
 };

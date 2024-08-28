@@ -15,7 +15,8 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '2rem 2rem',    
+    padding: '2rem ', 
+    margin: '0 auto',   
     backgroundColor: '#fcfaf4',
     flexDirection: 'column', // Ensures the text is centered
     width: '100%',

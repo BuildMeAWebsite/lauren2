@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Box, Link } from '@mui/material';
+import { Typography, Box, Link, Grid } from '@mui/material';
 
 const Footer = ({ onContactClick }) => {
   return (
@@ -8,115 +8,140 @@ const Footer = ({ onContactClick }) => {
       sx={{
         backgroundColor: '#FCFAF4 !important',
         backdropFilter: 'blur(10px) !important',
-        padding: '20px 40px',
-        boxShadow: '0 -10px 30px rgba(0, 0, 0, 0.1)',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        borderTop: '1px solid rgba(0, 0, 0, 0.1)',
+        padding: '2rem 4rem',
+        textAlign: 'center',
         position: 'relative',
         zIndex: 10,
       }}
     >
-      <Box sx={{ display: 'flex', gap: '20px' }}>
-        <Link
-          href="/"
-          underline="none"
+      <Grid
+        container
+        
+        spacing={2}
+        alignItems="center"
+        justifyContent="space-between"
+        sx={{
+          flexDirection: { xs: 'column', sm: 'row' }, // Vertical stacking on small screens, row on larger screens
+        }}
+      >
+        <Grid
+          item
+          spacing = {0}
+          xs={12}
+          sm={4}
           sx={{
-            fontFamily: 'Libre Baskerville, serif',
-            fontSize: '1rem',
-            color: '#01796F',
-            '&:hover': {
-              textDecoration: 'underline',
-            },
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' }, // Vertical stack on small screens
+            alignItems: { xs: 'flex-start', sm: 'center' },
+            gap: '10px',
           }}
         >
-          Home
-        </Link>
-        <Link
-          href="/about"
-          underline="none"
-          sx={{
-            fontFamily: 'Libre Baskerville, serif',
-            fontSize: '1rem',
-            color: '#01796F',
-            '&:hover': {
-              textDecoration: 'underline',
-            },
-          }}
-        >
-          About
-        </Link>
-        <Link
-          href="#"
-          onClick={onContactClick}
-          underline="none"
-          sx={{
-            fontFamily: 'Libre Baskerville, serif',
-            fontSize: '1rem',
-            color: '#01796F',
-            '&:hover': {
-              textDecoration: 'underline',
-            },
-          }}
-        >
-          Contact
-        </Link>
-      </Box>
+          <Link
+            href="/"
+            underline="none"
+            sx={{
+              fontFamily: 'PT Sans, sans-serif',
+              fontSize: '1rem',
+              color: '#01796F',
+              textAlign: 'center',
 
-      <Box sx={{ display: 'flex', gap: '20px' }}>
-        <div
-          style={{
-            position: 'relative', // Resetting any possible external styles
-            overflow: 'hidden',   // Prevent overflow issues
-            transform: 'none !important',  // Reset any transformation
-            transition: 'none !important', // Disable transitions
-            animation: 'none !important',  // Disable animations
+              '&:hover': {
+                textDecoration: 'underline',
+              },
+              display: { xs: 'block', sm: 'inline-block' }, // Block on small screens, inline on larger screens
+            }}
+          >
+            Home
+          </Link>
+          <Link
+            href="/about"
+            underline="none"
+            sx={{
+              fontFamily: 'PT Sans, sans-serif',
+              fontSize: '1rem',
+              color: '#01796F',
+              '&:hover': {
+                textDecoration: 'underline',
+              },
+              display: { xs: 'block', sm: 'inline-block' }, // Block on small screens, inline on larger screens
+            }}
+          >
+            About
+          </Link>
+          <Link
+            href="#"
+            onClick={onContactClick}
+            underline="none"
+            sx={{
+              fontFamily: 'PT Sans, sans-serif',
+              fontSize: '1rem',
+              color: '#01796F',
+              '&:hover': {
+                textDecoration: 'underline',
+              },
+              display: { xs: 'block', sm: 'inline-block' }, // Block on small screens, inline on larger screens
+            }}
+          >
+            Contact
+          </Link>
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          sm={4}
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'row', sm: 'row' }, // Horizontal on both small and large screens
+            justifyContent: { xs: 'center', sm: 'center' },
+            gap: '10px',
+            marginTop: { xs: '0px', sm: '0' },
           }}
         >
+        
           <img
             src={`${process.env.PUBLIC_URL}/Images/prideflag.png`}
             alt="Pride Flag"
             style={{
               maxWidth: '70px',
               maxHeight: '40px',
-              margin: '0 auto',
               borderRadius: '5px',
-              display: 'block',
-              transform: 'none !important',
-              transition: 'none !important',
-              animation: 'none !important',
-              position: 'static', // Ensure the image remains in place
             }}
           />
-        </div>
-      </Box>
+        </Grid>
 
-      <Box sx={{ textAlign: 'right' }}>
-        <Typography
-          variant="body2"
+        <Grid
+          item
+          xs={12}
+          sm={4}
           sx={{
-            fontFamily: 'Libre Baskerville, serif',
-            fontSize: '1rem',
-            color: '#01796F',
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' }, // Vertical on small screens, row on large
+            alignItems: { xs: 'flex-start', sm: 'flex-end' },
+            justifyContent: { xs: 'flex-start', sm: 'flex-end' },
+            textAlign: { xs: 'left', sm: 'right' }, // Align text left on small screens, right on large
+            gap: '1px',
           }}
         >
-          lauren@laurenmartyntherapy.ca
-        </Typography>
-
-        <Typography
-          variant="body2"
-          sx={{
-            fontFamily: 'Libre Baskerville, serif',
-            fontSize: '1rem',
-            color: '#01796F',
-          }}
-        >
-         Ottawa, Ontario
-        </Typography>
-      </Box>
+          <Box sx={{ textAlign: { xs: 'left', sm: 'right' } }}>
+          
+            <Typography
+              variant="body2"
+              sx={{
+                fontFamily: 'PT Sans, sans-serif',
+                fontSize: '1rem',
+                color: '#01796F',
+              }}
+            >
+              Ottawa, Ontario
+            </Typography>
+          </Box>
+        </Grid>
+      </Grid>
     </Box>
   );
 };
 
 export default Footer;
+
+
