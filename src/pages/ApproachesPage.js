@@ -14,7 +14,7 @@ const ApproachesPageComponent = () => {
     style = {{padding: '5rem 0' }}>
     
             <Grid item xs={12}>
-        <TextBanner text="Therapeutic Modalities" />
+        <TextBanner text="Therapeutic Modalities" backgroundColor= '#fcfaf4' textColor= '#01796F' padding = '4rem' />
       </Grid>
           <Grid item xs={12} id="services-offered">
         <ServicesOffered />

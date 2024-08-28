@@ -9,10 +9,14 @@ import IssuesComponent from '../Components/About/Issues';
 
 const FAQPage = () => {
   return (
-    <Grid container spacing={0}>
+    <Grid container spacing={0}
+    style = {{
+        paddingTop: '5rem',
+    }}
+    >
 
       <Grid item xs={12}>
-        <TextBanner text="Frequently Asked Questions" />
+        <TextBanner text="Frequently Asked Questions"  padding = '5rem'/>
       </Grid>
           <Grid item xs={12} id="faq">
         <FAQComponent questionFontSize="1.5rem" answerFontSize="1rem" />

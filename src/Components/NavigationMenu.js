@@ -47,10 +47,7 @@ const NavigationMenuBar = () => {
   }, [lastScrollTop]);
 
   const toggleDrawer = (open) => (event) => {
-    if (
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
     setDrawerOpen(open);
@@ -66,7 +63,7 @@ const NavigationMenuBar = () => {
       <List>
         {['Home', 'About', 'Contact', 'Book Now'].map((text, index) => (
           <ListItem button key={text} component="a" href={index === 0 ? '/' : `/${text.toLowerCase().replace(/\s/g, '')}`}>
-            <ListItemText primary={text} />
+            <ListItemText primary={text} style={{ color: textColor }} />
           </ListItem>
         ))}
       </List>
@@ -91,12 +88,14 @@ const NavigationMenuBar = () => {
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <IconButton
               edge="start"
-              style={{ marginRight: '20px', transform: 'scale(1.25)' }}
+              style={{ marginRight: '20px', transform: 'scale(1.25)', color: textColor }}
               color="inherit"
               aria-label="menu"
               onClick={toggleDrawer(true)}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#FCFAF4'}
+              onMouseLeave={(e) => e.currentTarget.style.color = textColor}
             >
-              <MenuIcon style={{ color: textColor }} /> {/* Adjust the color dynamically */}
+              <MenuIcon />
             </IconButton>
             {!isMobile && (
               <Link to="/" style={{ textDecoration: 'none' }}>
@@ -207,8 +206,9 @@ const NavigationMenuBar = () => {
         onClose={toggleDrawer(false)}
         PaperProps={{
           style: {
-            backgroundColor: 'rgba(255, 255, 255, 0.9)',
-            backdropFilter: 'blur(20px)',
+            backgroundColor: 'transparent', // Same transparent background as AppBar
+            backdropFilter: 'blur(20px)', // Same blur effect as AppBar
+            boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.2)', // Add subtle shadow
           },
         }}
       >

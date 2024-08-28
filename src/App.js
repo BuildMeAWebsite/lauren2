@@ -9,6 +9,8 @@ import FAQComponent from './Components/About/FAQSection';
 import FAQPage from './pages/FAQPage';
 import ApproachesPageComponent from './pages/ApproachesPage';
 import NavigationMenuBar from './Components/NavigationMenu';
+import GoogleFormEmbed from './Components/GoogleForm';
+import ContactForm from './pages/ContactFormPage';
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/frequently-asked-questions" element={<FAQPage />} />
           <Route path="/approaches" element={<ApproachesPageComponent />} />
+          <Route path="/contact-form" element={<ContactForm />} />
 
 
         </Routes>

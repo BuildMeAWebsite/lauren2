@@ -63,7 +63,7 @@ const WhatToExpect = () => {
 
   return (
     <div>
-      <TextBanner text="What To Expect" />
+      <TextBanner text="What To Expect" padding = '5rem' />
       <Grid container spacing={0}>
         {expectations.map((expectation, index) => (
           <Grid

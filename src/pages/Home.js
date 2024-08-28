@@ -9,7 +9,9 @@ import TextBanner from '../Components/About/TextBanner';
 
 const Home = () => {
   return (
-    <Grid container spacing={0}>
+    <Grid container spacing={0}
+    style = {{paddingTop : '4rem'}}
+    >
        
       
           <Grid item xs={12}>

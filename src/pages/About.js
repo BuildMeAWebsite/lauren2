@@ -10,7 +10,9 @@ import IssuesComponent from '../Components/About/Issues';
 
 const About = () => {
   return (
-    <Grid container spacing={0}>
+    <Grid container spacing={0}
+    style = {{paddingTop : '4rem'}}
+    >
       <Grid item xs={12} id="top">
         <Hero />
       </Grid>

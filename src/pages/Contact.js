@@ -1,7 +1,8 @@
 import React from 'react';
+import Grid from '@mui/material/Grid';
 import WhatToExpectComponent from '../Components/Contact/WhatToExpect';
-import SplittingImageText from '../Components/Contact/ContactOverlapSection';
 import GoogleFormEmbed from '../Components/GoogleForm';
+import ContactHero2 from '../Components/Contact/ContactHero2';
 
 const Contact = ({ isFormOpen, handleFormClose }) => {
   const handleOverlayClick = (e) => {
@@ -12,9 +13,17 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
 
   return (
     <>
-        <SplittingImageText />
-        <WhatToExpectComponent />
-      
+  
+
+      <Grid container spacing={0} style={{paddingTop: '5rem'}}>
+      <Grid item xs={12}>
+          <ContactHero2 />
+        </Grid>
+        <Grid item xs={12}  >
+          <WhatToExpectComponent />
+        </Grid>
+    
+      </Grid>
 
       {isFormOpen && (
         <div style={styles.modalOverlay} onClick={handleOverlayClick}>
@@ -29,20 +38,8 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
 };
 
 const styles = {
-  buttonContainer: {
-    textAlign: 'center',
-    marginBottom: '30px',
-  },
-  bookNowButton: {
-    padding: '15px 30px',
-    fontSize: '1.2rem',
-    color: '#fff',
-    backgroundColor: '#3b83f6',
-    borderRadius: '5px',
-    border: 'none',
-    cursor: 'pointer',
-    fontFamily: 'Libre Baskerville, serif',
-    transition: 'background-color 0.3s',
+  gridContainer: {
+    padding: '0rem',
   },
   modalOverlay: {
     position: 'fixed',
@@ -65,6 +62,7 @@ const styles = {
     maxWidth: '80%',
     width: '100%',
     boxSizing: 'border-box',
+    position: 'relative',
   },
   closeButton: {
     position: 'absolute',

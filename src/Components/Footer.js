@@ -69,7 +69,7 @@ const Footer = ({ onContactClick }) => {
             About
           </Link>
           <Link
-            href="#"
+            href="/contact-form"
             onClick={onContactClick}
             underline="none"
             sx={{

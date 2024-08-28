@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Splitting from 'splitting';
 
 const SplittingImageText = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   useEffect(() => {
-    Splitting();
-
     const options = {
       root: null,
       rootMargin: "0px",
@@ -27,7 +24,7 @@ const SplittingImageText = () => {
 
     const fadeInObserver = new IntersectionObserver(fadeInCallback, options);
 
-    document.querySelectorAll("h1 span, img").forEach((element) => {
+    document.querySelectorAll(".fade-in").forEach((element) => {
       element.style.opacity = 0;
       element.style.transform = "translateY(100px)";
       fadeInObserver.observe(element);
@@ -55,8 +52,9 @@ const SplittingImageText = () => {
             src={`${process.env.PUBLIC_URL}/Images/couch.jpg`}
             alt="Overlap"
             style={styles.image}
+            className="fade-in"
           />
-          <h1 data-splitting="lines" style={styles.heading}>
+          <h1 style={styles.heading} className="fade-in">
             Click <a href="#" onClick={handleFormOpen} style={styles.link}> <em style={{ fontSize: '2.5rem' }}>here </em></a> to schedule a 15 minute call
           </h1>
         </div>
@@ -88,11 +86,11 @@ const SplittingImageText = () => {
 const styles = {
   body: {
     background: '#fcfaf4',
-    padding: '1rem 2rem',
+    padding: '10rem 2rem',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    minHeight: '100vh',
+    minHeight: '50vh',
   },
   gridContainer: {
     position: 'relative',
@@ -100,7 +98,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     background: '#fcfaf4',
-    maxWidth: '800px',
+    maxWidth: '1000px',
     margin: '0 auto',
     overflow: 'hidden',
   },
@@ -109,40 +107,36 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'column', // Center text vertically
   },
   image: {
-    maxWidth: '100%',
+    maxWidth: '50%', // Adjust the width of the image to be smaller
     height: 'auto',
     objectFit: 'cover',
     filter: 'brightness(0.95)',
     visibility: 'hidden', // Initially hidden for animation
-    maxHeight: 'calc(60vh - 10px)',
-    transform: 'translateY(100px)',
-    opacity: 0,
+    opacity: 0, // Start with opacity 0 for fade-in effect
   },
   heading: {
     position: 'absolute',
-    fontSize: '2rem',
+    top: '0%',
+    transform: 'translateY(-50%)', // Center the text vertically
+    fontSize: '1.5rem',
     fontFamily: "PT Sans, sans-serif",
     textTransform: 'lowercase',
-    overflow: 'hidden',
-    display: 'block',
-    lineHeight: 1.1,
-    color: '#fcfaf4',
     textAlign: 'center',
-    padding: '0 50px',
+    padding: '0 20px', // Reduce padding to make it more centered
     textShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+    color: '#fcfaf4',
     visibility: 'hidden', // Initially hidden for animation
-    transform: 'translateY(100px)',
     opacity: 0,
   },
   link: {
-    color: '#ffffff',
+    color: '#fcfaf4',
     textDecoration: 'none',
-    borderBottom: '1px solid #ffffff',
+    borderBottom: '1px solid #fcfaf4',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
-    color: '#fcFAF4',
   },
   overlay: {
     position: 'fixed',
@@ -160,7 +154,7 @@ const styles = {
     backgroundColor: '#ffffff',
     padding: '20px',
     borderRadius: '10px',
-    maxWidth: '500px',
+    maxWidth: '400px',
     width: '100%',
     boxSizing: 'border-box',
     position: 'relative',
@@ -177,3 +171,4 @@ const styles = {
 };
 
 export default SplittingImageText;
+

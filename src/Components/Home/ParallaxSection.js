@@ -18,7 +18,7 @@ const ParallaxSection = ({ image, children, showOnMobile = true }) => {
   const parallaxStyle = {
     backgroundImage: `url(${image})`,
     minHeight: '50vh',
-    opacity: 0.8, // Adjusted opacity for a more subtle effect
+    opacity: 0.9, // Adjusted opacity for a more subtle effect
     backgroundAttachment: isMobile ? 'scroll' : 'fixed',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
