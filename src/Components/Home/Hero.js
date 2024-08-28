@@ -19,23 +19,30 @@ const Hero = () => {
   }, []);
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/notebooks.jpg`}>
-      <Grid container alignItems="center" justifyContent="center" style={styles.heroContainer} spacing={3}>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background1.jpg`}>
+      <Grid
+        container
+        alignItems="center"
+        justifyContent="center"
+        direction={{ xs: 'column-reverse', md: 'row' }} // Stack image below text on small screens, side by side on large screens
+        style={styles.heroContainer}
+        spacing={3}
+      >
         <Grid item xs={12} md={6} className="fadeIn">
-          <h2 style={styles.subtitle}>LAUREN MARTYN PSYCHOTHERAPY</h2>
+          <img
+            src={`${process.env.PUBLIC_URL}/Images/h.jpg`}
+            alt="Lauren Martyn Headshot"
+            style={styles.image}
+          />
+        </Grid>
+        <Grid item xs={12} md={6} className="fadeIn">
+          <h2 style={styles.subtitle}>ONTARIO PSYCHOTHERAPY</h2>
           <h1 style={styles.title}>
             To be seen, to be heard, and to be <em>understood</em>.
           </h1>
           <div style={styles.buttonContainer}>
             <a href="/contact" style={styles.contactButton}>Contact</a>
           </div>
-        </Grid>
-        <Grid item xs={12} md={6} className="fadeIn">
-          <img
-            src={`${process.env.PUBLIC_URL}/Images/headshot.jpg`}
-            alt="Decorative"
-            style={styles.image}
-          />
         </Grid>
       </Grid>
     </ParallaxSection>
@@ -53,7 +60,7 @@ const styles = {
   },
   subtitle: {
     fontFamily: "Libre Baskerville, serif",
-    fontSize: '1rem',
+    fontSize: '0.75rem',
     fontWeight: 'normal',
     color: '#3a3a3a',
     textTransform: 'uppercase',
@@ -63,7 +70,7 @@ const styles = {
     fontFamily: "PT Sans, sans-serif",
     fontSize: '2.5rem',
     fontWeight: '400',
-    color: '#01796f',
+    color: '#3a3a3a',
     margin: '0',
     lineHeight: '1',
   },
@@ -87,12 +94,12 @@ const styles = {
   },
   image: {
     maxWidth: '100%',
-    borderRadius: '50px',
-    height: 'auto',
     borderRadius: '10px',
+    height: 'auto',
     objectFit: 'contain',
   },
 };
 
 export default Hero;
+
 

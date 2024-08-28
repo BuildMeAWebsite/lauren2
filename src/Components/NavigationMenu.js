@@ -14,6 +14,8 @@ const NavigationMenuBar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 700);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [textColor, setTextColor] = useState('#01796F'); // Initialize with default color
+  const [logoSrc, setLogoSrc] = useState(`${process.env.PUBLIC_URL}/Images/logo.png`); // Default logo
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,8 +26,12 @@ const NavigationMenuBar = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       if (scrollTop > lastScrollTop && scrollTop > 100) {
         setShowHeader(false);
+        setTextColor('#FCFAF4'); // Change text color when scrolling down
+        setLogoSrc(`${process.env.PUBLIC_URL}/Images/lightlogo.png`); // Change to light logo
       } else {
         setShowHeader(true);
+        setTextColor(scrollTop === 0 ? '#01796F' : '#FCFAF4'); // Default color at the top, else light color
+        setLogoSrc(scrollTop === 0 ? `${process.env.PUBLIC_URL}/Images/logo.png` : `${process.env.PUBLIC_URL}/Images/lightlogo.png`); // Change logo based on scroll position
       }
       setLastScrollTop(scrollTop);
     };
@@ -77,7 +83,7 @@ const NavigationMenuBar = () => {
           boxShadow: showHeader ? 'none' : '0px 2px 5px rgba(0, 0, 0, 0.2)',
           transition: 'all 0.4s ease',
           transform: showHeader ? 'translateY(0)' : 'translateY(-100%)',
-          zIndex: 1100,
+          zIndex: 1200, // Slightly lower than the iframe
         }}
       >
         <Toolbar style={{ display: 'flex', justifyContent: 'space-between', padding: '0 25px' }}>
@@ -85,19 +91,19 @@ const NavigationMenuBar = () => {
             <IconButton
               edge="start"
               style={{ marginRight: '20px', transform: 'scale(1.25)' }}
-              color="#01796F"
+              color="inherit"
               aria-label="menu"
               onClick={toggleDrawer(true)}
             >
-              <MenuIcon style={{ color: '#01796F' }} />
+              <MenuIcon style={{ color: textColor }} /> {/* Adjust the color dynamically */}
             </IconButton>
             {!isMobile && (
               <img
-                src={`${process.env.PUBLIC_URL}/Images/logo.png`}  // Adjusted path to use public folder
+                src={logoSrc}  // Adjusted path to dynamically change logo
                 alt="Logo"
                 style={{
-                  height: '150px',
-                  width: '300px',
+                  height: '5rem',
+                  width: '12rem',
                   objectFit: 'contain',
                 }}
               />
@@ -113,7 +119,7 @@ const NavigationMenuBar = () => {
                   borderRadius: '0px',
                   fontWeight: 100,
                   fontSize: '1.25rem',
-                  color: '#01796F',
+                  color: textColor, // Adjust the color dynamically
                   textTransform: 'none',
                   marginLeft: '12px',
                   transition: 'color 0.3s ease',
@@ -128,7 +134,7 @@ const NavigationMenuBar = () => {
                   fontFamily: 'PT Sans, sans-serif',
                   fontWeight: 300,
                   fontSize: '1.25rem',
-                  color: '#01796F',
+                  color: textColor, // Adjust the color dynamically
                   textTransform: 'none',
                   marginLeft: '12px',
                   transition: 'color 0.3s ease',
@@ -143,7 +149,7 @@ const NavigationMenuBar = () => {
                   fontFamily: 'PT Sans, sans-serif',
                   fontWeight: 300,
                   fontSize: '1.25rem',
-                  color: '#01796F',
+                  color: textColor, // Adjust the color dynamically
                   textTransform: 'none',
                   marginLeft: '12px',
                   transition: 'color 0.3s ease',
@@ -162,11 +168,11 @@ const NavigationMenuBar = () => {
                 fontFamily: 'PT Sans, sans-serif',
                 fontWeight: 500,
                 fontSize: '1.25rem',
-                color: '#01796F', // Changed text color
+                color: textColor, // Adjust the color dynamically
                 textTransform: 'none',
                 marginRight: '10px',
                 transition: 'color 0.3s ease',
-                border: '1px solid #3a3a3a',
+                border: `1px solid ${textColor}`, // Adjust the border color dynamically
                 padding: '6px 18px',
                 borderRadius: '0px', // Removed border-radius for sharp edges
               }}
@@ -178,10 +184,11 @@ const NavigationMenuBar = () => {
 
           {isMobile && (
             <img
-              src={`${process.env.PUBLIC_URL}/Images/logo.jpg`}  // Adjusted path to use public folder
+              src={logoSrc}  // Adjusted path to dynamically change logo
               alt="Logo"
               style={{
-             
+                height: '7.5rem',
+                width: '15rem',
                 objectFit: 'contain',
                 position: 'absolute',
                 left: '50%',

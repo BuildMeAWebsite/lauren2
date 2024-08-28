@@ -8,12 +8,13 @@ import Footer from './Components/Footer';
 import FAQComponent from './Components/About/FAQSection';
 import FAQPage from './pages/FAQPage';
 import ApproachesPageComponent from './pages/ApproachesPage';
+import NavigationMenuBar from './Components/NavigationMenu';
 
 
 function App() {
   return (
     <Router>
-      <Layout>
+         <NavigationMenuBar />
       <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -23,7 +24,6 @@ function App() {
 
 
         </Routes>
-      </Layout>
      <Footer />
     </Router>
   );

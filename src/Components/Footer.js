@@ -1,12 +1,12 @@
 import React from 'react';
-import { Typography, Box } from '@mui/material';
+import { Typography, Box, Link } from '@mui/material';
 
-const Footer = () => {
+const Footer = ({ onContactClick }) => {
   return (
     <Box
       component="footer"
       sx={{
-        backgroundColor: '#01796F !important',
+        backgroundColor: '#FCFAF4 !important',
         backdropFilter: 'blur(10px) !important',
         padding: '20px 40px',
         boxShadow: '0 -10px 30px rgba(0, 0, 0, 0.1)',
@@ -18,16 +18,51 @@ const Footer = () => {
         zIndex: 10,
       }}
     >
-      <Typography
-        variant="body1"
-        sx={{
-          fontFamily: 'Libre Baskerville, serif',
-          fontSize: '1rem',
-          color: '#f8f8f8',
-        }}
-      >
-        © 2024 Lauren Martyn
-      </Typography>
+      <Box sx={{ display: 'flex', gap: '20px' }}>
+        <Link
+          href="/"
+          underline="none"
+          sx={{
+            fontFamily: 'Libre Baskerville, serif',
+            fontSize: '1rem',
+            color: '#01796F',
+            '&:hover': {
+              textDecoration: 'underline',
+            },
+          }}
+        >
+          Home
+        </Link>
+        <Link
+          href="/about"
+          underline="none"
+          sx={{
+            fontFamily: 'Libre Baskerville, serif',
+            fontSize: '1rem',
+            color: '#01796F',
+            '&:hover': {
+              textDecoration: 'underline',
+            },
+          }}
+        >
+          About
+        </Link>
+        <Link
+          href="#"
+          onClick={onContactClick}
+          underline="none"
+          sx={{
+            fontFamily: 'Libre Baskerville, serif',
+            fontSize: '1rem',
+            color: '#01796F',
+            '&:hover': {
+              textDecoration: 'underline',
+            },
+          }}
+        >
+          Contact
+        </Link>
+      </Box>
 
       <Box sx={{ display: 'flex', gap: '20px' }}>
         <div
@@ -43,8 +78,9 @@ const Footer = () => {
             src={`${process.env.PUBLIC_URL}/Images/prideflag.png`}
             alt="Pride Flag"
             style={{
-              width: '90px',
-              height: '60px',
+              maxWidth: '70px',
+              maxHeight: '40px',
+              margin: '0 auto',
               borderRadius: '5px',
               display: 'block',
               transform: 'none !important',
@@ -62,10 +98,10 @@ const Footer = () => {
           sx={{
             fontFamily: 'Libre Baskerville, serif',
             fontSize: '1rem',
-            color: '#f8f8f8',
+            color: '#01796F',
           }}
         >
-          Email: info@psychotherapy.com
+          lauren@laurenmartyntherapy.ca
         </Typography>
 
         <Typography
@@ -73,10 +109,10 @@ const Footer = () => {
           sx={{
             fontFamily: 'Libre Baskerville, serif',
             fontSize: '1rem',
-            color: '#f8f8f8',
+            color: '#01796F',
           }}
         >
-          Location: Ottawa, Ontario
+         Ottawa, Ontario
         </Typography>
       </Box>
     </Box>
@@ -84,4 +120,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

@@ -17,11 +17,12 @@ const ParallaxSection = ({ image, children, showOnMobile = true }) => {
 
   const parallaxStyle = {
     backgroundImage: `url(${image})`,
-    minHeight: '70vh',
+    minHeight: '50vh',
+    opacity: 0.8, // Adjusted opacity for a more subtle effect
     backgroundAttachment: isMobile ? 'scroll' : 'fixed',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+    backgroundSize: 'cover', // Adjusted from 'cover' to 'contain'
     display: isMobile && !showOnMobile ? 'none' : 'flex', 
     alignItems: 'center',
     justifyContent: 'center',
@@ -34,7 +35,6 @@ const ParallaxSection = ({ image, children, showOnMobile = true }) => {
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(255, 255, 255, 0.5)', // 20% white overlay
     zIndex: 1, // Ensure overlay is on top of the image
   };
 

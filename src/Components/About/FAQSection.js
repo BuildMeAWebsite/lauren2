@@ -92,6 +92,7 @@ const FAQComponent = ({ questionFontSize = '1.5rem', answerFontSize = '1rem' }) 
           key={boxIndex}
           style={{
             backgroundColor: colors[boxIndex],
+     
             padding: '1rem 2rem',
             display: 'flex',
             flexDirection: 'column',

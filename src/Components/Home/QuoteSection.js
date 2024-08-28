@@ -25,7 +25,7 @@ const QuoteSection = () => {
   return (
     <div style={styles.quoteContainer}>
       <blockquote className="quote" style={{ ...styles.quote, ...styles.hidden }}>
-      If you are reading this you have already taken the biggest step in the therapeutic journey. My name is Lauren Martyn, I am a registered psychotherapist and I have dedicated myself to supporting school-aged children, youth, and young adults as they navigate life’s challenges. I currently offer virtual counselling to those residing in Ontario, Canada. Explore my website to learn more about me and if you feel it’s a good fit, let's continue this therapeutic journey together.      </blockquote>
+      If you are reading this, you have already taken the biggest step in your therapeutic journey. My name is Lauren Martyn, and I am a registered psychotherapist dedicated to supporting school-aged children, youth, and young adults as they navigate life’s challenges. I currently offer virtual counseling to those residing in Ontario, Canada. Explore my website to learn more about me, and if you feel we’re a good fit, let's continue this therapeutic journey together.         </blockquote>
     </div>
   );
 };
@@ -36,7 +36,7 @@ const styles = {
     minHeight: '40vh',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '2rem 2rem',
+    padding: '2rem 3rem',
     margin: '0 auto',
     backgroundColor: '#FCFAF4',
   },

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import gsap from 'gsap';
 import Splitting from 'splitting';
-import ContactFormPopout from './ContactFormPopout'; // Import the contact form component
 
 const SplittingImageText = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -12,12 +11,12 @@ const SplittingImageText = () => {
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.1
+      threshold: 0.1,
     };
 
     const itemDelay = 0.1;
 
-    let fadeupCallback = (entries, self) => {
+    const fadeupCallback = (entries, self) => {
       let itemLoad = 0;
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -29,7 +28,7 @@ const SplittingImageText = () => {
             skewY: 40,
             autoAlpha: 0,
             delay: itemLoad * itemDelay,
-            ease: "power3.out"
+            ease: "power3.out",
           });
           itemLoad++;
           self.unobserve(entry.target);
@@ -37,7 +36,7 @@ const SplittingImageText = () => {
       });
     };
 
-    let fadeupObserver = new IntersectionObserver(fadeupCallback, options);
+    const fadeupObserver = new IntersectionObserver(fadeupCallback, options);
 
     document.querySelectorAll("h1 span, img").forEach((fadeup) => {
       fadeupObserver.observe(fadeup);
@@ -62,7 +61,7 @@ const SplittingImageText = () => {
       <div style={styles.gridContainer}>
         <div style={styles.item2}>
           <img
-            src={`${process.env.PUBLIC_URL}/Images/couch.jpg`} 
+            src={`${process.env.PUBLIC_URL}/Images/couch.jpg`}
             alt="Overlap"
             style={styles.image}
           />
@@ -74,7 +73,25 @@ const SplittingImageText = () => {
         </div>
       </div>
 
-      {isFormOpen && <ContactFormPopout onClose={handleFormClose} />}
+      {isFormOpen && (
+        <div style={styles.overlay} onClick={handleFormClose}>
+          <div style={styles.formContainer} onClick={(e) => e.stopPropagation()}>
+            <button onClick={handleFormClose} style={styles.closeButton}>X</button>
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSf7NaBdfNFzRTJF17ZdeR0fbMFKArZfW7uQl9ODmGF5sGsEGA/viewform?embedded=true"
+              width="100%"
+              height="600px"
+              frameBorder="0"
+              marginHeight="0"
+              marginWidth="0"
+              style={{ border: 'none' }}
+              title="Google Form"
+            >
+              Loading…
+            </iframe>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -102,7 +119,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     lineHeight: 1,
-    color: 'white',
+    color: '#fcfFAF4',
   },
   item2: {
     gridColumn: 'col 2 / span 5',
@@ -111,9 +128,11 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    color: '#fcfFAF4',
+
   },
   image: {
-    maxWidth: '400px',
+    maxWidth: '500px',
     height: 'auto',
     objectFit: 'cover',
     filter: 'brightness(0.95)',
@@ -121,23 +140,53 @@ const styles = {
     maxHeight: 'calc(60vh - 100px)',
   },
   heading: {
-    fontSize: '2rem', // Adjusted font size to fit the text
-    fontFamily: "Libre Baskerville, serif",
+    fontSize: '2rem',
+    fontFamily: "PT Sans, sans-serif",
     textTransform: 'lowercase',
     overflow: 'hidden',
     display: 'block',
     lineHeight: 1.1,
+    color: '#fcfFAF4',
+
   },
   link: {
     color: '#ffffff',
     textDecoration: 'none',
-    borderBottom: '1px solid #ffffff', // Border underline instead of text underline
+    borderBottom: '1px solid #ffffff',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
+    color: '#fcfFAF4',
+
   },
-  linkHover: {
-    color: '#ffffff',
-    borderBottom: '1px solid #ffffff',
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 1000,
+  },
+  formContainer: {
+    backgroundColor: '#ffffff',
+    padding: '20px',
+    borderRadius: '10px',
+    maxWidth: '500px',
+    width: '100%',
+    boxSizing: 'border-box',
+    position: 'relative',
+  },
+  closeButton: {
+    background: 'none',
+    border: 'none',
+    fontSize: '1.5rem',
+    cursor: 'pointer',
+    position: 'absolute',
+    top: '10px',
+    right: '10px',
   }
 };
 

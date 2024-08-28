@@ -17,13 +17,9 @@ const FAQPage = () => {
           <Grid item xs={12} id="faq">
         <FAQComponent questionFontSize="1.5rem" answerFontSize="1rem" />
       </Grid>
-      <Grid item xs={12} id="top">
-        <Hero />
-      </Grid>
+    
 
-      <Grid item xs={12}>
-        <QuoteSection />
-      </Grid>
+    
 
       <Grid item xs={12} id="issues">
         <IssuesComponent />
