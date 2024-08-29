@@ -16,7 +16,6 @@ const Footer = ({ onContactClick }) => {
     >
       <Grid
         container
-        
         spacing={2}
         alignItems="center"
         justifyContent="space-between"
@@ -26,7 +25,7 @@ const Footer = ({ onContactClick }) => {
       >
         <Grid
           item
-          spacing = {0}
+          spacing={0}
           xs={12}
           sm={4}
           sx={{
@@ -38,15 +37,16 @@ const Footer = ({ onContactClick }) => {
         >
           <Link
             href="/"
-            underline="none"
+            underline="none" // No underline, even on hover
             sx={{
               fontFamily: 'PT Sans, sans-serif',
               fontSize: '1rem',
               color: '#556B2F',
               textAlign: 'center',
-
+              transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
-                textDecoration: 'underline',
+                color: '#FFD700', // Yellow on hover
+                transform: 'scale(1.05)', // Slightly enlarge on hover
               },
               display: { xs: 'block', sm: 'inline-block' }, // Block on small screens, inline on larger screens
             }}
@@ -55,13 +55,15 @@ const Footer = ({ onContactClick }) => {
           </Link>
           <Link
             href="/about"
-            underline="none"
+            underline="none" // No underline, even on hover
             sx={{
               fontFamily: 'PT Sans, sans-serif',
               fontSize: '1rem',
               color: '#556B2F',
+              transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
-                textDecoration: 'underline',
+                color: '#FFD700', // Yellow on hover
+                transform: 'scale(1.05)', // Slightly enlarge on hover
               },
               display: { xs: 'block', sm: 'inline-block' }, // Block on small screens, inline on larger screens
             }}
@@ -71,13 +73,15 @@ const Footer = ({ onContactClick }) => {
           <Link
             href="/contact-form"
             onClick={onContactClick}
-            underline="none"
+            underline="none" // No underline, even on hover
             sx={{
               fontFamily: 'PT Sans, sans-serif',
               fontSize: '1rem',
               color: '#556B2F',
+              transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
-                textDecoration: 'underline',
+                color: '#FFD700', // Yellow on hover
+                transform: 'scale(1.05)', // Slightly enlarge on hover
               },
               display: { xs: 'block', sm: 'inline-block' }, // Block on small screens, inline on larger screens
             }}
@@ -98,7 +102,6 @@ const Footer = ({ onContactClick }) => {
             marginTop: { xs: '0px', sm: '0' },
           }}
         >
-        
           <img
             src={`${process.env.PUBLIC_URL}/Images/prideflag.png`}
             alt="Pride Flag"
@@ -124,13 +127,17 @@ const Footer = ({ onContactClick }) => {
           }}
         >
           <Box sx={{ textAlign: { xs: 'left', sm: 'right' } }}>
-          
             <Typography
               variant="body2"
               sx={{
                 fontFamily: 'PT Sans, sans-serif',
                 fontSize: '1rem',
                 color: '#556B2F',
+                transition: 'color 0.3s ease, transform 0.3s ease',
+                '&:hover': {
+                  color: '#FFD700', // Yellow on hover
+                  transform: 'scale(1.05)', // Slightly enlarge on hover
+                },
               }}
             >
               Ottawa, Ontario
@@ -143,5 +150,3 @@ const Footer = ({ onContactClick }) => {
 };
 
 export default Footer;
-
-

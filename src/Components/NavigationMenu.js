@@ -62,15 +62,24 @@ const NavigationMenuBar = () => {
     >
       <List>
         {['Home', 'About', 'Contact', 'Book Now'].map((text, index) => (
-          <ListItem button key={text} component="a" href={index === 0 ? '/' : `/${text.toLowerCase().replace(/\s/g, '')}`}>
-            <ListItemText 
-              primary={text} 
-              style={{ 
-                color: '#FCFAF4', 
-                fontFamily: "'PT Sans', sans-serif"  // Applying PT Sans font
-              }} 
-            />
-          </ListItem>
+        <ListItem 
+        button 
+        key={text} 
+        component="a" 
+        href={
+          text === 'Home' ? '/' : 
+          text === 'Book Now' ? '/contact-form' : 
+          `/${text.toLowerCase().replace(/\s/g, '')}`
+        }
+      >
+        <ListItemText 
+          primary={text} 
+          style={{ 
+            color: '#FCFAF4', 
+            fontFamily: "'PT Sans', sans-serif"
+          }} 
+        />
+      </ListItem>
         ))}
       </List>
     </div>
@@ -104,12 +113,25 @@ const NavigationMenuBar = () => {
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <IconButton
               edge="start"
-              style={{ marginRight: '20px', transform: 'scale(1.25)', color: textColor }}
+              style={{
+                marginRight: '20px',
+                transform: 'scale(1.25)',
+                color: textColor,
+                backgroundColor: 'transparent', // Ensure background is transparent
+              }}
               color="inherit"
               aria-label="menu"
               onClick={toggleDrawer(true)}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#FCFAF4'}
-              onMouseLeave={(e) => e.currentTarget.style.color = textColor}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#FFD700'; // Yellow on hover
+                e.currentTarget.style.transform = 'scale(1.05)'; // Enlarge slightly on hover
+                e.currentTarget.style.backgroundColor = 'transparent'; // Ensure background stays transparent
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = textColor; // Revert to original color
+                e.currentTarget.style.transform = 'scale(1.25)'; // Revert to original size
+                e.currentTarget.style.backgroundColor = 'transparent'; // Ensure background stays transparent
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -189,35 +211,35 @@ const NavigationMenuBar = () => {
           )}
 
           {!isMobile && (
-        <Button
-        href="/contact-form"
-        style={{
-          fontFamily: 'PT Sans, sans-serif',
-          fontWeight: 500,
-          fontSize: '1.25rem',
-          color: textColor,
-          textTransform: 'none',
-          marginRight: '10px',
-          transition: 'background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease', // Added transition for border-color
-          border: `1px solid ${textColor}`,
-          padding: '6px 18px',
-          borderRadius: '0px',
-          backgroundColor: 'transparent', // Ensure initial background is transparent
-        }}
-        color="inherit"
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = '#8FBC8F'; // Background color on hover
-          e.currentTarget.style.color = '#FCFAF4'; // Text color on hover
-          e.currentTarget.style.borderColor = 'transparent'; // Border becomes transparent on hover
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = 'transparent'; // Revert to transparent background
-          e.currentTarget.style.color = textColor; // Revert to original text color
-          e.currentTarget.style.borderColor = textColor; // Revert to original border color
-        }}
-      >
-        Book Now
-      </Button>
+            <Button
+              href="/contact-form"
+              style={{
+                fontFamily: 'PT Sans, sans-serif',
+                fontWeight: 500,
+                fontSize: '1.25rem',
+                color: textColor,
+                textTransform: 'none',
+                marginRight: '10px',
+                transition: 'background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease', // Added transition for border-color
+                border: `1px solid ${textColor}`,
+                padding: '6px 18px',
+                borderRadius: '0px',
+                backgroundColor: 'transparent', // Ensure initial background is transparent
+              }}
+              color="inherit"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#8FBC8F'; // Background color on hover
+                e.currentTarget.style.color = '#FCFAF4'; // Text color on hover
+                e.currentTarget.style.borderColor = 'transparent'; // Border becomes transparent on hover
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent'; // Revert to transparent background
+                e.currentTarget.style.color = textColor; // Revert to original text color
+                e.currentTarget.style.borderColor = textColor; // Revert to original border color
+              }}
+            >
+              Book Now
+            </Button>
           )}
 
           {isMobile && (

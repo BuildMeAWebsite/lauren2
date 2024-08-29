@@ -38,7 +38,11 @@ const About2Boxes1 = () => {
   };
 
   return (
-    <Grid container spacing={0}>
+    <Grid
+      container
+      spacing={0}
+      direction={{ xs: 'column-reverse', md: 'row' }} // Adjust direction based on screen size
+    >
       <Grid
         item
         xs={12}
@@ -47,10 +51,10 @@ const About2Boxes1 = () => {
           backgroundColor: '#FCFAF4', // Cream background
           padding: '2rem 5rem',
           display: 'flex',
-          justifyContent: 'center', // Center content horizontally
-          alignItems: 'center', // Center content vertically
+          justifyContent: 'center',
+          alignItems: 'center',
           minHeight: '600px',
-          position: 'relative', // For absolute positioning of overlay
+          position: 'relative',
         }}
       >
         <div
@@ -65,7 +69,7 @@ const About2Boxes1 = () => {
           onMouseLeave={handleImageMouseLeave}
         >
           <img
-            src={`${process.env.PUBLIC_URL}/Images/forestsunshine.jpg`} // Replace with your actual image path
+            src={`${process.env.PUBLIC_URL}/Images/forestsunshine.jpg`}
             alt="Forest Sunshine"
             style={{
               maxWidth: '70%',
@@ -85,8 +89,8 @@ const About2Boxes1 = () => {
               width: '100%',
               height: '100%',
               backgroundColor: '#fcfaf4',
-              opacity: isHovered ? 0 : 0.25, // Adjust opacity based on hover state
-              transition: 'opacity 0.3s ease-in-out', // Smooth transition for opacity
+              opacity: isHovered ? 0 : 0.25,
+              transition: 'opacity 0.3s ease-in-out',
             }}
           ></div>
         </div>
@@ -116,9 +120,9 @@ const About2Boxes1 = () => {
             transform: 'translateY(100%)',
             textShadow: '0 2px 5px rgba(0, 0, 0, 0.2)',
             opacity: 0,
-            fontSize: '1rem', // Set font size to 1rem
+            fontSize: '1rem',
             transition: 'color 0.5s ease-in-out, transform 0.5s ease-in-out',
-            cursor: 'pointer', // Show hand cursor on hover
+            cursor: 'pointer',
           }}
           data-original-color="#FCFAF4"
           onMouseEnter={handleTextMouseEnter}

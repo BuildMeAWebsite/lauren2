@@ -4,6 +4,7 @@ import WhatToExpectComponent from '../Components/Contact/WhatToExpect';
 import GoogleFormEmbed from '../Components/GoogleForm';
 import ContactHero2 from '../Components/Contact/ContactHero2';
 import Hero from '../Components/Contact/ContactHero';
+import { Helmet } from 'react-helmet';
 
 const Contact = ({ isFormOpen, handleFormClose }) => {
   const handleOverlayClick = (e) => {
@@ -12,22 +13,79 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
     }
   };
 
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact - Lauren Martyn Therapy",
+    "description": "Get in touch with Lauren Martyn Therapy for virtual counseling services. Reach out to us for more information or to schedule a session.",
+    "url": "https://laurenmartyntherapy.ca/contact",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Lauren Martyn Therapy",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://laurenmartyntherapy.ca/Images/logo.png",
+      }
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "email": "info@laurenmartyntherapy.ca"
+    }
+  };
+
   return (
     <>
-  
+      <Helmet>
+        {/* Title Tag */}
+        <title>Contact - Lauren Martyn Therapy</title>
 
-      <Grid container spacing={0} style={{paddingTop: '5rem'}}>
-      <Grid item xs={12}>
+        {/* Meta Description */}
+        <meta
+          name="description"
+          content="Get in touch with Lauren Martyn Therapy for virtual counseling services. Reach out to us for more information or to schedule a session."
+        />
+
+        {/* Meta Keywords */}
+        <meta
+          name="keywords"
+          content="contact, therapy, counseling, virtual counseling, Ontario, Lauren Martyn, schedule a session, mental health support"
+        />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://laurenmartyntherapy.ca/contact" />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Contact - Lauren Martyn Therapy" />
+        <meta
+          property="og:description"
+          content="Get in touch with Lauren Martyn Therapy for virtual counseling services. Reach out to us for more information or to schedule a session."
+        />
+        <meta property="og:url" content="https://laurenmartyntherapy.ca/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://laurenmartyntherapy.ca/Images/logo.png" />
+
+        {/* Robots Meta Tag */}
+        <meta name="robots" content="index, follow" />
+
+        {/* Structured Data (Schema.org) */}
+        <script type="application/ld+json">
+          {JSON.stringify(schemaMarkup)}
+        </script>
+      </Helmet>
+
+      <Grid container spacing={0} style={{ paddingTop: '5rem' }}>
+        <Grid item xs={12}>
           <Hero />
         </Grid>
-        
-      <Grid item xs={12}>
+
+        <Grid item xs={12}>
           <ContactHero2 />
         </Grid>
-        <Grid item xs={12}  >
+
+        <Grid item xs={12}>
           <WhatToExpectComponent />
         </Grid>
-    
       </Grid>
 
       {isFormOpen && (

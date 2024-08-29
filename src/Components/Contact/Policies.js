@@ -82,7 +82,7 @@ const Policies = () => {
             key={index}
             style={{
               backgroundColor: section.backgroundColor,
-              padding: '3rem 4rem',
+              padding: '3rem 5rem',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',

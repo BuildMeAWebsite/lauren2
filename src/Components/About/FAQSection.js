@@ -44,11 +44,11 @@ const FAQComponent = ({ questionFontSize = '1.5rem', answerFontSize = '1rem' }) 
       },
       {
         title: 'Do you accept insurance?',
-        answer: '(see insurance information)',
+        answer: '(see policy information below)',
       },
       {
         title: 'What are the payment options?',
-        answer: '(See payment information)',
+        answer: '(see policy information below)',
       },
       {
         title: 'How do I schedule an appointment?',

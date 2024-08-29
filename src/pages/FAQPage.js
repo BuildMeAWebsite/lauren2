@@ -1,46 +1,92 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-
 import ServicesOffered from '../Components/About/ServicesOffered';
 import TextBanner from '../Components/About/TextBanner';
 import FAQComponent from '../Components/About/FAQSection';
-import IssuesComponent from '../Components/About/Issues';
 import FAQHero from '../Components/FAQPage/FAQHero';
 import Policies from '../Components/Contact/Policies';
+import { Helmet } from 'react-helmet';
 
 const FAQPage = () => {
-  return (
-    <Grid container spacing={0}
-    style = {{
-        paddingTop: '5rem',
-    }}
-    >
-        <Grid item xs={12}>
-        <FAQHero/>
-      </Grid>
-   
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "FAQ - Lauren Martyn Therapy",
+    "description": "Frequently Asked Questions about Lauren Martyn Therapy's virtual counseling services for school-aged children, youth, and young adults in Ontario, Canada.",
+    "url": "https://laurenmartyntherapy.ca/faq",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Lauren Martyn Therapy",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://laurenmartyntherapy.ca/Images/logo.png",
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://laurenmartyntherapy.ca/faq",
+    }
+  };
 
-  
-          <Grid item xs={12} id="faq">
+  return (
+    <Grid container spacing={0} style={{ paddingTop: '5rem' }}>
+      <Helmet>
+        {/* Title Tag */}
+        <title>FAQ - Lauren Martyn Therapy</title>
+
+        {/* Meta Description */}
+        <meta
+          name="description"
+          content="Frequently Asked Questions about Lauren Martyn Therapy's virtual counseling services for school-aged children, youth, and young adults in Ontario, Canada."
+        />
+
+        {/* Meta Keywords */}
+        <meta
+          name="keywords"
+          content="FAQ, therapy, counseling, virtual counseling, Ontario, Lauren Martyn, mental health, youth therapy, child therapy, young adult therapy, psychotherapy, mental well-being, online therapy"
+        />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://laurenmartyntherapy.ca/faq" />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="FAQ - Lauren Martyn Therapy" />
+        <meta
+          property="og:description"
+          content="Frequently Asked Questions about Lauren Martyn Therapy's virtual counseling services for school-aged children, youth, and young adults in Ontario, Canada."
+        />
+        <meta property="og:url" content="https://laurenmartyntherapy.ca/faq" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://laurenmartyntherapy.ca/Images/logo.png" />
+
+        {/* Robots Meta Tag */}
+        <meta name="robots" content="index, follow" />
+
+        {/* Structured Data (Schema.org) */}
+        <script type="application/ld+json">
+          {JSON.stringify(schemaMarkup)}
+        </script>
+      </Helmet>
+
+      <Grid item xs={12}>
+        <FAQHero />
+      </Grid>
+
+      <Grid item xs={12} id="faq">
         <FAQComponent questionFontSize="1.5rem" answerFontSize="1rem" />
       </Grid>
-    
+
       <Grid item xs={12}>
-        <Policies/>
+        <Policies />
       </Grid>
-    
-
 
       <Grid item xs={12}>
-      <TextBanner text="Therapeutic Modalities" backgroundColor = '#fcfaf4' textColor = '#556B2F' padding = '5rem'/>
+        <TextBanner text="Therapeutic Modalities" backgroundColor='#fcfaf4' textColor='#556B2F' padding='5rem' />
       </Grid>
 
       <Grid item xs={12} id="services-offered">
         <ServicesOffered />
       </Grid>
-
-
-    
     </Grid>
   );
 };

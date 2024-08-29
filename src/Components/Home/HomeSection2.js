@@ -7,24 +7,12 @@ const HomeSection2 = () => {
   const [isImageHovered, setIsImageHovered] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop > 50) { // Trigger the animation after a small scroll
-        textRefs.current.forEach((ref, index) => {
-          if (ref) {
-            ref.style.transition = `transform 1s ease-in-out ${index * 0.1}s, opacity 1s ease-in-out ${index * 0.1}s`;
-            ref.style.transform = 'translateY(0)';
-            ref.style.opacity = '1';
-          }
-        });
+    textRefs.current.forEach((ref) => {
+      if (ref) {
+        ref.style.transform = 'translateY(0)';
+        ref.style.opacity = '1';
       }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    });
   }, []);
 
   const handleImageMouseEnter = () => {
@@ -62,14 +50,13 @@ const HomeSection2 = () => {
           onMouseLeave={handleImageMouseLeave}
         >
           <img
-            src={`${process.env.PUBLIC_URL}/Images/bloomingflower.jpg`} // Replace with your actual image path
+            src={`${process.env.PUBLIC_URL}/Images/tree.jpg`} // Replace with your actual image path
             alt="Contact Us"
             style={{
-              maxWidth: '50%',
+              maxWidth: '70%',
               height: 'auto',
-              transform: 'translateY(100%)',
-              opacity: 0,
-              transition: 'transform 1s ease-in-out, opacity 1s ease-in-out',
+              boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)', // Added box shadow
+              opacity: 1,
             }}
             ref={(el) => (textRefs.current[0] = el)}
           />
@@ -99,7 +86,6 @@ const HomeSection2 = () => {
           justifyContent: 'center',
           backgroundColor: '#8FBC8F', // Soft green background
           minHeight: '400px',
-          transition: 'padding 0.3s ease',
         }}
       >
         <Typography
@@ -109,10 +95,9 @@ const HomeSection2 = () => {
             fontFamily: "PT Sans, sans-serif",
             marginBottom: '20px',
             color: '#FCFAF4', // Cream text color
-            transform: 'translateY(100%)',
-            opacity: 0,
             textShadow: '0 2px 5px rgba(0, 0, 0, 0.25)',
-            transition: 'transform 1s ease-in-out, opacity 1s ease-in-out, color 0.5s ease-in-out',
+            opacity: 1, // Fully visible on load
+            transition: 'color 0.5s ease-in-out, transform 0.5s ease-in-out', // Smooth transition for color and transform
           }}
           ref={(el) => (textRefs.current[1] = el)}
           onMouseEnter={(e) => {
@@ -124,7 +109,7 @@ const HomeSection2 = () => {
             e.currentTarget.style.transform = 'scale(1)';
           }}
         >
-          Hello and <em> welcome </em> ,
+          Hello and <em> welcome </em>,
         </Typography>
         <Typography
           variant="h6"
@@ -134,9 +119,8 @@ const HomeSection2 = () => {
             marginBottom: '20px',
             textShadow: '0 2px 5px rgba(0, 0, 0, 0.25)',
             color: '#FCFAF4', // Cream text color
-            transform: 'translateY(100%)',
-            opacity: 0,
-            transition: 'transform 1s ease-in-out, opacity 1s ease-in-out, color 0.5s ease-in-out',
+            opacity: 1, // Fully visible on load
+            transition: 'color 0.5s ease-in-out, transform 0.5s ease-in-out', // Smooth transition for color and transform
           }}
           ref={(el) => (textRefs.current[2] = el)}
           onMouseEnter={(e) => {

@@ -5,26 +5,25 @@ import ParallaxSection from '../Home/ParallaxSection';
 const ApproachHero = () => {
   const styles = {
     heroContainer: {
-      minHeight: '50vh',
+      minHeight: '30vh',
       color: '#01796F',
       fontFamily: "'PT Sans', sans-serif",
       padding: '2.5rem 2.5rem',
       boxSizing: 'border-box',
       overflow: 'hidden',
-      maxWidth: '500px',
-      
+      maxWidth: '800px',
     },
     slideIn: {
       animation: 'slideInFromBottom 1s ease-in-out forwards',
     },
     title: {
       fontFamily: "'PT Sans', sans-serif",
-      fontSize: '1.25rem',
+      fontSize: '3rem',
       fontWeight: 300,
-      color: '#3a3a3a',
+      color: '#fcfaf4',
       margin: 0,
       lineHeight: 1,
-      textShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+      textShadow: '0 2px 5px rgba(0, 0, 0, 0.5)',
     },
     '@keyframes slideInFromBottom': {
       '0%': {
@@ -51,7 +50,7 @@ const ApproachHero = () => {
       >
         <Grid item xs={12} md={12} style={{ ...styles.slideIn, ...styles['@keyframes slideInFromBottom'] }}>
           <h1 style={styles.title}>
-          My approach is rooted in strength-based, solution-focused, emotion-focused and narrative therapy. I customize my approach to best fit each client's unique needs and goals. I use a variety of therapeutic interventions and approaches:           </h1>
+Therapeutic Modalities</h1>
         </Grid>
       </Grid>
     </ParallaxSection>
