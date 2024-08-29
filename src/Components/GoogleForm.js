@@ -3,7 +3,7 @@ import React from 'react';
 const GoogleFormEmbed = () => {
   return (
     <div style={{ 
-      padding: '7.5rem 0', 
+      padding: '7rem 0', 
         backgroundColor: '#fcfaf4', 
       display: 'flex', 
       justifyContent: 'center', 
@@ -14,7 +14,9 @@ const GoogleFormEmbed = () => {
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLSf7NaBdfNFzRTJF17ZdeR0fbMFKArZfW7uQl9ODmGF5sGsEGA/viewform?embedded=true"
         width="100%"
-        height="800px"
+      
+
+        height="1200px"
         frameBorder="0"
         marginHeight="0"
         marginWidth="0"

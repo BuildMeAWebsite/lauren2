@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Assuming you're using react-router-dom for routing
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
@@ -31,7 +31,7 @@ const NavigationMenuBar = () => {
         setLogoSrc(`${process.env.PUBLIC_URL}/Images/lightlogo.png`); // Change to light logo
       } else {
         setShowHeader(true);
-        setTextColor(scrollTop === 0 ? '#01796F' : '#FCFAF4'); // Default color at the top, else light color
+        setTextColor(scrollTop === 0 ? '#546A2F' : '#FCFAF4'); // Default color at the top, else light color
         setLogoSrc(scrollTop === 0 ? `${process.env.PUBLIC_URL}/Images/logo.png` : `${process.env.PUBLIC_URL}/Images/lightlogo.png`); // Change logo based on scroll position
       }
       setLastScrollTop(scrollTop);
@@ -63,12 +63,28 @@ const NavigationMenuBar = () => {
       <List>
         {['Home', 'About', 'Contact', 'Book Now'].map((text, index) => (
           <ListItem button key={text} component="a" href={index === 0 ? '/' : `/${text.toLowerCase().replace(/\s/g, '')}`}>
-            <ListItemText primary={text} style={{ color: textColor }} />
+            <ListItemText 
+              primary={text} 
+              style={{ 
+                color: '#FCFAF4', 
+                fontFamily: "'PT Sans', sans-serif"  // Applying PT Sans font
+              }} 
+            />
           </ListItem>
         ))}
       </List>
     </div>
   );
+
+  const handleMouseEnter = (e) => {
+    e.currentTarget.style.color = '#FFD700'; // Yellow on hover
+    e.currentTarget.style.transform = 'scale(1.05)'; // Slightly enlarge the text
+  };
+
+  const handleMouseLeave = (e) => {
+    e.currentTarget.style.color = textColor; // Revert to original color
+    e.currentTarget.style.transform = 'scale(1)'; // Return to normal size
+  };
 
   return (
     <div style={{ flexGrow: 1 }}>
@@ -124,9 +140,12 @@ const NavigationMenuBar = () => {
                   color: textColor,
                   textTransform: 'none',
                   marginLeft: '12px',
-                  transition: 'color 0.3s ease',
+                  transition: 'color 0.3s ease, transform 0.3s ease',
+                  backgroundColor: 'transparent', // Remove background color on hover
                 }}
                 color="inherit"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
                 Home
               </Button>
@@ -139,9 +158,12 @@ const NavigationMenuBar = () => {
                   color: textColor,
                   textTransform: 'none',
                   marginLeft: '12px',
-                  transition: 'color 0.3s ease',
+                  transition: 'color 0.3s ease, transform 0.3s ease',
+                  backgroundColor: 'transparent', // Remove background color on hover
                 }}
                 color="inherit"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
                 About
               </Button>
@@ -154,9 +176,12 @@ const NavigationMenuBar = () => {
                   color: textColor,
                   textTransform: 'none',
                   marginLeft: '12px',
-                  transition: 'color 0.3s ease',
+                  transition: 'color 0.3s ease, transform 0.3s ease',
+                  backgroundColor: 'transparent', // Remove background color on hover
                 }}
                 color="inherit"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
                 Contact
               </Button>
@@ -164,24 +189,35 @@ const NavigationMenuBar = () => {
           )}
 
           {!isMobile && (
-            <Button
-              href="/booking"
-              style={{
-                fontFamily: 'PT Sans, sans-serif',
-                fontWeight: 500,
-                fontSize: '1.25rem',
-                color: textColor,
-                textTransform: 'none',
-                marginRight: '10px',
-                transition: 'color 0.3s ease',
-                border: `1px solid ${textColor}`,
-                padding: '6px 18px',
-                borderRadius: '0px',
-              }}
-              color="inherit"
-            >
-              Book Now
-            </Button>
+        <Button
+        href="/contact-form"
+        style={{
+          fontFamily: 'PT Sans, sans-serif',
+          fontWeight: 500,
+          fontSize: '1.25rem',
+          color: textColor,
+          textTransform: 'none',
+          marginRight: '10px',
+          transition: 'background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease', // Added transition for border-color
+          border: `1px solid ${textColor}`,
+          padding: '6px 18px',
+          borderRadius: '0px',
+          backgroundColor: 'transparent', // Ensure initial background is transparent
+        }}
+        color="inherit"
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = '#8FBC8F'; // Background color on hover
+          e.currentTarget.style.color = '#FCFAF4'; // Text color on hover
+          e.currentTarget.style.borderColor = 'transparent'; // Border becomes transparent on hover
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = 'transparent'; // Revert to transparent background
+          e.currentTarget.style.color = textColor; // Revert to original text color
+          e.currentTarget.style.borderColor = textColor; // Revert to original border color
+        }}
+      >
+        Book Now
+      </Button>
           )}
 
           {isMobile && (

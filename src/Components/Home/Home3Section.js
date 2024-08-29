@@ -15,12 +15,12 @@ const Home3Boxes = () => {
     },
     {
       title: 'My Approaches',
-      backgroundColor: '#339991', // Teal-green for the middle box
+      backgroundColor: '#D1BFA9', // Desaturated Beige for the middle box (smooth transition)
       href: '/approaches', // Link for the second box
     },
     {
       title: 'FAQs',
-      backgroundColor: '#01796F', // Deep teal for the right box
+      backgroundColor: '#8FBC8F', // Soft green for the right box
       href: '/frequently-asked-questions', // Link for the third box
     },
   ];
@@ -60,6 +60,16 @@ const Home3Boxes = () => {
     };
   }, []);
 
+  const handleMouseEnter = (e) => {
+    e.currentTarget.style.color = '#FFD700';
+    e.currentTarget.style.transform = 'scale(1.05)'; // Slightly enlarge the text
+  };
+
+  const handleMouseLeave = (e) => {
+    e.currentTarget.style.color = e.currentTarget.dataset.originalColor;
+    e.currentTarget.style.transform = 'scale(1)'; // Return to normal size
+  };
+
   return (
     <Grid container spacing={0}>
       {services.map((service, index) => (
@@ -72,6 +82,8 @@ const Home3Boxes = () => {
           style={{
             backgroundColor: service.backgroundColor,
             padding: '30px 20px',
+            textShadow: '0 2px 5px rgba(0, 0, 0, 0.15)',
+
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -85,34 +97,26 @@ const Home3Boxes = () => {
             align="center"
             style={{
               fontFamily: "PT Sans, sans-serif",
+
               marginBottom: '20px',
-              color: service.backgroundColor === '#FCFAF4' ? '#01796F' : '#ffffff', // Text color based on background
+              color: service.backgroundColor === '#FCFAF4' ? '#556B2F' : '#fcfaf4', // Text color based on background
               transform: 'translateY(100%)', // Start off-screen at the bottom
               opacity: 0, // Start invisible
+              transition: 'color 0.5s ease-in-out, transform 0.5s ease-in-out', // Smooth transition for color and scale change
+              cursor: 'pointer', // Set cursor to pointer
             }}
+            data-original-color={service.backgroundColor === '#FCFAF4' ? '#556B2F' : '#fcfaf4'}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
             {service.title}
-          </Typography>
-          <Typography
-            ref={(el) => (textRefs.current[index + services.length] = el)}
-            variant="body1"
-            align="center"
-            style={{
-              fontFamily: "PT Sans, sans-serif",
-              fontSize: '1rem',
-              color: service.backgroundColor === '#FCFAF4' ? '#01796F' : '#ffffff', // Text color based on background
-              transform: 'translateY(100%)', // Start off-screen at the bottom
-              opacity: 0, // Start invisible
-            }}
-          >
-            {service.description}
           </Typography>
           <Button
             href={service.href} // Set the correct link for each button
             style={{
               fontFamily: "PT Sans, sans-serif",
-              fontSize: '1rem',
-              color: service.backgroundColor === '#FCFAF4' ? '#01796F' : '#ffffff', // Text color based on background
+              fontSize: '1.25rem',
+              color: service.backgroundColor === '#FCFAF4' ? '#546A2F' : '#ffffff', // Text color based on background
               textTransform: 'none',
               borderRadius: '0px',
               marginTop: '20px',
@@ -120,10 +124,15 @@ const Home3Boxes = () => {
               opacity: 0, // Start invisible
               display: 'flex',
               alignItems: 'center',
+              cursor: 'pointer', // Set cursor to pointer for the button
+              transition: 'color 0.5s ease-in-out, transform 0.5s ease-in-out', // Smooth transition for color and scale change
+              background: 'transparent', // Ensure no background change
+              outline: 'none', // Remove any outline that may appear on focus or click
+              boxShadow: 'none', // Remove any box shadow that may appear
             }}
             ref={(el) => (textRefs.current[index + services.length * 2] = el)}
           >
-            <ArrowForwardIosIcon style={{ fontSize: '1rem' }} />
+            <ArrowForwardIosIcon style={{ fontSize: '1rem', marginLeft: '10px', color: service.backgroundColor === '#FCFAF4' ? '#546A2F' : '#ffffff' }} />
           </Button>
         </Grid>
       ))}

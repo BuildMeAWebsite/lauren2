@@ -79,8 +79,8 @@ const FAQComponent = ({ questionFontSize = '1.5rem', answerFontSize = '1rem' }) 
     ],
   ];
 
-  // Flipped colors: Teal is now on the right, light cream is on the left, and intermediate green in the middle
-  const colors = ['#F0EFE6', '#66B3A4', '#01796F']; // Light cream, intermediate green, and teal
+  // Updated color scheme: Soft Green on the left, Desaturated Beige in the middle, and Cream on the right
+  const colors = ['#8FBC8F', '#D1BFA9', '#FCFAF4'];
 
   return (
     <Grid container spacing={0}>
@@ -92,7 +92,6 @@ const FAQComponent = ({ questionFontSize = '1.5rem', answerFontSize = '1rem' }) 
           key={boxIndex}
           style={{
             backgroundColor: colors[boxIndex],
-     
             padding: '1rem 2rem',
             display: 'flex',
             flexDirection: 'column',
@@ -108,12 +107,23 @@ const FAQComponent = ({ questionFontSize = '1.5rem', answerFontSize = '1rem' }) 
                 align="left"
                 style={{
                   fontFamily: 'PT Sans, sans-serif',
+                  textShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+
                   marginBottom: '10px',
-                  color: boxIndex === 0 ? '#01796F' : '#ffffff', // Adjusted text color based on background
+                  color: boxIndex === 2 ? '#556B2F' : '#fcfaf4', // Adjusted text color based on background
                   cursor: 'pointer',
                   fontSize: questionFontSize, // Question font size
+                  transition: 'color 0.5s ease-in-out, transform 0.5s ease-in-out',
                 }}
                 onClick={() => handleExpandClick(`${boxIndex}-${index}`)}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#FFD700';
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = boxIndex === 2 ? '#556B2F' : '#fcfaf4';
+                  e.currentTarget.style.transform = 'scale(1)';
+                }}
               >
                 {faq.title}
               </Typography>
@@ -123,9 +133,11 @@ const FAQComponent = ({ questionFontSize = '1.5rem', answerFontSize = '1rem' }) 
                   align="left"
                   style={{
                     fontFamily: 'PT Sans, sans-serif',
-                    color: boxIndex === 0 ? '#01796F' : '#ffffff', // Adjusted text color based on background
+                    color: boxIndex === 2 ? '#556B2F' : '#fcfaf4', // Adjusted text color based on background
                     marginBottom: '20px',
                     fontSize: answerFontSize, // Answer font size
+                    textShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+
                   }}
                 >
                   {faq.answer}

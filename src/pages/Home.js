@@ -1,11 +1,9 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import Hero from '../Components/Home/Hero';
-import QuoteSection from '../Components/Home/QuoteSection';
-import SplittingImageText from '../Components/Home/OverlapSection';
-import CounselingServices from '../Components/About/ServicesOffered';
+
 import Home3Boxes from '../Components/Home/Home3Section';
-import TextBanner from '../Components/About/TextBanner';
+import HomeSection2 from '../Components/Home/HomeSection2';
 
 const Home = () => {
   return (
@@ -22,7 +20,7 @@ const Home = () => {
 
 
       <Grid item xs={12}>
-        <QuoteSection />
+        <HomeSection2 />
       </Grid>
   
       <Grid item xs={12}>

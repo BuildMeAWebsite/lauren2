@@ -3,38 +3,27 @@ import TextBanner from '../About/TextBanner';
 
 const QuoteSection = () => {
   useEffect(() => {
-    const handleScroll = () => {
-      const quote = document.querySelector('.quote');
-      const banner = document.querySelector('.banner');
-      const quotePosition = quote.getBoundingClientRect().top;
-      const bannerPosition = banner.getBoundingClientRect().top;
-      const screenPosition = window.innerHeight / 1.2;
+    const quote = document.querySelector('.quote');
+    const banner = document.querySelector('.banner');
 
-      if (bannerPosition < screenPosition) {
-        banner.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
-        banner.style.transform = 'translateY(0)';
-        banner.style.opacity = '1';
-      }
+    // Trigger animations on component mount (page load)
+    if (banner) {
+      banner.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
+      banner.style.transform = 'translateY(0)';
+      banner.style.opacity = '1';
+    }
 
-      if (quotePosition < screenPosition) {
-        quote.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
-        quote.style.transform = 'translateY(0)';
-        quote.style.opacity = '1';
-        window.removeEventListener('scroll', handleScroll); // Remove the event listener once the animation is triggered
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+    if (quote) {
+      quote.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
+      quote.style.transform = 'translateY(0)';
+      quote.style.opacity = '1';
+    }
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
     <div style={styles.sectionContainer}>
       <div className="banner" style={{ ...styles.banner, ...styles.hidden }}>
-        <TextBanner text="Hello and welcome" fontSize="2rem" padding="0.5rem" backgroundColor="#fcfaf4" textColor="#01796F" />
+        <TextBanner text="Hello and welcome" fontSize="2rem" padding="1rem" backgroundColor="#fcfaf4" textColor="#556B2F"  />
       </div>
       <div style={styles.quoteContainer}>
         <blockquote className="quote" style={{ ...styles.quote, ...styles.hidden }}>
@@ -48,7 +37,7 @@ const QuoteSection = () => {
 const styles = {
   sectionContainer: {
     backgroundColor: '#FCFAF4',
-    padding: '2rem 0rem',
+    padding: '1rem 0rem',
     margin: '0 auto',
   },
   banner: {
@@ -58,7 +47,7 @@ const styles = {
   },
   quoteContainer: {
     display: 'flex',
-    minHeight: '30vh',
+    minHeight: '40vh',
     justifyContent: 'center',
     alignItems: 'center',
     margin: '0 auto',
@@ -69,14 +58,12 @@ const styles = {
     backgroundColor: "transparent",
     fontSize: '1.25rem',
     fontStyle: 'italic',
-    color: '#01796F',
+    color: '#556B2F',
     maxWidth: '600px',
     textAlign: 'left',
     lineHeight: '1.5',
     margin: '0',
     padding: '1rem 2rem', // Add padding to the left and right
-    opacity: 1,
-    transform: 'translateY(0)',
   },
   hidden: {
     transform: 'translateY(100%)', // Start off-screen at the bottom

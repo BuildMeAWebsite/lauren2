@@ -12,38 +12,14 @@ const ContactHero2 = () => {
   const navigate = useNavigate(); // Create a navigate instance for navigation
 
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1,
-    };
-
-    const observerCallback = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
-          entry.target.style.transform = 'translateY(0)';
-          entry.target.style.opacity = '1';
-          observer.unobserve(entry.target);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    textRefs.current.forEach((ref) => {
+    // Directly trigger the animation on page load
+    textRefs.current.forEach((ref, index) => {
       if (ref) {
-        observer.observe(ref);
+        ref.style.transition = `transform 1s ease-in-out ${index * 0.1}s, opacity 1s ease-in-out ${index * 0.1}s`;
+        ref.style.transform = 'translateY(0)';
+        ref.style.opacity = '1';
       }
     });
-
-    return () => {
-      textRefs.current.forEach((ref) => {
-        if (ref) {
-          observer.unobserve(ref);
-        }
-      });
-    };
   }, []);
 
   const handleButtonClick = () => {
@@ -61,23 +37,35 @@ const ContactHero2 = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: '#FCFAF4',
-          minHeight: '70vh',
+          backgroundColor: '#FCFAF4', // Cream background
+          minHeight: '80vh',
         }}
       >
-        <img
-          src={`${process.env.PUBLIC_URL}/path/to/your/image.jpg`} // Replace with your actual image path
-          alt="Contact Us"
-          style={{
-            maxWidth: '100%',
-            height: 'auto',
-            borderRadius: '10px',
-            transform: 'translateY(100%)',
-            opacity: 0,
-            transition: 'transform 1s ease-in-out, opacity 1s ease-in-out',
-          }}
-          ref={(el) => (textRefs.current[0] = el)}
-        />
+     <div style={{ position: 'relative', width: '60%' }}>
+  <img
+    src={`${process.env.PUBLIC_URL}/Images/contactfern.jpg`} // Replace with your actual image path
+    alt="Contact Us"
+    style={{
+      maxWidth: '100%',
+      height: 'auto',
+      transform: 'translateY(100%)',
+      opacity: 0,
+      transition: 'transform 1s ease-in-out, opacity 1s ease-in-out',
+    }}
+    ref={(el) => (textRefs.current[0] = el)}
+  />
+  <div
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      backgroundColor: '#fcfaf4',
+      opacity: 0.3, // Adjust opacity for the fade effect
+    }}
+  ></div>
+</div>
       </Grid>
       <Grid
         item
@@ -89,7 +77,7 @@ const ContactHero2 = () => {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#339991',
+          backgroundColor: '#8FBC8F', // Soft green background
           minHeight: '400px',
           transition: 'padding 0.3s ease', // Smooth transition for padding change
         }}
@@ -99,38 +87,58 @@ const ContactHero2 = () => {
         ) : (
           <>
             <Typography
-              variant="h4"
+              variant="h5"
               align="center"
               style={{
                 fontFamily: "PT Sans, sans-serif",
                 marginBottom: '20px',
-                color: '#ffffff',
+                color: '#FCFAF4', // Cream text color
                 transform: 'translateY(100%)',
                 opacity: 0,
-                transition: 'transform 1s ease-in-out, opacity 1s ease-in-out',
+                transition: 'transform 1s ease-in-out, opacity 1s ease-in-out, color 0.5s ease-in-out',
               }}
               ref={(el) => (textRefs.current[1] = el)}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#FFD700'; // Yellow on hover
+                e.currentTarget.style.transform = 'scale(1.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '#FCFAF4'; // Revert to cream
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
             >
-              Let’s connect for a quick 15-minute chat to explore how I can help, answer your questions, and guide you through the next steps to booking
+              Let’s connect for a quick 15-minute chat to explore how I can help, answer your questions, and guide you through the next steps to booking.
             </Typography>
             <Button
               onClick={handleButtonClick}
               style={{
                 fontFamily: "PT Sans, sans-serif",
                 fontSize: '1.2rem',
-                color: '#ffffff',
+                color: '#FCFAF4', // Cream text color
                 textTransform: 'none',
                 borderRadius: '0px',
                 transform: 'translateY(100%)',
                 opacity: 0,
-                transition: 'transform 1s ease-in-out, opacity 1s ease-in-out',
+                transition: 'transform 1s ease-in-out, opacity 1s ease-in-out, color 0.5s ease-in-out',
                 display: 'flex',
                 alignItems: 'center',
+                cursor: 'pointer',
+                background: 'transparent', // Ensure no background change
+                outline: 'none', // Remove any outline that may appear on focus or click
+                boxShadow: 'none', // Remove any box shadow that may appear
               }}
               ref={(el) => (textRefs.current[2] = el)}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#FFD700'; // Yellow on hover
+                e.currentTarget.style.transform = 'scale(1.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '#FCFAF4'; // Revert to cream
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
             >
               Contact
-              <ArrowForwardIosIcon style={{ fontSize: '1rem', marginLeft: '10px' }} />
+              <ArrowForwardIosIcon style={{ fontSize: '1rem', marginLeft: '10px', color: '#FCFAF4' }} />
             </Button>
           </>
         )}

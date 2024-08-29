@@ -42,7 +42,7 @@ const Footer = ({ onContactClick }) => {
             sx={{
               fontFamily: 'PT Sans, sans-serif',
               fontSize: '1rem',
-              color: '#01796F',
+              color: '#556B2F',
               textAlign: 'center',
 
               '&:hover': {
@@ -59,7 +59,7 @@ const Footer = ({ onContactClick }) => {
             sx={{
               fontFamily: 'PT Sans, sans-serif',
               fontSize: '1rem',
-              color: '#01796F',
+              color: '#556B2F',
               '&:hover': {
                 textDecoration: 'underline',
               },
@@ -75,7 +75,7 @@ const Footer = ({ onContactClick }) => {
             sx={{
               fontFamily: 'PT Sans, sans-serif',
               fontSize: '1rem',
-              color: '#01796F',
+              color: '#556B2F',
               '&:hover': {
                 textDecoration: 'underline',
               },
@@ -130,7 +130,7 @@ const Footer = ({ onContactClick }) => {
               sx={{
                 fontFamily: 'PT Sans, sans-serif',
                 fontSize: '1rem',
-                color: '#01796F',
+                color: '#556B2F',
               }}
             >
               Ottawa, Ontario

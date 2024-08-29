@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import WhatToExpectComponent from '../Components/Contact/WhatToExpect';
 import GoogleFormEmbed from '../Components/GoogleForm';
 import ContactHero2 from '../Components/Contact/ContactHero2';
+import Hero from '../Components/Contact/ContactHero';
 
 const Contact = ({ isFormOpen, handleFormClose }) => {
   const handleOverlayClick = (e) => {
@@ -16,6 +17,10 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
   
 
       <Grid container spacing={0} style={{paddingTop: '5rem'}}>
+      <Grid item xs={12}>
+          <Hero />
+        </Grid>
+        
       <Grid item xs={12}>
           <ContactHero2 />
         </Grid>

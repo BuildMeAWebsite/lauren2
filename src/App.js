@@ -11,23 +11,22 @@ import ApproachesPageComponent from './pages/ApproachesPage';
 import NavigationMenuBar from './Components/NavigationMenu';
 import GoogleFormEmbed from './Components/GoogleForm';
 import ContactForm from './pages/ContactFormPage';
-
+import ScrollToTop from './Components/ScrollToTop'; // Import ScrollToTop
 
 function App() {
   return (
     <Router>
-         <NavigationMenuBar />
+      <ScrollToTop /> {/* Scroll to top on route change */}
+      <NavigationMenuBar />
       <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/frequently-asked-questions" element={<FAQPage />} />
-          <Route path="/approaches" element={<ApproachesPageComponent />} />
-          <Route path="/contact-form" element={<ContactForm />} />
-
-
-        </Routes>
-     <Footer />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/frequently-asked-questions" element={<FAQPage />} />
+        <Route path="/approaches" element={<ApproachesPageComponent />} />
+        <Route path="/contact-form" element={<ContactForm />} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }

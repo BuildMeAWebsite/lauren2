@@ -96,18 +96,17 @@ const TherapeuticModalities = () => {
 
 const styles = {
   container: {
-    backgroundColor: 'transparent',
     padding: '40px 20px',
     maxWidth: '1000px',
     margin: '0 auto',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    backgroundColor: 'rgba(252, 250, 244, 0.9)', // Updated to a semi-transparent version of the cream background color
     boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
     borderRadius: '8px',
   },
   header: {
-    fontFamily: 'Libre Baskerville, serif',
+    fontFamily: 'PT Sans, sans-serif',
     fontSize: '2.5rem',
-    color: '#333',
+    color: '#546A2F', // Darker green text color
     marginBottom: '30px',
     textAlign: 'center',
   },
@@ -115,9 +114,14 @@ const styles = {
     marginBottom: '20px',
   },
   categoryButton: {
-    backgroundColor: '#3b83f6',
-    color: '#fff',
+    backgroundColor: '#8FBC8F', // Primary green color
+    color: '#FCFAF4', // Cream text color
     fontSize: '1.5rem',
+    padding: '10px 20px',
+    border: 'none',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s ease',
   },
   button: {
     display: 'block',
@@ -125,8 +129,8 @@ const styles = {
     textAlign: 'left',
     padding: '10px 20px',
     fontSize: '1.2rem',
-    fontFamily: 'Libre Baskerville, serif',
-    color: '#333',
+    fontFamily: 'PT Sans, sans-serif',
+    color: '#546A2F', // Darker green text color
     border: 'none',
     borderRadius: '4px',
     background: 'none',
@@ -143,8 +147,8 @@ const styles = {
   },
   content: {
     padding: '10px 20px',
-    color: '#555',
-    backgroundColor: 'rgba(240, 240, 240, 0.8)',
+    color: '#546A2F', // Darker green text color
+    backgroundColor: '#F0EFE6', // Light cream background for content
     borderRadius: '4px',
     marginTop: '5px',
   },

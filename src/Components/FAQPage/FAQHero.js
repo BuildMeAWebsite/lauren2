@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import ParallaxSection from '../Home/ParallaxSection';
 
-const Hero = () => {
+const FAQHero = () => {
   const styles = {
     heroContainer: {
       maxheight: '30vh',
@@ -53,7 +53,7 @@ const Hero = () => {
       >
         <Grid item xs={12} md={12} style={{ ...styles.slideIn, ...styles['@keyframes slideInFromBottom'] }}>
           <h1 style={styles.title}>
-            A bit about me
+            Frequently Asked Questions
           </h1>
         </Grid>
       </Grid>
@@ -61,4 +61,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default FAQHero;

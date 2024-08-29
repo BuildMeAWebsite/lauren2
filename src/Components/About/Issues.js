@@ -1,41 +1,15 @@
 import React, { useEffect } from 'react';
-import Splitting from 'splitting'; // Importing Splitting for text effects
 import TextBanner from './TextBanner';
 
 const SplittingImageText = () => {
   useEffect(() => {
-    // Splitting.js for text effects
-    Splitting();
-
-    // Intersection Observer for handling the fade-in effect
-    const options = {
-      root: null, // use the document's viewport as the container
-      rootMargin: "0px", // % or px - offsets added to each side of the intersection
-      threshold: 0.1
-    };
-
-    let fadeupCallback = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.visibility = 'visible';
-          entry.target.style.transition = 'opacity 1.5s ease-in-out, transform 1.5s ease-in-out';
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = 'translateY(0)'; // Animate sliding into view
-          observer.unobserve(entry.target); // Stop observing once the animation is triggered
-        }
-      });
-    };
-
-    let fadeupObserver = new IntersectionObserver(fadeupCallback, options);
-
-    document.querySelectorAll(".bullet-item, img").forEach((fadeup) => {
-      fadeupObserver.observe(fadeup);
+    // Trigger the animation after component mounts
+    const elements = document.querySelectorAll('.bullet-item, img');
+    elements.forEach((element) => {
+      element.style.visibility = 'visible';
+      element.style.transform = 'translateY(0)';
+      element.style.opacity = '1';
     });
-
-    // Clean up the observer on component unmount
-    return () => {
-      fadeupObserver.disconnect();
-    };
   }, []);
 
   const items = [
@@ -54,43 +28,41 @@ const SplittingImageText = () => {
   ];
 
   return (
-    <>
-      <div style={styles.body}>
-        <TextBanner
-          text="I can assist you or your child who are seeking support with:"
-          fontSize="2rem"
-          padding="2rem 1rem"
-          backgroundColor="#01796F"
-          textColor="#fcfaf4"
-          textAlign="left"
-          fontFamily="PT Sans, Sans-serif"
-        />
-        <div style={styles.gridContainer}>
-          <div style={styles.item1}>
-            <div style={styles.listContainer}>
-              {items.map((item, index) => (
-                <div key={index} className="bullet-item" style={styles.bulletItem}>
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div style={styles.item2}>
-            <img
-              src={`${process.env.PUBLIC_URL}/Images/background.jpg`} 
-              alt="Overlap"
-              style={styles.image}
-            />
+    <div style={styles.body}>
+      <TextBanner
+        text="I can assist you or your child who are seeking support with:"
+        fontSize="2rem"
+        padding="2rem 1rem"
+        backgroundColor="#8FBC8F" // Updated to the soft green
+        textColor="#FCFAF4" // Cream text color
+        textAlign="left"
+        fontFamily="PT Sans, Sans-serif"
+      />
+      <div style={styles.gridContainer}>
+        <div style={styles.item1}>
+          <div style={styles.listContainer}>
+            {items.map((item, index) => (
+              <div key={index} className="bullet-item" style={styles.bulletItem}>
+                {item}
+              </div>
+            ))}
           </div>
         </div>
+        <div style={styles.item2}>
+          <img
+            src={`${process.env.PUBLIC_URL}/Images/background.jpg`} 
+            alt="Overlap"
+            style={styles.image}
+          />
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
 const styles = {
   body: {
-    backgroundColor: '#01796F',
+    backgroundColor: '#FCFAF4', // Cream background color
     fontFamily: "PT Sans, sans-serif",
     paddingTop: '0px',
     marginTop: '0px',
@@ -99,7 +71,7 @@ const styles = {
   },
   gridContainer: {
     display: 'grid',
-    backgroundColor: '#01796F',
+    backgroundColor: '#FCFAF4', // Cream background color
     gridTemplate: 'repeat(6, [row] 1fr) / repeat(12, [col] 1fr)',
     gridGap: '20px',
     maxWidth: '600px',
@@ -114,7 +86,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     lineHeight: 1,
-    color: '#fcfaf4',
+    color: '#546A2F', // Darker green text color
     textShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
   },
   listContainer: {
@@ -128,9 +100,11 @@ const styles = {
     fontFamily: "PT Sans, sans-serif",
     textTransform: 'lowercase',
     lineHeight: 1,
-    opacity: 0, // Initially hidden for animation
-    transform: 'translateY(20px)', // Slide in from below
-    visibility: 'hidden', // Initially hidden
+    visibility: 'hidden',
+    transform: 'translateY(50px)', // Start slightly below
+    opacity: 0,
+    transition: 'transform 1s ease-out, opacity 1s ease-out', // Slide up and fade in
+    color: '#546A2F', // Darker green text color
   },
   item2: {
     gridColumn: 'col 5 / span 8',
@@ -145,7 +119,10 @@ const styles = {
     height: '100%',
     objectFit: 'cover',
     filter: 'brightness(0.95)',
-    visibility: 'hidden', // Initially hidden for animation
+    visibility: 'hidden',
+    transform: 'translateY(50px)', // Start slightly below
+    opacity: 0,
+    transition: 'transform 1s ease-out, opacity 1s ease-out', // Slide up and fade in
     maxHeight: 'calc(60vh - 50px)',
   },
 };

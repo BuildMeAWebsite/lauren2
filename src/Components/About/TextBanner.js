@@ -4,12 +4,13 @@ import Typography from '@mui/material/Typography';
 
 const TextBanner = ({
   text,
-  fontSize = '3rem',
+  fontSize = '3.25rem',
   padding = '3rem 0',
   backgroundColor = '#01796F',
   textColor = '#FCFAF4',
   textAlign = 'center',
   fontFamily = 'PT Sans, sans-serif',
+  
   ...otherProps
 }) => {
   return (
@@ -27,6 +28,8 @@ const TextBanner = ({
         style={{
           fontSize,
           color: textColor,
+          textShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+
           fontFamily,
         }}
       >
