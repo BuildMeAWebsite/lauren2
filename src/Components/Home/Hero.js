@@ -118,7 +118,9 @@ const Hero = () => {
             </a>
           </div>
         </Grid>
+        
       </Grid>
+
     </ParallaxSection>
   );
 };

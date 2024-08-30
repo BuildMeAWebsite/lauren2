@@ -113,6 +113,8 @@ const WhatToExpect = () => {
               align="center"
               style={{
                 fontFamily: "PT Sans, sans-serif",
+                textShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+
                 marginBottom: '20px',
                 color: expectation.textColor,
                 transform: 'translateY(100%)',
@@ -133,6 +135,8 @@ const WhatToExpect = () => {
               align="center"
               style={{
                 fontFamily: "PT Sans, sans-serif",
+                textShadow: '0 0 1px 2px rgba(0, 0, 0, 0.1)',
+
                 fontSize: '1rem',
                 color: expectation.textColor,
                 transform: 'translateY(100%)',

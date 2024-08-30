@@ -84,7 +84,7 @@ const HomeSection2 = () => {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#8FBC8F', // Soft green background
+          backgroundColor: '#fcfaf4', // Soft green background
           minHeight: '400px',
         }}
       >
@@ -94,7 +94,7 @@ const HomeSection2 = () => {
           style={{
             fontFamily: "PT Sans, sans-serif",
             marginBottom: '20px',
-            color: '#FCFAF4', // Cream text color
+            color: '#546A2F',
             textShadow: '0 2px 5px rgba(0, 0, 0, 0.25)',
             opacity: 1, // Fully visible on load
             transition: 'color 0.5s ease-in-out, transform 0.5s ease-in-out', // Smooth transition for color and transform
@@ -118,7 +118,7 @@ const HomeSection2 = () => {
             fontFamily: "PT Sans, sans-serif",
             marginBottom: '20px',
             textShadow: '0 2px 5px rgba(0, 0, 0, 0.25)',
-            color: '#FCFAF4', // Cream text color
+            color: '#546A2F', // 
             opacity: 1, // Fully visible on load
             transition: 'color 0.5s ease-in-out, transform 0.5s ease-in-out', // Smooth transition for color and transform
           }}
