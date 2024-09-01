@@ -12,6 +12,7 @@ import NavigationMenuBar from './Components/NavigationMenu';
 import GoogleFormEmbed from './Components/GoogleForm';
 import ContactForm from './pages/ContactFormPage';
 import ScrollToTop from './Components/ScrollToTop'; // Import ScrollToTop
+import FullHeightCarousel from './Components/Home/HomeSection8';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route path="/frequently-asked-questions" element={<FAQPage />} />
         <Route path="/approaches" element={<ApproachesPageComponent />} />
         <Route path="/contact-form" element={<ContactForm />} />
+        <Route path="/images-carousel" element={<FullHeightCarousel />} />
+
       </Routes>
       <Footer />
     </Router>

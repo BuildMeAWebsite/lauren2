@@ -1,279 +1,107 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 
 const NavigationMenuBar = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 700);
-  const [showHeader, setShowHeader] = useState(true);
-  const [lastScrollTop, setLastScrollTop] = useState(0);
-  const [textColor, setTextColor] = useState('#01796F'); // Initialize with default color
-  const [logoSrc, setLogoSrc] = useState(`${process.env.PUBLIC_URL}/Images/logo.png`); // Default logo
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 700);
-    };
-
-    const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop > lastScrollTop && scrollTop > 100) {
-        setShowHeader(false);
-        setTextColor('#FCFAF4'); // Change text color when scrolling down
-        setLogoSrc(`${process.env.PUBLIC_URL}/Images/lightlogo.png`); // Change to light logo
-      } else {
-        setShowHeader(true);
-        setTextColor(scrollTop === 0 ? '#546A2F' : '#FCFAF4'); // Default color at the top, else light color
-        setLogoSrc(scrollTop === 0 ? `${process.env.PUBLIC_URL}/Images/logo.png` : `${process.env.PUBLIC_URL}/Images/lightlogo.png`); // Change logo based on scroll position
-      }
-      setLastScrollTop(scrollTop);
-    };
-
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollTop]);
-
-  const toggleDrawer = (open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
-    setDrawerOpen(open);
-  };
-
-  const list = () => (
-    <div
-      style={{ width: 300 }} // Increased width for drawer
-      role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-    >
-      <List>
-        {['Home', 'About', 'Contact', 'Book Now'].map((text, index) => (
-        <ListItem 
-        button 
-        key={text} 
-        component="a" 
-        href={
-          text === 'Home' ? '/' : 
-          text === 'Book Now' ? '/contact-form' : 
-          `/${text.toLowerCase().replace(/\s/g, '')}`
-        }
-      >
-        <ListItemText 
-          primary={text} 
-          style={{ 
-            color: '#FCFAF4', 
-            fontFamily: "'PT Sans', sans-serif"
-          }} 
-        />
-      </ListItem>
-        ))}
-      </List>
-    </div>
-  );
-
-  const handleMouseEnter = (e) => {
-    e.currentTarget.style.color = '#FFD700'; // Yellow on hover
-    e.currentTarget.style.transform = 'scale(1.05)'; // Slightly enlarge the text
-  };
-
-  const handleMouseLeave = (e) => {
-    e.currentTarget.style.color = textColor; // Revert to original color
-    e.currentTarget.style.transform = 'scale(1)'; // Return to normal size
-  };
-
   return (
-    <div style={{ flexGrow: 1 }}>
-      <AppBar
-        position="fixed"
-        style={{
-          backgroundColor: showHeader ? 'transparent' : 'rgba(255, 255, 255, 0.9)',
-          backdropFilter: 'blur(20px)',
-          padding: '10px',
-          boxShadow: showHeader ? 'none' : '0px 2px 5px rgba(0, 0, 0, 0.2)',
-          transition: 'all 0.4s ease',
-          transform: showHeader ? 'translateY(0)' : 'translateY(-100%)',
-          zIndex: 1200, // Slightly lower than the iframe
-        }}
-      >
-        <Toolbar style={{ display: 'flex', justifyContent: 'space-between', padding: '0 25px' }}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <IconButton
-              edge="start"
-              style={{
-                marginRight: '20px',
-                transform: 'scale(1.25)',
-                color: textColor,
-                backgroundColor: 'transparent', // Ensure background is transparent
-              }}
-              color="inherit"
-              aria-label="menu"
-              onClick={toggleDrawer(true)}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#FFD700'; // Yellow on hover
-                e.currentTarget.style.transform = 'scale(1.05)'; // Enlarge slightly on hover
-                e.currentTarget.style.backgroundColor = 'transparent'; // Ensure background stays transparent
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = textColor; // Revert to original color
-                e.currentTarget.style.transform = 'scale(1.25)'; // Revert to original size
-                e.currentTarget.style.backgroundColor = 'transparent'; // Ensure background stays transparent
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
-            {!isMobile && (
-              <Link to="/" style={{ textDecoration: 'none' }}>
-                <img
-                  src={logoSrc}
-                  alt="Logo"
-                  style={{
-                    height: '5rem',
-                    width: '12rem',
-                    objectFit: 'contain',
-                  }}
-                />
-              </Link>
-            )}
+    <header style={styles.header}>
+      {/* Top Dark Bar */}
+      <div style={styles.topBar}>
+        <div style={styles.topBarContainer}>
+          <span style={styles.topBarItem}>Ottawa</span>
+          <span style={styles.topBarItem}>Ontario</span>
+          <span style={styles.topBarItem}>info@laurenmartyntherapy.ca</span>
+        </div>
+      </div>
+
+      {/* Main Navigation Bar */}
+      <AppBar position="static" style={styles.appBar}>
+        <Toolbar style={styles.toolbar}>
+          <div style={styles.logoContainer}>
+            <img
+              src={`${process.env.PUBLIC_URL}/Images/logo.png`} // Update with your logo path
+              alt="l'espace logo"
+              style={styles.logo}
+            />
           </div>
-
-          {!isMobile && (
-            <div style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', display: 'flex' }}>
-              <Button
-                href="/"
-                style={{
-                  fontFamily: 'PT Sans, sans-serif',
-                  borderRadius: '0px',
-                  fontWeight: 100,
-                  fontSize: '1.25rem',
-                  color: textColor,
-                  textTransform: 'none',
-                  marginLeft: '12px',
-                  transition: 'color 0.3s ease, transform 0.3s ease',
-                  backgroundColor: 'transparent', // Remove background color on hover
-                }}
-                color="inherit"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                Home
-              </Button>
-              <Button
-                href="/about"
-                style={{
-                  fontFamily: 'PT Sans, sans-serif',
-                  fontWeight: 300,
-                  fontSize: '1.25rem',
-                  color: textColor,
-                  textTransform: 'none',
-                  marginLeft: '12px',
-                  transition: 'color 0.3s ease, transform 0.3s ease',
-                  backgroundColor: 'transparent', // Remove background color on hover
-                }}
-                color="inherit"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                About
-              </Button>
-              <Button
-                href="/contact"
-                style={{
-                  fontFamily: 'PT Sans, sans-serif',
-                  fontWeight: 300,
-                  fontSize: '1.25rem',
-                  color: textColor,
-                  textTransform: 'none',
-                  marginLeft: '12px',
-                  transition: 'color 0.3s ease, transform 0.3s ease',
-                  backgroundColor: 'transparent', // Remove background color on hover
-                }}
-                color="inherit"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                Contact
-              </Button>
-            </div>
-          )}
-
-          {!isMobile && (
-            <Button
-              href="/contact-form"
-              style={{
-                fontFamily: 'PT Sans, sans-serif',
-                fontWeight: 500,
-                fontSize: '1.25rem',
-                color: textColor,
-                textTransform: 'none',
-                marginRight: '10px',
-                transition: 'background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease', // Added transition for border-color
-                border: `1px solid ${textColor}`,
-                padding: '6px 18px',
-                borderRadius: '0px',
-                backgroundColor: 'transparent', // Ensure initial background is transparent
-              }}
-              color="inherit"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#8FBC8F'; // Background color on hover
-                e.currentTarget.style.color = '#FCFAF4'; // Text color on hover
-                e.currentTarget.style.borderColor = 'transparent'; // Border becomes transparent on hover
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent'; // Revert to transparent background
-                e.currentTarget.style.color = textColor; // Revert to original text color
-                e.currentTarget.style.borderColor = textColor; // Revert to original border color
-              }}
-            >
-              Book Now
-            </Button>
-          )}
-
-          {isMobile && (
-            <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <img
-                src={logoSrc}
-                alt="Logo"
-                style={{
-                  height: '5rem',  // Adjust the height for smaller screens
-                  width: 'auto',
-                  objectFit: 'contain',
-                }}
-              />
-            </Link>
-          )}
+          <nav style={styles.navMenu}>
+            <Link to="/" style={styles.navLink}>home</Link>
+            <Link to="/about" style={styles.navLink}>about</Link>
+            <Link to="/services" style={styles.navLink}>contact</Link>
+            <Link to="/book-session" style={styles.navLink}>book a session</Link>
+          </nav>
         </Toolbar>
       </AppBar>
-
-      <Drawer
-        anchor="left"
-        open={drawerOpen}
-        onClose={toggleDrawer(false)}
-        PaperProps={{
-          style: {
-            backgroundColor: 'transparent', // Same transparent background as AppBar
-            backdropFilter: 'blur(20px)', // Same blur effect as AppBar
-            boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.2)', // Add subtle shadow
-          },
-        }}
-      >
-        {list()}
-      </Drawer>
-    </div>
+    </header>
   );
+};
+
+const styles = {
+  header: {
+    overflowX: 'hidden', // Prevent horizontal overflow
+  },
+  topBar: {
+    backgroundColor: '#2B3D2B', // Dark color for the top bar
+    color: '#FCFAF4', // Light text color
+    padding: '20px 10px',
+    fontFamily: 'Merriweather, sans-serif', // You can replace this with the actual font family used
+    fontSize: '1rem',
+    width: '100%',
+  },
+  topBarContainer: {
+    maxWidth: '17500px',
+    margin: '0 auto',
+    display: 'flex',
+    justifyContent: 'flex-end',
+    padding: '0 3rem',
+  },
+  topBarItem: {
+    marginLeft: '20px',
+  },
+  appBar: {
+    backgroundColor: '#ffffff', // White background for the main navbar
+    boxShadow: 'none', // Remove shadow
+    borderBottom: '1px solid #fcfaf4', // Light border at the bottom
+    width: '100%',
+    overflowX: 'hidden', // Prevent horizontal overflow
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  toolbar: {
+    maxWidth: '1200px',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '35px 0', // Padding around the logo and nav items
+  },
+  logoContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginBottom: '25px', // Space between logo and nav items
+  },
+  logo: {
+    height: '150px', // Adjust logo size as needed
+  },
+ 
+  navMenu: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  navLink: {
+    fontFamily: 'Merriweather, sans-serif', // You can replace this with the actual font family used
+    fontSize: '1.35rem',
+    color: '#3a3a3a',
+    textDecoration: 'none',
+    textTransform: 'lowercase',
+    margin: '0 10px', // 10px gap between each item
+    transition: 'color 0.3s ease',
+    whiteSpace: 'nowrap', // Prevent text wrapping
+  },
 };
 
 export default NavigationMenuBar;

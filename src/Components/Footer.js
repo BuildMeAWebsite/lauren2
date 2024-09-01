@@ -8,7 +8,7 @@ const Footer = ({ onContactClick }) => {
       sx={{
         backgroundColor: '#FCFAF4 !important',
         backdropFilter: 'blur(10px) !important',
-        padding: '2rem 4rem',
+        padding: '4rem 2.5rem',
         textAlign: 'center',
         position: 'relative',
         zIndex: 10,
@@ -40,7 +40,7 @@ const Footer = ({ onContactClick }) => {
             underline="none" // No underline, even on hover
             sx={{
               fontFamily: 'PT Sans, sans-serif',
-              fontSize: '1rem',
+              fontSize: '1.25rem',
               color: '#556B2F',
               textAlign: 'center',
               transition: 'color 0.3s ease, transform 0.3s ease',
@@ -58,7 +58,7 @@ const Footer = ({ onContactClick }) => {
             underline="none" // No underline, even on hover
             sx={{
               fontFamily: 'PT Sans, sans-serif',
-              fontSize: '1rem',
+              fontSize: '1.25rem',
               color: '#556B2F',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
@@ -76,7 +76,7 @@ const Footer = ({ onContactClick }) => {
             underline="none" // No underline, even on hover
             sx={{
               fontFamily: 'PT Sans, sans-serif',
-              fontSize: '1rem',
+              fontSize: '1.25rem',
               color: '#556B2F',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
@@ -106,8 +106,8 @@ const Footer = ({ onContactClick }) => {
             src={`${process.env.PUBLIC_URL}/Images/prideflag.png`}
             alt="Pride Flag"
             style={{
-              maxWidth: '70px',
-              maxHeight: '40px',
+              maxWidth: '100px',
+              maxHeight: '60px',
               borderRadius: '5px',
             }}
           />
@@ -123,7 +123,7 @@ const Footer = ({ onContactClick }) => {
             alignItems: { xs: 'flex-start', sm: 'flex-end' },
             justifyContent: { xs: 'flex-start', sm: 'flex-end' },
             textAlign: { xs: 'left', sm: 'right' }, // Align text left on small screens, right on large
-            gap: '1px',
+            gap: '10px',
           }}
         >
           <Box sx={{ textAlign: { xs: 'left', sm: 'right' } }}>
@@ -131,7 +131,7 @@ const Footer = ({ onContactClick }) => {
               variant="body2"
               sx={{
                 fontFamily: 'PT Sans, sans-serif',
-                fontSize: '1rem',
+                fontSize: '1.25rem',
                 color: '#556B2F',
                 transition: 'color 0.3s ease, transform 0.3s ease',
                 '&:hover': {

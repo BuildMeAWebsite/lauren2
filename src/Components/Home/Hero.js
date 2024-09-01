@@ -18,10 +18,10 @@ const Hero = () => {
 
   const styles = {
     heroContainer: {
-      minHeight: '80vh',
+      minHeight: '100vh',
       color: '#fcfaf4',
-      fontFamily: "'PT Sans', sans-serif",
-      padding: '2.5rem 2.5rem',
+      fontFamily: "'Merriweather', serif",
+      padding: '1rem 1.5rem',
       boxSizing: 'border-box',
       overflow: 'hidden',
       maxWidth: '1000px',
@@ -31,7 +31,7 @@ const Hero = () => {
       opacity: 0,
     },
     subtitle: {
-      fontFamily: "'PT Sans', sans-serif",
+      fontFamily: "'Merriweather', serif",
       fontSize: '1rem',
       color: '#fcfaf4',
       fontWeight: 'normal',
@@ -40,7 +40,7 @@ const Hero = () => {
       textShadow: '0 2px 5px rgba(0, 0, 0, 0.5)',
     },
     title: {
-      fontFamily: "'PT Sans', sans-serif",
+      fontFamily: "'Merriweather', serif",
       fontSize: '3.5rem',
       fontWeight: 400,
       color: '#fcfaf4',
@@ -57,7 +57,7 @@ const Hero = () => {
       padding: '6px 18px',
       fontFamily: "'PT Sans', sans-serif",
       fontWeight: 500,
-      fontSize: '1.5rem',
+      fontSize: '1.25rem',
       textTransform: 'none',
       color: '#556B2F', // Initial text color
       border: `1px solid #556B2F`, // Initial border color
@@ -66,7 +66,7 @@ const Hero = () => {
       borderRadius: '0px',
       cursor: 'pointer',
       transition: 'background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease',
-      boxShadow: '0 2px 5px rgba(0, 0, 0, 0.15)',
+      boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
       display: 'inline-block',
       // Hover effects handled by JS (onMouseEnter/onMouseLeave)
     },
@@ -78,7 +78,7 @@ const Hero = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background1.jpg`} >
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background1.jpg`} minheight = '100vh'>
       <Grid
         container
         alignItems="center"

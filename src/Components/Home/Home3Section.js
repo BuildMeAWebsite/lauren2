@@ -93,7 +93,7 @@ const Home3Boxes = () => {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            minHeight: '400px',
+            minHeight: '60vh',
             cursor: 'pointer',
           }}
           onClick={() => handleNavigation(service.href)}

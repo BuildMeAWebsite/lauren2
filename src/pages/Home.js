@@ -4,6 +4,15 @@ import Hero from '../Components/Home/Hero';
 import Home3Boxes from '../Components/Home/Home3Section';
 import HomeSection2 from '../Components/Home/HomeSection2';
 import { Helmet } from 'react-helmet';
+import FloatingCard from '../Components/Home/FloatCard1';
+import HomeSection4 from '../Components/Home/HomeSection4';
+import HomeSection5 from '../Components/Home/HomeSection5';
+import HomeSection6 from '../Components/Home/HomeSection6';
+import HomeSection7 from '../Components/Home/HomeSection7';
+import HomeSection8 from '../Components/Home/HomeSection8';
+import HomeSection9 from '../Components/Home/HomeSection9';
+import HomeSection10 from '../Components/Home/HomeSection10';
+import HomeSection11 from '../Components/Home/HomeSection11';
 
 const Home = () => {
   const schemaMarkup = {
@@ -12,11 +21,7 @@ const Home = () => {
     "name": "Lauren Martyn Therapy",
     "url": "https://laurenmartyntherapy.ca/",
     "logo": "https://laurenmartyntherapy.ca/Images/logo.png",
-    "sameAs": [
-      "https://www.facebook.com/laurenmartyntherapy",
-      "https://www.twitter.com/laurenmartyntherapy",
-      "https://www.linkedin.com/company/laurenmartyntherapy"
-    ],
+  
     "description": "Lauren Martyn Therapy is dedicated to supporting school-aged children, youth, and young adults in navigating life’s challenges through virtual counseling services in Ontario, Canada.",
     "founder": {
       "@type": "Person",
@@ -26,7 +31,7 @@ const Home = () => {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Service",
-      "email": "contact@laurenmartyntherapy.ca"
+      "email": "info@laurenmartyntherapy.ca"
     }
   };
 
@@ -34,7 +39,7 @@ const Home = () => {
     <Grid 
       container 
       spacing={0}
-      style={{ paddingTop: '4rem' }}
+   
     >
       <Helmet>
         {/* Title Tag */}
@@ -79,12 +84,43 @@ const Home = () => {
       </Grid>
 
       <Grid item xs={12}>
-        <HomeSection2 />
+        <HomeSection6 />
+      </Grid>
+
+  
+      <Grid item xs={12}>
+        <HomeSection9 />
+      </Grid>
+
+      <Grid item xs={12}>
+        <HomeSection8 />
+      </Grid>
+
+      <Grid item xs={12}>
+        <HomeSection7 />
+      </Grid>
+    
+  
+      <Grid item xs={12}>
+        <HomeSection11 />
+      </Grid>
+   
+      <Grid item xs={12}>
+        <FloatingCard />
+      </Grid>
+
+
+    
+
+  
+      <Grid item xs={12}>
+        <HomeSection5 />
       </Grid>
 
       <Grid item xs={12}>
         <Home3Boxes />
       </Grid>
+     
     </Grid>
   );
 };

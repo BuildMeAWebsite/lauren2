@@ -41,6 +41,7 @@ const Hero = () => {
 
   return (
     <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background1.jpg`}
+    minHeight='100vh'
 >
     
       <Grid
@@ -53,7 +54,7 @@ const Hero = () => {
       >
         <Grid item xs={12} md={12} style={{ ...styles.slideIn, ...styles['@keyframes slideInFromBottom'] }}>
           <h1 style={styles.title}>
-            A bit about me
+            About me
           </h1>
         </Grid>
       </Grid>

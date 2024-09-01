@@ -10,6 +10,20 @@ import Hero from '../Components/About/AboutHero';
 import About2Boxes1 from '../Components/About/About2Section1';
 import Policies from '../Components/Contact/Policies';
 import QuoteSection from '../Components/ApproachPage/ModalitiesQuote';
+import AboutSection6 from '../Components/About/AboutSection6';
+import AboutSection7 from '../Components/About/AboutSection7';
+import AboutSection8 from '../Components/About/AboutSection8';
+import AboutSection8a from '../Components/About/AboutSection8a';
+import AboutSection9 from '../Components/About/AboutSection9';
+import AboutSection10 from '../Components/About/AboutSection10';
+import AboutSection11 from '../Components/About/AboutSection11';
+import AboutSection10a from '../Components/About/AboutSection10a';
+import AboutSection11a from '../Components/About/AboutSection11a';
+import AboutSection9a from '../Components/About/AboutSection9a';
+import AboutSection8b from '../Components/About/AboutSection8b';
+import AboutSection9b from '../Components/About/AboutSection9b';
+import AboutSection10b from '../Components/About/AboutSection10b';
+import AboutSection11b from '../Components/About/AboutSection11b';
 
 const About = () => {
   const schemaMarkup = {
@@ -73,6 +87,48 @@ const About = () => {
 
       <Grid item xs={12} id="top">
         <Hero />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection6 />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection7 />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection8 />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection8a />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection8b />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection9 />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection9a />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection9b />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection10 />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection10a />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection10b />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection11 />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection11a />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection11b />
       </Grid>
       <Grid item xs={12} id="top">
         <About2Boxes1 />
