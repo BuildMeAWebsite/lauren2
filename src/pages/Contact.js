@@ -5,6 +5,11 @@ import GoogleFormEmbed from '../Components/GoogleForm';
 import ContactHero2 from '../Components/Contact/ContactHero2';
 import Hero from '../Components/Contact/ContactHero';
 import { Helmet } from 'react-helmet';
+import ContactFloatingHero from '../Components/Contact/ContactHero';
+import ContactSection1 from '../Components/Contact/ContactSection1';
+import ContactForm from './ContactFormPage';
+import HomeSection11 from '../Components/Home/HomeSection11';
+import HomeSection11ColorChange from '../Components/Home/HomeSection11ColorChange';
 
 const Contact = ({ isFormOpen, handleFormClose }) => {
   const handleOverlayClick = (e) => {
@@ -74,18 +79,24 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
         </script>
       </Helmet>
 
-      <Grid container spacing={0} style={{ paddingTop: '5rem' }}>
+      <Grid container spacing={0} >
         <Grid item xs={12}>
-          <Hero />
+          <ContactFloatingHero />
         </Grid>
 
         <Grid item xs={12}>
-          <ContactHero2 />
+          <ContactSection1 />
         </Grid>
-
         <Grid item xs={12}>
-          <WhatToExpectComponent />
+          <HomeSection11ColorChange />
         </Grid>
+        <Grid item xs={12}>
+          <ContactForm />
+        </Grid>
+        <Grid item xs={12}>
+          <HomeSection11 />
+        </Grid>
+      
       </Grid>
 
       {isFormOpen && (

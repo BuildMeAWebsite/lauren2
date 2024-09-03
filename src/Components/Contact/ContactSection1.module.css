@@ -7,7 +7,7 @@
 
 .heroSection {
   flex: 1;
-  padding: 100px;
+  padding: 200px;
   text-align: left;
   max-width: 1000px;
   margin: 0 auto;
@@ -53,6 +53,18 @@
   font-family: Georgia, serif; /* Corrected to serif */
   font-weight: normal;
   color: #333;
+}
+
+/* Email link styling */
+.emailLink {
+  color: #2b2d2b; /* Same color as the surrounding text */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.emailLink:hover {
+  color: #FFD700; /* Change to yellow on hover */
+  transform: scale(1.05); /* Slightly enlarge the text on hover */
 }
 
 /* Media queries for breakpoints */

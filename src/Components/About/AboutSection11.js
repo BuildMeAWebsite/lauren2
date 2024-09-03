@@ -5,7 +5,7 @@ import ParallaxSection from '../Home/ParallaxSection';
 const AboutSection11 = () => {
   const styles = {
     heroContainer: {
-      maxheight: '30vh',
+      maxheight: '50vh',
       color: '#556B2F',
       fontFamily: "'PT Sans', sans-serif",
       padding: '2.5rem 2.5rem',
@@ -19,8 +19,8 @@ const AboutSection11 = () => {
       animation: 'slideInFromBottom 1s ease-in-out forwards',
     },
     title: {
-      fontFamily: "'PT Sans', sans-serif",
-      fontSize: '3.5rem',
+        fontFamily: "'Lora', sans-serif",
+        fontSize: '3rem',
       fontWeight: 300,
       color: '#fcfaf4',
       margin: 0,
@@ -40,8 +40,8 @@ const AboutSection11 = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/aboutimage.jpg`}
-    minHeight='100vh'
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/leaves.jpg`}
+    minHeight='50vh'
 >
     
       <Grid

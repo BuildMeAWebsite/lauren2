@@ -2,10 +2,10 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import ParallaxSection from '../Home/ParallaxSection';
 
-const AboutSection8 = () => {
+const AboutSection12 = () => {
   const styles = {
     heroContainer: {
-      maxheight: '30vh',
+      maxheight: '50vh',
       color: '#556B2F',
       fontFamily: "'PT Sans', sans-serif",
       padding: '2.5rem 2.5rem',
@@ -19,8 +19,8 @@ const AboutSection8 = () => {
       animation: 'slideInFromBottom 1s ease-in-out forwards',
     },
     title: {
-      fontFamily: "'PT Sans', sans-serif",
-      fontSize: '3.5rem',
+        fontFamily: "'Lora', sans-serif",
+        fontSize: '3rem',
       fontWeight: 300,
       color: '#fcfaf4',
       margin: 0,
@@ -40,8 +40,8 @@ const AboutSection8 = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/watch.jpg`}
-    minHeight='100vh'
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/flower.jpg`}
+    minHeight='50vh'
 >
     
       <Grid
@@ -54,12 +54,12 @@ const AboutSection8 = () => {
       >
         <Grid item xs={12} md={12} style={{ ...styles.slideIn, ...styles['@keyframes slideInFromBottom'] }}>
           <h1 style={styles.title}>
-          My Approach
-          </h1>
+          Creative and Expressive Approaches
+                              </h1>
         </Grid>
       </Grid>
     </ParallaxSection>
   );
 };
 
-export default AboutSection8;
+export default AboutSection12;

@@ -5,27 +5,25 @@ import ParallaxSection from '../Home/ParallaxSection';
 const AboutSection9 = () => {
   const styles = {
     heroContainer: {
-      maxheight: '30vh',
       color: '#556B2F',
-      fontFamily: "'PT Sans', sans-serif",
+      fontFamily: "'Lora', sans-serif",
       padding: '2.5rem 2.5rem',
       boxSizing: 'border-box',
       overflow: 'hidden',
       textShadow: '0 2px 5px rgba(0, 0, 0, 0.5)',
-
       maxWidth: '1200px',
     },
     slideIn: {
       animation: 'slideInFromBottom 1s ease-in-out forwards',
     },
     title: {
-      fontFamily: "'PT Sans', sans-serif",
-      fontSize: '3.5rem',
+      fontFamily: "Lora, sans-serif",
+      fontSize: '3rem',
       fontWeight: 300,
       color: '#fcfaf4',
       margin: 0,
       lineHeight: 1,
-      textShadow: '0 2px 5px rgba(0, 0, 0, 0.5)',
+      textShadow: '0 2px 5px rgba(0, 0, 0, 0.9)',
     },
     '@keyframes slideInFromBottom': {
       '0%': {
@@ -40,10 +38,11 @@ const AboutSection9 = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/treeriver.jpg`}
-    minHeight='100vh'
->
-    
+    <ParallaxSection
+      image={`${process.env.PUBLIC_URL}/Images/forest.jpg`}
+      minHeight="50vh" // Set the desired height here
+      opacity="0.5"
+    >
       <Grid
         container
         alignItems="center"
@@ -54,8 +53,8 @@ const AboutSection9 = () => {
       >
         <Grid item xs={12} md={12} style={{ ...styles.slideIn, ...styles['@keyframes slideInFromBottom'] }}>
           <h1 style={styles.title}>
-Therapeutic Modalities 
-                    </h1>
+            Client-Centered Approaches
+          </h1>
         </Grid>
       </Grid>
     </ParallaxSection>

@@ -4,9 +4,21 @@ import { Helmet } from 'react-helmet';
 
 import ServicesOffered from '../Components/About/ServicesOffered';
 import TextBanner from '../Components/About/TextBanner';
-import FAQComponent from '../Components/About/FAQSection';
+import FAQComponent from '../Components/FAQPage/FAQSection';
 import ApproachHero from '../Components/ApproachPage/ApproachHero';
 import QuoteSection from '../Components/ApproachPage/ModalitiesQuote';
+import AboutSection12b from '../Components/About/AboutSection12b';
+import AboutSection12 from '../Components/About/AboutSection12';
+import AboutSection11b from '../Components/About/AboutSection11b';
+import AboutSection11 from '../Components/About/AboutSection11';
+import AboutSection10b from '../Components/About/AboutSection10b';
+import AboutSection10 from '../Components/About/AboutSection10';
+import AboutSection9b from '../Components/About/AboutSection9b';
+import AboutSection9 from '../Components/About/AboutSection9';
+import AboutSection9a from '../Components/About/AboutSection9a';
+import HomeSection11 from '../Components/Home/HomeSection11';
+import AboutSection7 from '../Components/About/AboutSection7';
+import AboutSection14 from '../Components/About/AboutSection14';
 
 const ApproachesPageComponent = () => {
   const schemaMarkup = {
@@ -30,7 +42,7 @@ const ApproachesPageComponent = () => {
   };
 
   return (
-    <Grid container spacing={0} style={{ paddingTop: '5rem' }}>
+    <Grid container spacing={0} >
       <Helmet>
         {/* Title Tag */}
         <title>Therapeutic Approaches - Lauren Martyn Therapy</title>
@@ -72,27 +84,50 @@ const ApproachesPageComponent = () => {
       <Grid item xs={12}>
         <ApproachHero />
       </Grid>
-
-      <Grid item xs={12}>
-        <QuoteSection/>
+      <Grid item xs={12} id="top">
+        <AboutSection7 />
       </Grid>
-
-      <Grid item xs={12} id="services-offered">
-        <ServicesOffered />
+      <Grid item xs={12} id="top">
+        <HomeSection11 />
       </Grid>
-
-      <Grid item xs={12}>
-        <TextBanner 
-          text="Frequently Asked Questions" 
-          backgroundColor='#fcfaf4' 
-          textColor='#556B2F' 
-          padding='5rem' 
-        />
+      <Grid item xs={12} id="top">
+        <AboutSection9a />
       </Grid>
-
-      <Grid item xs={12} id="faq">
-        <FAQComponent questionFontSize="1.5rem" answerFontSize="1rem" />
+    
+      <Grid item xs={12} id="top">
+        <AboutSection9 />
       </Grid>
+   
+      <Grid item xs={12} id="top">
+        <AboutSection9b />
+      </Grid>
+     
+      <Grid item xs={12} id="top">
+        <AboutSection10 />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection10b />
+      </Grid>  
+
+   
+       <Grid item xs={12} id="top">
+        <AboutSection11 />
+      </Grid> 
+      
+        <Grid item xs={12} id="top">
+        <AboutSection11b />
+      </Grid>  
+   
+       <Grid item xs={12} id="top">
+        <AboutSection12 />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection12b />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection14 />
+      </Grid>
+     
     </Grid>
   );
 };

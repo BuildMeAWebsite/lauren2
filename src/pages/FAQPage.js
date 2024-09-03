@@ -2,10 +2,12 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import ServicesOffered from '../Components/About/ServicesOffered';
 import TextBanner from '../Components/About/TextBanner';
-import FAQComponent from '../Components/About/FAQSection';
+import FAQComponent from '../Components/FAQPage/FAQSection';
 import FAQHero from '../Components/FAQPage/FAQHero';
 import Policies from '../Components/Contact/Policies';
 import { Helmet } from 'react-helmet';
+import HomeSection11ColorChange from '../Components/Home/HomeSection11ColorChange';
+import FAQBottomSection from '../Components/FAQPage/FAQBottomSection';
 
 const FAQPage = () => {
   const schemaMarkup = {
@@ -29,7 +31,7 @@ const FAQPage = () => {
   };
 
   return (
-    <Grid container spacing={0} style={{ paddingTop: '5rem' }}>
+    <Grid container spacing={0} >
       <Helmet>
         {/* Title Tag */}
         <title>FAQ - Lauren Martyn Therapy</title>
@@ -76,17 +78,19 @@ const FAQPage = () => {
         <FAQComponent questionFontSize="1.5rem" answerFontSize="1rem" />
       </Grid>
 
+      <Grid item xs={12} id="faq">
+<HomeSection11ColorChange/>
+      </Grid>
+
       <Grid item xs={12}>
         <Policies />
       </Grid>
-
       <Grid item xs={12}>
-        <TextBanner text="Therapeutic Modalities" backgroundColor='#fcfaf4' textColor='#556B2F' padding='5rem' />
+        <FAQBottomSection />
       </Grid>
 
-      <Grid item xs={12} id="services-offered">
-        <ServicesOffered />
-      </Grid>
+
+      
     </Grid>
   );
 };

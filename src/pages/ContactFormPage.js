@@ -28,7 +28,7 @@ const ContactForm = () => {
   };
 
   return (
-    <Grid container spacing={0} style={{ paddingTop: '5rem' }}>
+    <Grid container spacing={0} >
       <Helmet>
         {/* Title Tag */}
         <title>Contact Form - Lauren Martyn Therapy</title>
@@ -67,21 +67,12 @@ const ContactForm = () => {
         </script>
       </Helmet>
 
-      <Grid item xs={12}>
-        <Hero />
-      </Grid>
       
       <Grid item xs={12}>
         <GoogleFormEmbed />
       </Grid>
 
-      <Grid item xs={12}>
-        <Policies />
-      </Grid>
-
-      <Grid item xs={12}>
-        <WhatToExpect />
-      </Grid>
+    
     </Grid>
   );
 };

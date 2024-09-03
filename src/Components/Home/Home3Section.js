@@ -17,12 +17,12 @@ const Home3Boxes = () => {
     },
     {
       title: 'My Approaches',
-      backgroundColor: '#D1BFA9', 
+      backgroundColor: '#8FBC8F', 
       href: '/approaches', 
     },
     {
       title: 'FAQs',
-      backgroundColor: '#8FBC8F', 
+      backgroundColor: '#2B3D2B', 
       href: '/frequently-asked-questions', 
     },
   ];

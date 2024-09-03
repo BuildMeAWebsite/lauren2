@@ -6,9 +6,9 @@ const Footer = ({ onContactClick }) => {
     <Box
       component="footer"
       sx={{
-        backgroundColor: '#FCFAF4 !important',
+        backgroundColor: '#2b3d2b !important',
         backdropFilter: 'blur(10px) !important',
-        padding: '4rem 2.5rem',
+        padding: '5rem 10rem',
         textAlign: 'center',
         position: 'relative',
         zIndex: 10,
@@ -25,47 +25,46 @@ const Footer = ({ onContactClick }) => {
       >
         <Grid
           item
-          spacing={0}
           xs={12}
           sm={4}
           sx={{
             display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' }, // Vertical stack on small screens
-            alignItems: { xs: 'flex-start', sm: 'center' },
+            flexDirection: 'column', // Ensure links are stacked vertically
+            alignItems: { xs: 'center', sm: 'flex-start' }, // Center on small screens, align left on larger
             gap: '10px',
+            paddingBottom: { xs: '20px', sm: '0' }, // Adjust padding for spacing
           }}
         >
           <Link
             href="/"
-            underline="none" // No underline, even on hover
+            underline="none"
             sx={{
-              fontFamily: 'PT Sans, sans-serif',
-              fontSize: '1.25rem',
-              color: '#556B2F',
+              fontFamily: 'Lora, sans-serif',
+              fontSize: '1.5rem',
+              color: '#fcfaf4',
               textAlign: 'center',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
                 color: '#FFD700', // Yellow on hover
                 transform: 'scale(1.05)', // Slightly enlarge on hover
               },
-              display: { xs: 'block', sm: 'inline-block' }, // Block on small screens, inline on larger screens
             }}
           >
             Home
           </Link>
           <Link
             href="/about"
-            underline="none" // No underline, even on hover
+            underline="none"
             sx={{
-              fontFamily: 'PT Sans, sans-serif',
-              fontSize: '1.25rem',
-              color: '#556B2F',
+              fontFamily: 'Lora, sans-serif',
+              fontSize: '1.5rem',
+              color: '#fcfaf4',
+              textAlign: 'center',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
                 color: '#FFD700', // Yellow on hover
                 transform: 'scale(1.05)', // Slightly enlarge on hover
               },
-              display: { xs: 'block', sm: 'inline-block' }, // Block on small screens, inline on larger screens
             }}
           >
             About
@@ -73,20 +72,38 @@ const Footer = ({ onContactClick }) => {
           <Link
             href="/contact-form"
             onClick={onContactClick}
-            underline="none" // No underline, even on hover
+            underline="none"
             sx={{
-              fontFamily: 'PT Sans, sans-serif',
-              fontSize: '1.25rem',
-              color: '#556B2F',
+              fontFamily: 'Lora, sans-serif',
+              fontSize: '1.5rem',
+              color: '#fcfaf4',
+              textAlign: 'center',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
                 color: '#FFD700', // Yellow on hover
                 transform: 'scale(1.05)', // Slightly enlarge on hover
               },
-              display: { xs: 'block', sm: 'inline-block' }, // Block on small screens, inline on larger screens
             }}
           >
             Contact
+          </Link>
+          <Link
+            href="/sitemap"
+            onClick={onContactClick}
+            underline="none"
+            sx={{
+              fontFamily: 'Lora, sans-serif',
+              fontSize: '1.5rem',
+              color: '#fcfaf4',
+              textAlign: 'center',
+              transition: 'color 0.3s ease, transform 0.3s ease',
+              '&:hover': {
+                color: '#FFD700', // Yellow on hover
+                transform: 'scale(1.05)', // Slightly enlarge on hover
+              },
+            }}
+          >
+            Sitemap
           </Link>
         </Grid>
 
@@ -96,10 +113,9 @@ const Footer = ({ onContactClick }) => {
           sm={4}
           sx={{
             display: 'flex',
-            flexDirection: { xs: 'row', sm: 'row' }, // Horizontal on both small and large screens
             justifyContent: { xs: 'center', sm: 'center' },
             gap: '10px',
-            marginTop: { xs: '0px', sm: '0' },
+            marginTop: { xs: '20px', sm: '0' },
           }}
         >
           <img
@@ -119,20 +135,21 @@ const Footer = ({ onContactClick }) => {
           sm={4}
           sx={{
             display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' }, // Vertical on small screens, row on large
-            alignItems: { xs: 'flex-start', sm: 'flex-end' },
-            justifyContent: { xs: 'flex-start', sm: 'flex-end' },
-            textAlign: { xs: 'left', sm: 'right' }, // Align text left on small screens, right on large
+            flexDirection: { xs: 'column', sm: 'row' },
+            alignItems: { xs: 'center', sm: 'flex-end' },
+            justifyContent: { xs: 'center', sm: 'flex-end' },
+            textAlign: { xs: 'center', sm: 'right' },
             gap: '10px',
+            paddingTop: { xs: '20px', sm: '0' },
           }}
         >
-          <Box sx={{ textAlign: { xs: 'left', sm: 'right' } }}>
+          <Box sx={{ textAlign: { xs: 'center', sm: 'right' } }}>
             <Typography
               variant="body2"
               sx={{
-                fontFamily: 'PT Sans, sans-serif',
+                fontFamily: 'Lora, sans-serif',
                 fontSize: '1.25rem',
-                color: '#556B2F',
+                color: '#fcfaf4',
                 transition: 'color 0.3s ease, transform 0.3s ease',
                 '&:hover': {
                   color: '#FFD700', // Yellow on hover

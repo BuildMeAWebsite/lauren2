@@ -1,7 +1,7 @@
 import React from 'react';
 import ParallaxSection from '../Home/ParallaxSection';
 
-const ContactFloatingHero = () => {
+const WhatToExpectFloating = () => {
   const overlayStyle = {
     position: 'absolute',
     top: 0,
@@ -50,15 +50,15 @@ const ContactFloatingHero = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/contact.jpg`} minHeight='80vh'>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/approach.jpg`} minHeight='80vh'>
       <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
-          <p style={headerTextStyle}>contact me</p>
+          <p style={headerTextStyle}>what to expect</p>
         </div>
       </div>
     </ParallaxSection>
   );
 };
 
-export default ContactFloatingHero;
+export default WhatToExpectFloating;

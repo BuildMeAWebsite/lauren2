@@ -5,14 +5,15 @@ import Home3Boxes from '../Components/Home/Home3Section';
 import HomeSection2 from '../Components/Home/HomeSection2';
 import { Helmet } from 'react-helmet';
 import FloatingCard from '../Components/Home/FloatCard1';
-import HomeSection4 from '../Components/Home/HomeSection4';
-import HomeSection5 from '../Components/Home/HomeSection5';
+
 import HomeSection6 from '../Components/Home/HomeSection6';
-import HomeSection7 from '../Components/Home/HomeSection7';
+import HomeSection7 from '../Components/Home/BookASession';
 import HomeSection8 from '../Components/Home/HomeSection8';
-import HomeSection9 from '../Components/Home/HomeSection9';
-import HomeSection10 from '../Components/Home/HomeSection10';
 import HomeSection11 from '../Components/Home/HomeSection11';
+import HomeSection12 from '../Components/Home/HomeSection12';
+import HomeSection13 from '../Components/Home/HomeSection13';
+import HomeSection9 from '../Components/Home/HomeSection9';
+import HomeSection11ColorChange from '../Components/Home/HomeSection11ColorChange';
 
 const Home = () => {
   const schemaMarkup = {
@@ -87,7 +88,9 @@ const Home = () => {
         <HomeSection6 />
       </Grid>
 
-  
+      <Grid item xs={12}>
+        <HomeSection11ColorChange />
+      </Grid>
       <Grid item xs={12}>
         <HomeSection9 />
       </Grid>
@@ -101,26 +104,21 @@ const Home = () => {
       </Grid>
     
   
+   
+     
       <Grid item xs={12}>
-        <HomeSection11 />
+        <HomeSection13 />
       </Grid>
    
       <Grid item xs={12}>
-        <FloatingCard />
+        <HomeSection11 />
       </Grid>
-
 
     
 
   
-      <Grid item xs={12}>
-        <HomeSection5 />
-      </Grid>
 
-      <Grid item xs={12}>
-        <Home3Boxes />
-      </Grid>
-     
+   
     </Grid>
   );
 };

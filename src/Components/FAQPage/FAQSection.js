@@ -80,7 +80,7 @@ const FAQComponent = ({ questionFontSize = '1.5rem', answerFontSize = '1rem' }) 
   ];
 
   // Updated color scheme: Soft Green on the left, Desaturated Beige in the middle, and Cream on the right
-  const colors = ['#8FBC8F', '#D1BFA9', '#FCFAF4'];
+  const colors = ['#2b3d2b', '#8FBC8F', '#FCFAF4'];
 
   return (
     <Grid container spacing={0}>
@@ -92,24 +92,24 @@ const FAQComponent = ({ questionFontSize = '1.5rem', answerFontSize = '1rem' }) 
           key={boxIndex}
           style={{
             backgroundColor: colors[boxIndex],
-            padding: '1rem 2rem',
+            padding: '5rem 2rem',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            minHeight: '500px',
+            minHeight: '600px',
           }}
         >
           {faqGroup.map((faq, index) => (
             <div key={index} style={{ width: '100%' }}>
               <Typography
-                variant="h5"
+              
                 align="left"
                 style={{
-                  fontFamily: 'PT Sans, sans-serif',
-                  textShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+                  fontFamily: 'Lora, sans-serif',
 
                   marginBottom: '10px',
+                  fontSize: '1rem',
                   color: boxIndex === 2 ? '#556B2F' : '#fcfaf4', // Adjusted text color based on background
                   cursor: 'pointer',
                   fontSize: questionFontSize, // Question font size
@@ -132,7 +132,7 @@ const FAQComponent = ({ questionFontSize = '1.5rem', answerFontSize = '1rem' }) 
                   variant="body1"
                   align="left"
                   style={{
-                    fontFamily: 'PT Sans, sans-serif',
+                    fontFamily: 'Georgia, serif',
                     color: boxIndex === 2 ? '#556B2F' : '#fcfaf4', // Adjusted text color based on background
                     marginBottom: '20px',
                     fontSize: answerFontSize, // Answer font size

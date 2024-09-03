@@ -1,12 +1,12 @@
 import React from 'react';
 import { Grid, Box, Typography } from '@mui/material';
 
-const AboutSection11b = () => {
+const AboutSection12b = () => {
   const styles = {
     container: {
       padding: { xs: '50px 20px', sm: '80px 40px', md: '100px 80px' },
-      backgroundColor: '#2b3d2b', // Dark background color
-      color: '#FCFAF4', // Light text color
+      color: '#2b3d2b', // Dark background color
+      backgroundColor: '#FCFAF4', // Light text color
       fontFamily: "'Georgia', serif",
       display: 'flex',
       justifyContent: 'center',
@@ -44,15 +44,15 @@ const AboutSection11b = () => {
               Key Techniques:
             </Typography>
             <ul style={styles.list}>
-              <li>Emotion-Focused Therapy</li>
-              <li>Compassion-Focused Therapy</li>
-              <li>Trauma-Informed Therapy</li>
+              <li>Play Therapy</li>
+              <li>Art Therapy</li>
+              <li>Narrative Therapy</li>
               <li>Attachment-Based Therapy</li>
             </ul>
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography variant="body1" sx={styles.paragraph}>
-              These approaches are designed to help you process and heal from deep emotional pain and traumatic experiences. These therapies create a safe and compassionate space where you can explore difficult emotions and work through past traumas at your own pace. By focusing on your emotional well-being and strengthening your resilience, I will support you in rebuilding a sense of safety, connection, and inner peace, allowing you to move forward with a renewed sense of hope and empowerment.
+              We will explore your thoughts and feelings through non-verbal and imaginative forms of expression. Whether through play, art, or storytelling, these therapies offer a unique way to process emotions, build self-awareness, and heal from past experiences. I will guide you in using these creative outlets to unlock new insights and foster personal growth, empowering you to navigate life’s challenges with renewed confidence and clarity.
             </Typography>
           </Grid>
         </Grid>
@@ -61,4 +61,4 @@ const AboutSection11b = () => {
   );
 };
 
-export default AboutSection11b;
+export default AboutSection12b;

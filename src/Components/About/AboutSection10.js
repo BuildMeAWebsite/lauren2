@@ -7,7 +7,7 @@ const AboutSection10 = () => {
     heroContainer: {
       maxheight: '30vh',
       color: '#556B2F',
-      fontFamily: "'PT Sans', sans-serif",
+      fontFamily: "'Lora', sans-serif",
       padding: '2.5rem 2.5rem',
       boxSizing: 'border-box',
       overflow: 'hidden',
@@ -19,8 +19,8 @@ const AboutSection10 = () => {
       animation: 'slideInFromBottom 1s ease-in-out forwards',
     },
     title: {
-      fontFamily: "'PT Sans', sans-serif",
-      fontSize: '3.5rem',
+      fontFamily: "'Lora', sans-serif",
+      fontSize: '3rem',
       fontWeight: 300,
       color: '#fcfaf4',
       margin: 0,
@@ -40,8 +40,8 @@ const AboutSection10 = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/notebooks.jpg`}
-    minHeight='100vh'
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/butterfly.jpg`}
+    minHeight='50vh'
 >
     
       <Grid
@@ -54,7 +54,7 @@ const AboutSection10 = () => {
       >
         <Grid item xs={12} md={12} style={{ ...styles.slideIn, ...styles['@keyframes slideInFromBottom'] }}>
           <h1 style={styles.title}>
-          Solutions-Focused Therapy
+          Cognitive Behavioral Approaches
                     </h1>
         </Grid>
       </Grid>

@@ -1,13 +1,15 @@
 import React from 'react';
 import NavigationMenuBar from '../Components/NavigationMenu';
+import Footer from '../Components/Footer';
 
 const Layout = ({ children }) => {
   return (
     <>
-   
-      <main style={{ paddingTop: '50px' }}> {/* Adjust padding to match AppBar height */}
+   <NavigationMenuBar/>
+      <main style={{ paddingTop: '5px' }}> {/* Adjust padding to match AppBar height */}
         {children}
       </main>
+      <Footer />
     </>
   );
 };

@@ -18,57 +18,36 @@ const Hero = () => {
 
   const styles = {
     heroContainer: {
-      minHeight: '100vh',
+      minHeight: '50vh',
       color: '#fcfaf4',
-      fontFamily: "'Merriweather', serif",
-      padding: '1rem 1.5rem',
+      fontFamily: "'Lora', sans-serif",
+      marginTop: '-10rem',
+      padding: '0.25rem 1rem',
       boxSizing: 'border-box',
       overflow: 'hidden',
-      maxWidth: '1000px',
+      maxWidth: '800px',
     },
     slideIn: {
       transform: 'translateY(100px)',
       opacity: 0,
     },
     subtitle: {
-      fontFamily: "'Merriweather', serif",
-      fontSize: '1rem',
+      fontFamily: "'Lora', sans-serif",
+      fontSize: '0.75rem',
       color: '#fcfaf4',
-      fontWeight: 'normal',
+      fontWeight: 'bold',
       textTransform: 'uppercase',
-      letterSpacing: '2px',
-      textShadow: '0 2px 5px rgba(0, 0, 0, 0.5)',
+      letterSpacing: '1px',
+      textShadow: '0 2px 5px rgba(0, 0, 0, 0.95)',
     },
     title: {
-      fontFamily: "'Merriweather', serif",
+      fontFamily: "'Lora', sans-serif",
       fontSize: '3.5rem',
       fontWeight: 400,
       color: '#fcfaf4',
       margin: 0,
       lineHeight: 1,
-      textShadow: '0 2px 5px rgba(0, 0, 0, 0.5)',
-    },
-    buttonContainer: {
-      display: 'flex',
-      margin: '1rem auto',
-      justifyContent: 'center',
-    },
-    contactButton: {
-      padding: '6px 18px',
-      fontFamily: "'PT Sans', sans-serif",
-      fontWeight: 500,
-      fontSize: '1.25rem',
-      textTransform: 'none',
-      color: '#556B2F', // Initial text color
-      border: `1px solid #556B2F`, // Initial border color
-      backgroundColor: 'transparent', // Initial background color
-      textDecoration: 'none',
-      borderRadius: '0px',
-      cursor: 'pointer',
-      transition: 'background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease',
-      boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-      display: 'inline-block',
-      // Hover effects handled by JS (onMouseEnter/onMouseLeave)
+      textShadow: '0 2px 5px rgba(0, 0, 0, 0.75)',
     },
     image: {
       maxWidth: '100%',
@@ -78,14 +57,14 @@ const Hero = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background1.jpg`} minheight = '100vh'>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background3.jpg`} minheight='100vh'>
       <Grid
         container
         alignItems="center"
         justifyContent="center"
         direction={{ xs: 'column-reverse', md: 'row' }} // Stack image below text on small screens, side by side on large screens
         style={styles.heroContainer}
-        spacing={3}
+        spacing={0}
       >
         <Grid item xs={12} md={6} style={styles.slideIn} ref={(el) => (textRefs.current[0] = el)}>
           <img
@@ -99,28 +78,8 @@ const Hero = () => {
           <h1 style={styles.title}>
             Therapy for children, teens, <em> and </em> young adults 
           </h1>
-          <div style={styles.buttonContainer}>
-            <a
-              href="/contact"
-              style={styles.contactButton}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#8FBC8F'; // Background color on hover
-                e.currentTarget.style.color = '#FCFAF4'; // Text color on hover
-                e.currentTarget.style.borderColor = 'transparent'; // Make border transparent on hover
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent'; // Revert to transparent background
-                e.currentTarget.style.color = '#556B2F'; // Revert to initial text color
-                e.currentTarget.style.borderColor = '#556B2F'; // Revert to initial border color
-              }}
-            >
-              Contact
-            </a>
-          </div>
         </Grid>
-        
       </Grid>
-
     </ParallaxSection>
   );
 };

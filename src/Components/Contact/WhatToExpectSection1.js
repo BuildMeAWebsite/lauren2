@@ -39,23 +39,7 @@ const Policies = () => {
               <Box sx={styles.serviceDetails}>
                 <Typography variant="h3" sx={styles.serviceTitle}>{item.title}</Typography>
                 <Typography sx={styles.serviceDescription}>{item.description}</Typography>
-                {item.link && (
-                  <Link
-                    to={item.link}
-                    style={{
-                      ...styles.serviceLink,
-                      color: hoveredLinkIndex === index ? '#FFD700' : '#8FBC8F',
-                      transform: hoveredLinkIndex === index ? 'scale(1.05)' : 'scale(1)',
-                      transition: 'color 0.3s ease, transform 0.3s ease',
-                      borderBottom: '2px solid transparent',
-                      borderColor: hoveredLinkIndex === index ? '#FFD700' : '#8FBC8F',
-                    }}
-                    onMouseEnter={() => handleLinkMouseEnter(index)}
-                    onMouseLeave={handleLinkMouseLeave}
-                  >
-                    {item.linkText}
-                  </Link>
-                )}
+                
               </Box>
             </Box>
           ))}
@@ -235,9 +219,13 @@ const styles = {
     textDecoration: 'none',
     fontWeight: 'bold',
     fontSize: '1rem',
-    borderBottom: '2px solid transparent',
+    transition: 'color 0.3s ease, transform 0.3s ease',
     '@media (max-width: 600px)': {
       fontSize: '0.9rem',
+    },
+    '&:hover': {
+      color: '#FFD700',
+      transform: 'scale(1.05)',
     },
   },
 };

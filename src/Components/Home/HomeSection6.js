@@ -11,7 +11,7 @@ const HomeSection6 = () => {
         </h1>
       </div>
       <div className={styles.sidebar}>
-        {/* Add content for the sidebar here */}
+        <div className={styles.line}></div> {/* Vertical line added */}
       </div>
     </div>
   );

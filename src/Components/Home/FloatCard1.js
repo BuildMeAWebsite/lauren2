@@ -7,45 +7,56 @@ const FloatingCard = () => {
     top: 0,
     left: 0,
     width: '100%',
-    height: '80vh',  // Match the parallax section height
+    height: '100vh',  // Match the parallax section height
     zIndex: 1,
+  };
+
+  const outerContentStyle = {
+    padding: '1rem', // Add padding around the border for spacing
+    backgroundColor: 'white',
+    boxSizing: 'border-box',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%', // Ensure the outer content fills the height of the section
   };
 
   const contentStyle = {
     zIndex: 2,
-    backgroundColor: '#fcfaf4',
-    padding: '12.5rem 5rem',
-    border: '2px solid #8FBC8F',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.25)',
-    textAlign: 'center',
-    maxWidth: '500px',
-    margin: 'auto',
+    backgroundColor: 'transparent', // No background color inside the card
+    padding: '5rem', // Adjusted padding for more space
+    border: '1.5px solid #2b2d2b', // Darker border to match the design
+    textAlign: 'center', // Center align the text
+    width: '100%',
+    maxWidth: '30rem', // Set max width for larger screens
+    aspectRatio: 'auto', // The card will adapt its height based on the content
     position: 'relative',
     fontFamily: 'Georgia, serif',
     fontWeight: 'normal',
+    color: '#2b2d2b', // Text color to match the border
+    lineHeight: '1.5',
+    display: 'flex',
+    justifyContent: 'center', // Center the text within the card
+    alignItems: 'center', // Vertically center the text
+    height: 'auto', // Allow height to adjust based on content
   };
 
-  const buttonStyle = {
-    marginTop: '1rem',
-    padding: '0.5rem 1rem',
-    border: '1px solid #333',
-    backgroundColor: '#fff',
-    cursor: 'pointer',
-    textTransform: 'uppercase',
-    fontSize: '0.875rem',
+  const headerTextStyle = {
+    fontSize: '1.75rem',
+    fontWeight: 400, // Regular font weight
+    letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
+    fontFamily: 'Lora, sans-serif',
+    textTransform: 'lowercase', // Make the text uppercase
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background1.jpg`} minHeight='100vh'>
-   <div style={overlayStyle}></div> {/* Overlay */}
-<div style={contentStyle}>
-  <p style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>serenity.</p>
-  <p style={{ fontSize: '1rem', fontStyle: 'italic', marginBottom: '1rem' }}>noun</p>
-  <p style={{ fontSize: '1.25rem', marginBottom: '1.5rem' }}>
-    The state of being calm, peaceful, and untroubled. Discover a space where young minds can find tranquility and clarity, guided by compassionate support.
-  </p>
-  <button style={buttonStyle}>Learn More</button>
-</div>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/abouthero.jpg`} minHeight='100vh'>
+      <div style={overlayStyle}></div> {/* Overlay */}
+      <div style={outerContentStyle}>
+        <div style={contentStyle}>
+          <p style={headerTextStyle}>about me</p>
+        </div>
+      </div>
     </ParallaxSection>
   );
 };

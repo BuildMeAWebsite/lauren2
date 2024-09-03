@@ -1,35 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const AboutSection8b = () => {
+const HomeSection7 = () => {
+  const [buttonHover, setButtonHover] = useState(false);
+
+  const handleMouseEnter = () => {
+    setButtonHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setButtonHover(false);
+  };
+
   return (
     <div style={styles.container}>
-      <div style={styles.leftColumn}>
-        <h2 style={styles.header}>We can help with:</h2>
-        <ul style={styles.list}>
-   
-
-         
-         
-          <li>Anxiety</li>
-          <li>Depression</li>
-          <li>Perfectionism</li>
-          <li>Emotional and Behavioural Challenges</li>
-          <li>Attention Deficit Hyperactivity Disorder</li>
-          <li>Academic Concerns and Learning Disabilities</li>
-          <li>Bullying and Social Challenges</li>
-          <li>Relationship Issues</li>
-          <li>Self-Esteem and Body Image</li>
-          <li>Career and Post-Secondary Guidance</li>
-          <li>Life Coaching</li>
-         
-        </ul>
-      </div>
       <div style={styles.rightColumn}>
         <h2 style={styles.header}>Book a session:</h2>
         <p style={styles.paragraph}>
           To get started, click the button below to schedule a free, 15-minute introductory call with us. We’ll talk about your availability and preferences and match you with a therapist that will best meet your needs.
         </p>
-        <a href="#schedule-call" style={styles.button}>
+        <a
+          href="#schedule-call"
+          style={{
+            ...styles.button,
+            ...(buttonHover ? styles.buttonHover : {}),
+          }}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           schedule an introductory call
         </a>
         <p style={styles.faq}>
@@ -43,31 +40,23 @@ const AboutSection8b = () => {
 const styles = {
   container: {
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center', // Center the content horizontally
     padding: '100px',
-    backgroundColor: '#1a1d1f', // Dark background color
+    backgroundColor: '#2B3D2B', // Dark background color
     color: '#FCFAF4', // Light text color
-    fontFamily: "'Merriweather', serif",
-  },
-  leftColumn: {
-    flex: 1,
-    marginRight: '50px',
+    fontFamily: "Lora, sans-serif",
   },
   rightColumn: {
     flex: 1,
+    maxWidth: '600px', // Limit the width of the text content for better readability
   },
   header: {
     fontSize: '2.5rem',
     marginBottom: '20px',
-  },
-  list: {
-    listStyleType: 'disc',
-    paddingLeft: '20px',
-    lineHeight: '1.8',
-    fontSize: '1.25rem',
+    fontWeight: 'normal',
   },
   paragraph: {
+    fontFamily: "Georgia, serif",
     lineHeight: '1.8',
     fontSize: '1.25rem',
     marginBottom: '30px',
@@ -82,6 +71,12 @@ const styles = {
     fontSize: '1rem',
     marginBottom: '20px',
     textAlign: 'center',
+    transition: 'color 0.3s ease, transform 0.3s ease, border-color 0.3s ease',
+  },
+  buttonHover: {
+    color: '#FFD700', // Yellow text color on hover
+    borderColor: '#FFD700', // Yellow border color on hover
+    transform: 'scale(1.05)', // Slightly enlarge the button on hover
   },
   faq: {
     fontSize: '1.25rem',
@@ -92,4 +87,4 @@ const styles = {
   },
 };
 
-export default AboutSection8b;
+export default HomeSection7;

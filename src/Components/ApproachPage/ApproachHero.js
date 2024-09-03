@@ -1,58 +1,62 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
 import ParallaxSection from '../Home/ParallaxSection';
 
 const ApproachHero = () => {
-  const styles = {
-    heroContainer: {
-      minHeight: '30vh',
-      color: '#01796F',
-      fontFamily: "'PT Sans', sans-serif",
-      padding: '2.5rem 2.5rem',
-      boxSizing: 'border-box',
-      overflow: 'hidden',
-      maxWidth: '800px',
-    },
-    slideIn: {
-      animation: 'slideInFromBottom 1s ease-in-out forwards',
-    },
-    title: {
-      fontFamily: "'PT Sans', sans-serif",
-      fontSize: '3rem',
-      fontWeight: 300,
-      color: '#fcfaf4',
-      margin: 0,
-      lineHeight: 1,
-      textShadow: '0 2px 5px rgba(0, 0, 0, 0.5)',
-    },
-    '@keyframes slideInFromBottom': {
-      '0%': {
-        opacity: 0,
-        transform: 'translateY(100px)',
-      },
-      '100%': {
-        opacity: 1,
-        transform: 'translateY(0)',
-      },
-    },
+  const overlayStyle = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100vh',  // Match the parallax section height
+    zIndex: 1,
+  };
+
+  const outerContentStyle = {
+    padding: '1rem', // Add padding around the border for spacing
+    backgroundColor: 'white',
+    boxSizing: 'border-box',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%', // Ensure the outer content fills the height of the section
+  };
+
+  const contentStyle = {
+    zIndex: 2,
+    backgroundColor: 'transparent', // No background color inside the card
+    padding: '5rem', // Adjusted padding for more space
+    border: '1.5px solid #2b2d2b', // Darker border to match the design
+    textAlign: 'center', // Center align the text
+    width: '100%',
+    maxWidth: '30rem', // Set max width for larger screens
+    aspectRatio: 'auto', // The card will adapt its height based on the content
+    position: 'relative',
+    fontFamily: 'Georgia, serif',
+    fontWeight: 'normal',
+    color: '#2b2d2b', // Text color to match the border
+    lineHeight: '1.5',
+    display: 'flex',
+    justifyContent: 'center', // Center the text within the card
+    alignItems: 'center', // Vertically center the text
+    height: 'auto', // Allow height to adjust based on content
+  };
+
+  const headerTextStyle = {
+    fontSize: '1.75rem',
+    fontWeight: 400, // Regular font weight
+    letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
+    fontFamily: 'Lora, sans-serif',
+    textTransform: 'lowercase', // Make the text uppercase
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background1.jpg`}>
-      <Grid
-        container
-        
-        alignItems="center"
-        justifyContent="center"
-        direction={{ xs: 'column', md: 'row' }} // Center text on small screens, side by side on large screens
-        style={styles.heroContainer}
-        spacing={3}
-      >
-        <Grid item xs={12} md={12} style={{ ...styles.slideIn, ...styles['@keyframes slideInFromBottom'] }}>
-          <h1 style={styles.title}>
-Therapeutic Modalities</h1>
-        </Grid>
-      </Grid>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/abouthero.jpg`} minHeight='80vh'>
+      <div style={overlayStyle}></div> {/* Overlay */}
+      <div style={outerContentStyle}>
+        <div style={contentStyle}>
+          <p style={headerTextStyle}>approaches</p>
+        </div>
+      </div>
     </ParallaxSection>
   );
 };

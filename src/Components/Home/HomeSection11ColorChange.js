@@ -1,18 +1,16 @@
 import React from 'react';
 
-const HomeSection11 = () => {
+const HomeSection11ColorChange = ({ backgroundColor = '#2b3d2b', lineColor = '#FCFAF4' }) => {
   return (
-    <div style={styles.container}>
-      <div style={styles.line}></div>
-     
+    <div style={{ ...styles.container, backgroundColor }}>
+      <div style={{ ...styles.line, borderTop: `1px solid ${lineColor}` }}></div>
     </div>
   );
 };
 
 const styles = {
   container: {
-    backgroundColor: '#8FBC8F', 
-    height: '150px', // Adjust height as needed
+    height: '200px', // Adjust height as needed
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -20,8 +18,7 @@ const styles = {
     padding: '10px',
   },
   line: {
-    borderTop: '1px solid #FCFAF4', // Light color for the line
-    width: '20%',
+    width: '50%',
     marginRight: '10px',
   },
   buttonContainer: {
@@ -31,7 +28,7 @@ const styles = {
   button: {
     display: 'inline-block',
     padding: '10px 20px',
-    border: '1px solid #FCFAF4', // Light color for the border
+    border: '1.5px solid #FCFAF4', // Light color for the border
     color: '#FCFAF4', // Light color for the text
     textAlign: 'center',
     textDecoration: 'none',
@@ -42,4 +39,4 @@ const styles = {
   },
 };
 
-export default HomeSection11;
+export default HomeSection11ColorChange;

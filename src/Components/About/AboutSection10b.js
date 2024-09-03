@@ -1,95 +1,64 @@
 import React from 'react';
+import { Grid, Box, Typography } from '@mui/material';
 
 const AboutSection10b = () => {
+  const styles = {
+    container: {
+      padding: { xs: '50px 20px', sm: '80px 40px', md: '100px 80px' },
+      color: '#2b3d2b', // Dark background color
+      backgroundColor: '#FCFAF4', // Light text color
+      fontFamily: "'Georgia', serif",
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    content: {
+      maxWidth: '1000px', // Constrain the width of the content to 1200px
+      width: '100%',
+    },
+    header: {
+      fontFamily: "'Lora', sans-serif",
+      fontSize: { xs: '2rem', md: '2.5rem' },
+      marginBottom: '20px',
+    },
+    list: {
+      fontFamily: "'Georgia', serif",
+      listStyleType: 'disc',
+      paddingLeft: '20px',
+      lineHeight: '1.8',
+      fontSize: '1.25rem',
+    },
+    paragraph: {
+      fontFamily: "'Georgia', serif",
+      lineHeight: '1.8',
+      fontSize: '1.25rem',
+      marginBottom: '30px',
+    },
+  };
+
   return (
-    <div style={styles.container}>
-      <div style={styles.leftColumn}>
-        <h2 style={styles.header}>We can help with:</h2>
-        <ul style={styles.list}>
-   
-
-         
-         
-          <li>Anxiety</li>
-          <li>Depression</li>
-          <li>Perfectionism</li>
-          <li>Emotional and Behavioural Challenges</li>
-          <li>Attention Deficit Hyperactivity Disorder</li>
-          <li>Academic Concerns and Learning Disabilities</li>
-          <li>Bullying and Social Challenges</li>
-          <li>Relationship Issues</li>
-          <li>Self-Esteem and Body Image</li>
-          <li>Career and Post-Secondary Guidance</li>
-          <li>Life Coaching</li>
-         
-        </ul>
-      </div>
-      <div style={styles.rightColumn}>
-        <h2 style={styles.header}>Book a session:</h2>
-        <p style={styles.paragraph}>
-          To get started, click the button below to schedule a free, 15-minute introductory call with us. We’ll talk about your availability and preferences and match you with a therapist that will best meet your needs.
-        </p>
-        <a href="#schedule-call" style={styles.button}>
-          schedule an introductory call
-        </a>
-        <p style={styles.faq}>
-          Questions? <a href="#faq" style={styles.link}>Read our FAQs</a>
-        </p>
-      </div>
-    </div>
+    <Box sx={styles.container}>
+      <Box sx={styles.content}>
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={6} sx={{ order: { xs: 1, md: 2 } }} style={styles.leftColumn}>
+            <Typography variant="body1" sx={styles.paragraph}>
+              Cognitive and behavioral approaches are centered around helping you identify and change unhelpful thought patterns and behaviors. Through these techniques, we will work together to challenge negative beliefs, develop healthier coping strategies, and promote positive behavior change. My goal is to support you in gaining practical tools that you can use to navigate life's challenges, empowering you to make meaningful progress toward your goals and enhance your overall well-being.
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }} style={styles.rightColumn}>
+            <Typography variant="h2" sx={styles.header}>
+              Key Techniques:
+            </Typography>
+            <ul style={styles.list}>
+              <li>Cognitive Behavioural Therapy</li>
+              <li>Dialectical Behavioural Therapy</li>
+              <li>Solutions-Focused Therapy</li>
+              <li>Motivational Interviewing</li>
+            </ul>
+          </Grid>
+        </Grid>
+      </Box>
+    </Box>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: '100px',
-    backgroundColor: '#1a1d1f', // Dark background color
-    color: '#FCFAF4', // Light text color
-    fontFamily: "'Merriweather', serif",
-  },
-  leftColumn: {
-    flex: 1,
-    marginRight: '50px',
-  },
-  rightColumn: {
-    flex: 1,
-  },
-  header: {
-    fontSize: '2.5rem',
-    marginBottom: '20px',
-  },
-  list: {
-    listStyleType: 'disc',
-    paddingLeft: '20px',
-    lineHeight: '1.8',
-    fontSize: '1.25rem',
-  },
-  paragraph: {
-    lineHeight: '1.8',
-    fontSize: '1.25rem',
-    marginBottom: '30px',
-  },
-  button: {
-    display: 'inline-block',
-    padding: '15px 30px',
-    border: '1px solid #FCFAF4',
-    color: '#FCFAF4',
-    textDecoration: 'none',
-    textTransform: 'uppercase',
-    fontSize: '1rem',
-    marginBottom: '20px',
-    textAlign: 'center',
-  },
-  faq: {
-    fontSize: '1.25rem',
-  },
-  link: {
-    color: '#FCFAF4',
-    textDecoration: 'underline',
-  },
 };
 
 export default AboutSection10b;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,7 +9,6 @@ const NavigationMenuBar = () => {
       {/* Top Dark Bar */}
       <div style={styles.topBar}>
         <div style={styles.topBarContainer}>
-          <span style={styles.topBarItem}>Ottawa</span>
           <span style={styles.topBarItem}>Ontario</span>
           <span style={styles.topBarItem}>info@laurenmartyntherapy.ca</span>
         </div>
@@ -21,15 +20,15 @@ const NavigationMenuBar = () => {
           <div style={styles.logoContainer}>
             <img
               src={`${process.env.PUBLIC_URL}/Images/logo.png`} // Update with your logo path
-              alt="l'espace logo"
+              alt="lauren martyn logo"
               style={styles.logo}
             />
           </div>
           <nav style={styles.navMenu}>
-            <Link to="/" style={styles.navLink}>home</Link>
-            <Link to="/about" style={styles.navLink}>about</Link>
-            <Link to="/services" style={styles.navLink}>contact</Link>
-            <Link to="/book-session" style={styles.navLink}>book a session</Link>
+            <NavLink to="/" label="home" />
+            <NavLink to="/about" label="about" />
+            <NavLink to="/frequently-asked-questions" label="faq" />
+            <NavLink to="/contact" label="contact" />
           </nav>
         </Toolbar>
       </AppBar>
@@ -37,24 +36,65 @@ const NavigationMenuBar = () => {
   );
 };
 
+const NavLink = ({ to, label }) => {
+  const [hovered, setHovered] = useState(false);
+
+  const handleMouseEnter = () => setHovered(true);
+  const handleMouseLeave = () => setHovered(false);
+
+  const style = {
+    fontFamily: 'Merriweather, sans-serif', // Font family for the nav items
+    fontSize: '1rem',
+    color: hovered ? '#FFD700' : '#3a3a3a',
+    textDecoration: 'none',
+    textTransform: 'lowercase',
+    margin: '0 10px', // 10px gap between each item
+    transition: 'color 0.3s ease, transform 0.3s ease',
+    whiteSpace: 'nowrap', // Prevent text wrapping
+    transform: hovered ? 'scale(1.05)' : 'scale(1)',
+  };
+
+  return (
+    <Link
+      to={to}
+      style={style}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {label}
+    </Link>
+  );
+};
+
 const styles = {
   header: {
-    overflowX: 'hidden', // Prevent horizontal overflow
+    width: '100%',
+    zIndex: 1000, // Ensure the header is on top
+    '@media (max-width: 1000px)': {
+      position: 'fixed', // Fix the header at the top of the screen on smaller screens
+      top: 0,
+      left: 0,
+      right: 0,
+      backgroundColor: '#ffffff', // Ensure the header has a background when fixed
+    },
   },
   topBar: {
-    backgroundColor: '#2B3D2B', // Dark color for the top bar
+    backgroundColor: '#8fbc8f', // Dark color for the top bar
     color: '#FCFAF4', // Light text color
-    padding: '20px 10px',
-    fontFamily: 'Merriweather, sans-serif', // You can replace this with the actual font family used
-    fontSize: '1rem',
+    padding: '10px 10px',
+    fontFamily: 'Merriweather, sans-serif', // Font family for the top bar
+    fontSize: '.75rem',
     width: '100%',
+    '@media (max-width: 1000px)': {
+      display: 'none', // Hide top bar on screens smaller than 1000px
+    },
   },
   topBarContainer: {
-    maxWidth: '17500px',
+    maxWidth: '1200px',
     margin: '0 auto',
     display: 'flex',
     justifyContent: 'flex-end',
-    padding: '0 3rem',
+    padding: '0 2rem',
   },
   topBarItem: {
     marginLeft: '20px',
@@ -62,7 +102,6 @@ const styles = {
   appBar: {
     backgroundColor: '#ffffff', // White background for the main navbar
     boxShadow: 'none', // Remove shadow
-    borderBottom: '1px solid #fcfaf4', // Light border at the bottom
     width: '100%',
     overflowX: 'hidden', // Prevent horizontal overflow
     display: 'flex',
@@ -75,31 +114,37 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: '35px 0', // Padding around the logo and nav items
+    padding: '1rem', // Padding around the logo and nav items
+    '@media (max-width: 1000px)': {
+      padding: '15px 0', // Adjust padding for smaller screens
+    },
   },
   logoContainer: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginBottom: '25px', // Space between logo and nav items
+    marginBottom: '0.5rem', // Space between logo and nav items
   },
   logo: {
-    height: '150px', // Adjust logo size as needed
+    height: '175px', // Adjust logo size as needed
+    '@media (max-width: 1000px)': {
+      height: '100px', // Smaller logo on small screens
+    },
   },
- 
   navMenu: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: '0.5rem', // Space between
   },
   navLink: {
-    fontFamily: 'Merriweather, sans-serif', // You can replace this with the actual font family used
-    fontSize: '1.35rem',
+    fontFamily: 'Merriweather, sans-serif', // Font family for the nav items
+    fontSize: '1rem',
     color: '#3a3a3a',
     textDecoration: 'none',
     textTransform: 'lowercase',
     margin: '0 10px', // 10px gap between each item
-    transition: 'color 0.3s ease',
+    transition: 'color 0.3s ease, transform 0.3s ease',
     whiteSpace: 'nowrap', // Prevent text wrapping
   },
 };

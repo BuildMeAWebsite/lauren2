@@ -1,37 +1,20 @@
 import React from 'react';
+import styles from './AboutSection6.module.css';
 
-const AboutSection6 = () => {
+const HomeSection6 = () => {
   return (
-    <div style={styles.heroSection}>
-      <p style={styles.smallText}>therapy in montreal.</p>
-      <h1 style={styles.heading}>
-        We’re a team of Psychologists dedicated to providing high quality, modern mental health care to the Montreal, Laval, and North Shore communities.
-      </h1>
+    <div className={styles.container}>
+      <div className={styles.heroSection}>
+        <p className={styles.smallText}>compassionate, <em> non-blaming </em> empathy.</p>
+        <h1 className={styles.heading}>
+          I believe the most important part of the therapeutic process is building a safe, trusting, collaborative, and genuine bond. From there, we can deepen the understanding of your lived experience and emotions. Together, we work to re-frame your story with an emphasis on strengths, hope, and solutions to help you towards their full potential.
+        </h1>
+      </div>
+      <div className={styles.sidebar}>
+        <div className={styles.line}></div> {/* Vertical line added */}
+      </div>
     </div>
   );
 };
 
-const styles = {
-  heroSection: {
-    padding: '100px',
-    textAlign: 'left',
-    maxWidth: '600px',
-    margin: '0 auto',
-    fontFamily: 'Georgia, serif', // You can replace this with the actual font family used
-  },
-  smallText: {
-    fontSize: '0.875rem', // Small text
-    letterSpacing: '0.1rem',
-    textTransform: 'lowercase',
-    marginBottom: '20px',
-    color: '#333', // Dark gray color for the text
-  },
-  heading: {
-    fontSize: '2rem', // Adjust the size as needed
-    lineHeight: '1.5',
-    fontWeight: 'normal',
-    color: '#333', // Dark gray color for the text
-  },
-};
-
-export default AboutSection6;
+export default HomeSection6;
