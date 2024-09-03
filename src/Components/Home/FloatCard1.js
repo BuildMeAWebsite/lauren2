@@ -7,7 +7,7 @@ const FloatingCard = () => {
     top: 0,
     left: 0,
     width: '100%',
-    height: '100vh',  // Match the parallax section height
+    height: '100%',  // Match the section height
     zIndex: 1,
   };
 
@@ -45,12 +45,12 @@ const FloatingCard = () => {
     fontSize: '1.75rem',
     fontWeight: 400, // Regular font weight
     letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Lora, sans-serif',
-    textTransform: 'lowercase', // Make the text uppercase
+    fontFamily: 'Georgia, serif',
+    textTransform: 'lowercase', // Make the text lowercase
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/abouthero.jpg`} minHeight='100vh'>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/sunshine.jpg`} minHeight='80vh'>
       <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>

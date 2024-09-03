@@ -81,7 +81,7 @@ const FullPageCarousel = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundImage: `url(${images[index].src})`,
-        transition: "transform 1s ease-in-out",
+        transition: "transform .9s ease-in-out",
         transform: "translateX(-100%)",
         zIndex: 1,
       };
@@ -219,11 +219,15 @@ const FullPageCarousel = () => {
   useEffect(() => {
     let intervalId;
     if (isAutoRotating) {
-      intervalId = setInterval(handleNext, 5000); // Rotate every 5 seconds
+      intervalId = setInterval(() => {
+        if (!isAnimating) {
+          handleNext();
+        }
+      }, 5000); // Rotate every 5 seconds
     }
 
     return () => clearInterval(intervalId);
-  }, [isAutoRotating, activeIndex]);
+  }, [isAutoRotating, isAnimating]);
 
   return (
     <div id="myCarousel" ref={carouselRef} style={{ height: "100vh", position: "relative", overflow: "hidden" }}>

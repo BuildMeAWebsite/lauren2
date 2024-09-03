@@ -19,7 +19,6 @@ const HomeSection13 = () => {
     padding: '1rem', // Add padding around the border for spacing
     backgroundColor: 'white',
     color: '#8fbc8f',
-
     boxSizing: 'border-box',
     display: 'flex',
     justifyContent: 'center',
@@ -48,23 +47,32 @@ const HomeSection13 = () => {
   };
 
   const linkTextStyle = {
-    fontSize: hovered ? '1.4rem' : '1.25rem', // Enlarge text on hover
+    fontSize: '1.25rem', // Base font size
     fontWeight: 400, // Regular font weight
     letterSpacing: '0.1em', // Slightly increase letter spacing for a cleaner look
     fontFamily: 'Lora, sans-serif',
     textTransform: 'lowercase',
-    color: hovered ? '#FFD700' : '#2b3d2b', // Change color on hover
+    color: '#2b3d2b', // Base color
     display: 'inline-flex',
     alignItems: 'center',
     textDecoration: 'none', // Remove underline
     cursor: 'pointer',
-    transition: 'color 0.3s ease, font-size 0.3s ease', // Smooth transition for the color and size
+    transition: 'transform 0.3s ease', // Smooth transition for scaling
+  };
+
+  const linkTextHoverStyle = {
+    transform: 'scale(1.05)', // Slightly enlarge text on hover
+    color: '#FFD700', // Change color on hover
   };
 
   const iconStyle = {
     marginLeft: '0.5rem',
-    fontSize: hovered ? '1.4rem' : '1.25rem', // Enlarge icon on hover
-    transition: 'font-size 0.3s ease', // Smooth transition for the icon size
+    fontSize: '1.25rem', // Base icon size
+    transition: 'transform 0.3s ease', // Smooth transition for scaling
+  };
+
+  const iconHoverStyle = {
+    transform: 'scale(1.05)', // Slightly enlarge icon on hover
   };
 
   return (
@@ -74,11 +82,12 @@ const HomeSection13 = () => {
         <div style={contentStyle}>
           <Link
             href="/about"
-            style={linkTextStyle}
+            style={hovered ? { ...linkTextStyle, ...linkTextHoverStyle } : linkTextStyle}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
-            more information <ArrowForwardIcon style={iconStyle} />
+            more information 
+            <ArrowForwardIcon style={hovered ? { ...iconStyle, ...iconHoverStyle } : iconStyle} />
           </Link>
         </div>
       </div>

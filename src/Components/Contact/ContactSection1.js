@@ -14,9 +14,7 @@ const ContactSection1 = () => {
           </em>
         </h1>
       </div>
-      <div className={styles.sidebar}>
-        <div className={styles.line}></div> {/* Vertical line added */}
-      </div>
+
     </div>
   );
 };

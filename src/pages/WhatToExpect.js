@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import WhatToExpectSection1 from '../Components/Contact/WhatToExpectSection1';
 import WhatToExpectFloating from '../Components/Contact/WhatToExpectFloating';
 import HomeSection11 from '../Components/Home/HomeSection11';
+import Policies from '../Components/Contact/Policies';
 
 
 const WhatToExpect = () => {
@@ -27,6 +28,9 @@ const WhatToExpect = () => {
 
       <Grid item xs={12}>
         <HomeSection11/>
+      </Grid>
+      <Grid item xs={12}>
+        <Policies/>
       </Grid>
    
     </Grid>

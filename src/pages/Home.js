@@ -1,16 +1,12 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import Hero from '../Components/Home/Hero';
-import Home3Boxes from '../Components/Home/Home3Section';
-import HomeSection2 from '../Components/Home/HomeSection2';
 import { Helmet } from 'react-helmet';
-import FloatingCard from '../Components/Home/FloatCard1';
 
 import HomeSection6 from '../Components/Home/HomeSection6';
 import HomeSection7 from '../Components/Home/BookASession';
 import HomeSection8 from '../Components/Home/HomeSection8';
 import HomeSection11 from '../Components/Home/HomeSection11';
-import HomeSection12 from '../Components/Home/HomeSection12';
 import HomeSection13 from '../Components/Home/HomeSection13';
 import HomeSection9 from '../Components/Home/HomeSection9';
 import HomeSection11ColorChange from '../Components/Home/HomeSection11ColorChange';

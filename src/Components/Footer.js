@@ -1,7 +1,30 @@
-import React from 'react';
-import { Typography, Box, Link, Grid } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { Typography, Box, Link, Grid, IconButton } from '@mui/material';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 const Footer = ({ onContactClick }) => {
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <Box
       component="footer"
@@ -12,6 +35,12 @@ const Footer = ({ onContactClick }) => {
         textAlign: 'center',
         position: 'relative',
         zIndex: 10,
+        '@media (max-width: 768px)': {
+          padding: '3rem 5rem', // Smaller padding for smaller screens
+        },
+        '@media (max-width: 576px)': {
+          padding: '2rem 3rem', // Even smaller padding for mobile devices
+        },
       }}
     >
       <Grid
@@ -23,6 +52,7 @@ const Footer = ({ onContactClick }) => {
           flexDirection: { xs: 'column', sm: 'row' }, // Vertical stacking on small screens, row on larger screens
         }}
       >
+        {/* Left Column: Links */}
         <Grid
           item
           xs={12}
@@ -33,6 +63,10 @@ const Footer = ({ onContactClick }) => {
             alignItems: { xs: 'center', sm: 'flex-start' }, // Center on small screens, align left on larger
             gap: '10px',
             paddingBottom: { xs: '20px', sm: '0' }, // Adjust padding for spacing
+            padding: '0 1rem', // Add horizontal padding to avoid crowding
+            '@media (max-width: 768px)': {
+              padding: '0 0.5rem', // Smaller padding for smaller screens
+            },
           }}
         >
           <Link
@@ -70,7 +104,7 @@ const Footer = ({ onContactClick }) => {
             About
           </Link>
           <Link
-            href="/contact-form"
+            href="/contact"
             onClick={onContactClick}
             underline="none"
             sx={{
@@ -89,7 +123,6 @@ const Footer = ({ onContactClick }) => {
           </Link>
           <Link
             href="/sitemap"
-            onClick={onContactClick}
             underline="none"
             sx={{
               fontFamily: 'Lora, sans-serif',
@@ -107,6 +140,7 @@ const Footer = ({ onContactClick }) => {
           </Link>
         </Grid>
 
+        {/* Center Column: Logo */}
         <Grid
           item
           xs={12}
@@ -114,21 +148,26 @@ const Footer = ({ onContactClick }) => {
           sx={{
             display: 'flex',
             justifyContent: { xs: 'center', sm: 'center' },
-            gap: '10px',
+            alignItems: 'center',
+            padding: '0 1rem', // Add horizontal padding to avoid crowding
             marginTop: { xs: '20px', sm: '0' },
+            '@media (max-width: 768px)': {
+              padding: '0 0.5rem', // Smaller padding for smaller screens
+            },
           }}
         >
           <img
             src={`${process.env.PUBLIC_URL}/Images/prideflag.png`}
             alt="Pride Flag"
             style={{
-              maxWidth: '100px',
-              maxHeight: '60px',
-              borderRadius: '5px',
+              maxWidth: '90px',
+              maxHeight: '50px',
+              borderRadius: '1px',
             }}
           />
         </Grid>
 
+        {/* Right Column: Location */}
         <Grid
           item
           xs={12}
@@ -141,6 +180,10 @@ const Footer = ({ onContactClick }) => {
             textAlign: { xs: 'center', sm: 'right' },
             gap: '10px',
             paddingTop: { xs: '20px', sm: '0' },
+            padding: '0 1rem', // Add horizontal padding to avoid crowding
+            '@media (max-width: 768px)': {
+              padding: '0 0.5rem', // Smaller padding for smaller screens
+            },
           }}
         >
           <Box sx={{ textAlign: { xs: 'center', sm: 'right' } }}>
@@ -148,7 +191,7 @@ const Footer = ({ onContactClick }) => {
               variant="body2"
               sx={{
                 fontFamily: 'Lora, sans-serif',
-                fontSize: '1.25rem',
+                fontSize: '1rem',
                 color: '#fcfaf4',
                 transition: 'color 0.3s ease, transform 0.3s ease',
                 '&:hover': {
@@ -162,6 +205,56 @@ const Footer = ({ onContactClick }) => {
           </Box>
         </Grid>
       </Grid>
+
+      {/* Back to Top Button */}
+      {showButton && (
+        <Box
+          sx={{
+            position: 'fixed',
+            bottom: '2rem',
+            right: '2rem',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            backgroundColor: '#2b3d2b',
+            padding: '0.5rem',
+            borderRadius: '8px',
+            '&:hover': {
+              backgroundColor: '#FFD700',
+              color: '#2b3d2b',
+            },
+            transition: 'background-color 0.3s ease, transform 0.3s ease',
+          }}
+          onClick={handleScrollToTop}
+        >
+          <IconButton
+            sx={{
+              color: '#fcfaf4',
+              '&:hover': {
+                color: '#2b3d2b',
+                background: 'none'
+              },
+            }}
+          >
+            <ArrowUpwardIcon />
+          </IconButton>
+          <Typography
+            sx={{
+              fontSize: '0.75rem',
+              color: '#2b3d2b',
+
+              fontFamily: 'Lora, sans-serif',
+              color: '#fcfaf4',
+              marginTop: '-4px',
+              '&:hover': {
+                color: '#2b3d2b',
+              },
+            }}
+          >
+            Top
+          </Typography>
+        </Box>
+      )}
     </Box>
   );
 };

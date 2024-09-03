@@ -1,77 +1,100 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Grid, Typography, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const Policies = () => {
-  const [hoveredTitle, setHoveredTitle] = useState(false);
-  const [hoveredLinkIndex, setHoveredLinkIndex] = useState(null);
-
-  const handleTitleMouseEnter = () => setHoveredTitle(true);
-  const handleTitleMouseLeave = () => setHoveredTitle(false);
-
-  const handleLinkMouseEnter = (index) => setHoveredLinkIndex(index);
-  const handleLinkMouseLeave = () => setHoveredLinkIndex(null);
-
+const WhatToExpectSection1 = () => {
   return (
     <Box sx={styles.container}>
       <Grid container spacing={4} justifyContent="center">
         <Grid item xs={12} sm={4} sx={styles.leftColumn}>
-          <Typography
-            variant="h1"
-            sx={{
-              ...styles.title,
-              color: hoveredTitle ? '#FFD700' : '#2B3D2B',
-              transform: hoveredTitle ? 'scale(1.05)' : 'scale(1)',
-              transition: 'color 0.3s ease, transform 0.3s ease',
-            }}
-            onMouseEnter={handleTitleMouseEnter}
-            onMouseLeave={handleTitleMouseLeave}
-          >
-            <span style={styles.titlePrimary}>payment &</span>
-            <span style={styles.titleSecondary}>insurance</span>
+          <Typography variant="h1" sx={styles.title}>
+            <span style={styles.titlePrimary}>what</span>
+            <span style={styles.titleSecondary}>to expect</span>
           </Typography>
           <hr style={styles.line} />
         </Grid>
         <Grid item xs={12} sm={8} sx={styles.rightColumn}>
-          {serviceItems.map((item, index) => (
-            <Box sx={styles.serviceItem} key={index}>
-              <Typography variant="h2" sx={styles.serviceNumber}>{item.number}</Typography>
-              <Box sx={styles.serviceDetails}>
-                <Typography variant="h3" sx={styles.serviceTitle}>{item.title}</Typography>
-                <Typography sx={styles.serviceDescription}>{item.description}</Typography>
-                
-              </Box>
+          <Box sx={styles.serviceItem}>
+            <Typography variant="h2" sx={styles.serviceNumber}>01.</Typography>
+            <Box sx={styles.serviceDetails}>
+              <Typography variant="h3" sx={styles.serviceTitle}>Initial Call</Typography>
+              <Typography sx={styles.serviceDescription}>
+                During the initial 15-minute introductory call, we will discuss your reasons for starting therapy and what kind of support you are looking for. It is an opportunity for us to ask each other questions and see if we are a good therapeutic fit.
+              </Typography>
+              <Link to="/contact-form" style={styles.serviceLink}>Schedule your first call</Link>
             </Box>
-          ))}
+          </Box>
+
+          <Box sx={styles.serviceItem}>
+            <Typography variant="h2" sx={styles.serviceNumber}>02.</Typography>
+            <Box sx={styles.serviceDetails}>
+              <Typography variant="h3" sx={styles.serviceTitle}>First Session</Typography>
+              <Typography sx={styles.serviceDescription}>
+                The first session is an intake process where I will be collecting information about your background, current life situation, and goals. It is also an opportunity for you to ask questions about me and my approach. Consent, limits of confidentiality, fees, and cancellation policy will also be discussed.
+              </Typography>
+            </Box>
+          </Box>
+
+          <Box sx={styles.serviceItem}>
+            <Typography variant="h2" sx={styles.serviceNumber}>03.</Typography>
+            <Box sx={styles.serviceDetails}>
+              <Typography variant="h3" sx={styles.serviceTitle}>Ongoing Sessions</Typography>
+              <Typography sx={styles.serviceDescription}>
+                Your therapy session is your time and space for yourself. You are free to choose a topic of discussion and give yourself time to process what is important for you. As a therapist, I will provide you with support and listen to you without judgment.
+              </Typography>
+              <Link to="/approaches" style={styles.serviceLink}>Learn more about the methods I use</Link>
+            </Box>
+          </Box>
+
+          <Box sx={styles.serviceItem}>
+            <Typography variant="h2" sx={styles.serviceNumber}>04.</Typography>
+            <Box sx={styles.serviceDetails}>
+              <Typography variant="h3" sx={styles.serviceTitle}>Building a Relationship</Typography>
+              <Typography sx={styles.serviceDescription}>
+                The main predictor of success in therapy is the strength of a therapeutic relationship. As our sessions progress, I invite you to reflect on how you feel in my presence and whether a safe and trusting relationship is being developed.
+              </Typography>
+            </Box>
+          </Box>
+
+          <Box sx={styles.serviceItem}>
+            <Typography variant="h2" sx={styles.serviceNumber}>05.</Typography>
+            <Box sx={styles.serviceDetails}>
+              <Typography variant="h3" sx={styles.serviceTitle}>Frequency of Sessions</Typography>
+              <Typography sx={styles.serviceDescription}>
+                Sessions typically occur on a weekly basis, although depending on your situation, the frequency can be adjusted. Therapy is an active and collaborative process where we will work together on identifying goals and areas of life you’d like to improve.
+              </Typography>
+              <Link to="/frequently-asked-questions" style={styles.serviceLink}>More Frequently Asked Questions</Link>
+            </Box>
+          </Box>
+
+          <Box sx={styles.serviceItem}>
+            <Typography variant="h2" sx={styles.serviceNumber}>06.</Typography>
+            <Box sx={styles.serviceDetails}>
+              <Typography variant="h3" sx={styles.serviceTitle}>Homework and Progress</Typography>
+              <Typography sx={styles.serviceDescription}>
+                Occasionally, I will invite you to practice strategies in your life and complete assigned material when needed. Progress is not linear, and there might be times when you will feel less hopeful. Know that this is a part of the process, and we will work through it together.
+              </Typography>
+            </Box>
+          </Box>
+
+          <Box sx={styles.serviceItem}>
+            <Typography variant="h2" sx={styles.serviceNumber}>07.</Typography>
+            <Box sx={styles.serviceDetails}>
+              <Typography variant="h3" sx={styles.serviceTitle}>Transitioning Out of Therapy</Typography>
+              <Typography sx={styles.serviceDescription}>
+                As you gain more stability and confidence in your abilities, we can start having sessions less frequently. Some people decide to continue therapy for ongoing support, and as always, we will discuss what works best for you.
+              </Typography>
+            </Box>
+          </Box>
         </Grid>
       </Grid>
     </Box>
   );
 };
 
-const serviceItems = [
-  {
-    number: '01.',
-    title: 'Payment Method',
-    description: 'E-transfer is the preferred payment method to be paid at the time the session is held. A credit card will also be saved to your file at the start of therapy, as an alternative method and for any outstanding fees. Receipts are sent promptly by email.',
-  },
-  {
-    number: '02.',
-    title: 'Insurance Information',
-    description: 'I do not bill insurance companies. My therapist’s license number is on the receipt for insurance purposes. Insurance plans differ in what they cover, so please contact your specific provider to verify your coverage for Registered Psychotherapist, for coverage details, and claim procedures.',
-  },
-  {
-    number: '03.',
-    title: 'Cancellation Policy',
-    description: 'I have a 24-hour cancellation policy. Appointments can be cancelled or rescheduled via email or through the booking software. Providing less than 24 hours notice will result in being charged the full session fee. This fee may be waived in emergency situations.',
-    link: '/booking-software',
-    linkText: 'Manage your appointments',
-  },
-];
-
 const styles = {
   container: {
-    padding: '60px 80px',
+    padding: '60px 80px', 
     fontFamily: "'Lora', sans-serif",
     maxWidth: '1300px',
     margin: '0 auto',
@@ -142,7 +165,7 @@ const styles = {
     },
   },
   serviceItem: {
-    marginBottom: '50px',
+    marginBottom: '50px', 
     '@media (max-width: 800px)': {
       marginBottom: '40px',
     },
@@ -173,7 +196,7 @@ const styles = {
     '@media (max-width: 1100px)': {
       marginLeft: '0',
       width: '70%', // Make the service details take up 70% of the space
-      margin: '0 auto',
+      margin: '0 auto', 
     },
     '@media (max-width: 800px)': {
       textAlign: 'center',
@@ -219,15 +242,10 @@ const styles = {
     textDecoration: 'none',
     fontWeight: 'bold',
     fontSize: '1rem',
-    transition: 'color 0.3s ease, transform 0.3s ease',
     '@media (max-width: 600px)': {
       fontSize: '0.9rem',
-    },
-    '&:hover': {
-      color: '#FFD700',
-      transform: 'scale(1.05)',
     },
   },
 };
 
-export default Policies;
+export default WhatToExpectSection1;

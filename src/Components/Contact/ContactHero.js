@@ -43,9 +43,9 @@ const ContactFloatingHero = () => {
 
   const headerTextStyle = {
     fontSize: '1.75rem',
-    fontWeight: 400, // Regular font weight
+    fontWeight: 'normal', // Regular font weight
     letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Lora, sans-serif',
+    fontFamily: 'Georgia, serif',
     textTransform: 'lowercase', // Make the text uppercase
   };
 

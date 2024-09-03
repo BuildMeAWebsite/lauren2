@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 import { Grid, Typography, Box } from '@mui/material';
-import { Link } from 'react-router-dom';
 
 const Policies = () => {
   const [hoveredTitle, setHoveredTitle] = useState(false);
-  const [hoveredLinkIndex, setHoveredLinkIndex] = useState(null);
 
   const handleTitleMouseEnter = () => setHoveredTitle(true);
   const handleTitleMouseLeave = () => setHoveredTitle(false);
-
-  const handleLinkMouseEnter = (index) => setHoveredLinkIndex(index);
-  const handleLinkMouseLeave = () => setHoveredLinkIndex(null);
 
   return (
     <Box sx={styles.container}>
@@ -39,23 +34,6 @@ const Policies = () => {
               <Box sx={styles.serviceDetails}>
                 <Typography variant="h3" sx={styles.serviceTitle}>{item.title}</Typography>
                 <Typography sx={styles.serviceDescription}>{item.description}</Typography>
-                {item.link && (
-                  <Link
-                    to={item.link}
-                    style={{
-                      ...styles.serviceLink,
-                      color: hoveredLinkIndex === index ? '#FFD700' : '#8FBC8F',
-                      transform: hoveredLinkIndex === index ? 'scale(1.05)' : 'scale(1)',
-                      transition: 'color 0.3s ease, transform 0.3s ease',
-                      borderBottom: '2px solid transparent',
-                      borderColor: hoveredLinkIndex === index ? '#FFD700' : '#8FBC8F',
-                    }}
-                    onMouseEnter={() => handleLinkMouseEnter(index)}
-                    onMouseLeave={handleLinkMouseLeave}
-                  >
-                    {item.linkText}
-                  </Link>
-                )}
               </Box>
             </Box>
           ))}
@@ -80,8 +58,6 @@ const serviceItems = [
     number: '03.',
     title: 'Cancellation Policy',
     description: 'I have a 24-hour cancellation policy. Appointments can be cancelled or rescheduled via email or through the booking software. Providing less than 24 hours notice will result in being charged the full session fee. This fee may be waived in emergency situations.',
-    link: '/booking-software',
-    linkText: 'Manage your appointments',
   },
 ];
 
@@ -226,18 +202,6 @@ const styles = {
     },
     '@media (max-width: 600px)': {
       fontSize: '0.95rem',
-    },
-  },
-  serviceLink: {
-    display: 'inline-block',
-    marginTop: '10px',
-    color: '#8FBC8F',
-    textDecoration: 'none',
-    fontWeight: 'bold',
-    fontSize: '1rem',
-    borderBottom: '2px solid transparent',
-    '@media (max-width: 600px)': {
-      fontSize: '0.9rem',
     },
   },
 };

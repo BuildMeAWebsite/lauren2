@@ -7,7 +7,7 @@ const FAQHero = () => {
     top: 0,
     left: 0,
     width: '100%',
-    height: '100vh',  // Match the parallax section height
+    height: '100%',  // Match the section height
     zIndex: 1,
   };
 
@@ -24,7 +24,9 @@ const FAQHero = () => {
   const contentStyle = {
     zIndex: 2,
     backgroundColor: 'transparent', // No background color inside the card
-    padding: '5rem', // Adjusted padding for more space
+    padding: '2rem', // Default padding
+    paddingTop: '5rem',
+    paddingBottom: '5rem',
     border: '1.5px solid #2b2d2b', // Darker border to match the design
     textAlign: 'center', // Center align the text
     width: '100%',
@@ -39,14 +41,15 @@ const FAQHero = () => {
     justifyContent: 'center', // Center the text within the card
     alignItems: 'center', // Vertically center the text
     height: 'auto', // Allow height to adjust based on content
+    boxSizing: 'border-box', // Include padding and border in the element's width and height
   };
 
   const headerTextStyle = {
     fontSize: '1.75rem',
     fontWeight: 400, // Regular font weight
     letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Lora, sans-serif',
-    textTransform: 'lowercase', // Make the text uppercase
+    fontFamily: 'Georgia, serif',
+    textTransform: 'lowercase', // Make the text lowercase
   };
 
   return (

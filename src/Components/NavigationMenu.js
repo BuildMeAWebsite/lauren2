@@ -9,8 +9,19 @@ const NavigationMenuBar = () => {
       {/* Top Dark Bar */}
       <div style={styles.topBar}>
         <div style={styles.topBarContainer}>
-          <span style={styles.topBarItem}>Ontario</span>
-          <span style={styles.topBarItem}>info@laurenmartyntherapy.ca</span>
+          <span style={styles.topBarItem}>Now accepting virtual therapy clients in Ontario</span>
+          <span style={styles.topBarItem}>
+            <Link
+              to="#"
+              onClick={(e) => {
+                window.location.href = 'mailto:info@laurenmartyntherapy.ca';
+                e.preventDefault(); // Prevent the default link behavior
+              }}
+              style={styles.emailLink}
+            >
+              info@laurenmartyntherapy.ca
+            </Link>
+          </span>
         </div>
       </div>
 
@@ -70,7 +81,7 @@ const styles = {
   header: {
     width: '100%',
     zIndex: 1000, // Ensure the header is on top
-    '@media (max-width: 1000px)': {
+    '@media (maxWidth: 100%)': {
       position: 'fixed', // Fix the header at the top of the screen on smaller screens
       top: 0,
       left: 0,
@@ -81,23 +92,30 @@ const styles = {
   topBar: {
     backgroundColor: '#8fbc8f', // Dark color for the top bar
     color: '#FCFAF4', // Light text color
-    padding: '10px 10px',
-    fontFamily: 'Merriweather, sans-serif', // Font family for the top bar
+    padding: '10px 0', // Adjust padding to prevent overflow
+    fontFamily: 'Georgia, serif', // Font family for the top bar
     fontSize: '.75rem',
     width: '100%',
+    boxSizing: 'border-box', // Include padding in the width calculation
     '@media (max-width: 1000px)': {
       display: 'none', // Hide top bar on screens smaller than 1000px
     },
   },
   topBarContainer: {
-    maxWidth: '1200px',
+    maxWidth: '100%',
     margin: '0 auto',
     display: 'flex',
     justifyContent: 'flex-end',
-    padding: '0 2rem',
+    padding: '0.25rem 1.5rem',
+    boxSizing: 'border-box', // Ensure padding is accounted for
   },
   topBarItem: {
     marginLeft: '20px',
+  },
+  emailLink: {
+    color: '#FCFAF4', // Match the top bar text color
+    textDecoration: 'none', // Remove underline
+    cursor: 'pointer',
   },
   appBar: {
     backgroundColor: '#ffffff', // White background for the main navbar
@@ -109,7 +127,7 @@ const styles = {
     alignItems: 'center',
   },
   toolbar: {
-    maxWidth: '1200px',
+    maxWidth: '100%',
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
@@ -127,7 +145,7 @@ const styles = {
   },
   logo: {
     height: '175px', // Adjust logo size as needed
-    '@media (max-width: 1000px)': {
+    '@media (maxWidth: 1000px)': {
       height: '100px', // Smaller logo on small screens
     },
   },
@@ -138,7 +156,7 @@ const styles = {
     marginBottom: '0.5rem', // Space between
   },
   navLink: {
-    fontFamily: 'Merriweather, sans-serif', // Font family for the nav items
+    fontFamily: 'Lora, sans-serif', // Font family for the nav items
     fontSize: '1rem',
     color: '#3a3a3a',
     textDecoration: 'none',

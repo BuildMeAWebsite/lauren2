@@ -71,7 +71,7 @@ const styles = {
     container: {
       padding: '10rem 5rem', 
       fontFamily: "'Lora', sans-serif",
-      maxWidth: '1000px',
+      maxWidth: '700px',
       margin: '0 auto',
       textAlign: 'center', // Center text and elements
       '@media (max-width: 1100px)': {

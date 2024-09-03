@@ -16,10 +16,9 @@ const HomeSection7 = () => {
       <div style={styles.rightColumn}>
         <h2 style={styles.header}>Book a session:</h2>
         <p style={styles.paragraph}>
-          To get started, click the button below to schedule a free, 15-minute introductory call with us. We’ll talk about your availability and preferences and match you with a therapist that will best meet your needs.
-        </p>
+        To get started, click the button below to schedule a free, 15-minute introductory call with me. We’ll discuss your availability and preferences, and I’ll work to find the best approach to meet your needs.        </p>
         <a
-          href="#schedule-call"
+          href="contact"
           style={{
             ...styles.button,
             ...(buttonHover ? styles.buttonHover : {}),
@@ -27,11 +26,9 @@ const HomeSection7 = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          schedule an introductory call
+          schedule your introductory call
         </a>
-        <p style={styles.faq}>
-          Questions? <a href="#faq" style={styles.link}>Read our FAQs</a>
-        </p>
+    
       </div>
     </div>
   );
