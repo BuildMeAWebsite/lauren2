@@ -97,9 +97,7 @@ const styles = {
     fontSize: '.75rem',
     width: '100%',
     boxSizing: 'border-box', // Include padding in the width calculation
-    '@media (max-width: 1000px)': {
-      display: 'none', // Hide top bar on screens smaller than 1000px
-    },
+  
   },
   topBarContainer: {
     maxWidth: '100%',
