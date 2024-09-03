@@ -149,6 +149,7 @@ const styles = {
   },
   title: {
     fontSize: '3rem',
+    paddingTop: '1rem',
     lineHeight: '1.1',
     fontFamily: "'Lora', sans-serif",
     marginBottom: '20px',
