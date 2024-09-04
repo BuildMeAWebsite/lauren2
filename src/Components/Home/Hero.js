@@ -18,7 +18,7 @@ const Hero = () => {
 
   const styles = {
     heroContainer: {
-      minHeight: '50vh',
+      minHeight: '50vh', // Default minHeight for larger screens
       color: '#fcfaf4',
       fontFamily: "'Lora', sans-serif",
       marginTop: '-10rem',
@@ -26,6 +26,10 @@ const Hero = () => {
       boxSizing: 'border-box',
       overflow: 'hidden',
       maxWidth: '800px',
+      '@media (max-width: 768px)': {
+        minHeight: '40vh', // Reduce minHeight for mobile screens
+        marginTop: '-5rem', // Adjust margin for better centering on smaller screens
+      },
     },
     slideIn: {
       transform: 'translateY(100px)',
@@ -39,6 +43,9 @@ const Hero = () => {
       textTransform: 'uppercase',
       letterSpacing: '1px',
       textShadow: '0 2px 5px rgba(0, 0, 0, 0.95)',
+      '@media (max-width: 768px)': {
+        fontSize: '0.65rem', // Slightly smaller font size on mobile
+      },
     },
     title: {
       fontFamily: "'Lora', sans-serif",
@@ -48,6 +55,9 @@ const Hero = () => {
       margin: 0,
       lineHeight: 1,
       textShadow: '0 2px 5px rgba(0, 0, 0, 0.75)',
+      '@media (max-width: 768px)': {
+        fontSize: '2.5rem', // Reduce title size on mobile
+      },
     },
     image: {
       maxWidth: '100%',
@@ -57,7 +67,7 @@ const Hero = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/forest.jpg`} minheight='100vh'>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/forest.jpg`} minHeight='100vh'>
       <Grid
         container
         alignItems="center"
