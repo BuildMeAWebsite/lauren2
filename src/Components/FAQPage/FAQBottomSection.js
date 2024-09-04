@@ -25,6 +25,10 @@ const FAQBottomSection = () => {
     alignItems: 'center',
     height: '100%', // Ensure the outer content fills the height of the section
     width: '100%',
+    margin: '0 2rem', // Add space around the card for smaller screens
+    '@media (max-width: 576px)': {
+      margin: '0 1rem', // Reduce margin for very small screens
+    },
   };
 
   const contentStyle = {
@@ -45,7 +49,6 @@ const FAQBottomSection = () => {
     justifyContent: 'center', // Center the text within the card
     alignItems: 'center', // Vertically center the text
     height: 'auto', // Allow height to adjust based on content
-    margin: '0 1rem', // Add horizontal margin for spacing on small screens
     boxSizing: 'border-box',
   };
 
