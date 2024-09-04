@@ -52,7 +52,7 @@ const FAQComponent = ({ questionFontSize = '1.5rem', answerFontSize = '1rem' }) 
       },
       {
         title: 'How do I schedule an appointment?',
-        answer: 'You can contact me here by email to schedule your initial or returning appointment. (email link)',
+        answer: `You can contact me <a href="mailto:info@laurenmartyntherapy.ca" style="text-decoration: underline; color: inherit;">here</a> by email to schedule your initial or returning appointment.`,
       },
       {
         title: 'Can I schedule an appointment if I live or am travelling outside of Ontario?',
@@ -103,16 +103,13 @@ const FAQComponent = ({ questionFontSize = '1.5rem', answerFontSize = '1rem' }) 
           {faqGroup.map((faq, index) => (
             <div key={index} style={{ width: '100%' }}>
               <Typography
-              
                 align="left"
                 style={{
                   fontFamily: 'Lora, sans-serif',
-
                   marginBottom: '10px',
-                  fontSize: '1rem',
+                  fontSize: questionFontSize, // Question font size
                   color: boxIndex === 2 ? '#556B2F' : '#fcfaf4', // Adjusted text color based on background
                   cursor: 'pointer',
-                  fontSize: questionFontSize, // Question font size
                   transition: 'color 0.5s ease-in-out, transform 0.5s ease-in-out',
                 }}
                 onClick={() => handleExpandClick(`${boxIndex}-${index}`)}
@@ -137,11 +134,9 @@ const FAQComponent = ({ questionFontSize = '1.5rem', answerFontSize = '1rem' }) 
                     marginBottom: '20px',
                     fontSize: answerFontSize, // Answer font size
                     textShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-
                   }}
-                >
-                  {faq.answer}
-                </Typography>
+                  dangerouslySetInnerHTML={{ __html: faq.answer }} // Renders the HTML correctly
+                />
               </Collapse>
             </div>
           ))}

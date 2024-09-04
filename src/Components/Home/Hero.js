@@ -21,14 +21,14 @@ const Hero = () => {
       minHeight: '50vh', // Default minHeight for larger screens
       color: '#fcfaf4',
       fontFamily: "'Lora', sans-serif",
-      marginTop: '-10rem',
+      marginTop: '-1rem',
       padding: '0.25rem 1rem',
       boxSizing: 'border-box',
       overflow: 'hidden',
-      maxWidth: '800px',
+      maxWidth: '900px',
       '@media (max-width: 768px)': {
-        minHeight: '40vh', // Reduce minHeight for mobile screens
-        marginTop: '-5rem', // Adjust margin for better centering on smaller screens
+        minHeight: '30vh', // Reduce minHeight for mobile screens
+        marginTop: '-1rem', // Adjust margin for better centering on smaller screens
       },
     },
     slideIn: {
@@ -63,7 +63,16 @@ const Hero = () => {
       maxWidth: '100%',
       height: 'auto',
       objectFit: 'contain',
+      display: 'block',
+      margin: '0 auto', // Center the image horizontally
     },
+    textWrapper: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100%',
+    }
   };
 
   return (
@@ -78,16 +87,18 @@ const Hero = () => {
       >
         <Grid item xs={12} md={6} style={styles.slideIn} ref={(el) => (textRefs.current[0] = el)}>
           <img
-            src={`${process.env.PUBLIC_URL}/Images/h.jpg`}
+            src={`${process.env.PUBLIC_URL}/Images/lauren.png`}
             alt="Lauren Martyn Headshot"
             style={styles.image}
           />
         </Grid>
         <Grid item xs={12} md={6} style={styles.slideIn} ref={(el) => (textRefs.current[1] = el)}>
-          <h2 style={styles.subtitle}>ONTARIO PSYCHOTHERAPY</h2>
-          <h1 style={styles.title}>
-            Therapy for children, teens, <em> and </em> young adults 
-          </h1>
+          <div style={styles.textWrapper}>
+            <h2 style={styles.subtitle}>ONTARIO PSYCHOTHERAPY</h2>
+            <h1 style={styles.title}>
+              Therapy for children, teens, <em> and </em> young adults 
+            </h1>
+          </div>
         </Grid>
       </Grid>
     </ParallaxSection>
