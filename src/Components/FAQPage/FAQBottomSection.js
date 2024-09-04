@@ -24,6 +24,7 @@ const FAQBottomSection = () => {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%', // Ensure the outer content fills the height of the section
+    width: '100%',
   };
 
   const contentStyle = {
@@ -44,6 +45,8 @@ const FAQBottomSection = () => {
     justifyContent: 'center', // Center the text within the card
     alignItems: 'center', // Vertically center the text
     height: 'auto', // Allow height to adjust based on content
+    margin: '0 1rem', // Add horizontal margin for spacing on small screens
+    boxSizing: 'border-box',
   };
 
   const linkTextStyle = {
