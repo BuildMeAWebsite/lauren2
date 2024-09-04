@@ -87,7 +87,7 @@ const Hero = () => {
       >
         <Grid item xs={12} md={6} style={styles.slideIn} ref={(el) => (textRefs.current[0] = el)}>
           <img
-            src={`${process.env.PUBLIC_URL}/Images/lauren.png`}
+            src={`${process.env.PUBLIC_URL}/Images/h.png`}
             alt="Lauren Martyn Headshot"
             style={styles.image}
           />
