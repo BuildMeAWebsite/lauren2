@@ -24,6 +24,10 @@ const AboutSection14 = () => {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%', // Ensure the outer content fills the height of the section
+    margin: '0 2rem', // Add margin for spacing on the left and right sides
+    '@media (max-width: 576px)': {
+      margin: '0 1rem', // Reduce margin for very small screens
+    },
   };
 
   const contentStyle = {
@@ -34,7 +38,6 @@ const AboutSection14 = () => {
     textAlign: 'center', // Center align the text
     width: '100%',
     maxWidth: '25rem', // Set max width for larger screens
-    aspectRatio: 'auto', // The card will adapt its height based on the content
     position: 'relative',
     fontFamily: 'Georgia, serif',
     fontWeight: 'normal',
@@ -44,6 +47,7 @@ const AboutSection14 = () => {
     justifyContent: 'center', // Center the text within the card
     alignItems: 'center', // Vertically center the text
     height: 'auto', // Allow height to adjust based on content
+    boxSizing: 'border-box',
   };
 
   const linkTextStyle = {
