@@ -17,7 +17,7 @@ const FAQBottomSection = () => {
 
   const outerContentStyle = {
     padding: '1.25rem', // Add padding around the border for spacing
-    backgroundColor: 'white',
+    backgroundColor: '#ffffff',
     color: '#8fbc8f',
     boxSizing: 'border-box',
     display: 'flex',
@@ -25,20 +25,22 @@ const FAQBottomSection = () => {
     alignItems: 'center',
     height: '100%', // Ensure the outer content fills the height of the section
     width: '100%',
-    margin: '0 2rem', // Add space around the card for smaller screens
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    maxWidth: 'calc(100% - 1rem)', // Ensure spacing on both sides
     '@media (max-width: 576px)': {
-      margin: '0 1rem', // Reduce margin for very small screens
+      maxWidth: 'calc(100% - 2rem)', // Reduce margin for very small screens
     },
   };
 
   const contentStyle = {
     zIndex: 2,
     backgroundColor: 'transparent', // No background color inside the card
-    padding: '4rem 2rem', // Adjusted padding for more space
+    padding: '5rem 5rem', // Adjusted padding for more space
     border: '1.5px solid #2b3d2b', // Darker border to match the design
     textAlign: 'center', // Center align the text
     width: '100%',
-    maxWidth: '25rem', // Set max width for larger screens
+    maxWidth: '30rem', // Set max width for larger screens
     aspectRatio: 'auto', // The card will adapt its height based on the content
     position: 'relative',
     fontFamily: 'Georgia, serif',
@@ -56,7 +58,7 @@ const FAQBottomSection = () => {
     fontSize: '1.25rem',
     fontWeight: 400, // Regular font weight
     letterSpacing: '0.1em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Lora, sans-serif',
+    fontFamily: 'Georgia, serif',
     textTransform: 'lowercase',
     color: hovered ? '#FFD700' : '#2b3d2b', // Change color on hover
     display: 'inline-flex',
