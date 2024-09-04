@@ -44,8 +44,8 @@ const ApproachHero = () => {
   const headerTextStyle = {
     fontSize: '1.75rem',
     fontWeight: 400, // Regular font weight
-    letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Lora, sans-serif',
+    letterSpacing: '0.1em', // Slightly increase letter spacing for a cleaner look
+    fontFamily: 'Georgia, serif',
     textTransform: 'lowercase', // Make the text uppercase
   };
 

@@ -54,7 +54,7 @@ const AboutSection14 = () => {
     fontSize: '1.25rem',
     fontWeight: 400, // Regular font weight
     letterSpacing: '0.1em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Lora, sans-serif',
+    fontFamily: 'Georgia, serif',
     textTransform: 'lowercase',
     color: hovered ? '#FFD700' : '#2b3d2b', // Change color on hover
     display: 'inline-flex',
