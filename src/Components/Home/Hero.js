@@ -76,7 +76,7 @@ const Hero = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/forest.jpg`} minHeight='100vh'>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/forest.jpg`} minHeight='70vh'>
       <Grid
         container
         alignItems="center"
