@@ -85,13 +85,7 @@ const Hero = () => {
         style={styles.heroContainer}
         spacing={0}
       >
-        <Grid item xs={12} md={6} style={styles.slideIn} ref={(el) => (textRefs.current[0] = el)}>
-          <img
-            src={`${process.env.PUBLIC_URL}/Images/h.png`}
-            alt="Lauren Martyn Headshot"
-            style={styles.image}
-          />
-        </Grid>
+       
         <Grid item xs={12} md={6} style={styles.slideIn} ref={(el) => (textRefs.current[1] = el)}>
           <div style={styles.textWrapper}>
             <h2 style={styles.subtitle}>ONTARIO PSYCHOTHERAPY</h2>
