@@ -80,8 +80,12 @@ const About = () => {
       <Grid item xs={12} id="top">
         <FloatingCard />
       </Grid>
+  
       <Grid item xs={12} id="top">
         <AboutSection6 />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <HomeSection11ColorChange  />
       </Grid>
       <Grid item xs={12} id="top">
         <AboutSection7 />
@@ -89,44 +93,9 @@ const About = () => {
       <Grid item xs={12} id="top">
         <HomeSection11 />
       </Grid>
-      <Grid item xs={12} id="top">
-        <AboutSection9a />
-      </Grid>
-    
-      <Grid item xs={12} id="top">
-        <AboutSection9 />
-      </Grid>
-   
-      <Grid item xs={12} id="top">
-        <AboutSection9b />
-      </Grid>
-     
-      <Grid item xs={12} id="top">
-        <AboutSection10 />
-      </Grid>
-      <Grid item xs={12} id="top">
-        <AboutSection10b />
-      </Grid>  
-
-   
-       <Grid item xs={12} id="top">
-        <AboutSection11 />
-      </Grid> 
       
-        <Grid item xs={12} id="top">
-        <AboutSection11b />
-      </Grid>  
    
-       <Grid item xs={12} id="top">
-        <AboutSection12 />
-      </Grid>
-      <Grid item xs={12} id="top">
-        <AboutSection12b />
-      </Grid>
-   
-      <Grid item xs={12} id="top">
-        <HomeSection11ColorChange  />
-      </Grid>
+ 
       <Grid item xs={12} id="top">
         <AboutSection14  />
       </Grid>

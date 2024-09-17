@@ -1,5 +1,7 @@
 import React from 'react';
 import ParallaxSection from '../Home/ParallaxSection';
+import FAQPage from '../../pages/FAQPage';
+import FAQSection from './FAQSection';
 
 const FAQHero = () => {
   const overlayStyle = {
@@ -12,8 +14,7 @@ const FAQHero = () => {
   };
 
   const outerContentStyle = {
-    padding: '1rem', // Add padding around the border for spacing
-    backgroundColor: 'white',
+    padding: '2rem 0', // Add padding around the border for spacing
     boxSizing: 'border-box',
     display: 'flex',
     justifyContent: 'center',
@@ -23,7 +24,7 @@ const FAQHero = () => {
 
   const contentStyle = {
     zIndex: 2,
-    backgroundColor: 'transparent', // No background color inside the card
+    backgroundColor: '#fcfaf4',
     padding: '2rem', // Default padding
     paddingTop: '5rem',
     paddingBottom: '5rem',
@@ -53,13 +54,9 @@ const FAQHero = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/faq.jpg`} minHeight='80vh'>
-      <div style={overlayStyle}></div> {/* Overlay */}
-      <div style={outerContentStyle}>
-        <div style={contentStyle}>
-          <p style={headerTextStyle}>frequently asked</p>
-        </div>
-      </div>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/faq1.jpg`} minHeight='80vh'>
+     
+      <FAQSection/>
     </ParallaxSection>
   );
 };

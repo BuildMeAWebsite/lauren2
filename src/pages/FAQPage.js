@@ -74,9 +74,7 @@ const FAQPage = () => {
         <FAQHero />
       </Grid>
 
-      <Grid item xs={12} id="faq">
-        <FAQComponent questionFontSize="1.5rem" answerFontSize="1rem" />
-      </Grid>
+     
 
       <Grid item xs={12} id="faq">
 <HomeSection11ColorChange/>

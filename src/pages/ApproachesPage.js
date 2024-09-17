@@ -19,6 +19,7 @@ import AboutSection9a from '../Components/About/AboutSection9a';
 import HomeSection11 from '../Components/Home/HomeSection11';
 import AboutSection7 from '../Components/About/AboutSection7';
 import AboutSection14 from '../Components/About/AboutSection14';
+import HomeSection11ColorChange from '../Components/Home/HomeSection11ColorChange';
 
 const ApproachesPageComponent = () => {
   const schemaMarkup = {
@@ -85,18 +86,23 @@ const ApproachesPageComponent = () => {
         <ApproachHero />
       </Grid>
       <Grid item xs={12} id="top">
+        <HomeSection11ColorChange />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <AboutSection9a />
+      </Grid>
+      <Grid item xs={12} id="top">
         <AboutSection7 />
       </Grid>
       <Grid item xs={12} id="top">
         <HomeSection11 />
       </Grid>
       <Grid item xs={12} id="top">
-        <AboutSection9a />
-      </Grid>
-    
-      <Grid item xs={12} id="top">
         <AboutSection9 />
       </Grid>
+     
+    
+     
    
       <Grid item xs={12} id="top">
         <AboutSection9b />
