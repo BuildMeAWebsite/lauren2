@@ -13,9 +13,7 @@ const AboutSection7 = () => {
             <Button variant="outlined" href="contact" sx={styles.button}>
               Schedule an Introductory Call
             </Button>
-            <Typography variant="body1" sx={styles.faq}>
-              Questions? <Link href="/frequently-asked-questions" sx={styles.link}>Read our FAQs</Link>
-            </Typography>
+
             
           </Grid>
           <Grid item xs={12} md={6}>
@@ -75,6 +73,8 @@ const styles = {
   },
   button: {
     fontFamily: "Lora, sans-serif",
+    backgroundColor: "Transparent",
+
     display: 'inline-block',
     padding: '0.5rem 1rem',
     borderColor: '#2b3d2b',

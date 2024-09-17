@@ -86,26 +86,28 @@ const ApproachesPageComponent = () => {
         <ApproachHero />
       </Grid>
       <Grid item xs={12} id="top">
-        <HomeSection11ColorChange />
+        <HomeSection11 />
       </Grid>
       <Grid item xs={12} id="top">
         <AboutSection9a />
       </Grid>
+     
       <Grid item xs={12} id="top">
         <AboutSection7 />
       </Grid>
-      <Grid item xs={12} id="top">
-        <HomeSection11 />
-      </Grid>
+   
+     
       <Grid item xs={12} id="top">
         <AboutSection9 />
       </Grid>
-     
+   
     
-     
    
       <Grid item xs={12} id="top">
         <AboutSection9b />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <HomeSection11ColorChange />
       </Grid>
      
       <Grid item xs={12} id="top">
@@ -114,7 +116,9 @@ const ApproachesPageComponent = () => {
       <Grid item xs={12} id="top">
         <AboutSection10b />
       </Grid>  
-
+      <Grid item xs={12} id="top">
+        <HomeSection11ColorChange />
+      </Grid>
    
        <Grid item xs={12} id="top">
         <AboutSection11 />
@@ -123,12 +127,17 @@ const ApproachesPageComponent = () => {
         <Grid item xs={12} id="top">
         <AboutSection11b />
       </Grid>  
-   
+      <Grid item xs={12} id="top">
+        <HomeSection11ColorChange />
+      </Grid>
        <Grid item xs={12} id="top">
         <AboutSection12 />
       </Grid>
       <Grid item xs={12} id="top">
         <AboutSection12b />
+      </Grid>
+      <Grid item xs={12} id="top">
+        <HomeSection11ColorChange />
       </Grid>
       <Grid item xs={12} id="top">
         <AboutSection14 />

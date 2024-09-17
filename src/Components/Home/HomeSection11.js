@@ -21,7 +21,7 @@ const styles = {
   },
   line: {
     borderTop: '1px solid #FCFAF4', // Light color for the line
-    width: '20%',
+    width: '50%',
     marginRight: '10px',
   },
   buttonContainer: {
