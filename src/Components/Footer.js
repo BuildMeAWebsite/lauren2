@@ -31,15 +31,15 @@ const Footer = ({ onContactClick }) => {
       sx={{
         backgroundColor: '#2b3d2b !important',
         backdropFilter: 'blur(10px) !important',
-        padding: '5rem 10rem',
+        padding: '2rem 5rem', // Reduced padding for a thinner footer
         textAlign: 'center',
         position: 'relative',
         zIndex: 10,
         '@media (max-width: 768px)': {
-          padding: '3rem 5rem', // Smaller padding for smaller screens
+          padding: '1.5rem 3rem', // Smaller padding for smaller screens
         },
         '@media (max-width: 576px)': {
-          padding: '2rem 3rem', // Even smaller padding for mobile devices
+          padding: '1rem 2rem', // Even smaller padding for mobile devices
         },
       }}
     >
@@ -49,110 +49,22 @@ const Footer = ({ onContactClick }) => {
         alignItems="center"
         justifyContent="space-between"
         sx={{
-          flexDirection: { xs: 'column', sm: 'row' }, // Vertical stacking on small screens, row on larger screens
+          flexDirection: { xs: 'column', sm: 'row' },
+          justifyContent: 'space-between', // Ensure horizontal layout
         }}
       >
-        {/* Left Column: Links */}
+        {/* Left Column: Pride Flag */}
         <Grid
           item
           xs={12}
           sm={4}
           sx={{
             display: 'flex',
-            flexDirection: 'column', // Ensure links are stacked vertically
-            alignItems: { xs: 'center', sm: 'flex-start' }, // Center on small screens, align left on larger
-            gap: '10px',
-            paddingBottom: { xs: '20px', sm: '0' }, // Adjust padding for spacing
-            padding: '0 1rem', // Add horizontal padding to avoid crowding
-            '@media (max-width: 768px)': {
-              padding: '0 0.5rem', // Smaller padding for smaller screens
-            },
-          }}
-        >
-          <Link
-            href="/"
-            underline="none"
-            sx={{
-              fontFamily: 'Lora, sans-serif',
-              fontSize: '1.5rem',
-              color: '#fcfaf4',
-              textAlign: 'center',
-              transition: 'color 0.3s ease, transform 0.3s ease',
-              '&:hover': {
-                color: '#FFD700', // Yellow on hover
-                transform: 'scale(1.05)', // Slightly enlarge on hover
-              },
-            }}
-          >
-            Home
-          </Link>
-          <Link
-            href="/about"
-            underline="none"
-            sx={{
-              fontFamily: 'Lora, sans-serif',
-              fontSize: '1.5rem',
-              color: '#fcfaf4',
-              textAlign: 'center',
-              transition: 'color 0.3s ease, transform 0.3s ease',
-              '&:hover': {
-                color: '#FFD700', // Yellow on hover
-                transform: 'scale(1.05)', // Slightly enlarge on hover
-              },
-            }}
-          >
-            About
-          </Link>
-          <Link
-            href="/contact"
-            onClick={onContactClick}
-            underline="none"
-            sx={{
-              fontFamily: 'Lora, sans-serif',
-              fontSize: '1.5rem',
-              color: '#fcfaf4',
-              textAlign: 'center',
-              transition: 'color 0.3s ease, transform 0.3s ease',
-              '&:hover': {
-                color: '#FFD700', // Yellow on hover
-                transform: 'scale(1.05)', // Slightly enlarge on hover
-              },
-            }}
-          >
-            Contact
-          </Link>
-          <Link
-            href="/sitemap"
-            underline="none"
-            sx={{
-              fontFamily: 'Lora, sans-serif',
-              fontSize: '1.5rem',
-              color: '#fcfaf4',
-              textAlign: 'center',
-              transition: 'color 0.3s ease, transform 0.3s ease',
-              '&:hover': {
-                color: '#FFD700', // Yellow on hover
-                transform: 'scale(1.05)', // Slightly enlarge on hover
-              },
-            }}
-          >
-            Sitemap
-          </Link>
-        </Grid>
-
-        {/* Center Column: Logo */}
-        <Grid
-          item
-          xs={12}
-          sm={4}
-          sx={{
-            display: 'flex',
-            justifyContent: { xs: 'center', sm: 'center' },
+            justifyContent: { xs: 'center', sm: 'flex-start' },
             alignItems: 'center',
-            padding: '0 1rem', // Add horizontal padding to avoid crowding
-            marginTop: { xs: '20px', sm: '0' },
+            padding: '0 1rem',
             '@media (max-width: 768px)': {
-              padding: '0 0.5rem', // Smaller padding for smaller screens
+              padding: '0 0.5rem',
             },
           }}
         >
@@ -167,42 +79,105 @@ const Footer = ({ onContactClick }) => {
           />
         </Grid>
 
-        {/* Right Column: Location */}
+        {/* Center Column: Quick Links */}
         <Grid
           item
           xs={12}
           sm={4}
           sx={{
             display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' },
-            alignItems: { xs: 'center', sm: 'flex-end' },
-            justifyContent: { xs: 'center', sm: 'flex-end' },
-            textAlign: { xs: 'center', sm: 'right' },
-            gap: '10px',
-            paddingTop: { xs: '20px', sm: '0' },
-            padding: '0 1rem', // Add horizontal padding to avoid crowding
-            '@media (max-width: 768px)': {
-              padding: '0 0.5rem', // Smaller padding for smaller screens
-            },
+            justifyContent: 'center',
+            gap: '20px', // Add spacing between the links
           }}
         >
-          <Box sx={{ textAlign: { xs: 'center', sm: 'right' } }}>
-            <Typography
-              variant="body2"
-              sx={{
-                fontFamily: 'Lora, sans-serif',
-                fontSize: '1rem',
-                color: '#fcfaf4',
-                transition: 'color 0.3s ease, transform 0.3s ease',
-                '&:hover': {
-                  color: '#FFD700', // Yellow on hover
-                  transform: 'scale(1.05)', // Slightly enlarge on hover
-                },
-              }}
-            >
-              Ottawa, Ontario
-            </Typography>
-          </Box>
+          <Link
+            href="/"
+            underline="none"
+            sx={{
+              fontFamily: 'Lora, sans-serif',
+              fontSize: '1.25rem',
+              color: '#fcfaf4',
+              transition: 'color 0.3s ease, transform 0.3s ease',
+              '&:hover': {
+                color: '#FFD700', // Yellow on hover
+                transform: 'scale(1.05)',
+              },
+            }}
+          >
+            Home
+          </Link>
+          <Link
+            href="/about"
+            underline="none"
+            sx={{
+              fontFamily: 'Lora, sans-serif',
+              fontSize: '1.25rem',
+              color: '#fcfaf4',
+              transition: 'color 0.3s ease, transform 0.3s ease',
+              '&:hover': {
+                color: '#FFD700', // Yellow on hover
+                transform: 'scale(1.05)',
+              },
+            }}
+          >
+            About
+          </Link>
+          <Link
+            href="/contact"
+            onClick={onContactClick}
+            underline="none"
+            sx={{
+              fontFamily: 'Lora, sans-serif',
+              fontSize: '1.25rem',
+              color: '#fcfaf4',
+              transition: 'color 0.3s ease, transform 0.3s ease',
+              '&:hover': {
+                color: '#FFD700',
+                transform: 'scale(1.05)',
+              },
+            }}
+          >
+            Contact
+          </Link>
+          <Link
+            href="/sitemap"
+            underline="none"
+            sx={{
+              fontFamily: 'Lora, sans-serif',
+              fontSize: '1.25rem',
+              color: '#fcfaf4',
+              transition: 'color 0.3s ease, transform 0.3s ease',
+              '&:hover': {
+                color: '#FFD700', // Yellow on hover
+                transform: 'scale(1.05)',
+              },
+            }}
+          >
+            Sitemap
+          </Link>
+        </Grid>
+
+        {/* Right Column: Custom Logo */}
+        <Grid
+          item
+          xs={12}
+          sm={4}
+          sx={{
+            display: 'flex',
+            justifyContent: { xs: 'center', sm: 'flex-end' },
+            alignItems: 'center',
+            padding: '0 1rem',
+          }}
+        >
+          <img
+            src={`${process.env.PUBLIC_URL}/Images/customlogo.png`} // Replace with your custom logo
+            alt="Custom Logo"
+            style={{
+              maxWidth: '90px',
+              maxHeight: '50px',
+              borderRadius: '1px',
+            }}
+          />
         </Grid>
       </Grid>
 
@@ -242,7 +217,6 @@ const Footer = ({ onContactClick }) => {
             sx={{
               fontSize: '0.75rem',
               color: '#2b3d2b',
-
               fontFamily: 'Lora, sans-serif',
               color: '#fcfaf4',
               marginTop: '-4px',
