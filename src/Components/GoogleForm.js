@@ -16,7 +16,7 @@ const GoogleFormEmbed = () => {
         width="100%"
       
 
-        height="500px"
+        height="1500px"
         frameBorder="0"
         marginHeight="0"
         marginWidth="0"
