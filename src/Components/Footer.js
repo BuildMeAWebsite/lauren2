@@ -170,10 +170,10 @@ const Footer = ({ onContactClick }) => {
           }}
         >
           <img
-            src={`${process.env.PUBLIC_URL}/Images/customlogo.png`} // Replace with your custom logo
+            src={`${process.env.PUBLIC_URL}/Images/logo.png`} // Replace with your custom logo
             alt="Custom Logo"
             style={{
-              maxWidth: '90px',
+              maxWidth: '120px',
               maxHeight: '50px',
               borderRadius: '1px',
             }}
