@@ -3,7 +3,7 @@ import React from 'react';
 const GoogleFormEmbed = () => {
   return (
     <div style={{ 
-      padding: '7rem 0', 
+      padding: '1rem 0', 
         backgroundColor: '#fcfaf4', 
       display: 'flex', 
       justifyContent: 'center', 
@@ -16,7 +16,7 @@ const GoogleFormEmbed = () => {
         width="100%"
       
 
-        height="1400px"
+        height="800px"
         frameBorder="0"
         marginHeight="0"
         marginWidth="0"
