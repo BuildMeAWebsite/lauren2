@@ -5,8 +5,8 @@ const AboutSection9b = () => {
   const styles = {
     container: {
       padding: { xs: '50px 20px', sm: '80px 40px', md: '100px 80px' },
-      backgroundColor: '#2b3d2b', // Dark background color
-      color: '#FCFAF4', // Light text color
+      backgroundColor: '#fcfaf4', // Dark background color
+      color: '#2b3d2b', // Light text color
       fontFamily: "'Georgia', serif",
       display: 'flex',
       justifyContent: 'center',

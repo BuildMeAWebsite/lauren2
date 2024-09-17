@@ -45,8 +45,8 @@ const AboutSection7 = () => {
 const styles = {
   container: {
     padding: { xs: '4rem 2rem', sm: '6rem 3rem', md: '8rem 4rem' },
-    backgroundColor: '#2b3d2b', // Dark background color
-    color: '#FCFAF4', // Light text color
+    color: '#2b3d2b', // Dark background color
+    backgroundColor: '#FCFAF4', // Light text color
     display: 'flex',
     justifyContent: 'center',
   },
@@ -77,8 +77,8 @@ const styles = {
     fontFamily: "Lora, sans-serif",
     display: 'inline-block',
     padding: '0.5rem 1rem',
-    borderColor: '#FCFAF4',
-    color: '#FCFAF4',
+    borderColor: '#2b3d2b',
+    color: '#2b3d2b',
     textDecoration: 'none',
     textTransform: 'uppercase',
     fontSize: '1rem',
@@ -93,11 +93,11 @@ const styles = {
   },
   faq: {
     fontFamily: "'Georgia', serif",
-    fontSize: '1.25rem',
+    fontSize: '1rem',
   },
   link: {
     fontFamily: "'Georgia', serif",
-    color: '#FCFAF4',
+    color: '#2b3d2b',
     textDecoration: 'underline',
   },
 };

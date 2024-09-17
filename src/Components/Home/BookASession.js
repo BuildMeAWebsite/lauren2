@@ -39,8 +39,8 @@ const styles = {
     display: 'flex',
     justifyContent: 'center', // Center the content horizontally
     padding: '100px',
-    backgroundColor: '#2B3D2B', // Dark background color
-    color: '#FCFAF4', // Light text color
+    backgroundColor: '#fcfaf4', // Dark background color
+    color: '#2B3D2B', // Light text color
     fontFamily: "Lora, sans-serif",
   },
   rightColumn: {
@@ -62,7 +62,7 @@ const styles = {
     display: 'inline-block',
     padding: '15px 30px',
     border: '1px solid #FCFAF4',
-    color: '#FCFAF4',
+    color: '#2B3D2B',
     textDecoration: 'none',
     textTransform: 'uppercase',
     fontSize: '1rem',
@@ -72,14 +72,14 @@ const styles = {
   },
   buttonHover: {
     color: '#FFD700', // Yellow text color on hover
-    borderColor: '#FFD700', // Yellow border color on hover
+    borderColor: '#2B3D2B', // Yellow border color on hover
     transform: 'scale(1.05)', // Slightly enlarge the button on hover
   },
   faq: {
-    fontSize: '1.25rem',
+    fontSize: '1rem',
   },
   link: {
-    color: '#FCFAF4',
+    color: '#2B3D2B',
     textDecoration: 'underline',
   },
 };
