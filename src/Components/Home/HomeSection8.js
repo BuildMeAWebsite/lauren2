@@ -1,287 +1,153 @@
-import React, { useState, useEffect, useRef } from "react";
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import React, { useEffect, useRef, useState } from 'react';
+import Grid from '@mui/material/Grid';
+import ParallaxSection from './ParallaxSection';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-const FullPageCarousel = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [prevIndex, setPrevIndex] = useState(null);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [isAutoRotating, setIsAutoRotating] = useState(false);
-  const carouselRef = useRef(null);
-
-  const images = [
-    {
-      src: `${process.env.PUBLIC_URL}/Images/background3.jpg`,
-      captionTitle: "What to expect.",
-      buttonText: "start your journey",
-      href: "/what-to-expect",
-    },
- 
-  ];
-
-  const handleNext = () => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setPrevIndex(activeIndex);
-      setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }
-  };
-
-  const handlePrev = () => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setPrevIndex(activeIndex);
-      setActiveIndex((prevIndex) =>
-        prevIndex === 0 ? images.length - 1 : prevIndex - 1
-      );
-    }
-  };
-
-  const handleAnimationEnd = () => {
-    setIsAnimating(false);
-    setPrevIndex(null);  // Clear the previous index once animation ends
-  };
-
-  const slideStyle = (index) => {
-    if (index === activeIndex) {
-      return {
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        fontFamily: "'Lora', sans-serif",
-        fontWeight: 'normal',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundImage: `url(${images[index].src})`,
-        transition: "transform .9s ease-in-out",
-        transform: "translateX(0)",
-        zIndex: 2,
-      };
-    } else if (index === prevIndex) {
-      return {
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        fontFamily: "'Lora', sans-serif",
-        fontWeight: 'normal',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundImage: `url(${images[index].src})`,
-        transition: "transform .9s ease-in-out",
-        transform: "translateX(-100%)",
-        zIndex: 1,
-      };
-    } else {
-      return {
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        fontFamily: "'Lora', sans-serif",
-        fontWeight: 'normal',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundImage: `url(${images[index].src})`,
-        transform: "translateX(100%)",
-        zIndex: 1,
-      };
-    }
-  };
-
-  const containerStyle = {
-    position: "relative",
-    width: "100%",
-    height: "100%",
-    overflow: "hidden",
-  };
-
-  const cardStyle = {
-    backgroundColor: '#fafafa',
-    padding: '2rem',
-    border: '2px solid #2b2d2b',
-    textAlign: 'center',
-    width: '100%',
-    maxWidth: '22rem',
-    maxHeight: '22rem',
-    height: '15.5rem',
-    position: 'relative',
-    fontFamily: 'Georgia, serif',
-    fontWeight: 'normal',
-    color: '#2b2d2b',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    aspectRatio: '1 / 1',
-    boxSizing: 'border-box',
-  };
-
-  const captionContainerStyle = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: "100%",
-    height: "100%",
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  };
-
-  const captionTitleStyle = {
-    padding: '1rem',
-    fontSize: "2rem",
-    fontWeight: "normal",
-    fontFamily: "Lora, sans-serif",
-    textTransform: 'lowercase',
-    color: '#2b2d2b',
-    textAlign: 'center',
-    margin: 0,
-  };
-
-  const captionTextStyle = {
-    fontSize: '1rem',
-    marginBottom: '1.5rem',
-    fontWeight: 400,
-    textAlign: 'center',
-    margin: 0,
-  };
-
-  const buttonStyle = {
-    backgroundColor: "#fafafa",
-    color: "#2b3d2b",
-    fontFamily: "Georgia, serif",
-    textDecoration: 'none',
-    borderRadius: "50px",
-    padding: "10px 30px",
-    fontSize: "1rem",
-    cursor: "pointer",
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    transition: "color 0.3s ease, transform 0.3s ease",
-  };
-
-  const buttonHoverStyle = {
-    color: "#FFD700",
-    transform: "scale(1.05)",
-  };
-
-  const iconStyle = {
-    marginLeft: "8px",
-    fontSize: "1rem",
-  };
-
-  const arrowButtonStyle = {
-    fontSize: "2rem", 
-    color: "#fff", 
-    transform: "rotate(180deg)" // Rotate the arrow for left direction
-  };
+const HomeSection8 = () => {
+  const textRefs = useRef([]); // Use refs to keep track of each text element
+  const [hovered, setHovered] = useState(false); // Hover state for hover effects
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsAutoRotating(true);
-        } else {
-          setIsAutoRotating(false);
-        }
-      },
-      { threshold: 0.5 } // Start auto-rotation when 50% of the carousel is visible
-    );
-
-    if (carouselRef.current) {
-      observer.observe(carouselRef.current);
-    }
-
-    return () => {
-      if (carouselRef.current) {
-        observer.unobserve(carouselRef.current);
+    // Trigger animation on page load
+    textRefs.current.forEach((ref, index) => {
+      if (ref) {
+        ref.style.transition = `transform 1s ease-in-out ${index * 0.1}s, opacity 1s ease-in-out ${index * 0.1}s`;
+        ref.style.transform = 'translateY(0)';
+        ref.style.opacity = '1';
       }
-    };
-  }, [carouselRef]);
+    });
+  }, []);
 
-  useEffect(() => {
-    let intervalId;
-    if (isAutoRotating) {
-      intervalId = setInterval(() => {
-        if (!isAnimating) {
-          handleNext();
-        }
-      }, 5000); // Rotate every 5 seconds
-    }
-
-    return () => clearInterval(intervalId);
-  }, [isAutoRotating, isAnimating]);
+  const styles = {
+    heroContainer: {
+      minHeight: '10vh', // Default minHeight for larger screens
+      color: '#fcfaf4',
+      fontFamily: "'Lora', sans-serif",
+      backgroundColor: '#fcfaf4',
+      display: 'block',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '1rem auto',
+      boxSizing: 'border-box',
+      overflow: 'hidden',
+      maxWidth: '500px',
+      '@media (max-width: 768px)': {
+        minHeight: '10vh', // Reduce minHeight for mobile screens
+        margin: '0 1rem', // Adjust margin for better centering on smaller screens
+      },
+    },
+    slideIn: {
+      transform: 'translateY(100px)',
+      opacity: 0,
+    },
+    subtitle: {
+      fontFamily: "'Lora', sans-serif",
+      fontSize: '0.75rem',
+      color: '#2b3d2b',
+      fontWeight: 'normal',
+      textAlign: 'left',
+      textTransform: 'lowercase',
+      letterSpacing: '1px',
+      textShadow: '0 1px 5px rgba(0, 0, 0, 0.05)',
+      '@media (max-width: 768px)': {
+        fontSize: '0.65rem', // Slightly smaller font size on mobile
+      },
+    },
+    title: {
+      fontFamily: "'Georgia', serif",
+      fontSize: '1.5rem',
+      fontWeight: 400,
+      color: '#2b3d2b',
+      margin: 0,
+      lineHeight: 1,
+      textShadow: '0 2px 5px rgba(0, 0, 0, 0.05)',
+      display: 'inline-flex', // Ensure title and arrow align properly
+      alignItems: 'center', // Vertically center the arrow with the text
+      '@media (max-width: 768px)': {
+        fontSize: '2rem', // Reduce title size on mobile
+      },
+    },
+    image: {
+      maxWidth: '100%',
+      height: 'auto',
+      objectFit: 'contain',
+      display: 'block',
+      margin: '0 auto', // Center the image horizontally
+    },
+    squareCard: {
+      zIndex: 2,
+      backgroundColor: 'transparent',
+      padding: '1rem', // Adjusted padding for spacing
+      border: '2px solid brown', // Brown border for the card
+      textAlign: 'center', // Center text in the card
+      width: '100%',
+      maxWidth: '20rem', // Set max width for the square card
+      height: '20rem', // Set the height to match the width for a square shape
+      margin: '1rem 1rem', // Center horizontally with margin
+      position: 'relative',
+      fontFamily: 'Georgia, serif',
+      fontWeight: '100',
+      color: '#2b3d2b',
+      lineHeight: '1',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      transition: 'transform 0.3s ease, color 0.3s ease',
+      textDecoration: 'none', // Remove underline from links
+      ...(hovered && { transform: 'scale(1.05)', color: '#FFD700' }), // Hover effect for the card
+    },
+    textHoverEffect: {
+      transform: 'scale(1.05)',
+      color: '#FFD700',
+    },
+    linkStyle: {
+      textDecoration: 'none', // Remove the underline from the entire link
+      color: 'inherit', // Inherit color to avoid changing the text color
+      display: 'block', // Make the entire block clickable
+    },
+    iconStyle: {
+      fontSize: '1.5rem', // Set arrow size
+      marginLeft: '5px', // Space between the text and the arrow
+      transition: 'transform 0.3s ease',
+    },
+  };
 
   return (
-    <div id="myCarousel" ref={carouselRef} style={{ height: "100vh", position: "relative", overflow: "hidden" }}>
-      <div style={containerStyle}>
-        {images.map((image, index) => (
-          <div
-            key={index}
-            style={slideStyle(index)}
-            onTransitionEnd={handleAnimationEnd}
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/busbackground.jpg`} minHeight='100vh'>
+      <Grid
+        container
+        alignItems="center"
+        justifyContent="center"
+        direction={{ xs: 'column-reverse', md: 'row' }} // Stack image below text on small screens, side by side on large screens
+        style={styles.heroContainer}
+        spacing={0}
+      >
+        <Grid
+          item
+          xs={12}
+          md={6}
+          style={styles.slideIn}
+          ref={(el) => (textRefs.current[1] = el)}
+        >
+          <a
+            href="/what-to-expect"
+            style={styles.linkStyle} // Apply the link style
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
           >
-            <div style={captionContainerStyle}>
-              <div style={cardStyle}>
-                <h2 style={captionTitleStyle}>{image.captionTitle}</h2>
-                <p style={captionTextStyle}>{image.captionText}</p>
-                <a
-                  href={image.href}
-                  style={buttonStyle}
-                  onMouseEnter={(e) => {
-                    Object.assign(e.currentTarget.style, buttonHoverStyle);
-                  }}
-                  onMouseLeave={(e) => {
-                    Object.assign(e.currentTarget.style, {
-                      color: "#2b3d2b",
-                      transform: "scale(1)",
-                    });
-                  }}
-                >
-                  {image.buttonText}
-                  <ArrowRightAltIcon style={iconStyle} />
-                </a>
-              </div>
+            <div style={styles.squareCard}> {/* Card is wrapped inside the link */}
+              <h2 style={styles.subtitle}>start your journey</h2>
+              <h1 style={styles.title}>
+                What to expect on your first visit
+                <ArrowForwardIcon sx={styles.iconStyle} />
+              </h1>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Controls */}
-      <a
-        className="left carousel-control"
-        onClick={handlePrev}
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "10px",
-          zIndex: 1000,
-          cursor: "pointer",
-        }}
-      >
-        <ArrowRightAltIcon style={arrowButtonStyle} />
-      </a>
-      <a
-        className="right carousel-control"
-        onClick={handleNext}
-        style={{
-          position: "absolute",
-          top: "50%",
-          right: "10px",
-          zIndex: 1000,
-          cursor: "pointer",
-        }}
-      >
-        <ArrowRightAltIcon style={{ fontSize: "2rem", color: "#fff" }} />
-      </a>
-    </div>
+          </a>
+        </Grid>
+      </Grid>
+    </ParallaxSection>
   );
 };
 
-export default FullPageCarousel;
+export default HomeSection8;
