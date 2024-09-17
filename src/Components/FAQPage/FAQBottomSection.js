@@ -75,7 +75,7 @@ const FAQBottomSection = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/abouthero.jpg`} minHeight='50vh'>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/ferncouch.jpg`} minHeight='50vh'>
       <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
@@ -85,7 +85,7 @@ const FAQBottomSection = () => {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
-            still need help? <ArrowForwardIcon style={iconStyle} />
+            click here to book now <ArrowForwardIcon style={iconStyle} />
           </Link>
         </div>
       </div>

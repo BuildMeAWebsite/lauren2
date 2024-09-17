@@ -15,18 +15,7 @@ const FullPageCarousel = () => {
       buttonText: "start your journey",
       href: "/what-to-expect",
     },
-    {
-      src: `${process.env.PUBLIC_URL}/Images/background2.jpg`,
-      captionTitle: "Therapeutic Modalities",
-      buttonText: "my approaches to therapy",
-      href: "/approaches",
-    },
-    {
-      src: `${process.env.PUBLIC_URL}/Images/background4.jpg`,
-      captionTitle: "Frequently Asked",
-      buttonText: "read fAQs",
-      href: "/frequently-asked-questions",
-    },
+ 
   ];
 
   const handleNext = () => {

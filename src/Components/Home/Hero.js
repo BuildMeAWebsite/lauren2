@@ -76,7 +76,7 @@ const Hero = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background3.jpg`} minHeight='70vh'>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/lightbackground2.jpg`} minHeight='70vh'>
       <Grid
         container
         alignItems="center"
@@ -88,7 +88,7 @@ const Hero = () => {
        
         <Grid item xs={12} md={6} style={styles.slideIn} ref={(el) => (textRefs.current[1] = el)}>
           <div style={styles.textWrapper}>
-            <h2 style={styles.subtitle}>ONTARIO PSYCHOTHERAPY</h2>
+            <h2 style={styles.subtitle}>VIRTUAL PSYCHOTHERAPY</h2>
             <h1 style={styles.title}>
               Therapy for children, teens, <em> and </em> young adults 
             </h1>

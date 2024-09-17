@@ -126,7 +126,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: 1000,
-    paddingTop: '20vh',
+  
   },
   modal: {
     backgroundColor: '#fff',

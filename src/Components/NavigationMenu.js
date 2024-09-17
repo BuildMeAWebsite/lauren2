@@ -38,6 +38,7 @@ const NavigationMenuBar = () => {
           <nav style={styles.navMenu}>
             <NavLink to="/" label="home" />
             <NavLink to="/about" label="about" />
+            <NavLink to="/approaches" label="approach" />
             <NavLink to="/frequently-asked-questions" label="faq" />
             <NavLink to="/contact" label="contact" />
           </nav>

@@ -87,9 +87,7 @@ const Home = () => {
       <Grid item xs={12}>
         <HomeSection11ColorChange />
       </Grid>
-      <Grid item xs={12}>
-        <HomeSection9 />
-      </Grid>
+    
 
       <Grid item xs={12}>
         <HomeSection8 />
