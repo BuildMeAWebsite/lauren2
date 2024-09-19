@@ -1,0 +1,96 @@
+import React from 'react';
+import ParallaxSection from './ParallaxSection';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'; // Import the right-facing arrow icon
+
+const FloatingCard2 = () => {
+  const overlayStyle = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    zIndex: 1,
+  };
+
+  const outerContentStyle = {
+    padding: '1rem',
+    backgroundColor: 'transparent',
+    boxSizing: 'border-box',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
+  };
+
+  const contentStyle = {
+    zIndex: 2,
+    backgroundColor: '#fcfaf4',
+    padding: '2rem', // Ensure padding around content
+    border: '1.5px solid #2b2d2b',
+    textAlign: 'center',
+    width: '90%', // Limit width to ensure spacing around the card
+    maxWidth: '300px', // Ensure the card stays square
+    aspectRatio: '1 / 1', // Maintain square shape
+    position: 'relative',
+    fontFamily: 'Georgia, serif',
+    fontWeight: 'normal',
+    color: '#2b2d2b',
+    lineHeight: '1.5',
+    display: 'flex',
+    flexDirection: 'column', // Stack text and arrow vertically
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: '2rem', // Add spacing around the card
+    boxSizing: 'border-box',
+  };
+
+  const headerTextStyle = {
+    fontSize: '1.75rem',
+    fontWeight: 400,
+    letterSpacing: '0.05em',
+    fontFamily: 'Georgia, serif',
+    textTransform: 'lowercase',
+    marginBottom: '1rem', // Add spacing between the text and the arrow
+  };
+
+  const arrowLinkStyle = {
+    textDecoration: 'none',
+    color: '#2b2d2b',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '0.5rem', // Space between the text and the arrow
+    transition: 'transform 0.3s ease',
+    cursor: 'pointer', // Add pointer cursor to the link
+  };
+
+  const iconStyle = {
+    fontSize: '2rem',
+    transition: 'transform 0.3s ease',
+  };
+
+  const linkTextStyle = {
+    fontSize: '1rem',
+    fontWeight: 400,
+    textTransform: 'lowercase',
+    fontFamily: 'Georgia, serif',
+    letterSpacing: '0.05em',
+  };
+
+  return (
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/sunshine.jpg`} minHeight='80vh'>
+      <div style={overlayStyle}></div> {/* Overlay */}
+      <div style={outerContentStyle}>
+        <div style={contentStyle}>
+          <p style={headerTextStyle}>What to expect on your first call</p>
+          <a href="/what-to-expect" style={arrowLinkStyle}>
+            <span style={linkTextStyle}>start your journey</span> {/* Text next to the arrow */}
+            <ArrowForwardIcon sx={iconStyle} /> {/* Right-facing arrow icon */}
+          </a>
+        </div>
+      </div>
+    </ParallaxSection>
+  );
+};
+
+export default FloatingCard2;

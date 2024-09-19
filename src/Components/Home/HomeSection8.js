@@ -20,7 +20,7 @@ const HomeSection8 = () => {
 
   const styles = {
     heroContainer: {
-      minHeight: '300px', // Default minHeight for larger screens
+      minHeight: '350px',
       color: '#fcfaf4',
       fontFamily: "'Lora', sans-serif",
       backgroundColor: '#fcfaf4',
@@ -30,9 +30,10 @@ const HomeSection8 = () => {
       padding: '1rem auto',
       boxSizing: 'border-box',
       overflow: 'hidden',
-      maxWidth: '500px',
+      maxWidth: '400px',
+      margin: '0 auto', // Center the container on the screen
       '@media (max-width: 768px)': {
-        minHeight: '10vh', // Reduce minHeight for mobile screens
+        minHeight: '10vh',
         margin: '0 1rem', // Adjust margin for better centering on smaller screens
       },
     },
@@ -50,7 +51,7 @@ const HomeSection8 = () => {
       letterSpacing: '1px',
       textShadow: '0 1px 5px rgba(0, 0, 0, 0.05)',
       '@media (max-width: 768px)': {
-        fontSize: '0.65rem', // Slightly smaller font size on mobile
+        fontSize: '0.65rem',
       },
     },
     title: {
@@ -61,10 +62,10 @@ const HomeSection8 = () => {
       margin: 0,
       lineHeight: 1,
       textShadow: '0 2px 5px rgba(0, 0, 0, 0.05)',
-      display: 'inline-flex', // Ensure title and arrow align properly
-      alignItems: 'center', // Vertically center the arrow with the text
+      display: 'inline-flex',
+      alignItems: 'center',
       '@media (max-width: 768px)': {
-        fontSize: '2rem', // Reduce title size on mobile
+        fontSize: '1.25rem',
       },
     },
     image: {
@@ -72,17 +73,16 @@ const HomeSection8 = () => {
       height: 'auto',
       objectFit: 'contain',
       display: 'block',
-      margin: '0 auto', // Center the image horizontally
+      margin: '0 auto',
     },
     squareCard: {
       zIndex: 2,
-      backgroundColor: 'transparent',
-      padding: '1rem', // Adjusted padding for spacing
-      border: '2px solid brown', // Brown border for the card
-      textAlign: 'center', // Center text in the card
-      width: '100%',
-      maxWidth: '20rem', // Set max width for the square card
-      height: '20rem', // Set the height to match the width for a square shape
+      backgroundColor: '#fcfaf4',
+      padding: '1rem 0', // Ensure even padding around the content
+      border: '2px solid brown', // Dark border
+      textAlign: 'center',
+      width: '300px', // Set explicit width
+      height: '300px', // Set explicit height to match width for square shape
       margin: '1rem 1rem', // Center horizontally with margin
       position: 'relative',
       fontFamily: 'Georgia, serif',
@@ -94,21 +94,26 @@ const HomeSection8 = () => {
       justifyContent: 'center',
       alignItems: 'center',
       transition: 'transform 0.3s ease, color 0.3s ease',
-      textDecoration: 'none', // Remove underline from links
-      ...(hovered && { transform: 'scale(1.05)', color: '#FFD700' }), // Hover effect for the card
+      boxSizing: 'border-box',
+      ...(hovered && { transform: 'scale(1.05)', color: '#FFD700' }),
+      '@media (max-width: 768px)': {
+        maxWidth: '90%',
+        height: 'auto', // Maintain aspect ratio and responsiveness on small screens
+        margin: '1rem',
+      },
     },
     textHoverEffect: {
       transform: 'scale(1.05)',
       color: '#FFD700',
     },
     linkStyle: {
-      textDecoration: 'none', // Remove the underline from the entire link
-      color: 'inherit', // Inherit color to avoid changing the text color
-      display: 'block', // Make the entire block clickable
+      textDecoration: 'none',
+      color: 'inherit',
+      display: 'block',
     },
     iconStyle: {
-      fontSize: '1.5rem', // Set arrow size
-      marginLeft: '5px', // Space between the text and the arrow
+      fontSize: '1.5rem',
+      marginLeft: '5px',
       transition: 'transform 0.3s ease',
     },
   };
@@ -132,11 +137,11 @@ const HomeSection8 = () => {
         >
           <a
             href="/what-to-expect"
-            style={styles.linkStyle} // Apply the link style
+            style={styles.linkStyle}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
-            <div style={styles.squareCard}> {/* Card is wrapped inside the link */}
+            <div style={styles.squareCard}>
               <h2 style={styles.subtitle}>start your journey</h2>
               <h1 style={styles.title}>
                 What to expect on your first call

@@ -10,6 +10,7 @@ import HomeSection11 from '../Components/Home/HomeSection11';
 import HomeSection13 from '../Components/Home/HomeSection13';
 import HomeSection9 from '../Components/Home/HomeSection9';
 import HomeSection11ColorChange from '../Components/Home/HomeSection11ColorChange';
+import FloatingCard from '../Components/Home/FloatCard2';
 
 const Home = () => {
   const schemaMarkup = {
@@ -90,7 +91,7 @@ const Home = () => {
     
 
       <Grid item xs={12}>
-        <HomeSection8 />
+        <FloatingCard />
       </Grid>
 
       <Grid item xs={12}>
