@@ -12,7 +12,7 @@ const ContactFloatingHero = () => {
   };
 
   const outerContentStyle = {
-    padding: '1rem', // Add padding around the border for spacing
+    padding: '2rem', // Add padding around the border for spacing
     backgroundColor: 'white',
     boxSizing: 'border-box',
     display: 'flex',

@@ -10,7 +10,7 @@ const HomeSection11ColorChange = ({ backgroundColor = '#2b3d2b', lineColor = '#F
 
 const styles = {
   container: {
-    height: '200px', // Adjust height as needed
+    height: '100px', // Adjust height as needed
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

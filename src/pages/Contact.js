@@ -87,14 +87,12 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
         <Grid item xs={12}>
           <ContactSection1 />
         </Grid>
-        <Grid item xs={12}>
-          <HomeSection11ColorChange />
-        </Grid>
+     
         <Grid item xs={12}>
           <ContactForm />
         </Grid>
         <Grid item xs={12}>
-          <HomeSection11 />
+          <HomeSection11ColorChange />
         </Grid>
       
       </Grid>

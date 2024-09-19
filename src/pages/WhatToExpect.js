@@ -6,6 +6,7 @@ import WhatToExpectSection1 from '../Components/Contact/WhatToExpectSection1';
 import WhatToExpectFloating from '../Components/Contact/WhatToExpectFloating';
 import HomeSection11 from '../Components/Home/HomeSection11';
 import Policies from '../Components/Contact/Policies';
+import AboutSection14 from '../Components/About/AboutSection14';
 
 
 const WhatToExpect = () => {
@@ -29,7 +30,9 @@ const WhatToExpect = () => {
       <Grid item xs={12}>
         <HomeSection11/>
       </Grid>
-    
+      <Grid item xs={12} id="top">
+        <AboutSection14  />
+      </Grid>
    
     </Grid>
   );

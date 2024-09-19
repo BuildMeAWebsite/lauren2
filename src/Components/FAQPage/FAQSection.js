@@ -18,7 +18,6 @@ const FAQSection = () => {
             ...styles.title,
             color: hoveredTitle ? '#FFD700' : '#2B3D2B',
             textShadow: '0 3px 5px rgba(0, 0, 0, 0.52)',
-
             transition: 'color 0.3s ease, transform 0.3s ease',
           }}
           onMouseEnter={handleTitleMouseEnter}

@@ -22,17 +22,18 @@ const Hero = () => {
       minHeight: '10vh', // Default minHeight for larger screens
       color: '#fcfaf4',
       fontFamily: "'Lora', sans-serif",
-      backgroundColor: '#fcfaf4',
-      display: 'block',
+      backgroundColor: 'transparent',
+      display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      padding: '1rem auto',
+      padding: '2rem auto',
       boxSizing: 'border-box',
       overflow: 'hidden',
-      maxWidth: '500px',
-      '@media (max-width: 768px)': {
+      maxWidth: '900px',
+      '@media (maxWidth: 768px)': {
         minHeight: '50vh', // Reduce minHeight for mobile screens
         margin: '0 1rem', // Adjust margin for better centering on smaller screens
+        flexDirection: 'column', // Stack elements vertically on smaller screens
       },
     },
     slideIn: {
@@ -47,41 +48,41 @@ const Hero = () => {
       textTransform: 'uppercase',
       letterSpacing: '1px',
       textShadow: '0 1px 5px rgba(0, 0, 0, 0.05)',
-      '@media (max-width: 768px)': {
+      '@media (maxWidth: 768px)': {
         fontSize: '0.65rem', // Slightly smaller font size on mobile
       },
     },
     title: {
       fontFamily: "'Georgia', serif",
-      fontSize: '2.5rem',
+      fontSize: '2rem',
       fontWeight: 400,
       color: '#2b3d2b',
       margin: 0,
       lineHeight: 1,
       textShadow: '0 2px 5px rgba(0, 0, 0, 0.05)',
-      '@media (max-width: 768px)': {
+      '@media (maxWidth: 768px)': {
         fontSize: '2rem', // Reduce title size on mobile
       },
     },
     image: {
-      maxWidth: '100%',
-      height: 'auto',
-      objectFit: 'contain',
+      maxWidth: '70%',
+      maxHeight: '100%', // Ensure the image doesn't exceed 80% of the container's height
+      objectFit: 'contain', // Maintain aspect ratio and ensure image doesn't overflow
       display: 'block',
-      margin: '0 auto', // Center the image horizontally
+      margin: '1rem auto', // Center the image horizontally
     },
     squareCard: {
       zIndex: 2,
-      backgroundColor: 'transparent',
-      padding: '2rem', // Adjusted padding for spacing
-      border: '2px solid brown', // Brown border for the card
+      backgroundColor: '#fcfaf4',
+      padding: '1.5rem', // Adjusted padding for spacing
+      border: '2.5px solid brown', // Brown border for the card
       textAlign: 'center', // Center text in the card
       width: '100%',
-      maxWidth: '20rem', // Set max width for the square card
-      height: '20rem', // Set the height to match the width for a square shape
-      margin: '1rem 1rem', // Center horizontally with margin
+      maxWidth: '250px', // Set max width for the square card
+      height: '250px', // Set the height to match the width for a square shape
+      margin: '1rem', // Add margin to ensure spacing from other elements
       position: 'relative',
-      fontFamily: 'Georgia, serif',
+      fontFamily: 'Lora, sans-serif',
       fontWeight: '100',
       color: '#2b3d2b',
       lineHeight: '1.2',
@@ -92,40 +93,56 @@ const Hero = () => {
       transition: 'transform 0.3s ease, color 0.3s ease',
       ...(hovered && { transform: 'scale(1.05)', color: '#FFD700' }), // Hover effect for the card
     },
-    textHoverEffect: {
-      transform: 'scale(1.05)',
-      color: '#FFD700',
-    },
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background1a1.jpg`} minHeight='100vh'>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background1a1.jpg`} minHeight="70vh" opacity = "0.5">
       <Grid
         container
         alignItems="center"
         justifyContent="center"
-        direction={{ xs: 'column-reverse', md: 'row' }} // Stack image below text on small screens, side by side on large screens
+        spacing={2} // Add spacing between the grid items
         style={styles.heroContainer}
-        spacing={0}
       >
+       
+        {/* Card with text */}
         <Grid
           item
           xs={12}
           md={6}
-          style={styles.slideIn}
-          ref={(el) => (textRefs.current[1] = el)}
+          style={{ display: 'flex', justifyContent: 'center' }} // Center the card
         >
           <div
-            style={styles.squareCard} // Changed the classname to 'squareCard' for the square layout
+            style={styles.squareCard}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
+            ref={(el) => (textRefs.current[1] = el)}
           >
             <h2 style={styles.subtitle}>VIRTUAL PSYCHOTHERAPY</h2>
             <h1 style={styles.title}>
-              Therapy for children, teens, <em> and </em> young adults
+              Therapy for children, teens, <em>and</em> young adults
             </h1>
           </div>
         </Grid>
+
+        {/* Image Grid Item */}
+        <Grid
+          item
+          xs={12}
+          md={6}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+           <img
+            src={`${process.env.PUBLIC_URL}/Images/lauren1.jpeg`} // Replace with your actual image path
+            alt="Therapy Visual"
+            style={styles.image}
+          />
+        </Grid>
+      
       </Grid>
     </ParallaxSection>
   );

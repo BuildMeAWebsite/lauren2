@@ -98,16 +98,16 @@ const Home = () => {
       </Grid>
     
   
+      <Grid item xs={12}>
+        <HomeSection11 />
+      </Grid>
+
    
      
       <Grid item xs={12}>
         <HomeSection13 />
       </Grid>
    
-      <Grid item xs={12}>
-        <HomeSection11 />
-      </Grid>
-
     
 
   

@@ -20,7 +20,7 @@ const HomeSection8 = () => {
 
   const styles = {
     heroContainer: {
-      minHeight: '10vh', // Default minHeight for larger screens
+      minHeight: '300px', // Default minHeight for larger screens
       color: '#fcfaf4',
       fontFamily: "'Lora', sans-serif",
       backgroundColor: '#fcfaf4',
@@ -139,7 +139,7 @@ const HomeSection8 = () => {
             <div style={styles.squareCard}> {/* Card is wrapped inside the link */}
               <h2 style={styles.subtitle}>start your journey</h2>
               <h1 style={styles.title}>
-                What to expect on your first visit
+                What to expect on your first call
                 <ArrowForwardIcon sx={styles.iconStyle} />
               </h1>
             </div>

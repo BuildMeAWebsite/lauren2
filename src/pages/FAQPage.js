@@ -83,6 +83,9 @@ const FAQPage = () => {
       <Grid item xs={12}>
         <Policies />
       </Grid>
+      <Grid item xs={12} id="faq">
+<HomeSection11ColorChange/>
+      </Grid>
       <Grid item xs={12}>
         <FAQBottomSection />
       </Grid>

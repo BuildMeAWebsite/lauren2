@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-const ParallaxSection = ({ image, children, minHeight = '100vh', showOnMobile = true }) => {
+const ParallaxSection = ({
+  image,
+  children,
+  minHeight = '100vh',
+  showOnMobile = true,
+  overlayColor = 'rgba(255, 255, 255, 0.3)', // Default white transparent overlay
+}) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -17,16 +23,16 @@ const ParallaxSection = ({ image, children, minHeight = '100vh', showOnMobile = 
 
   const parallaxStyle = {
     backgroundImage: `url(${image})`,
-    minHeight: minHeight, // Use the minHeight prop passed to the component
-    opacity: 0.9, // Adjusted opacity for a more subtle effect
+    minHeight: minHeight,
+    opacity: 1,
     backgroundAttachment: isMobile ? 'scroll' : 'fixed',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover', // Adjusted from 'cover' to 'contain'
-    display: isMobile && !showOnMobile ? 'none' : 'flex', 
+    backgroundSize: 'cover',
+    display: isMobile && !showOnMobile ? 'none' : 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    position: 'relative', // For the overlay to work properly
+    position: 'relative',
   };
 
   const overlayStyle = {
@@ -35,16 +41,17 @@ const ParallaxSection = ({ image, children, minHeight = '100vh', showOnMobile = 
     left: 0,
     width: '100%',
     height: '100%',
-    zIndex: 1, // Ensure overlay is on top of the image
+    backgroundColor: overlayColor, // Use the overlayColor prop
+    zIndex: 1,
   };
 
   const contentStyle = {
-    zIndex: 2, // Ensure content is on top of the overlay
+    zIndex: 2,
   };
 
   return (
     <div style={parallaxStyle}>
-      <div style={overlayStyle}></div> {/* Overlay */}
+      <div style={overlayStyle}></div> {/* Overlay with adjustable color */}
       <div style={contentStyle}>
         {children}
       </div>
