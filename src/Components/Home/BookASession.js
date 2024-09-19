@@ -38,7 +38,7 @@ const styles = {
   container: {
     display: 'flex',
     justifyContent: 'center', // Center the content horizontally
-    padding: '100px',
+    padding: '2rem 1.5rem',
     backgroundColor: '#fcfaf4', // Dark background color
     color: '#2B3D2B', // Light text color
     fontFamily: "Lora, sans-serif",
@@ -49,19 +49,19 @@ const styles = {
   },
   header: {
     fontSize: '2.5rem',
-    marginBottom: '20px',
+    marginBottom: '1rem',
     fontWeight: 'normal',
   },
   paragraph: {
     fontFamily: "Georgia, serif",
-    lineHeight: '1.8',
+    lineHeight: '1.75',
     fontSize: '1.25rem',
     marginBottom: '30px',
   },
   button: {
     display: 'inline-block',
     padding: '15px 30px',
-    border: '1px solid #FCFAF4',
+    border: '1px solid #2B3D2B',
     color: '#2B3D2B',
     textDecoration: 'none',
     textTransform: 'uppercase',

@@ -34,7 +34,7 @@ const Footer = ({ onContactClick }) => {
         padding: '2rem 5rem', // Reduced padding for a thinner footer
         textAlign: 'center',
         position: 'relative',
-        zIndex: 10,
+        zIndex: 9,
         '@media (max-width: 768px)': {
           padding: '1.5rem 3rem', // Smaller padding for smaller screens
         },
@@ -88,6 +88,7 @@ const Footer = ({ onContactClick }) => {
             display: 'flex',
             justifyContent: 'center',
             gap: '20px', // Add spacing between the links
+            zIndex: 11,
           }}
         >
           <Link
@@ -219,7 +220,8 @@ const Footer = ({ onContactClick }) => {
               color: '#2b3d2b',
               fontFamily: 'Lora, sans-serif',
               color: '#fcfaf4',
-              marginTop: '-4px',
+              zIndex: 10,
+              marginTop: '1px',
               '&:hover': {
                 color: '#2b3d2b',
               },

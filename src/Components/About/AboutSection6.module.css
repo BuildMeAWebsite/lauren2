@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: row;
-  min-height: 80vh;
+  min-height: 50vh;
   background-color: #fcfaf4;
 }
 
@@ -12,12 +12,14 @@
   max-width: 1000px;
   margin: 0 auto;
   font-family: Lora, sans-serif;
+  box-sizing: border-box;
 }
 
+/* Sidebar with a distinct background and padding */
 .sidebar {
-  min-width: 200px;
+  min-width: 150px;
   background-color: #8FBC8F;
-  padding: 10px;
+  padding: 10px 1rem;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -46,8 +48,9 @@
   transform: scale(1.05); /* Slightly enlarge the text on hover */
 }
 
+/* Headings with varying font sizes */
 .heading {
-  font-size: 2rem; /* Default size for large screens */
+  font-size: 1.75rem; /* Default size for large screens */
   line-height: 1.5;
   text-align: left;
   font-family: Georgia, serif; /* Corrected to serif */
@@ -55,22 +58,22 @@
   color: #333;
 }
 
-/* Media queries for breakpoints */
+/* Adjust heading size at breakpoints */
 @media (max-width: 1200px) {
   .heading {
-    font-size: 2rem; /* Slightly smaller for screens less than 1200px wide */
+    font-size: 1.75rem; /* Slightly smaller for screens less than 1200px wide */
   }
 }
 
 @media (max-width: 992px) {
   .heading {
-    font-size: 1.5rem; /* Smaller for screens less than 992px wide */
+    font-size: 1.75rem; /* Smaller for screens less than 992px wide */
   }
 }
 
 @media (max-width: 808px) {
   .heading {
-    font-size: 1.25rem; /* Even smaller for screens less than 768px wide */
+    font-size: 1.5rem; /* Even smaller for screens less than 808px wide */
   }
 }
 
@@ -79,10 +82,18 @@
   .container {
     flex-direction: column;
   }
+  .heroSection {
+    padding: 50px 20px; /* Reduce padding to prevent text from being too skinny */
+    max-width: 90%; /* Expand max-width to better fit screen space */
+  }
 }
 
 @media (max-width: 576px) {
   .heading {
     font-size: 1.25rem; /* Smallest size for screens less than 576px wide */
+  }
+  .heroSection {
+    padding: 30px 15px; /* Further reduce padding on smaller screens */
+    max-width: 95%; /* Further expand max-width to utilize screen space */
   }
 }
