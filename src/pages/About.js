@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import { Helmet } from 'react-helmet';
-import AboutSection6 from '../Components/About/AboutSection6';
+import AboutSection6 from '../Components/About/AboutSection1';
 import AboutSection7 from '../Components/About/AboutSection7';
 
 import FloatingCard from '../Components/Home/FloatCard1';
@@ -9,6 +9,7 @@ import HomeSection11 from '../Components/Home/HomeSection11';
 
 import HomeSection11ColorChange from '../Components/Home/HomeSection11ColorChange';
 import AboutSection14 from '../Components/About/AboutSection14';
+import AboutSection1 from '../Components/About/AboutSection1';
 
 const About = () => {
   const schemaMarkup = {
@@ -75,7 +76,7 @@ const About = () => {
       </Grid>
     
       <Grid item xs={12} id="top">
-        <AboutSection6 />
+        <AboutSection1 />
       </Grid>
       <Grid item xs={12} id="top">
         <HomeSection11ColorChange  />
