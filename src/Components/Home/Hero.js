@@ -4,6 +4,7 @@ import ParallaxSection from './ParallaxSection';
 
 const Hero = () => {
   const textRefs = useRef([]); // Use refs to keep track of each text element
+  const imageRef = useRef(null); // Ref for the image element
   const [hovered, setHovered] = useState(false); // Hover state for hover effects
 
   useEffect(() => {
@@ -15,6 +16,13 @@ const Hero = () => {
         ref.style.opacity = '1';
       }
     });
+
+    // Fade in the image
+    if (imageRef.current) {
+      imageRef.current.style.transition = 'opacity 1.5s ease-in-out, transform 1.5s ease-in-out';
+      imageRef.current.style.opacity = '1';
+      imageRef.current.style.transform = 'translateY(0)';
+    }
   }, []);
 
   const styles = {
@@ -66,13 +74,14 @@ const Hero = () => {
       },
     },
     image: {
-      maxHeight: '475px', // Maximum height of 400px
+      maxHeight: '475px',
       border: '2px solid #8FBC8F',
-
-      width: 'auto', // Adjust width to maintain aspect ratio
-      objectFit: 'contain', // Maintain aspect ratio and ensure image doesn't overflow
+      width: 'auto',
+      objectFit: 'contain',
       display: 'block',
-      margin: '1rem auto', // Center the image horizontally
+      margin: '1rem auto',
+      opacity: 0, // Initial opacity set to 0 for fade-in effect
+      transform: 'translateY(20px)', // Initial position to create movement effect
     },
     squareCard: {
       zIndex: 2,
@@ -109,11 +118,11 @@ const Hero = () => {
         alignItems="center"
         justifyContent="center"
         spacing={2}
-        direction={{ xs: 'column-reverse', md: 'row' }} // Stack the image below the card on small screens, side-by-side on large screens
+        direction={{ xs: 'column-reverse', md: 'row' }}
         style={styles.heroContainer}
       >
-          {/* Image Grid Item */}
-          <Grid
+        {/* Image Grid Item */}
+        <Grid
           item
           xs={12}
           md={6}
@@ -124,9 +133,10 @@ const Hero = () => {
           }}
         >
           <img
-            src={`${process.env.PUBLIC_URL}/Images/lauren1.jpeg`} // Replace with your actual image path
+            src={`${process.env.PUBLIC_URL}/Images/lauren1.webp`} 
             alt="Therapy Visual"
             style={styles.image}
+            ref={imageRef} // Ref for controlling the image fade-in
           />
         </Grid>
         {/* Card with text */}
@@ -148,8 +158,6 @@ const Hero = () => {
             </h1>
           </div>
         </Grid>
-
-      
       </Grid>
     </ParallaxSection>
   );

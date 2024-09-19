@@ -31,26 +31,20 @@ const Footer = ({ onContactClick }) => {
       sx={{
         backgroundColor: '#2b3d2b !important',
         backdropFilter: 'blur(10px) !important',
-        padding: '2rem 5rem', // Reduced padding for a thinner footer
+        padding: { xs: '1rem 2rem', sm: '1.5rem 3rem', md: '2rem 5rem' }, // Adjusted padding for quicker breakpoints
         textAlign: 'center',
         position: 'relative',
         zIndex: 9,
-        '@media (max-width: 768px)': {
-          padding: '1.5rem 3rem', // Smaller padding for smaller screens
-        },
-        '@media (max-width: 576px)': {
-          padding: '1rem 2rem', // Even smaller padding for mobile devices
-        },
       }}
     >
       <Grid
         container
-        spacing={2}
+        spacing={1}
         alignItems="center"
         justifyContent="space-between"
         sx={{
           flexDirection: { xs: 'column', sm: 'row' },
-          justifyContent: 'space-between', // Ensure horizontal layout
+          justifyContent: 'space-between',
         }}
       >
         {/* Left Column: Pride Flag */}
@@ -60,23 +54,30 @@ const Footer = ({ onContactClick }) => {
           sm={4}
           sx={{
             display: 'flex',
-            justifyContent: { xs: 'center', sm: 'flex-start' },
+            justifyContent: 'center',
             alignItems: 'center',
-            padding: '0 1rem',
-            '@media (max-width: 768px)': {
-              padding: '0 0.5rem',
-            },
+            margin: '1rem auto',
           }}
         >
-          <img
-            src={`${process.env.PUBLIC_URL}/Images/prideflag.png`}
-            alt="Pride Flag"
-            style={{
-              maxWidth: '90px',
-              maxHeight: '50px',
-              borderRadius: '1px',
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%', // Ensure box takes full width to properly center content
             }}
-          />
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/Images/prideflag.png`}
+              alt="Pride Flag"
+              style={{
+                maxWidth: '50px',
+                maxHeight: '50px',
+                borderRadius: '1px',
+                display: 'block', // Ensure the image respects its parent box for centering
+              }}
+            />
+          </Box>
         </Grid>
 
         {/* Center Column: Quick Links */}
@@ -87,7 +88,7 @@ const Footer = ({ onContactClick }) => {
           sx={{
             display: 'flex',
             justifyContent: 'center',
-            gap: '20px', // Add spacing between the links
+            gap: '1rem',
             zIndex: 11,
           }}
         >
@@ -100,7 +101,7 @@ const Footer = ({ onContactClick }) => {
               color: '#fcfaf4',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
-                color: '#FFD700', // Yellow on hover
+                color: '#FFD700',
                 transform: 'scale(1.05)',
               },
             }}
@@ -116,7 +117,7 @@ const Footer = ({ onContactClick }) => {
               color: '#fcfaf4',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
-                color: '#FFD700', // Yellow on hover
+                color: '#FFD700',
                 transform: 'scale(1.05)',
               },
             }}
@@ -149,7 +150,7 @@ const Footer = ({ onContactClick }) => {
               color: '#fcfaf4',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
-                color: '#FFD700', // Yellow on hover
+                color: '#FFD700',
                 transform: 'scale(1.05)',
               },
             }}
@@ -165,20 +166,30 @@ const Footer = ({ onContactClick }) => {
           sm={4}
           sx={{
             display: 'flex',
-            justifyContent: { xs: 'center', sm: 'flex-end' },
+            justifyContent: 'center', // Changed to center for smaller screens
             alignItems: 'center',
-            padding: '0 1rem',
+            padding: '0 auto',
           }}
         >
-          <img
-            src={`${process.env.PUBLIC_URL}/Images/logo.png`} // Replace with your custom logo
-            alt="Custom Logo"
-            style={{
-              maxWidth: '120px',
-              maxHeight: '50px',
-              borderRadius: '1px',
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%',
             }}
-          />
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/Images/logolightfooter.png`}
+              alt="Custom Logo"
+              style={{
+                maxWidth: '100px',
+                maxHeight: 'auto',
+                borderRadius: '1px',
+                display: 'block', // Display block to help centering
+              }}
+            />
+          </Box>
         </Grid>
       </Grid>
 
@@ -187,14 +198,14 @@ const Footer = ({ onContactClick }) => {
         <Box
           sx={{
             position: 'fixed',
-            bottom: '2rem',
-            right: '2rem',
+            bottom: '1rem',
+            right: '1rem',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            backgroundColor: '#2b3d2b',
-            padding: '0.5rem',
-            borderRadius: '8px',
+            backgroundColor: 'transparent',
+            padding: '1rem',
+            borderRadius: '2px',
             '&:hover': {
               backgroundColor: '#FFD700',
               color: '#2b3d2b',
@@ -208,7 +219,7 @@ const Footer = ({ onContactClick }) => {
               color: '#fcfaf4',
               '&:hover': {
                 color: '#2b3d2b',
-                background: 'none'
+                background: 'none',
               },
             }}
           >
@@ -217,9 +228,9 @@ const Footer = ({ onContactClick }) => {
           <Typography
             sx={{
               fontSize: '0.75rem',
-              color: '#2b3d2b',
-              fontFamily: 'Lora, sans-serif',
               color: '#fcfaf4',
+              fontFamily: 'Lora, sans-serif',
+              backgroundColor: 'none',
               zIndex: 10,
               marginTop: '1px',
               '&:hover': {

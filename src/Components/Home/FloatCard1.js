@@ -12,8 +12,8 @@ const FloatingCard = () => {
   };
 
   const outerContentStyle = {
-    padding: '1rem', // Add padding around the border for spacing
-    backgroundColor: 'white',
+    padding: '0.5rem', // Add padding around the border for spacing
+    backgroundColor: '#fcfaf4',
     boxSizing: 'border-box',
     display: 'flex',
     justifyContent: 'center',
