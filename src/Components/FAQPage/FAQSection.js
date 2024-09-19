@@ -9,17 +9,7 @@ const FAQSection = () => {
   const handleTitleMouseLeave = () => setHoveredTitle(false);
 
   return (
-   
     <Box sx={styles.container}>
-      {/* Video Background */}
-      <video autoPlay loop muted playsInline style={styles.videoBackground}>
-        <source src={`${process.env.PUBLIC_URL}/Images/laurenfaq.mp4`} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      {/* Overlay for Better Readability */}
-      <Box sx={styles.overlay}></Box>
-
       {/* Centered Title */}
       <Box sx={styles.centeredTitle}>
         <Typography
@@ -66,18 +56,84 @@ const FAQSection = () => {
 
 // Sample FAQ Data
 const faqs = [
-  // ... (your existing FAQ data)
+  [
+    {
+      title: 'Do you offer in-person therapy sessions?',
+      answer: 'At this time no, I offer video sessions. You can also request phone sessions.',
+    },
+    {
+      title: 'Do you offer family or group therapy sessions?',
+      answer: 'At this time no, I offer individual sessions only.',
+    },
+    {
+      title: 'Are parents able to join therapy sessions?',
+      answer:
+        'Parent involvement varies based on the needs of the child. I believe in collaboration and may involve parents in certain aspects of therapy to support their child’s progress. This will be assessed ongoing in the therapy sessions.',
+    },
+    {
+      title: 'What is your rate?',
+      answer: 'My rate is $170 per session.',
+    },
+    {
+      title: 'What are your hours?',
+      answer:
+        'Currently, I offer therapy sessions in the evening Monday-Friday to accommodate those in school and working. If you prefer another time, I will try my best to accommodate.',
+    },
+  ],
+  [
+    {
+      title: 'How long are your sessions?',
+      answer:
+        'Each session is scheduled for 60 minutes. We have up to 50 minutes for counseling and 10 minutes are used for documentation and sending resources discussed.',
+    },
+    {
+      title: 'Do you accept insurance?',
+      answer: '(see policy information below)',
+    },
+    {
+      title: 'What are the payment options?',
+      answer: '(see policy information below)',
+    },
+    {
+      title: 'How do I schedule an appointment?',
+      answer:
+        'You can contact me <a href="mailto:info@laurenmartyntherapy.ca" style="text-decoration: underline; color: inherit;">here</a> by email to schedule your initial or returning appointment.',
+    },
+    {
+      title: 'Can I schedule an appointment if I live or am travelling outside of Ontario?',
+      answer:
+        'Unfortunately, I am only able to offer services to those residing in Ontario and are located in Ontario at the time of our sessions.',
+    },
+  ],
+  [
+    {
+      title: 'How often are therapy sessions?',
+      answer:
+        'The frequency of therapy sessions depends on individual needs, goals, and budget. Initially, I recommend weekly sessions and then transition to bi-weekly or monthly as progress is made.',
+    },
+    {
+      title: 'How many therapy sessions can I have?',
+      answer:
+        'There is no limit to how many therapy sessions you can have. Some people may be seeking brief support, others may be looking for ongoing support over a longer period of their life.',
+    },
+    {
+      title: 'What can I expect in the first session?',
+      answer:
+        'The first session is an opportunity to get to know you or your child, understand your concerns, and discuss goals for therapy.',
+    },
+    {
+      title: 'I haven’t attended a session in a long time, can I return?',
+      answer: 'Absolutely, anytime you feel ready to return, please reach out to schedule your next appointment.',
+    },
+  ],
 ];
 
 const styles = {
   container: {
-    position: 'relative',
     padding: '60px 80px',
     fontFamily: "'Lora', sans-serif",
     maxWidth: '1200px',
     margin: '0 auto',
-    zIndex: 2, // Ensures the content is above the video
-    paddingTop: '150px', // Adjusts to ensure content starts below the fixed header
     '@media (max-width: 1100px)': {
       padding: '50px 40px',
     },
@@ -91,29 +147,9 @@ const styles = {
       padding: '20px 15px',
     },
   },
-  videoBackground: {
-    position: 'fixed',
-    top: '0',
-    left: '0',
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    zIndex: -1, // Places the video behind all other content, including the header
-  },
-  overlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.3)', // Dark overlay for improved readability
-    zIndex: 1, // Ensures the overlay is above the video but below the content
-  },
   centeredTitle: {
     textAlign: 'center',
     marginBottom: '40px',
-    position: 'relative', // Keeps the title in front of the video
-    zIndex: 2,
   },
   title: {
     fontSize: '3.5rem',
@@ -166,18 +202,12 @@ const styles = {
   },
   accordion: {
     marginBottom: '15px',
-    border: '1px solid #dcdcdc', // Subtle border around accordion
-    boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)', // Add slight shadow for depth
   },
   accordionSummary: {
     backgroundColor: '#fcfaf4',
-    '&:hover': {
-      backgroundColor: '#f0f0f0', // Change color on hover for a subtle effect
-    },
   },
   question: {
     fontFamily: "'Lora', sans-serif",
-    fontWeight: 'bold',
   },
   accordionDetails: {
     backgroundColor: '#fcfaf4',
