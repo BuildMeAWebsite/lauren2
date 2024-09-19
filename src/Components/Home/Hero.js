@@ -27,7 +27,7 @@ const Hero = () => {
       justifyContent: 'center',
       alignItems: 'center',
       paddingTop: '100px',
-      padding: '1rem 2rem',
+      padding: '1rem 1rem',
       boxSizing: 'border-box',
       overflow: 'hidden',
       maxWidth: '1000px',
@@ -66,7 +66,9 @@ const Hero = () => {
       },
     },
     image: {
-      maxHeight: '400px', // Maximum height of 400px
+      maxHeight: '475px', // Maximum height of 400px
+      border: '2px solid #8FBC8F',
+
       width: 'auto', // Adjust width to maintain aspect ratio
       objectFit: 'contain', // Maintain aspect ratio and ensure image doesn't overflow
       display: 'block',
@@ -76,12 +78,12 @@ const Hero = () => {
       zIndex: 2,
       backgroundColor: '#fcfaf4',
       padding: '1rem',
-      border: '2.5px solid #2b3d2b',
+      border: '2px solid #2b3d2b',
       textAlign: 'center',
       width: '100%',
       maxWidth: '300px',
       height: '325px',
-      margin: '2rem auto',
+      margin: '1rem auto',
       position: 'relative',
       fontFamily: 'Lora, sans-serif',
       fontWeight: '100',
@@ -106,7 +108,7 @@ const Hero = () => {
         container
         alignItems="center"
         justifyContent="center"
-        spacing={1}
+        spacing={2}
         direction={{ xs: 'column-reverse', md: 'row' }} // Stack the image below the card on small screens, side-by-side on large screens
         style={styles.heroContainer}
       >
