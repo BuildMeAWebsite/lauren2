@@ -50,7 +50,7 @@ const ContactFloatingHero = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/contact.jpg`} minHeight='80vh'>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/contactimage.jpg`} minHeight='80vh'>
       <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
