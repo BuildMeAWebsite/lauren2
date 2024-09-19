@@ -19,14 +19,15 @@ const Hero = () => {
 
   const styles = {
     heroContainer: {
-      minHeight: '10vh',
+      minHeight: '50vh',
       color: '#fcfaf4',
       fontFamily: "'Lora', sans-serif",
       backgroundColor: 'transparent',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      padding: '1rem auto',
+      paddingTop: '100px',
+      padding: '1rem 2rem',
       boxSizing: 'border-box',
       overflow: 'hidden',
       maxWidth: '1000px',
@@ -55,7 +56,7 @@ const Hero = () => {
     title: {
       fontFamily: "'Georgia', serif",
       fontSize: '2.25rem',
-      fontWeight: 400,
+      fontWeight: 100,
       color: '#2b3d2b',
       margin: 0,
       lineHeight: 1,
@@ -80,7 +81,7 @@ const Hero = () => {
       width: '100%',
       maxWidth: '300px',
       height: '325px',
-      margin: '1rem',
+      margin: '2rem auto',
       position: 'relative',
       fontFamily: 'Lora, sans-serif',
       fontWeight: '100',
@@ -105,7 +106,7 @@ const Hero = () => {
         container
         alignItems="center"
         justifyContent="center"
-        spacing={5}
+        spacing={1}
         direction={{ xs: 'column-reverse', md: 'row' }} // Stack the image below the card on small screens, side-by-side on large screens
         style={styles.heroContainer}
       >
