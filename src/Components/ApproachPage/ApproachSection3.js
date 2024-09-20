@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Box, Typography, Button, Link } from '@mui/material';
 
-const AboutSection7 = () => {
+const ApproachSection3 = () => {
   return (
     <Box sx={styles.container}>
 
@@ -83,5 +83,5 @@ const styles = {
   },
 };
 
-export default AboutSection7;
+export default ApproachSection3;
 

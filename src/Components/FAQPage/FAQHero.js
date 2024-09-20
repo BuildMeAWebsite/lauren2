@@ -54,7 +54,7 @@ const FAQHero = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/bloomingflower.jpg`} minHeight='80vh'>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background3.jpg`} minHeight='80vh'>
      
       <FAQSection/>
     </ParallaxSection>
