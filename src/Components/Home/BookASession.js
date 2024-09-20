@@ -72,7 +72,7 @@ const styles = {
   },
   buttonHover: {
     color: '#FFD700', // Yellow text color on hover
-    borderColor: '#2B3D2B', // Yellow border color on hover
+    borderColor: '#FFD700', // Yellow border color on hover
     transform: 'scale(1.05)', // Slightly enlarge the button on hover
   },
   faq: {

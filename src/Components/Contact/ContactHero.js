@@ -10,10 +10,8 @@ const ContactFloatingHero = () => {
     height: '100vh',  // Match the parallax section height
     zIndex: 1,
   };
-
   const outerContentStyle = {
-    padding: '2rem', // Add padding around the border for spacing
-    backgroundColor: 'white',
+    padding: '2rem 0', // Add padding around the border for spacing
     boxSizing: 'border-box',
     display: 'flex',
     justifyContent: 'center',
@@ -23,7 +21,7 @@ const ContactFloatingHero = () => {
 
   const contentStyle = {
     zIndex: 2,
-    backgroundColor: 'transparent', // No background color inside the card
+    backgroundColor: '#fcfaf4', // No background color inside the card
     padding: '5rem', // Adjusted padding for more space
     border: '1.5px solid #2b2d2b', // Darker border to match the design
     textAlign: 'center', // Center align the text
