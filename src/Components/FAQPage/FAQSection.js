@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Grid, Typography, Box, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import zIndex from '@mui/material/styles/zIndex';
 
 const FAQSection = () => {
   const [hoveredTitle, setHoveredTitle] = useState(false);
@@ -171,12 +172,14 @@ const styles = {
   titlePrimary: {
     display: 'block',
     fontFamily: "'Lora', sans-serif",
+    zIndex: 15,
     fontWeight: 'normal',
     color: '#FCFAF4',
   },
   titleSecondary: {
     display: 'block',
     fontFamily: "'Lora', sans-serif",
+    zIndex: 15,
     fontWeight: 'normal',
     color: '#FCFAF4',
   },
