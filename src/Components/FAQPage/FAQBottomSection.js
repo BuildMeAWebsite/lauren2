@@ -14,7 +14,7 @@ const FAQBottomSection = () => {
     height: '50vh',  // Match the parallax section height
     zIndex: 1,
   };
-  
+
   const outerContentStyle = {
     margin: '10px 20px',
         backgroundColor: '#fcfaf4',
@@ -68,7 +68,7 @@ const FAQBottomSection = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/ferncouch.jpg`} minHeight='50vh'>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/lauren2.webp`} minHeight='50vh'>
       <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>

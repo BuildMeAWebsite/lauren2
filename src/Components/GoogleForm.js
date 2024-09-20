@@ -22,7 +22,7 @@ const GoogleFormEmbed = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/lauren4.webp`} minHeight="100vh">
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/cherryblossoms.jpg`} minHeight="100vh">
       <div style={outerContainerStyle}>
         <iframe
           src="https://docs.google.com/forms/d/e/1FAIpQLSf7NaBdfNFzRTJF17ZdeR0fbMFKArZfW7uQl9ODmGF5sGsEGA/viewform?embedded=true"

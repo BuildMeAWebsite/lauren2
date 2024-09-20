@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Grid, Typography, Box, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import zIndex from '@mui/material/styles/zIndex';
 
 const FAQSection = () => {
   const [hoveredTitle, setHoveredTitle] = useState(false);
@@ -13,28 +12,30 @@ const FAQSection = () => {
     <Box sx={styles.container}>
       {/* Centered Title */}
       <Box sx={styles.centeredTitle}>
-        <Typography
-          variant="h1"
-          sx={{
-            ...styles.title,
-            color: hoveredTitle ? '#FFD700' : '#2B3D2B',
-            textShadow: '0 3px 5px rgba(0, 0, 0, 0.52)',
-            transition: 'color 0.3s ease, transform 0.3s ease',
-          }}
-          onMouseEnter={handleTitleMouseEnter}
-          onMouseLeave={handleTitleMouseLeave}
-        >
-          <span style={styles.titlePrimary}>Frequently Asked</span>
-          <span style={styles.titleSecondary}>Questions</span>
-        </Typography>
+        <Box sx={styles.titleCard}>
+          <Typography
+            variant="h2"
+            sx={{
+              ...styles.title,
+              color: hoveredTitle ? '#FFD700' : '#2b2d2b',
+           
+              transition: 'color 0.3s ease, transform 0.3s ease',
+            }}
+            onMouseEnter={handleTitleMouseEnter}
+            onMouseLeave={handleTitleMouseLeave}
+          >
+            Frequently Asked Questions
+          </Typography>
+        </Box>
         <hr style={styles.line} />
       </Box>
 
       {/* Grid Container for FAQ Items */}
-      <Grid container spacing={2} justifyContent="center">
-        <Grid item xs={12} sm={8} sx={styles.rightColumn}>
-          {faqs.map((faqSection, index) => (
-            <Box key={index} sx={styles.faqSection}>
+      <Grid container spacing={5} justifyContent="center">
+        {faqs.map((faqSection, index) => (
+          <Grid item xs={12} md={6} key={index}>
+            {/* Two columns on larger screens, stack vertically on smaller */}
+            <Box sx={styles.faqSection}>
               {faqSection.map((faqItem, idx) => (
                 <Accordion key={idx} sx={styles.accordion}>
                   <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={styles.accordionSummary}>
@@ -48,8 +49,8 @@ const FAQSection = () => {
                 </Accordion>
               ))}
             </Box>
-          ))}
-        </Grid>
+          </Grid>
+        ))}
       </Grid>
     </Box>
   );
@@ -80,8 +81,7 @@ const faqs = [
       answer:
         'Currently, I offer therapy sessions in the evening Monday-Friday to accommodate those in school and working. If you prefer another time, I will try my best to accommodate.',
     },
-  ],
-  [
+  
     {
       title: 'How long are your sessions?',
       answer:
@@ -105,8 +105,8 @@ const faqs = [
       answer:
         'Unfortunately, I am only able to offer services to those residing in Ontario and are located in Ontario at the time of our sessions.',
     },
-  ],
-  [
+  
+  
     {
       title: 'How often are therapy sessions?',
       answer:
@@ -131,9 +131,9 @@ const faqs = [
 
 const styles = {
   container: {
-    padding: '1rem 3rem',
+    padding: '1rem 2rem',
     fontFamily: "'Lora', sans-serif",
-    maxWidth: '1200px',
+    maxWidth: '100%',
     margin: '0 auto',
     '@media (max-width: 1100px)': {
       padding: '50px 40px',
@@ -152,35 +152,23 @@ const styles = {
     textAlign: 'center',
     marginBottom: '40px',
   },
+  titleCard: {
+    padding: '1rem 2rem',
+    maxWidth: '40%',
+    margin: '0 auto',
+    backgroundColor: '#fcfaf4',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    border: '1px solid #2b2d2b',
+    borderRadius: '0px',
+    boxSizing: 'border-box',
+  },
   title: {
-    fontSize: '3.5rem',
+    fontSize: '1.75rem',
     lineHeight: '1.2',
-    marginBottom: '20px',
-    '@media (max-width: 1100px)': {
-      fontSize: '3rem',
-      marginBottom: '15px',
-    },
-    '@media (max-width: 800px)': {
-      fontSize: '2.5rem',
-      marginBottom: '10px',
-    },
-    '@media (max-width: 600px)': {
-      fontSize: '2rem',
-      marginBottom: '10px',
-    },
-  },
-  titlePrimary: {
-    display: 'block',
-    fontFamily: "'Lora', sans-serif",
-    zIndex: 15,
-    fontWeight: 'normal',
-    color: '#FCFAF4',
-  },
-  titleSecondary: {
-    display: 'block',
-    fontFamily: "'Lora', sans-serif",
-    fontWeight: 'normal',
-    color: '#FCFAF4',
+    marginBottom: '0',
+    fontFamily: "'Georgia', serif",
   },
   line: {
     borderTop: '1.25px solid #8FBC8F',
