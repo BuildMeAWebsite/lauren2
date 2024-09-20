@@ -10,6 +10,7 @@ import ContactSection1 from '../Components/Contact/ContactSection1';
 import ContactForm from './ContactFormPage';
 import HomeSection11 from '../Components/Home/HomeSection11';
 import HomeSection11ColorChange from '../Components/Home/HomeSection11ColorChange';
+import FloatingCard4 from '../Components/Home/FloatCard4';
 
 const Contact = ({ isFormOpen, handleFormClose }) => {
   const handleOverlayClick = (e) => {
@@ -81,18 +82,18 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
 
       <Grid container spacing={0} >
         <Grid item xs={12}>
-          <ContactFloatingHero />
+          <FloatingCard4 />
         </Grid>
 
         <Grid item xs={12}>
-          <ContactSection1 />
+          <HomeSection11ColorChange />
         </Grid>
      
         <Grid item xs={12}>
           <ContactForm />
         </Grid>
         <Grid item xs={12}>
-          <HomeSection11ColorChange />
+          <HomeSection11/>
         </Grid>
       
       </Grid>
