@@ -131,7 +131,7 @@ const faqs = [
 
 const styles = {
   container: {
-    padding: '60px 80px',
+    padding: '1rem 3rem',
     fontFamily: "'Lora', sans-serif",
     maxWidth: '1200px',
     margin: '0 auto',
@@ -179,7 +179,6 @@ const styles = {
   titleSecondary: {
     display: 'block',
     fontFamily: "'Lora', sans-serif",
-    zIndex: 15,
     fontWeight: 'normal',
     color: '#FCFAF4',
   },

@@ -29,7 +29,7 @@ const Policies = () => {
       </Box>
 
       {/* Grid Container for Service Items */}
-      <Grid container spacing={4} justifyContent="center">
+      <Grid container spacing={0} justifyContent="center">
         <Grid item xs={12} sm={8} sx={styles.rightColumn}>
           {serviceItems.map((item, index) => (
             <Box sx={styles.serviceItem} key={index}>
@@ -75,22 +75,18 @@ const serviceItems = [
 
 const styles = {
   container: {
-    padding: '60px 80px',
+    padding: '2rem 0',
     fontFamily: "'Lora', sans-serif",
     maxWidth: '1300px',
     margin: '0 auto',
     '@media (max-width: 1100px)': {
-      padding: '50px 40px',
-    },
+      padding: '1rem 5rem',    },
     '@media (max-width: 800px)': {
-      padding: '40px 30px',
-    },
+      padding: '1rem 5rem',    },
     '@media (max-width: 600px)': {
-      padding: '30px 20px',
-    },
+      padding: '1rem 5rem',    },
     '@media (max-width: 450px)': {
-      padding: '20px 15px',
-    },
+      padding: '1rem 5rem',    },
   },
   centeredTitle: {
     textAlign: 'center',
@@ -98,19 +94,19 @@ const styles = {
   },
   title: {
     fontSize: '3.5rem',
-    lineHeight: '1.2',
-    marginBottom: '20px',
+    lineHeight: '1',
+    marginBottom: '1rem',
     '@media (max-width: 1100px)': {
-      fontSize: '3rem',
-      marginBottom: '15px',
+      fontSize: '70px',
+      marginBottom: '1rem',
     },
     '@media (max-width: 800px)': {
-      fontSize: '2.5rem',
-      marginBottom: '10px',
+      fontSize: '60px',
+      marginBottom: '1rem',
     },
     '@media (max-width: 600px)': {
-      fontSize: '2rem',
-      marginBottom: '10px',
+      fontSize: '40px',
+      marginBottom: '1rem',
     },
   },
   titlePrimary: {
@@ -144,6 +140,8 @@ const styles = {
   },
   serviceItem: {
     marginBottom: '50px',
+    textAlign: 'left',
+
     '@media (max-width: 800px)': {
       marginBottom: '40px',
     },
@@ -152,27 +150,27 @@ const styles = {
     },
   },
   serviceNumber: {
-    fontSize: '1.5rem',
+    fontSize: '2rem',
     color: '#8FBC8F',
-    margin: '1rem 0',
+    margin: '0 auto',
     '@media (max-width: 1100px)': {
       fontSize: '1.4rem',
-      margin: '0.8rem 0',
+      margin: '1rem 0',
     },
     '@media (max-width: 800px)': {
-      fontSize: '1.3rem',
+      fontSize: '2rem',
       margin: '0.6rem 0',
     },
     '@media (max-width: 600px)': {
-      fontSize: '1.2rem',
+      fontSize: '2rem',
       margin: '0.5rem 0',
     },
   },
   serviceDetails: {
-    marginLeft: '30px',
+    marginLeft: '40px',
     textAlign: 'left',
     '@media (max-width: 1100px)': {
-      marginLeft: '0',
+      marginLeft: '10px',
       width: '70%',
       margin: '0 auto',
     },
