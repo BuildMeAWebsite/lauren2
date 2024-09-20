@@ -1,10 +1,13 @@
 import React from 'react';
 import { Grid, Typography, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
+import HomeSection11 from './Home/HomeSection11';
 
 const Sitemap = () => {
   return (
-    <Box sx={styles.container}>
+   
+    <>
+     <Box sx={styles.container}>
       <Grid container spacing={4} justifyContent="center">
         <Grid item xs={12} sm={4} sx={styles.leftColumn}>
           <Typography variant="h1" sx={styles.title}>
@@ -64,6 +67,8 @@ const Sitemap = () => {
         </Grid>
       </Grid>
     </Box>
+    <HomeSection11/>
+    </>
   );
 };
 

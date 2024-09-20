@@ -54,7 +54,7 @@ const ApproachHero = () => {
       <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
-          <p style={headerTextStyle}>approaches</p>
+          <p style={headerTextStyle}>my approach</p>
         </div>
       </div>
     </ParallaxSection>
