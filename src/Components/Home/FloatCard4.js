@@ -5,6 +5,7 @@ import { Box, Typography } from '@mui/material';
 const FloatingCard4 = () => {
   const overlayStyle = {
     position: 'absolute',
+    padding: '1rem 2rem',
     top: 0,
     left: 0,
     width: '100%',
@@ -13,14 +14,15 @@ const FloatingCard4 = () => {
   };
 
   const outerContentStyle = {
-    padding: '0.5rem', // Add padding around the border for spacing
-    backgroundColor: '#fcfaf4',
-    boxSizing: 'border-box',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%', // Ensure the outer content fills the height of the section
-  };
+    margin: '10px 20px',
+        backgroundColor: '#fcfaf4',
+        boxSizing: 'border-box',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%', // Ensure the outer content fills the height of the section
+      };
+
 
   const contentStyle = {
     zIndex: 2,

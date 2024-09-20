@@ -3,7 +3,7 @@ import ParallaxSection from './Home/ParallaxSection';
 
 const GoogleFormEmbed = () => {
   const outerContainerStyle = {
-    padding: '2rem 0', // Add some padding around the form
+    margin: '1rem auto', // Add some padding around the form
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -12,10 +12,11 @@ const GoogleFormEmbed = () => {
   };
 
   const iframeStyle = {
+    margin: '0 1rem',
     border: 'none',
     borderRadius: '1px',
-    width: '100%',
-    minWidth: '800px', // Constrain the maximum width of the form
+    maxWidth: '100%',
+    minWidth: '500px', // Constrain the maximum width of the form
     height: '1500px',
     zIndex: 1300, // Ensure this is higher than the AppBar
   };

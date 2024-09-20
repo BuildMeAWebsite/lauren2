@@ -12,7 +12,7 @@ const ApproachHero = () => {
   };
 
   const outerContentStyle = {
-    padding: '0.5rem', // Add padding around the border for spacing
+margin: '10px 20px',
     backgroundColor: '#fcfaf4',
     boxSizing: 'border-box',
     display: 'flex',

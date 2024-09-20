@@ -11,16 +11,16 @@ const FloatingCard3 = () => {
     height: '100%', // Match the section height
     zIndex: 1,
   };
-
   const outerContentStyle = {
-    padding: '0.5rem', // Add padding around the border for spacing
-    backgroundColor: '#fcfaf4',
-    boxSizing: 'border-box',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%', // Ensure the outer content fills the height of the section
-  };
+    margin: '10px 20px',
+        backgroundColor: '#fcfaf4',
+        boxSizing: 'border-box',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%', // Ensure the outer content fills the height of the section
+      };
+
 
   const contentStyle = {
     zIndex: 2,

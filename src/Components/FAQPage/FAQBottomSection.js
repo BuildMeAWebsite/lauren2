@@ -14,24 +14,17 @@ const FAQBottomSection = () => {
     height: '50vh',  // Match the parallax section height
     zIndex: 1,
   };
-
+  
   const outerContentStyle = {
-    padding: '1.25rem', // Add padding around the border for spacing
-    backgroundColor: '#ffffff',
-    color: '#8fbc8f',
-    boxSizing: 'border-box',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%', // Ensure the outer content fills the height of the section
-    width: '100%',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    maxWidth: 'calc(100% - 1rem)', // Ensure spacing on both sides
-    '@media (max-width: 576px)': {
-      maxWidth: 'calc(100% - 2rem)', // Reduce margin for very small screens
-    },
-  };
+    margin: '10px 20px',
+        backgroundColor: '#fcfaf4',
+        boxSizing: 'border-box',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%', // Ensure the outer content fills the height of the section
+      };
+
 
   const contentStyle = {
     zIndex: 2,

@@ -16,19 +16,15 @@ const AboutSection14 = () => {
   };
 
   const outerContentStyle = {
-    padding: '1.25rem', // Add padding around the border for spacing
-    backgroundColor: 'white',
-    color: '#8fbc8f',
-    boxSizing: 'border-box',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%', // Ensure the outer content fills the height of the section
-    margin: '0 2rem', // Add margin for spacing on the left and right sides
-    '@media (max-width: 576px)': {
-      margin: '0 1rem', // Reduce margin for very small screens
-    },
-  };
+    margin: '10px 20px',
+        backgroundColor: '#fcfaf4',
+        boxSizing: 'border-box',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%', // Ensure the outer content fills the height of the section
+      };
+
 
   const contentStyle = {
     zIndex: 2,
@@ -37,7 +33,7 @@ const AboutSection14 = () => {
     border: '1.5px solid #2b3d2b', // Darker border to match the design
     textAlign: 'center', // Center align the text
     width: '100%',
-    maxWidth: '25rem', // Set max width for larger screens
+    maxWidth: '300px', // Set max width for larger screens
     position: 'relative',
     fontFamily: 'Georgia, serif',
     fontWeight: 'normal',
