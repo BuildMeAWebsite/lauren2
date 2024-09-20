@@ -26,10 +26,10 @@ const FloatingCard2 = () => {
     zIndex: 2,
     backgroundColor: '#fcfaf4',
     padding: '2rem', // Ensure padding around content
-    border: '1.5px solid #2b2d2b',
+
     textAlign: 'center',
     width: '100%', // Limit width to ensure spacing around the card
-    maxWidth: '300px', // Ensure the card stays square
+    maxWidth: '250px', // Ensure the card stays square
     aspectRatio: '1 / 1', // Maintain square shape
     position: 'relative',
     fontFamily: 'Georgia, serif',

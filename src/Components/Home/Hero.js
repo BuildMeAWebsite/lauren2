@@ -110,7 +110,7 @@ const Hero = () => {
   return (
     <ParallaxSection
       image={`${process.env.PUBLIC_URL}/Images/background1a1.jpg`}
-      minHeight="80vh"
+      minHeight="100vh"
       overlayColor="rgba(255, 255, 255, 0.5)"
     >
       <Grid
