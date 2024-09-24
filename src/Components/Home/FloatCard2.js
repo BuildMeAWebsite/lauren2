@@ -78,7 +78,7 @@ const FloatingCard2 = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/busbackground.jpg`} minHeight='80vh'>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background3.jpg`} minHeight='80vh'>
       <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
