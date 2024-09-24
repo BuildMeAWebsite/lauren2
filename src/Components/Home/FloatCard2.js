@@ -11,25 +11,21 @@ const FloatingCard2 = () => {
     height: '100%',
     zIndex: 1,
   };
-  const outerContentStyle = {
-    margin: '10px 20px',
-        backgroundColor: '#fcfaf4',
-        boxSizing: 'border-box',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100%', // Ensure the outer content fills the height of the section
-      };
 
+  const outerContentStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%', // Ensure the outer content fills the height of the section
+  };
 
   const contentStyle = {
     zIndex: 2,
     backgroundColor: '#fcfaf4',
-    padding: '2rem', // Ensure padding around content
-
+    padding: '3rem', // Ensure padding around content
     textAlign: 'center',
     width: '100%', // Limit width to ensure spacing around the card
-    maxWidth: '250px', // Ensure the card stays square
+    maxWidth: '300px', // Ensure the card stays square
     aspectRatio: '1 / 1', // Maintain square shape
     position: 'relative',
     fontFamily: 'Georgia, serif',
@@ -40,17 +36,18 @@ const FloatingCard2 = () => {
     flexDirection: 'column', // Stack text and arrow vertically
     justifyContent: 'center',
     alignItems: 'center',
-    margin: '2rem', // Add spacing around the card
     boxSizing: 'border-box',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Subtle shadow for depth
+    border: '2px solid #2b2d2b', 
   };
 
   const headerTextStyle = {
-    fontSize: '2.5rem',
+    fontSize: '2rem',
     fontWeight: 'normal',
-    letterSpacing: '0.01em',
+    letterSpacing: '0.1px',
     fontFamily: 'Georgia, serif',
     textTransform: 'lowercase',
-
+    marginBottom: '2rem', // Add spacing below the header text
   };
 
   const arrowLinkStyle = {
@@ -59,18 +56,18 @@ const FloatingCard2 = () => {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: '1rem', // Space between the text and the arrow
+    gap: '0.5rem', // Space between the text and the arrow
     transition: 'transform 0.3s ease',
     cursor: 'pointer', // Add pointer cursor to the link
   };
 
   const iconStyle = {
-    fontSize: '0.75rem',
+    fontSize: '1.25rem',
     transition: 'transform 0.3s ease',
   };
 
   const linkTextStyle = {
-    fontSize: '0.75rem',
+    fontSize: '1rem',
     fontWeight: 100,
     textTransform: 'lowercase',
     fontFamily: 'Georgia, serif',
@@ -78,7 +75,7 @@ const FloatingCard2 = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background3.jpg`} minHeight='80vh'>
+    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background3.jpg`} minHeight="100vh">
       <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
