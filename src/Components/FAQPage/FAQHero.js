@@ -5,7 +5,7 @@ import { Typography, Box } from '@mui/material';
 
 const FAQHero = () => {
   return (
-       <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/rocksunflower.jpg`}>
+       <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/treebackground.jpg`}>
 
       {/* Overlay and Content */}
       <Box
