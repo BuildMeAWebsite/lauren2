@@ -1,87 +1,103 @@
-import React from 'react';
-import { Grid, Box, Typography, Button, Link } from '@mui/material';
+import React, { useState } from 'react';
 
 const ApproachSection3 = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
-    <Box sx={styles.container}>
+    <div style={styles.container}>
+      {/* Text on the left and Image on the right */}
+      <div style={styles.textContainer}>
+        <p
+          style={{
+            ...styles.smallText,
+            color: isHovered ? '#FFD700' : '#333',
+            transform: isHovered ? 'scale(1.05)' : 'scale(1)',
+          }}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          methods
+        </p>
+        <h1 style={styles.heading}>
+          My approach is rooted in strength-based, solution-focused,
+          emotion-focused and narrative therapy. I customize my approach to best
+          fit each client's unique needs and goals. I use a variety of
+          therapeutic interventions:
+        </h1>
+      </div>
 
-         
-          <Grid item xs={12} md={6}>
-            <Typography variant="body1" sx={styles.paragraph}>
-            I have experience working with various concerns and clients of all ages. Whether you know exactly what you want to work on or are unsure where to start, you’re in the driver’s seat. I’m here as your passenger, ready to move forward at your pace, whether we take the long way or change directions. Counseling offers a space to explore challenges, growth, healing, and everything in between.            </Typography>
-            <Button variant="outlined" href="contact" sx={styles.button}>
-              Schedule an Introductory Call
-            </Button>
-
-            
-         
-        </Grid>
-    
-    </Box>
+      {/* Image Container */}
+      <div style={styles.imageContainer}>
+        <img
+          src={`${process.env.PUBLIC_URL}/Images/lauren4.webp`}
+          alt="Lauren Martyn"
+          style={styles.image}
+        />
+      </div>
+    </div>
   );
 };
 
 const styles = {
   container: {
-    padding: { xs: '4rem 2rem', sm: '6rem 3rem', md: '8rem 4rem' },
-    color: '#2b3d2b', // Dark background color
-    backgroundColor: '#FCFAF4', // Light text color
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: '50px 20px',
+    backgroundColor: '#fcfaf4',
+    gap: '20px',
+  },
+  textContainer: {
+    backgroundColor: '#fcfaf4',
+    flex: 1,
+    padding: '20px',
+    textAlign: 'left',
+    maxWidth: '600px',
+    margin: '0 auto',
+    fontFamily: 'Lora, sans-serif',
+  },
+  smallText: {
+    backgroundColor: '#fcfaf4',    fontSize: '1rem',
+    letterSpacing: '0.1rem',
+    textTransform: 'lowercase',
+    marginBottom: '20px',
+    transition: 'color 0.3s ease, transform 0.3s ease',
+  },
+  heading: {
+    fontFamily: 'Georgia, serif',
+    fontSize: '2rem',
+    lineHeight: '1.5',
+    fontWeight: 'normal',
+    color: '#333',
+  },
+  imageContainer: {
+    flex: 1,
     display: 'flex',
     justifyContent: 'center',
   },
-  content: {
-    maxWidth: '1100px', // Constrain the width of the content to 1200px
-    width: '100%',
+  image: {
+    maxWidth: '100%',
+    height: 'auto',
+    borderRadius: '10px',
+    objectFit: 'cover',
   },
-  header: {
-    fontFamily: "'Lora', sans-serif",
-    fontSize: { xs: '2rem', md: '2.5rem' },
-    marginBottom: '20px',
-  },
-  list: {
-    listStyleType: 'disc',
-    fontFamily: "'Georgia', serif",
-    paddingLeft: '20px',
-    lineHeight: '1.5',
-    fontSize: '1.25rem',
-    marginLeft: { xs: '0', md: '2rem' },
-  },
-  paragraph: {
-    fontFamily: "'Georgia', serif",
-    lineHeight: '1.5',
-    fontSize: '1.25rem',
-    marginBottom: '30px',
-  },
-  button: {
-    fontFamily: "Lora, sans-serif",
-    backgroundColor: "Transparent",
-
-    display: 'inline-block',
-    padding: '0.5rem 1rem',
-    borderColor: '#2b3d2b',
-    color: '#2b3d2b',
-    textDecoration: 'none',
-    textTransform: 'uppercase',
-    fontSize: '1rem',
-    marginBottom: '20px',
-    textAlign: 'center',
-    transition: 'color 0.3s ease, border-color 0.3s ease, transform 0.3s ease', // Add transition for smooth effect
-    '&:hover': {
-      color: '#FFD700', // Yellow text on hover
-      borderColor: '#FFD700', // Yellow border on hover
-      transform: 'scale(1.05)', // Slightly enlarge on hover
+  '@media (max-width: 768px)': {
+    container: {
+      flexDirection: 'column',
     },
-  },
-  faq: {
-    fontFamily: "'Georgia', serif",
-    fontSize: '1rem',
-  },
-  link: {
-    fontFamily: "'Georgia', serif",
-    color: '#2b3d2b',
-    textDecoration: 'underline',
+    textContainer: {
+      maxWidth: '100%',
+    },
   },
 };
 
 export default ApproachSection3;
-

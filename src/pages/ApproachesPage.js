@@ -92,7 +92,7 @@ const ApproachesPageComponent = () => {
         <HomeSection11 />
       </Grid>
       <Grid item xs={12} id="top">
-        <AboutSection9a />
+        <ApproachSection3 />
       </Grid>
   
      

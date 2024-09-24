@@ -7,8 +7,7 @@ const AboutSection1 = () => {
       <div className={styles.heroSection}>
         <p className={styles.smallText}>compassionate, <em>non-blaming</em> empathy.</p>
         <h1 className={styles.heading}>
-My approach is rooted in strength-based, solution-focused, emotion-focused and narrative therapy. I customize my approach to best fit each client's unique needs and goals. I use a variety of therapeutic interventions:        </h1>
-      </div>
+Hey Lauren, since we switched up the approaches and about page, should we come up with a different line here that would be a good "about me" intro? Maybe something like Hi, I'm lauren and I grew up in Ontario, I like to hike, etc... </h1>      </div>
       <div className={styles.sidebar}>
         <div className={styles.line}></div> {/* Vertical line added */}
       </div>
