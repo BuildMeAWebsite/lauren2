@@ -38,7 +38,7 @@ const FloatingCard2 = () => {
     alignItems: 'center',
     boxSizing: 'border-box',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Subtle shadow for depth
-    border: '2px solid #2b2d2b', 
+    border: '1.5px solid #2b2d2b', // Darker border to match the design
   };
 
   const headerTextStyle = {
