@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Box, Grid, Typography } from '@mui/material';
 
 const HomeSection7 = () => {
   const [buttonHover, setButtonHover] = useState(false);
@@ -12,43 +13,54 @@ const HomeSection7 = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.rightColumn}>
-        <h2 style={styles.header}>Book a session:</h2>
-        <p style={styles.paragraph}>
-        To get started, click the button below to schedule a free, 15-minute introductory call with me. We’ll discuss your availability and preferences, and I’ll work to find the best approach to meet your needs.        </p>
-        <a
-          href="contact"
-          style={{
-            ...styles.button,
-            ...(buttonHover ? styles.buttonHover : {}),
-          }}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          schedule your introductory call
-        </a>
-    
-      </div>
-    </div>
+    <Box sx={styles.container}>
+      <Grid container spacing={4} alignItems="center">
+        <Grid item xs={12} md={6}>
+          <Typography variant="h2" sx={styles.header}>
+            Book a session:
+          </Typography>
+          <Typography variant="body1" sx={styles.paragraph}>
+            To get started, click the button below to schedule a free, 15-minute
+            introductory call with me. We’ll discuss your availability and
+            preferences, and I’ll work to find the best approach to meet your
+            needs.
+          </Typography>
+          <a
+            href="contact"
+            style={{
+              ...styles.button,
+              ...(buttonHover ? styles.buttonHover : {}),
+            }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            schedule your introductory call
+          </a>
+        </Grid>
+        <Grid item xs={12} md={6} sx={styles.imageContainer}>
+          <img
+            src={`${process.env.PUBLIC_URL}/Images/lauren2.webp`}
+            alt="Lauren Martyn"
+            style={styles.image}
+          />
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 
 const styles = {
   container: {
     display: 'flex',
-    justifyContent: 'center', // Center the content horizontally
-    padding: '2rem 1.5rem',
-    backgroundColor: '#fcfaf4', // Dark background color
-    color: '#2B3D2B', // Light text color
+    justifyContent: 'center',
+    padding: { xs: '4rem 2rem', sm: '6rem 3rem', md: '8rem 4rem' },
+    backgroundColor: '#fcfaf4',
+    color: '#2B3D2B',
     fontFamily: "Lora, sans-serif",
   },
-  rightColumn: {
-    flex: 1,
-    maxWidth: '600px', // Limit the width of the text content for better readability
-  },
   header: {
-    fontSize: '2.5rem',
+    fontSize: { xs: '2rem', md: '2.5rem' },
+    fontFamily: "Lora, sans-serif",
     marginBottom: '1rem',
     fontWeight: 'normal',
   },
@@ -71,16 +83,20 @@ const styles = {
     transition: 'color 0.3s ease, transform 0.3s ease, border-color 0.3s ease',
   },
   buttonHover: {
-    color: '#FFD700', // Yellow text color on hover
-    borderColor: '#FFD700', // Yellow border color on hover
-    transform: 'scale(1.05)', // Slightly enlarge the button on hover
+    color: '#FFD700',
+    borderColor: '#FFD700',
+    transform: 'scale(1.05)',
   },
-  faq: {
-    fontSize: '1rem',
+  imageContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  link: {
-    color: '#2B3D2B',
-    textDecoration: 'underline',
+  image: {
+    maxWidth: '100%',
+    height: 'auto',
+    borderRadius: '8px',
+    boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)',
   },
 };
 

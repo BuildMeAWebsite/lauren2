@@ -36,7 +36,7 @@
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 
   border-radius: 8px;
-  max-width: 300px; /* Adjusted size for better responsiveness */
+  max-width: 275px; /* Adjusted size for better responsiveness */
   max-height: 100%;
   margin: 0 50px; /* Adds spacing around the image */
   object-fit: contain;

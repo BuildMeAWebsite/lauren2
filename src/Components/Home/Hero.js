@@ -66,6 +66,7 @@ const Hero = () => {
       backgroundColor: '#fcfaf4',
       padding: '1rem',
       border: '2px solid #2b3d2b',
+
       textAlign: 'center',
       width: '100%',
       width: '300px',
