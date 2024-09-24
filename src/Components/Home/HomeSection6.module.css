@@ -29,7 +29,13 @@
   justify-content: center; /* Centers content horizontally */
 }
 
+
+
+
 .image {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+
+  border-radius: 8px;
   max-width: 300px; /* Adjusted size for better responsiveness */
   max-height: 100%;
   margin: 0 50px; /* Adds spacing around the image */
@@ -39,7 +45,7 @@
 
 .heroSection {
   flex: 1;
-  padding: 20px;
+  padding: 30px;
   text-align: left;
   max-width: 600px; /* Adjusted to improve readability */
   font-family: Lora, sans-serif;
