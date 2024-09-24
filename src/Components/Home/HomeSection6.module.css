@@ -1,21 +1,10 @@
 .container {
   display: flex;
   flex-direction: row;
-  min-height: 50vh;
+  min-height: 70vh;
   background-color: #fcfaf4;
 }
 
-.heroSection {
-  flex: 1;
-  padding: 100px;
-  text-align: left;
-  max-width: 1000px;
-  margin: 0 auto;
-  font-family: Lora, sans-serif;
-  box-sizing: border-box;
-}
-
-/* Sidebar with a distinct background and padding */
 .sidebar {
   min-width: 150px;
   background-color: #8FBC8F;
@@ -28,11 +17,35 @@
 
 .line {
   width: 1.25px;
-  height: 25%; /* Adjust height as needed */
-  background-color: #FCFAF4; /* Light color for the line */
+  height: 25%;
+  background-color: #FCFAF4;
 }
 
-/* Responsive text styles */
+.contentContainer {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: center; /* Centers content horizontally */
+}
+
+.image {
+  max-width: 300px; /* Adjusted size for better responsiveness */
+  max-height: 100%;
+  margin: 0 50px; /* Adds spacing around the image */
+  object-fit: contain;
+  flex-shrink: 0; /* Prevents the image from shrinking */
+}
+
+.heroSection {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+  max-width: 600px; /* Adjusted to improve readability */
+  font-family: Lora, sans-serif;
+  box-sizing: border-box;
+}
+
 .smallText {
   font-size: 1rem;
   letter-spacing: 0.25rem;
@@ -40,20 +53,18 @@
   margin-bottom: 20px;
   color: #2b2d2b;
   font-family: 'Lora, sans-serif';
-  transition: color 0.3s ease, transform 0.3s ease; /* Transition for hover effects */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .smallText:hover {
-  color: #FFD700; /* Change color to yellow on hover */
-  transform: scale(1.05); /* Slightly enlarge the text on hover */
+  color: #FFD700;
+  transform: scale(1.05);
 }
 
-/* Headings with varying font sizes */
 .heading {
-  font-size: 1.75rem; /* Default size for large screens */
+  font-size: 1.75rem;
   line-height: 1.5;
-  text-align: left;
-  font-family: Georgia, serif; /* Corrected to serif */
+  font-family: Georgia, serif;
   font-weight: normal;
   color: #333;
 }
@@ -61,39 +72,47 @@
 /* Adjust heading size at breakpoints */
 @media (max-width: 1200px) {
   .heading {
-    font-size: 1.75rem; /* Slightly smaller for screens less than 1200px wide */
+    font-size: 1.75rem;
   }
 }
 
 @media (max-width: 992px) {
   .heading {
-    font-size: 1.75rem; /* Smaller for screens less than 992px wide */
+    font-size: 1.75rem;
   }
 }
 
 @media (max-width: 808px) {
   .heading {
-    font-size: 1.5rem; /* Even smaller for screens less than 808px wide */
+    font-size: 1.5rem;
   }
 }
 
-/* Stack the sidebar below the hero section on small screens */
+/* Stack the content on smaller screens */
 @media (max-width: 868px) {
   .container {
     flex-direction: column;
   }
+  .contentContainer {
+    flex-direction: column;
+    padding: 20px 0;
+    align-items: center; /* Centers image and text vertically */
+  }
+  .image {
+    margin: 20px 0; /* Centers image with space on small screens */
+  }
   .heroSection {
-    padding: 50px 20px; /* Reduce padding to prevent text from being too skinny */
-    max-width: 90%; /* Expand max-width to better fit screen space */
+    padding: 20px;
+    max-width: 90%;
   }
 }
 
 @media (max-width: 576px) {
   .heading {
-    font-size: 1.25rem; /* Smallest size for screens less than 576px wide */
+    font-size: 1.25rem;
   }
   .heroSection {
-    padding: 30px 15px; /* Further reduce padding on smaller screens */
-    max-width: 95%; /* Further expand max-width to utilize screen space */
+    padding: 30px 15px;
+    max-width: 95%;
   }
 }

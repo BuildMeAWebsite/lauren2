@@ -59,7 +59,25 @@ const Footer = ({ onContactClick }) => {
             margin: '1rem auto',
           }}
         >
-        
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%', // Ensure box takes full width to properly center content
+            }}
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/Images/prideflag.png`}
+              alt="Pride Flag"
+              style={{
+                maxWidth: '50px',
+                maxHeight: '50px',
+                borderRadius: '1px',
+                display: 'block', // Ensure the image respects its parent box for centering
+              }}
+            />
+          </Box>
         </Grid>
 
         {/* Center Column: Quick Links */}
@@ -140,25 +158,7 @@ const Footer = ({ onContactClick }) => {
             Sitemap
           </Link>
         </Grid>
-        <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '100%', // Ensure box takes full width to properly center content
-            }}
-          >
-            <img
-              src={`${process.env.PUBLIC_URL}/Images/logolightfooter.png`}
-              alt="Lauren Martyn Psycotherapy"
-              style={{
-                minWidth: '100px',
-                height: '50px',
-                borderRadius: '1px',
-                display: 'block', // Ensure the image respects its parent box for centering
-              }}
-            />
-          </Box>
+
         {/* Right Column: Custom Logo */}
         <Grid
           item
@@ -171,28 +171,26 @@ const Footer = ({ onContactClick }) => {
             padding: '0 auto',
           }}
         >
-          
           <Box
             sx={{
               display: 'flex',
-              justifyContent: 'left',
+              justifyContent: 'center',
               alignItems: 'center',
               width: '100%',
             }}
           >
             <img
-              src={`${process.env.PUBLIC_URL}/Images/prideflag.png`}
-              alt="Pride Flag"
+              src={`${process.env.PUBLIC_URL}/Images/logolightfooter.png`}
+              alt="Custom Logo"
               style={{
-                minWidth: '60px',
-                height: '40px',
+                maxWidth: '100px',
+                maxHeight: 'auto',
                 borderRadius: '1px',
                 display: 'block', // Display block to help centering
               }}
             />
           </Box>
         </Grid>
-      
       </Grid>
 
       {/* Back to Top Button */}

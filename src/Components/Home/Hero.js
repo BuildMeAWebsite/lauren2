@@ -4,7 +4,6 @@ import ParallaxSection from './ParallaxSection';
 
 const Hero = () => {
   const textRefs = useRef([]); // Use refs to keep track of each text element
-  const imageRef = useRef(null); // Ref for the image element
   const [hovered, setHovered] = useState(false); // Hover state for hover effects
 
   useEffect(() => {
@@ -16,18 +15,11 @@ const Hero = () => {
         ref.style.opacity = '1';
       }
     });
-
-    // Fade in the image
-    if (imageRef.current) {
-      imageRef.current.style.transition = 'opacity 1.5s ease-in-out, transform 1.5s ease-in-out';
-      imageRef.current.style.opacity = '1';
-      imageRef.current.style.transform = 'translateY(0)';
-    }
   }, []);
 
   const styles = {
     heroContainer: {
-      minHeight: '50vh',
+      minHeight: '40vh',
       color: '#fcfaf4',
       fontFamily: "'Lora', sans-serif",
       backgroundColor: 'transparent',
@@ -44,10 +36,6 @@ const Hero = () => {
         margin: '0 1rem',
         flexDirection: 'column',
       },
-    },
-    slideIn: {
-      transform: 'translateY(100px)',
-      opacity: 0,
     },
     subtitle: {
       fontFamily: "'Lora', sans-serif",
@@ -73,16 +61,6 @@ const Hero = () => {
         fontSize: '2rem',
       },
     },
-    image: {
-      maxHeight: '475px',
-      border: '2px solid #8FBC8F',
-      width: 'auto',
-      objectFit: 'contain',
-      display: 'block',
-      margin: '1rem auto',
-      opacity: 0, // Initial opacity set to 0 for fade-in effect
-      transform: 'translateY(20px)', // Initial position to create movement effect
-    },
     squareCard: {
       zIndex: 2,
       backgroundColor: '#fcfaf4',
@@ -90,8 +68,8 @@ const Hero = () => {
       border: '2px solid #2b3d2b',
       textAlign: 'center',
       width: '100%',
-      maxWidth: '300px',
-      height: '325px',
+      width: '300px',
+      height: '300px',
       margin: '1rem auto',
       position: 'relative',
       fontFamily: 'Lora, sans-serif',
@@ -110,7 +88,7 @@ const Hero = () => {
   return (
     <ParallaxSection
       image={`${process.env.PUBLIC_URL}/Images/background1a1.jpg`}
-      minHeight="100vh"
+      minHeight="80vh"
       overlayColor="rgba(255, 255, 255, 0.5)"
     >
       <Grid
@@ -121,24 +99,6 @@ const Hero = () => {
         direction={{ xs: 'column-reverse', md: 'row' }}
         style={styles.heroContainer}
       >
-        {/* Image Grid Item */}
-        <Grid
-          item
-          xs={12}
-          md={6}
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <img
-            src={`${process.env.PUBLIC_URL}/Images/lauren1.webp`} 
-            alt="Therapy Visual"
-            style={styles.image}
-            ref={imageRef} // Ref for controlling the image fade-in
-          />
-        </Grid>
         {/* Card with text */}
         <Grid
           item
