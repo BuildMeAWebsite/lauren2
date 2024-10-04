@@ -41,7 +41,7 @@ const styles = {
     padding: '3rem 2rem',
     backgroundColor: '#fcfaf4', // Dark background color
     color: '#2B3D2B', // Light text color
-    fontFamily: "Lora, sans-serif",
+    fontFamily: "Lora, serif",
   },
   rightColumn: {
     flex: 1,
@@ -53,12 +53,14 @@ const styles = {
     fontWeight: 'normal',
   },
   paragraph: {
-    fontFamily: "Georgia, serif",
+    fontFamily: "Quicksand, sans-serif",
     lineHeight: '1.75',
     fontSize: '1.25rem',
     marginBottom: '30px',
   },
   button: {
+    fontFamily: "Quicksand, sans-serif",
+
     display: 'inline-block',
     padding: '15px 30px',
     border: '1px solid #2B3D2B',

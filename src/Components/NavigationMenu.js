@@ -15,7 +15,7 @@ const NavigationMenuBar = () => {
               to="#"
               onClick={(e) => {
                 window.location.href = 'mailto:info@laurenmartyntherapy.ca';
-                e.preventDefault(); // Prevent the default link behavior
+                e.preventDefault(); 
               }}
               style={styles.emailLink}
             >

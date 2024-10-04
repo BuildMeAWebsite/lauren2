@@ -21,14 +21,14 @@ const AboutSection12b = () => {
       marginBottom: '20px',
     },
     list: {
-      fontFamily: "'Georgia', serif",
+      fontFamily: "Quicksand, sans-serif",
       listStyleType: 'disc',
       paddingLeft: '20px',
       lineHeight: '1.8',
       fontSize: '1.25rem',
     },
     paragraph: {
-      fontFamily: "'Georgia', serif",
+      fontFamily: "Quicksand, sans-serif",
       lineHeight: '1.8',
       fontSize: '1.25rem',
       marginBottom: '30px',
@@ -52,8 +52,7 @@ const AboutSection12b = () => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography variant="body1" sx={styles.paragraph}>
-              We will explore your thoughts and feelings through non-verbal and imaginative forms of expression. Whether through play, art, or storytelling, these therapies offer a unique way to process emotions, build self-awareness, and heal from past experiences. I will guide you in using these creative outlets to unlock new insights and foster personal growth, empowering you to navigate life’s challenges with renewed confidence and clarity.
-            </Typography>
+            For those who find expressing themselves difficult or uncomfortable, I use an alternative approach to talk therapy,  through play, art, or storytelling. These approaches offer a unique way to process emotions, build self-awareness, and heal from past experiences. I will guide you in using these creative outlets to unlock new insights and foster personal growth, empowering you to navigate life’s challenges with renewed confidence and clarity.            </Typography>
           </Grid>
         </Grid>
       </Box>

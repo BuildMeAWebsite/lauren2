@@ -24,20 +24,18 @@ const ApproachSection3 = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          methods
+          approach
         </p>
         <h1 style={styles.heading}>
-          My approach is rooted in strength-based, solution-focused,
-          emotion-focused and narrative therapy. I customize my approach to best
-          fit each client's unique needs and goals. I use a variety of
-          therapeutic interventions:
-        </h1>
+        My approach is rooted in offering a warm, genuine, approachable, playful and optimistic space. I customize my approach to best fit each client's unique needs and goals. I use a variety of therapeutic interventions : 
+
+</h1>
       </div>
 
       {/* Image Container */}
       <div style={styles.imageContainer}>
         <img
-          src={`${process.env.PUBLIC_URL}/Images/lauren4.webp`}
+          src={`${process.env.PUBLIC_URL}/Images/lauren2.webp`}
           alt="Lauren Martyn"
           style={styles.image}
         />
@@ -63,20 +61,24 @@ const styles = {
     textAlign: 'left',
     maxWidth: '600px',
     margin: '0 auto',
-    fontFamily: 'Lora, sans-serif',
+   
   },
   smallText: {
-    backgroundColor: '#fcfaf4',    fontSize: '1rem',
+    backgroundColor: '#fcfaf4',    
+    fontSize: '2rem',
     letterSpacing: '0.1rem',
     textTransform: 'lowercase',
     marginBottom: '20px',
     transition: 'color 0.3s ease, transform 0.3s ease',
+    fontFamily: 'Lora, sans-serif',
+    fontStyle: 'italic', // This makes the text italic
+  
   },
   heading: {
-    fontFamily: 'Georgia, serif',
-    fontSize: '2rem',
+    fontFamily: 'Quicksand, sans-serif',
+    fontSize: '20px',
     lineHeight: '1.5',
-    fontWeight: 'normal',
+    fontWeight: '400',
     color: '#333',
   },
   imageContainer: {

@@ -48,18 +48,22 @@
   padding: 30px;
   text-align: left;
   max-width: 600px; /* Adjusted to improve readability */
-  font-family: Lora, sans-serif;
   box-sizing: border-box;
 }
 
 .smallText {
-  font-size: 1rem;
+  font-size: 2.5rem;
   letter-spacing: 0.25rem;
   text-transform: lowercase;
   margin-bottom: 20px;
   color: #2b2d2b;
-  font-family: 'Lora, sans-serif';
+  font-family: 'Lora', sans-serif;
   transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.container .heading {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: '300'
 }
 
 .smallText:hover {
@@ -68,9 +72,9 @@
 }
 
 .heading {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   line-height: 1.5;
-  font-family: Georgia, serif;
+  font-family: '"Quicksand", sans-serif';
   font-weight: normal;
   color: #333;
 }

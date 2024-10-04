@@ -31,7 +31,7 @@ const CounselingServices = () => {
       therapies: [
         { name: 'Person-Centred Therapy', description: 'Focuses on the individual’s self-worth and values.' },
         { name: 'Strength-Based Therapy', description: 'Identifies and builds on client strengths.' },
-        { name: 'Psychodynamic Therapy', description: 'Explores unconscious patterns influencing behavior.' },
+        { name: 'Psychodynamic Therapy', description: 'Explores unconscious patterns influencing behaviour.' },
       ],
       backgroundColor: '#FCFAF4', // Light Cream
       textColor: '#556B2F', // Olive Green
@@ -39,7 +39,7 @@ const CounselingServices = () => {
     {
       title: 'Cognitive and Behavioural Approaches',
       therapies: [
-        { name: 'Cognitive Behavioural Therapy', description: 'Changes unhelpful thinking and behavior.' },
+        { name: 'Cognitive Behavioural Therapy', description: 'Changes unhelpful thinking and behaviour.' },
         { name: 'Dialectical Behavioural Therapy', description: 'Combines CBT with mindfulness techniques.' },
         { name: 'Acceptance and Commitment Therapy', description: 'Encourages acceptance of thoughts and feelings.' },
       ],

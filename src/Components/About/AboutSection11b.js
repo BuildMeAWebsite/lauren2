@@ -21,14 +21,14 @@ const AboutSection11b = () => {
       marginBottom: '20px',
     },
     list: {
-      fontFamily: "'Georgia', serif",
+      fontFamily: "Quicksand, sans-serif",
       listStyleType: 'disc',
       paddingLeft: '20px',
       lineHeight: '1.8',
       fontSize: '1.25rem',
     },
     paragraph: {
-      fontFamily: "'Georgia', serif",
+      fontFamily: "Quicksand, sans-serif",
       lineHeight: '1.8',
       fontSize: '1.25rem',
       marginBottom: '30px',
@@ -52,7 +52,7 @@ const AboutSection11b = () => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography variant="body1" sx={styles.paragraph}>
-              These approaches are designed to help you process and heal from deep emotional pain and traumatic experiences. These therapies create a safe and compassionate space where you can explore difficult emotions and work through past traumas at your own pace. By focusing on your emotional well-being and strengthening your resilience, I will support you in rebuilding a sense of safety, connection, and inner peace, allowing you to move forward with a renewed sense of hope and empowerment.
+              These therapies are designed to help you process and heal from deep emotional pain and traumatic experiences. These therapies create a safe and compassionate space where you can explore difficult emotions and work through past traumas at your own pace. By focusing on your emotional well-being and strengthening your resilience, I will support you in rebuilding a sense of safety, connection, and inner peace, allowing you to move forward with a renewed sense of hope and empowerment.
             </Typography>
           </Grid>
         </Grid>

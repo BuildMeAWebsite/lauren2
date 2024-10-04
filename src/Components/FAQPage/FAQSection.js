@@ -18,7 +18,6 @@ const FAQSection = () => {
             sx={{
               ...styles.title,
               color: hoveredTitle ? '#FFD700' : '#2b2d2b',
-           
               transition: 'color 0.3s ease, transform 0.3s ease',
             }}
             onMouseEnter={handleTitleMouseEnter}
@@ -34,10 +33,9 @@ const FAQSection = () => {
       <Grid container spacing={5} justifyContent="center">
         {faqs.map((faqSection, index) => (
           <Grid item xs={12} md={6} key={index}>
-            {/* Two columns on larger screens, stack vertically on smaller */}
             <Box sx={styles.faqSection}>
               {faqSection.map((faqItem, idx) => (
-                <Accordion key={idx} sx={styles.accordion}>
+                <Accordion key={idx} sx={styles.accordion} disableGutters>
                   <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={styles.accordionSummary}>
                     <Typography variant="h5" sx={styles.question}>
                       {faqItem.title}
@@ -81,7 +79,6 @@ const faqs = [
       answer:
         'Currently, I offer therapy sessions in the evening Monday-Friday to accommodate those in school and working. If you prefer another time, I will try my best to accommodate.',
     },
-  
     {
       title: 'How long are your sessions?',
       answer:
@@ -105,8 +102,6 @@ const faqs = [
       answer:
         'Unfortunately, I am only able to offer services to those residing in Ontario and are located in Ontario at the time of our sessions.',
     },
-  
-  
     {
       title: 'How often are therapy sessions?',
       answer:
@@ -182,11 +177,6 @@ const styles = {
       width: '90%',
     },
   },
-  rightColumn: {
-    '@media (max-width: 800px)': {
-      textAlign: 'center',
-    },
-  },
   faqSection: {
     marginBottom: '50px',
   },
@@ -195,6 +185,7 @@ const styles = {
   },
   accordionSummary: {
     backgroundColor: '#fcfaf4',
+    transition: 'none', // Ensure no background transition occurs
   },
   question: {
     fontFamily: "'Lora', sans-serif",

@@ -7,7 +7,6 @@ const AboutSection10 = () => {
     heroContainer: {
       maxheight: '30vh',
       color: '#556B2F',
-      fontFamily: "'Lora', sans-serif",
       padding: '2.5rem 2.5rem',
       boxSizing: 'border-box',
       overflow: 'hidden',
@@ -54,7 +53,7 @@ const AboutSection10 = () => {
       >
         <Grid item xs={12} md={12} style={{ ...styles.slideIn, ...styles['@keyframes slideInFromBottom'] }}>
           <h1 style={styles.title}>
-          Cognitive Behavioral Approaches
+          Cognitive Behavioural Approaches
                     </h1>
         </Grid>
       </Grid>

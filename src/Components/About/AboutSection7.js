@@ -5,20 +5,22 @@ const AboutSection7 = () => {
   return (
     <Box sx={styles.container}>
       <Grid container spacing={4} alignItems="center">
-        <Grid item xs={12} md={6}>
+        {/* Image on top for smaller screens */}
+        <Grid item xs={12} md={6} sx={{ ...styles.imageContainer, order: { xs: 1, md: 2 } }}>
+          <img
+            src={`${process.env.PUBLIC_URL}/Images/lauren4.webp`}
+            alt="Lauren Martyn"
+            style={styles.image}
+          />
+        </Grid>
+        {/* Text on bottom for smaller screens */}
+        <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }}>
           <Typography variant="body1" sx={styles.paragraph}>
             I have experience working with various concerns and clients of all ages. Whether you know exactly what you want to work on or are unsure where to start, you’re in the driver’s seat. I’m here as your passenger, ready to move forward at your pace, whether we take the long way or change directions. Counseling offers a space to explore challenges, growth, healing, and everything in between.
           </Typography>
           <Button variant="outlined" href="contact" sx={styles.button}>
             Schedule an Introductory Call
           </Button>
-        </Grid>
-        <Grid item xs={12} md={6} sx={styles.imageContainer}>
-          <img
-            src={`${process.env.PUBLIC_URL}/Images/lauren4.webp`}
-            alt="Lauren Martyn"
-            style={styles.image}
-          />
         </Grid>
       </Grid>
     </Box>
@@ -34,19 +36,19 @@ const styles = {
     justifyContent: 'center',
   },
   paragraph: {
-    fontFamily: "'Georgia', serif",
+    fontFamily: "Quicksand, sans-serif",
     lineHeight: '1.5',
-    fontSize: '1.25rem',
+    fontSize: '20px',
     marginBottom: '30px',
   },
   button: {
-    fontFamily: "Lora, sans-serif",
+    fontFamily: "Quicksand, sans-serif",
     display: 'inline-block',
     padding: '0.5rem 1rem',
     borderColor: '#2b3d2b',
     color: '#2b3d2b',
     textTransform: 'uppercase',
-    fontSize: '1rem',
+    fontSize: '20px',
     marginBottom: '20px',
     textAlign: 'center',
     transition: 'color 0.3s ease, border-color 0.3s ease, transform 0.3s ease',

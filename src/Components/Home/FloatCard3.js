@@ -12,15 +12,14 @@ const FloatingCard3 = () => {
     zIndex: 1,
   };
   const outerContentStyle = {
-    margin: '10px 20px',
-        backgroundColor: '#fcfaf4',
-        boxSizing: 'border-box',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100%', // Ensure the outer content fills the height of the section
-      };
-
+    margin: '20px 20px',
+    backgroundColor: '#fcfaf4',
+    boxSizing: 'border-box',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%', // Ensure the outer content fills the height of the section
+  };
 
   const contentStyle = {
     zIndex: 2,
@@ -44,19 +43,32 @@ const FloatingCard3 = () => {
   };
 
   const headerTextStyle = {
-    fontSize: '1.75rem',
+    fontSize: '2rem',
     fontWeight: 400, // Regular font weight
     letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Georgia, serif',
+    fontFamily: 'Lora, sans-serif',
     textTransform: 'none', // Use normal case for the text
-    marginBottom: '1rem',
+    marginBottom: '1.5rem',
   };
 
   const listStyle = {
     listStyleType: 'disc',
-    padding: '0',
-    margin: '0',
+    padding: '10px',
+    margin: '1',
     textAlign: 'left',
+    fontFamily: 'Quicksand, sans-serif',
+
+  };
+
+  const subHeadingStyle = {
+    fontSize: '1.25rem',
+    fontWeight: 300,
+    fontFamily: 'Quicksand, sans-serif',
+    color: '#2b2d2b',
+    marginBottom: '1rem',
+    textAlign: 'left',
+    textDecoration: 'none',
+
   };
 
   return (
@@ -65,21 +77,43 @@ const FloatingCard3 = () => {
       <div style={outerContentStyle}>
         <div style={contentStyle}>
           <Typography variant="h2" sx={headerTextStyle}>
-            Together, we can work to overcome:
+            Together we can navigate:
           </Typography>
-          <ul style={listStyle}>
-            <li>Anxiety</li>
-            <li>Depression</li>
-            <li>Perfectionism</li>
-            <li>Emotional and Behavioural Challenges</li>
-            <li>Attention Deficit Hyperactivity Disorder</li>
-            <li>Academic Concerns and Learning Disabilities</li>
-            <li>Bullying and Social Challenges</li>
-            <li>Relationship Issues</li>
-            <li>Self-Esteem and Body Image</li>
-            <li>Career and Post-Secondary Guidance</li>
-            <li>Life Coaching</li>
-          </ul>
+
+          <div style={{ textAlign: 'left' }}>
+            {/* Mental Health and Emotional Wellbeing Section */}
+            <Typography variant="h3" sx={subHeadingStyle}>
+              Mental Health and Emotional Wellbeing:
+            </Typography>
+            <ul style={listStyle}>
+              <li>Anxiety</li>
+              <li>Depression</li>
+              <li>Perfectionism</li>
+              <li>Emotional and Behavioural Challenges</li>
+              <li>ADHD</li>
+            </ul>
+
+            {/* Social and Relational Concerns Section */}
+            <Typography variant="h3" sx={subHeadingStyle}>
+              Social and Relational Concerns:
+            </Typography>
+            <ul style={listStyle}>
+              <li>Bullying and Social Challenges</li>
+              <li>Relationship Issues</li>
+              <li>Self-Esteem and Body Image</li>
+            </ul>
+
+            {/* Academic and Personal Development Section */}
+            <Typography variant="h3" sx={subHeadingStyle}>
+              Academic and Personal Development:
+            </Typography>
+            <ul style={listStyle}>
+              <li>Academic Concerns and Learning Disabilities</li>
+              <li>Career and Post-Secondary Decision Making</li>
+              <li>Athletic Performance</li>
+              <li>Personal Development</li>
+            </ul>
+          </div>
         </div>
       </div>
     </ParallaxSection>

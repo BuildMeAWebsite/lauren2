@@ -62,15 +62,15 @@ const FloatingCard2 = () => {
   };
 
   const iconStyle = {
-    fontSize: '1.25rem',
+    fontSize: '1rem',
     transition: 'transform 0.3s ease',
   };
 
   const linkTextStyle = {
-    fontSize: '1rem',
+    fontSize: '1.25rem',
     fontWeight: 100,
     textTransform: 'lowercase',
-    fontFamily: 'Georgia, serif',
+    fontFamily: 'Quicksand, sans-serif',
     letterSpacing: '0.01em',
   };
 

@@ -21,14 +21,14 @@ const AboutSection9b = () => {
       marginBottom: '20px',
     },
     list: {
-      fontFamily: "'Georgia', serif",
+      fontFamily: "Quicksand, sans-serif",
       listStyleType: 'disc',
       paddingLeft: '20px',
       lineHeight: '1.8',
       fontSize: '1.25rem',
     },
     paragraph: {
-      fontFamily: "'Georgia', serif",
+      fontFamily: "Quicksand, sans-serif",
       lineHeight: '1.8',
       fontSize: '1.25rem',
       marginBottom: '30px',

@@ -12,15 +12,15 @@ const TherapeuticModalities = () => {
       items: [
         { id: 'personCentred', title: 'Person-Centred Therapy', content: 'Person-Centred Therapy focuses on the client’s ability to self-heal and grow within a supportive, non-judgmental environment.' },
         { id: 'strengthBased', title: 'Strength-Based Therapy', content: 'Strength-Based Therapy emphasizes the individual’s strengths and resources to overcome challenges and achieve goals.' },
-        { id: 'psychodynamic', title: 'Psychodynamic Therapy', content: 'Psychodynamic Therapy explores the influence of the unconscious mind and past experiences on current behavior and emotions.' },
+        { id: 'psychodynamic', title: 'Psychodynamic Therapy', content: 'Psychodynamic Therapy explores the influence of the unconscious mind and past experiences on current behaviour and emotions.' },
       ],
     },
     {
       id: 'cognitiveBehavioural',
       title: 'Cognitive and Behavioural Approaches',
       items: [
-        { id: 'cognitiveBehavioural', title: 'Cognitive Behavioural Therapy', content: 'Cognitive Behavioural Therapy (CBT) helps individuals identify and change negative thought patterns and behaviors.' },
-        { id: 'dialecticalBehavioural', title: 'Dialectical Behavioural Therapy', content: 'Dialectical Behavioural Therapy (DBT) combines cognitive-behavioral techniques with mindfulness to help manage emotions and relationships.' },
+        { id: 'cognitiveBehavioural', title: 'Cognitive Behavioural Therapy', content: 'Cognitive Behavioural Therapy (CBT) helps individuals identify and change negative thought patterns and behaviours.' },
+        { id: 'dialecticalBehavioural', title: 'Dialectical Behavioural Therapy', content: 'Dialectical Behavioural Therapy (DBT) combines cognitive-behavioural techniques with mindfulness to help manage emotions and relationships.' },
         { id: 'acceptanceCommitment', title: 'Acceptance and Commitment Therapy', content: 'Acceptance and Commitment Therapy (ACT) uses acceptance and mindfulness strategies to increase psychological flexibility.' },
         { id: 'solutionsFocused', title: 'Solutions-Focused Therapy', content: 'Solutions-Focused Therapy emphasizes finding practical solutions to achieve immediate goals.' },
         { id: 'motivationalInterviewing', title: 'Motivational Interviewing', content: 'Motivational Interviewing is a collaborative approach that helps individuals resolve ambivalence and commit to positive change.' },

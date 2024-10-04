@@ -115,7 +115,7 @@ const About2Boxes1 = () => {
           variant="h6"
           align="center"
           style={{
-            fontFamily: "PT Sans, sans-serif",
+            fontFamily: "Quicksand, sans-serif",
             color: '#FCFAF4', // Cream text
             transform: 'translateY(100%)',
             textShadow: '0 2px 5px rgba(0, 0, 0, 0.2)',

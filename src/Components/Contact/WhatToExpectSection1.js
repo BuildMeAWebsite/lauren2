@@ -21,7 +21,7 @@ const WhatToExpectSection1 = () => {
               <Typography sx={styles.serviceDescription}>
                 During the initial 15-minute introductory call, we will discuss your reasons for starting therapy and what kind of support you are looking for. It is an opportunity for us to ask each other questions and see if we are a good therapeutic fit.
               </Typography>
-              <Link to="/contact-form" style={styles.serviceLink}>Schedule your first call</Link>
+              <Link to="/contact" style={styles.serviceLink}>Schedule your first call</Link>
             </Box>
           </Box>
 

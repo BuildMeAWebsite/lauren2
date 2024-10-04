@@ -21,14 +21,14 @@ const AboutSection10b = () => {
       marginBottom: '20px',
     },
     list: {
-      fontFamily: "'Georgia', serif",
+      fontFamily: "Quicksand, sans-serif",
       listStyleType: 'disc',
       paddingLeft: '20px',
       lineHeight: '1.8',
       fontSize: '1.25rem',
     },
     paragraph: {
-      fontFamily: "'Georgia', serif",
+      fontFamily: "Quicksand, sans-serif",
       lineHeight: '1.8',
       fontSize: '1.25rem',
       marginBottom: '30px',
@@ -41,7 +41,7 @@ const AboutSection10b = () => {
         <Grid container spacing={4}>
           <Grid item xs={12} md={6} sx={{ order: { xs: 1, md: 2 } }} style={styles.leftColumn}>
             <Typography variant="body1" sx={styles.paragraph}>
-              Cognitive and behavioral approaches are centered around helping you identify and change unhelpful thought patterns and behaviors. Through these techniques, we will work together to challenge negative beliefs, develop healthier coping strategies, and promote positive behavior change. My goal is to support you in gaining practical tools that you can use to navigate life's challenges, empowering you to make meaningful progress toward your goals and enhance your overall well-being.
+              Cognitive and behavioural approaches are centered around helping you identify and change unhelpful thought patterns and behaviours. Through these techniques, we will work together to challenge negative beliefs, develop healthier coping strategies, and promote positive behaviour change. My goal is to support you in gaining practical tools that you can use to navigate life's challenges, empowering you to make meaningful progress toward your goals and enhance your overall well-being.
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }} style={styles.rightColumn}>
