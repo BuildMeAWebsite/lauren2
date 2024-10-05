@@ -88,7 +88,7 @@ const Hero = () => {
 
   return (
 <ParallaxSection
-  image="https://res.cloudinary.com/dvbubqhpp/image/upload/f_auto,q_auto/v1728154935/background1a1_ke54dk.jpg"
+  image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1728154935/background1a1_ke54dk.jpg"
   minHeight="80vh"
   overlayColor="rgba(255, 255, 255, 0.5)"
 >
