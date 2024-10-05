@@ -5,11 +5,11 @@ const HomeSection6 = () => {
   return (
     <div className={styles.container}>
       <div className={styles.contentContainer}>
-        <img
-          src={`${process.env.PUBLIC_URL}/Images/lauren1.webp`}
-          alt="Lauren Martyn"
-          className={styles.image}
-        />
+      <img
+  src="https://res.cloudinary.com/dvbubqhpp/image/upload/v1728154934/lauren1_xmyolw.webp"
+  alt="Lauren Martyn"
+  className={styles.image}
+/>
         <div className={styles.heroSection}>
           <p className={styles.smallText}>hello and <em>welcome</em>.</p>
           <h1 className={styles.heading}>

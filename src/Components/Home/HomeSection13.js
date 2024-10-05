@@ -75,8 +75,10 @@ const HomeSection13 = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/ferncouch.jpg`} minHeight='50vh'>
-      <div style={overlayStyle}></div> {/* Overlay */}
+<ParallaxSection
+  image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1728154937/ferncouch_q8nr26.jpg"
+  minHeight="50vh"
+>      <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
           <Link

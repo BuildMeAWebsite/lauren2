@@ -75,8 +75,10 @@ const FloatingCard2 = () => {
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/background3.jpg`} minHeight="100vh">
-      <div style={overlayStyle}></div> {/* Overlay */}
+<ParallaxSection
+  image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1728154938/forest_iityvj.webp"
+  minHeight="100vh"
+>      <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
           <p style={headerTextStyle}>What to expect</p>

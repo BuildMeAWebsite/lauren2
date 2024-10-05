@@ -7,11 +7,11 @@ const AboutSection7 = () => {
       <Grid container spacing={4} alignItems="center">
         {/* Image on top for smaller screens */}
         <Grid item xs={12} md={6} sx={{ ...styles.imageContainer, order: { xs: 1, md: 2 } }}>
-          <img
-            src={`${process.env.PUBLIC_URL}/Images/lauren4.webp`}
-            alt="Lauren Martyn"
-            style={styles.image}
-          />
+        <img
+  src="https://res.cloudinary.com/dvbubqhpp/image/upload/f_auto/v1728154935/lauren4_vo7lr2.webp"
+  alt="Lauren Martyn"
+  style={styles.image}
+/>
         </Grid>
         {/* Text on bottom for smaller screens */}
         <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }}>

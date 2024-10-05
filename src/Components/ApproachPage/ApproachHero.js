@@ -50,8 +50,8 @@ margin: '10px 20px',
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/flowerfield.jpg`} minHeight='80vh'>
-      <div style={overlayStyle}></div> {/* Overlay */}
+<ParallaxSection image="https://res.cloudinary.com/dvbubqhpp/image/upload/f_auto/v1728154906/flowerfield_i9oxdn.jpg" minHeight='80vh' >   
+   <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
           <p style={headerTextStyle}>my approach</p>

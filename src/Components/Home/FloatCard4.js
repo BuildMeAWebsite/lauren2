@@ -49,21 +49,21 @@ const FloatingCard4 = () => {
     fontSize: '1.5rem',
     fontWeight: 400, // Regular font weight
     letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Georgia, serif',
+    fontFamily: 'Lora, sans-serif',
     textTransform: 'none', // Use normal case for the text
-    marginBottom: '1rem',
+    marginBottom: '2rem',
   };
 
   const paragraphStyle = {
-    fontFamily: 'Georgia, serif',
+    fontFamily: 'Quicksand, sans-serif',
     fontSize: '1rem',
     lineHeight: '1.6',
     textAlign: 'center',
-    marginBottom: '1rem',
+  
   };
 
   return (
-    <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/lightbackground.jpg`} minHeight="50vh">
+<ParallaxSection image="https://res.cloudinary.com/dvbubqhpp/image/upload/f_auto/v1728154937/lightbackground_uxs2hg.jpg" minHeight="50vh" >
       <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>

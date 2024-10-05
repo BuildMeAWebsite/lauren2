@@ -112,7 +112,7 @@ const styles = {
   titlePrimary: {
     display: 'block',
     fontFamily: "'Lora', sans-serif",
-    fontWeight: 'normal',
+    fontWeight: '400',
     color: '#2B3D2B',
   },
   titleSecondary: {
@@ -179,7 +179,7 @@ const styles = {
     },
   },
   serviceTitle: {
-    fontSize: '2rem',
+    fontSize: '1.5rem',
     fontFamily: "'Lora', sans-serif",
     fontWeight: 'normal',
     marginBottom: '15px',
@@ -198,7 +198,7 @@ const styles = {
   },
   serviceDescription: {
     fontSize: '1.25rem',
-    fontFamily: "Georgia, sans-serif",
+    fontFamily: "Quicksand, sans-serif",
     margin: '20px 0',
     lineHeight: '1.6',
     '@media (max-width: 1100px)': {

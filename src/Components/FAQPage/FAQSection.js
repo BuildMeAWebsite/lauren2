@@ -127,7 +127,7 @@ const faqs = [
 const styles = {
   container: {
     padding: '1rem 2rem',
-    fontFamily: "'Lora', sans-serif",
+    fontFamily: "Quicksand, sans-serif",
     maxWidth: '100%',
     margin: '0 auto',
     '@media (max-width: 1100px)': {
@@ -145,12 +145,13 @@ const styles = {
   },
   centeredTitle: {
     textAlign: 'center',
-    marginBottom: '40px',
+    marginBottom: '20px',
   },
   titleCard: {
     padding: '1rem 2rem',
     maxWidth: '40%',
     margin: '0 auto',
+
     backgroundColor: '#fcfaf4',
     display: 'flex',
     justifyContent: 'center',
@@ -194,7 +195,7 @@ const styles = {
     backgroundColor: '#fcfaf4',
   },
   answer: {
-    fontFamily: 'Georgia, serif',
+    fontFamily: "Quicksand, sans-serif",
     fontSize: '1rem',
   },
 };
