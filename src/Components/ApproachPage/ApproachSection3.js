@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const ApproachSection3 = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -11,8 +12,21 @@ const ApproachSection3 = () => {
     setIsHovered(false);
   };
 
+  // Function to detect screen resize and set "isMobile" state based on screen width
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  // Attach the resize event listener when the component mounts and clean up when it unmounts
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <div style={styles.container}>
+    <div style={{ ...styles.container, flexDirection: isMobile ? 'column' : 'row' }}>
       {/* Text on the left and Image on the right */}
       <div style={styles.textContainer}>
         <p
@@ -27,9 +41,8 @@ const ApproachSection3 = () => {
           approach
         </p>
         <h1 style={styles.heading}>
-        My approach is rooted in offering a warm, genuine, approachable, playful and optimistic space. I customize my approach to best fit each client's unique needs and goals. I use a variety of therapeutic interventions : 
-
-</h1>
+          My approach is rooted in offering a warm, genuine, approachable, playful and optimistic space. I customize my approach to best fit each client's unique needs and goals. I use a variety of therapeutic interventions:
+        </h1>
       </div>
 
       {/* Image Container */}
@@ -47,7 +60,6 @@ const ApproachSection3 = () => {
 const styles = {
   container: {
     display: 'flex',
-    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: '50px 20px',
@@ -61,10 +73,8 @@ const styles = {
     textAlign: 'left',
     maxWidth: '600px',
     margin: '0 auto',
-   
   },
   smallText: {
-    backgroundColor: '#fcfaf4',    
     fontSize: '2rem',
     letterSpacing: '0.1rem',
     textTransform: 'lowercase',
@@ -72,7 +82,6 @@ const styles = {
     transition: 'color 0.3s ease, transform 0.3s ease',
     fontFamily: 'Lora, sans-serif',
     fontStyle: 'italic', // This makes the text italic
-  
   },
   heading: {
     fontFamily: 'Quicksand, sans-serif',
@@ -91,14 +100,6 @@ const styles = {
     height: 'auto',
     borderRadius: '10px',
     objectFit: 'cover',
-  },
-  '@media (max-width: 768px)': {
-    container: {
-      flexDirection: 'column',
-    },
-    textContainer: {
-      maxWidth: '100%',
-    },
   },
 };
 
