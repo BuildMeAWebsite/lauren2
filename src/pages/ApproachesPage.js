@@ -28,18 +28,18 @@ const ApproachesPageComponent = () => {
     "@type": "WebPage",
     "name": "Approaches - Lauren Martyn Therapy",
     "description": "Learn about the various therapeutic approaches offered by Lauren Martyn Therapy, including strength-based, solution-focused, emotion-focused, and narrative therapy.",
-    "url": "https://laurenmartyntherapy.ca/approaches",
+    "url": "https://laurenmartyn.ca/approaches",
     "publisher": {
       "@type": "Organization",
       "name": "Lauren Martyn Therapy",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://laurenmartyntherapy.ca/Images/logo.png",
+        "url": "https://laurenmartyn.ca/Images/logo.png",
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://laurenmartyntherapy.ca/approaches",
+      "@id": "https://laurenmartyn.ca/approaches",
     }
   };
 
@@ -62,7 +62,7 @@ const ApproachesPageComponent = () => {
         />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://laurenmartyntherapy.ca/approaches" />
+        <link rel="canonical" href="https://laurenmartyn.ca/approaches" />
 
         {/* Open Graph Tags */}
         <meta property="og:title" content="Therapeutic Approaches - Lauren Martyn Therapy" />
@@ -70,9 +70,9 @@ const ApproachesPageComponent = () => {
           property="og:description"
           content="Learn about the various therapeutic approaches offered by Lauren Martyn Therapy, including strength-based, solution-focused, emotion-focused, and narrative therapy."
         />
-        <meta property="og:url" content="https://laurenmartyntherapy.ca/approaches" />
+        <meta property="og:url" content="https://laurenmartyn.ca/approaches" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://laurenmartyntherapy.ca/Images/logo.png" />
+        <meta property="og:image" content="https://laurenmartyn.ca/Images/logo.png" />
 
         {/* Robots Meta Tag */}
         <meta name="robots" content="index, follow" />

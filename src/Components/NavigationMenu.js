@@ -14,12 +14,12 @@ const NavigationMenuBar = () => {
             <Link
               to="#"
               onClick={(e) => {
-                window.location.href = 'mailto:info@laurenmartyntherapy.ca';
+                window.location.href = 'mailto:info@laurenmartyn.ca';
                 e.preventDefault(); 
               }}
               style={styles.emailLink}
             >
-              info@laurenmartyntherapy.ca
+              info@laurenmartyn.ca
             </Link>
           </span>
         </div>

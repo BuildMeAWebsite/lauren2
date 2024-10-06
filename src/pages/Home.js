@@ -17,8 +17,8 @@ const Home = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Lauren Martyn Therapy",
-    "url": "https://laurenmartyntherapy.ca/",
-    "logo": "https://laurenmartyntherapy.ca/Images/logo.png",
+    "url": "https://laurenmartyn.ca/",
+    "logo": "https://laurenmartyn.ca/Images/logo.png",
   
     "description": "Lauren Martyn Therapy is dedicated to supporting school-aged children, youth, and young adults in navigating life’s challenges through virtual counselling services in Ontario, Canada.",
     "founder": {
@@ -29,7 +29,7 @@ const Home = () => {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Service",
-      "email": "info@laurenmartyntherapy.ca"
+      "email": "info@laurenmartyn.ca"
     }
   };
 
@@ -56,7 +56,7 @@ const Home = () => {
         />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://laurenmartyntherapy.ca" />
+        <link rel="canonical" href="https://laurenmartyn.ca" />
 
         {/* Open Graph Tags */}
         <meta property="og:title" content="Home - Lauren Martyn Therapy" />
@@ -64,9 +64,9 @@ const Home = () => {
           property="og:description"
           content="Lauren Martyn Therapy offers virtual counselling services dedicated to supporting school-aged children, youth, and young adults in Ontario, Canada."
         />
-        <meta property="og:url" content="https://laurenmartyntherapy.ca" />
+        <meta property="og:url" content="https://laurenmartyn.ca" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://laurenmartyntherapy.ca/Images/logo.png" />
+        <meta property="og:image" content="https://laurenmartyn.ca/Images/logo.png" />
 
         {/* Robots Meta Tag */}
         <meta name="robots" content="index, follow" />

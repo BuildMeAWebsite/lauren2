@@ -95,7 +95,7 @@ const faqs = [
     {
       title: 'How do I schedule an appointment?',
       answer:
-        'You can contact me <a href="mailto:info@laurenmartyntherapy.ca" style="text-decoration: underline; color: inherit;">here</a> by email to schedule your initial or returning appointment.',
+        'You can contact me <a href="mailto:info@laurenmartyn.ca" style="text-decoration: underline; color: inherit;">here</a> by email to schedule your initial or returning appointment.',
     },
     {
       title: 'Can I schedule an appointment if I live or am travelling outside of Ontario?',

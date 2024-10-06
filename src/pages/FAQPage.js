@@ -15,18 +15,18 @@ const FAQPage = () => {
     "@type": "WebPage",
     "name": "FAQ - Lauren Martyn Therapy",
     "description": "Frequently Asked Questions about Lauren Martyn Therapy's virtual counselling services for school-aged children, youth, and young adults in Ontario, Canada.",
-    "url": "https://laurenmartyntherapy.ca/faq",
+    "url": "https://laurenmartyn.ca/faq",
     "publisher": {
       "@type": "Organization",
       "name": "Lauren Martyn Therapy",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://laurenmartyntherapy.ca/Images/logo.png",
+        "url": "https://laurenmartyn.ca/Images/logo.png",
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://laurenmartyntherapy.ca/faq",
+      "@id": "https://laurenmartyn.ca/faq",
     }
   };
 
@@ -49,7 +49,7 @@ const FAQPage = () => {
         />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://laurenmartyntherapy.ca/faq" />
+        <link rel="canonical" href="https://laurenmartyn.ca/faq" />
 
         {/* Open Graph Tags */}
         <meta property="og:title" content="FAQ - Lauren Martyn Therapy" />
@@ -57,9 +57,9 @@ const FAQPage = () => {
           property="og:description"
           content="Frequently Asked Questions about Lauren Martyn Therapy's virtual counselling services for school-aged children, youth, and young adults in Ontario, Canada."
         />
-        <meta property="og:url" content="https://laurenmartyntherapy.ca/faq" />
+        <meta property="og:url" content="https://laurenmartyn.ca/faq" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://laurenmartyntherapy.ca/Images/logo.png" />
+        <meta property="og:image" content="https://laurenmartyn.ca/Images/logo.png" />
 
         {/* Robots Meta Tag */}
         <meta name="robots" content="index, follow" />

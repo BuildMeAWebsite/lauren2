@@ -8,8 +8,8 @@ const ContactSection1 = () => {
         <p className={styles.smallText}>now accepting clients for <em> virtual </em> therapy.</p>
         <h1 className={styles.heading}>
           Fill out the form below to schedule your 15-minute introductory call. I can also be reached at <em>
-            <a href="mailto:info@laurenmartyntherapy.ca" className={styles.emailLink}>
-              info@laurenmartyntherapy.ca
+            <a href="mailto:info@laurenmartyn.ca" className={styles.emailLink}>
+              info@laurenmartyn.ca
             </a>
           </em>
         </h1>

@@ -72,8 +72,8 @@ const FloatingCard4 = () => {
           </Typography>
           <Typography sx={paragraphStyle}>
             Fill out the form below to schedule your 15-minute introductory call. I can also be reached at{' '}
-            <a href="mailto:info@laurenmartyntherapy.ca" style={{ color: '#2b2d2b', textDecoration: 'underline' }}>
-              info@laurenmartyntherapy.ca
+            <a href="mailto:info@laurenmartyn.ca" style={{ color: '#2b2d2b', textDecoration: 'underline' }}>
+              info@laurenmartyn.ca
             </a>.
           </Typography>
         </div>

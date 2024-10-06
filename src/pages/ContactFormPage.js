@@ -12,18 +12,18 @@ const ContactForm = () => {
     "@type": "WebPage",
     "name": "Contact Form - Lauren Martyn Therapy",
     "description": "Fill out the contact form to get in touch with Lauren Martyn Therapy for virtual counselling services. Available for school-aged children, youth, and young adults in Ontario, Canada.",
-    "url": "https://laurenmartyntherapy.ca/contact-form",
+    "url": "https://laurenmartyn.ca/contact",
     "publisher": {
       "@type": "Organization",
       "name": "Lauren Martyn Therapy",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://laurenmartyntherapy.ca/Images/logo.png",
+        "url": "https://laurenmartyn.ca/Images/logo.png",
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://laurenmartyntherapy.ca/contact-form",
+      "@id": "https://laurenmartyn.ca/contact-form",
     }
   };
 
@@ -46,17 +46,17 @@ const ContactForm = () => {
         />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://laurenmartyntherapy.ca/contact-form" />
+        <link rel="canonical" href="https://laurenmartyn.ca/contact-form" />
 
         {/* Open Graph Tags */}
         <meta property="og:title" content="Contact Form - Lauren Martyn Therapy" />
         <meta
           property="og:description"
-          content="Fill out the contact form to get in touch with Lauren Martyn Therapy for virtual counselling services. Available for school-aged children, youth, and young adults in Ontario, Canada."
+          content="Fill out the contact form to get in touch with Lauren Martyn Therapy for virtual ling services. Available for school-aged children, youth, and young adults in Ontario, Canada."
         />
-        <meta property="og:url" content="https://laurenmartyntherapy.ca/contact-form" />
+        <meta property="og:url" content="htcounseltps://laurenmartyn.ca/contact-form" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://laurenmartyntherapy.ca/Images/logo.png" />
+        <meta property="og:image" content="https://laurenmartyn.ca/Images/logo.png" />
 
         {/* Robots Meta Tag */}
         <meta name="robots" content="index, follow" />

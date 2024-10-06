@@ -24,19 +24,19 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
     "@type": "ContactPage",
     "name": "Contact - Lauren Martyn Therapy",
     "description": "Get in touch with Lauren Martyn Therapy for virtual counselling services. Reach out to us for more information or to schedule a session.",
-    "url": "https://laurenmartyntherapy.ca/contact",
+    "url": "https://laurenmartyn.ca/contact",
     "publisher": {
       "@type": "Organization",
       "name": "Lauren Martyn Therapy",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://laurenmartyntherapy.ca/Images/logo.png",
+        "url": "https://laurenmartyn.ca/Images/logo.png",
       }
     },
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Service",
-      "email": "info@laurenmartyntherapy.ca"
+      "email": "info@laurenmartyn.ca"
     }
   };
 
@@ -59,7 +59,7 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
         />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://laurenmartyntherapy.ca/contact" />
+        <link rel="canonical" href="https://laurenmartyn.ca/contact" />
 
         {/* Open Graph Tags */}
         <meta property="og:title" content="Contact - Lauren Martyn Therapy" />
@@ -67,9 +67,9 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
           property="og:description"
           content="Get in touch with Lauren Martyn Therapy for virtual counselling services. Reach out to us for more information or to schedule a session."
         />
-        <meta property="og:url" content="https://laurenmartyntherapy.ca/contact" />
+        <meta property="og:url" content="https://laurenmartyn.ca/contact" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://laurenmartyntherapy.ca/Images/logo.png" />
+        <meta property="og:image" content="https://laurenmartyn.ca/Images/logo.png" />
 
         {/* Robots Meta Tag */}
         <meta name="robots" content="index, follow" />
