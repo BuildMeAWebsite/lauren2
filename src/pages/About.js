@@ -19,7 +19,7 @@ const About = () => {
     "name": "Lauren Martyn Therapy",
     "url": "https://laurenmartyntherapy.ca/",
     "logo": "https://laurenmartyntherapy.ca/Images/logo.png",
-    "description": "Lauren Martyn Therapy is dedicated to supporting school-aged children, youth, and young adults in navigating life’s challenges through virtual counseling services in Ontario, Canada.",
+    "description": "Lauren Martyn Therapy is dedicated to supporting school-aged children, youth, and young adults in navigating life’s challenges through virtual counselling services in Ontario, Canada.",
     "founder": {
       "@type": "Person",
       "name": "Lauren Martyn"
@@ -41,13 +41,13 @@ const About = () => {
         {/* Meta Description */}
         <meta
           name="description"
-          content="Learn more about Lauren Martyn Therapy, offering virtual counseling services to support school-aged children, youth, and young adults in Ontario, Canada."
+          content="Learn more about Lauren Martyn Therapy, offering virtual counselling services to support school-aged children, youth, and young adults in Ontario, Canada."
         />
 
         {/* Meta Keywords */}
         <meta
           name="keywords"
-          content="therapy, counseling, mental health, virtual counseling, Ontario, Lauren Martyn, youth therapy, child therapy, young adult therapy, psychotherapy, mental well-being, online therapy"
+          content="therapy, counselling, mental health, virtual counselling, Ontario, Lauren Martyn, youth therapy, child therapy, young adult therapy, psychotherapy, mental well-being, online therapy"
         />
 
         {/* Canonical URL */}
@@ -57,7 +57,7 @@ const About = () => {
         <meta property="og:title" content="About Us - Lauren Martyn Therapy" />
         <meta
           property="og:description"
-          content="Learn more about Lauren Martyn Therapy, offering virtual counseling services to support school-aged children, youth, and young adults in Ontario, Canada."
+          content="Learn more about Lauren Martyn Therapy, offering virtual counselling services to support school-aged children, youth, and young adults in Ontario, Canada."
         />
         <meta property="og:url" content="https://laurenmartyntherapy.ca/about" />
         <meta property="og:type" content="website" />

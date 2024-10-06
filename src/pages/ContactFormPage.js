@@ -11,7 +11,7 @@ const ContactForm = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Contact Form - Lauren Martyn Therapy",
-    "description": "Fill out the contact form to get in touch with Lauren Martyn Therapy for virtual counseling services. Available for school-aged children, youth, and young adults in Ontario, Canada.",
+    "description": "Fill out the contact form to get in touch with Lauren Martyn Therapy for virtual counselling services. Available for school-aged children, youth, and young adults in Ontario, Canada.",
     "url": "https://laurenmartyntherapy.ca/contact-form",
     "publisher": {
       "@type": "Organization",
@@ -36,13 +36,13 @@ const ContactForm = () => {
         {/* Meta Description */}
         <meta
           name="description"
-          content="Fill out the contact form to get in touch with Lauren Martyn Therapy for virtual counseling services. Available for school-aged children, youth, and young adults in Ontario, Canada."
+          content="Fill out the contact form to get in touch with Lauren Martyn Therapy for virtual counselling services. Available for school-aged children, youth, and young adults in Ontario, Canada."
         />
 
         {/* Meta Keywords */}
         <meta
           name="keywords"
-          content="contact form, therapy, counseling, virtual counseling, Ontario, Lauren Martyn, mental health support, schedule a session"
+          content="contact form, therapy, counselling, virtual counselling, Ontario, Lauren Martyn, mental health support, schedule a session"
         />
 
         {/* Canonical URL */}
@@ -52,7 +52,7 @@ const ContactForm = () => {
         <meta property="og:title" content="Contact Form - Lauren Martyn Therapy" />
         <meta
           property="og:description"
-          content="Fill out the contact form to get in touch with Lauren Martyn Therapy for virtual counseling services. Available for school-aged children, youth, and young adults in Ontario, Canada."
+          content="Fill out the contact form to get in touch with Lauren Martyn Therapy for virtual counselling services. Available for school-aged children, youth, and young adults in Ontario, Canada."
         />
         <meta property="og:url" content="https://laurenmartyntherapy.ca/contact-form" />
         <meta property="og:type" content="website" />

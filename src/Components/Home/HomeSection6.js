@@ -17,7 +17,7 @@ const HomeSection6 = () => {
             the therapeutic journey. My name is Lauren Martyn, I am a registered
             psychotherapist and I have dedicated myself to supporting school-aged
             children, youth, and young adults as they navigate life’s challenges.
-            I currently offer virtual counseling to those residing in Ontario,
+            I currently offer virtual counslling to those residing in Ontario,
             Canada.
           </h1>
         </div>

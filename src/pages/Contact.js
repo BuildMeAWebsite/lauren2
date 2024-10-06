@@ -23,7 +23,7 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contact - Lauren Martyn Therapy",
-    "description": "Get in touch with Lauren Martyn Therapy for virtual counseling services. Reach out to us for more information or to schedule a session.",
+    "description": "Get in touch with Lauren Martyn Therapy for virtual counselling services. Reach out to us for more information or to schedule a session.",
     "url": "https://laurenmartyntherapy.ca/contact",
     "publisher": {
       "@type": "Organization",
@@ -49,13 +49,13 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
         {/* Meta Description */}
         <meta
           name="description"
-          content="Get in touch with Lauren Martyn Therapy for virtual counseling services. Reach out to us for more information or to schedule a session."
+          content="Get in touch with Lauren Martyn Therapy for virtual counselling services. Reach out to us for more information or to schedule a session."
         />
 
         {/* Meta Keywords */}
         <meta
           name="keywords"
-          content="contact, therapy, counseling, virtual counseling, Ontario, Lauren Martyn, schedule a session, mental health support"
+          content="contact, therapy, counselling, virtual counselling, Ontario, Lauren Martyn, schedule a session, mental health support"
         />
 
         {/* Canonical URL */}
@@ -65,7 +65,7 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
         <meta property="og:title" content="Contact - Lauren Martyn Therapy" />
         <meta
           property="og:description"
-          content="Get in touch with Lauren Martyn Therapy for virtual counseling services. Reach out to us for more information or to schedule a session."
+          content="Get in touch with Lauren Martyn Therapy for virtual counselling services. Reach out to us for more information or to schedule a session."
         />
         <meta property="og:url" content="https://laurenmartyntherapy.ca/contact" />
         <meta property="og:type" content="website" />

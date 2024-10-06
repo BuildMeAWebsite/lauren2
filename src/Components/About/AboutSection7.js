@@ -16,7 +16,7 @@ const AboutSection7 = () => {
         {/* Text on bottom for smaller screens */}
         <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }}>
           <Typography variant="body1" sx={styles.paragraph}>
-            I have experience working with various concerns and clients of all ages. Whether you know exactly what you want to work on or are unsure where to start, you’re in the driver’s seat. I’m here as your passenger, ready to move forward at your pace, whether we take the long way or change directions. Counseling offers a space to explore challenges, growth, healing, and everything in between.
+            I have experience working with various concerns and clients of all ages. Whether you know exactly what you want to work on or are unsure where to start, you’re in the driver’s seat. I’m here as your passenger, ready to move forward at your pace, whether we take the long way or change directions. Counselling offers a space to explore challenges, growth, healing, and everything in between.
           </Typography>
           <Button variant="outlined" href="contact" sx={styles.button}>
             Schedule an Introductory Call

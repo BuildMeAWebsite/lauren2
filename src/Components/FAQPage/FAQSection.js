@@ -82,7 +82,7 @@ const faqs = [
     {
       title: 'How long are your sessions?',
       answer:
-        'Each session is scheduled for 60 minutes. We have up to 50 minutes for counseling and 10 minutes are used for documentation and sending resources discussed.',
+        'Each session is scheduled for 60 minutes. We have up to 50 minutes for counselling and 10 minutes are used for documentation and sending resources discussed.',
     },
     {
       title: 'Do you accept insurance?',

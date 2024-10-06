@@ -14,7 +14,7 @@ const FAQPage = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "FAQ - Lauren Martyn Therapy",
-    "description": "Frequently Asked Questions about Lauren Martyn Therapy's virtual counseling services for school-aged children, youth, and young adults in Ontario, Canada.",
+    "description": "Frequently Asked Questions about Lauren Martyn Therapy's virtual counselling services for school-aged children, youth, and young adults in Ontario, Canada.",
     "url": "https://laurenmartyntherapy.ca/faq",
     "publisher": {
       "@type": "Organization",
@@ -39,13 +39,13 @@ const FAQPage = () => {
         {/* Meta Description */}
         <meta
           name="description"
-          content="Frequently Asked Questions about Lauren Martyn Therapy's virtual counseling services for school-aged children, youth, and young adults in Ontario, Canada."
+          content="Frequently Asked Questions about Lauren Martyn Therapy's virtual counselling services for school-aged children, youth, and young adults in Ontario, Canada."
         />
 
         {/* Meta Keywords */}
         <meta
           name="keywords"
-          content="FAQ, therapy, counseling, virtual counseling, Ontario, Lauren Martyn, mental health, youth therapy, child therapy, young adult therapy, psychotherapy, mental well-being, online therapy"
+          content="FAQ, therapy, counselling, virtual counselling, Ontario, Lauren Martyn, mental health, youth therapy, child therapy, young adult therapy, psychotherapy, mental well-being, online therapy"
         />
 
         {/* Canonical URL */}
@@ -55,7 +55,7 @@ const FAQPage = () => {
         <meta property="og:title" content="FAQ - Lauren Martyn Therapy" />
         <meta
           property="og:description"
-          content="Frequently Asked Questions about Lauren Martyn Therapy's virtual counseling services for school-aged children, youth, and young adults in Ontario, Canada."
+          content="Frequently Asked Questions about Lauren Martyn Therapy's virtual counselling services for school-aged children, youth, and young adults in Ontario, Canada."
         />
         <meta property="og:url" content="https://laurenmartyntherapy.ca/faq" />
         <meta property="og:type" content="website" />

@@ -58,7 +58,7 @@ const ApproachesPageComponent = () => {
         {/* Meta Keywords */}
         <meta
           name="keywords"
-          content="therapy, counseling, therapeutic approaches, strength-based therapy, solution-focused therapy, emotion-focused therapy, narrative therapy, Lauren Martyn, mental health, Ontario"
+          content="therapy, counselling, therapeutic approaches, strength-based therapy, solution-focused therapy, emotion-focused therapy, narrative therapy, Lauren Martyn, mental health, Ontario"
         />
 
         {/* Canonical URL */}
