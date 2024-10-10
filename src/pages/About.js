@@ -86,7 +86,9 @@ const About = () => {
       <Grid item xs={12} id="top">
         <FloatingCard3 />
       </Grid>
-    
+      <Grid item xs={12} id="top">
+        <AboutSection7 />
+      </Grid>
 
       <Grid item xs={12} id="top">
         <HomeSection11 />
