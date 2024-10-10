@@ -5,10 +5,9 @@ const AboutSection1 = () => {
   return (
     <div className={styles.container}>
       <div className={styles.heroSection}>
-        <p className={styles.smallText}> <em>experience</em> </p>
+        <p className={styles.smallText}> <em>philosophy</em> </p>
         <h1 className={styles.heading}>
-        I have been a Registered Psychotherapist since 2019, with a Master’s degree in Counselling Psychology. My experience spans both community and post-secondary settings, and I currently serve as a School Counsellor at an Independent School. I offer expertise in navigating school environments and recognize the unique challenges they present.
-
+        My therapeutic philosophy is rooted in the belief that everyone has the potential to thrive when provided with a safe and supportive environment. When individuals can freely express their thoughts and feelings and explore their experiences, they gain deeper insights into themselves. I strive to foster a trusting and genuine relationship that encourages self-discovery and empowers clients to navigate their challenges, ultimately guiding them toward achieving their full potential.
  </h1>      </div>
       <div className={styles.sidebar}>
         <div className={styles.line}></div> {/* Vertical line added */}

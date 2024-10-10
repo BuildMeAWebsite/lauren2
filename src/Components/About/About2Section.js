@@ -6,7 +6,7 @@ const About2Boxes1 = () => {
   const textRefs = useRef([]);
   const [isHovered, setIsHovered] = useState(false);
 
-  const leftText = `I have experience working with a variety of concerns and types of clients across the lifespan. You may know exactly what you want to work on or not be sure where to start. You are in the driver seat, and I am your passenger. Whenever you are ready, we can begin to move forward. We can take the long way, go slow, or change directions towards your destination of a life worth living. Counseling provides a space where we can explore challenges, growth, healing, and everything in between.`;
+  const leftText = `I have experience working with a variety of concerns and types of clients across the lifespan. You may know exactly what you want to work on or not be sure where to start. You are in the driver seat, and I am your passenger. Whenever you are ready, we can begin to move forward. We can take the long way, go slow, or change directions towards your destination of a life worth living. Counselling provides a space where we can explore challenges, growth, healing, and everything in between.`;
 
   useEffect(() => {
     textRefs.current.forEach((ref, index) => {
