@@ -1,0 +1,118 @@
+.container1 {
+    display: flex;
+    flex-direction: row;
+    min-height: 50vh;
+    background-color: #fcfaf4;
+  }
+  
+  .heroSection1 {
+    flex: 1;
+    padding: 100px;
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: 'Lora', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  /* Sidebar with a distinct background and padding */
+  .sidebar1 {
+    min-width: 150px;
+    background-color: #8FBC8F;
+    padding: 10px 1rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .line1 {
+    width: 1.25px;
+    height: 25%; /* Adjust height as needed */
+    background-color: #FCFAF4; /* Light color for the line */
+  }
+  
+  /* Responsive text styles */
+  .smallText1 {
+    font-size: 2rem;
+    letter-spacing: 0.25rem;
+    text-transform: lowercase;
+    margin-bottom: 20px;
+    color: #2b2d2b;
+    font-family: 'Lora', sans-serif;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition for hover effects */
+  }
+  
+  .smallText:hover1 {
+    color: #FFD700; /* Change color to yellow on hover */
+    transform: scale(1.05); /* Slightly enlarge the text on hover */
+  }
+  
+  /* Headings with varying font sizes */
+  .container1 .heading1 {
+    font-size: 20px; /* Explicitly set size for large screens */
+    line-height: 1.5;
+    text-align: left;
+    font-family: 'Quicksand', sans-serif; /* Apply Georgia font */
+    font-weight: 400;
+    color: #333;
+  }
+  
+  /* Adjust heading size at breakpoints */
+  @media (max-width: 1200px) {
+    .heading1 {
+      font-size: 1.75rem; /* Slightly smaller for screens less than 1200px wide */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .heading1 {
+      font-size: 1.5rem; /* Smaller for screens less than 992px wide */
+    }
+  }
+  
+  @media (max-width: 808px) {
+    .heading1 {
+      font-size: 1.5rem; /* Even smaller for screens less than 808px wide */
+    }
+  }
+  
+  /* Image container to handle responsiveness */
+  .imageContainer1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Responsive image styles */
+  .responsiveImage1 {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Stack the sidebar and image below the hero section on small screens */
+  @media (max-width: 868px) {
+    .container {
+      flex-direction: column;
+    }
+    .heroSection1 {
+      padding: 50px 20px; /* Reduce padding to prevent text from being too skinny */
+      max-width: 90%; /* Expand max-width to better fit screen space */
+    }
+    .imageContainer1 {
+      order: 2; /* Move image below the text */
+      padding: 10px; /* Reduce padding for smaller screens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .heading1 {
+      font-size: 1.25rem; /* Smallest size for screens less than 576px wide */
+    }
+    .heroSection1 {
+      padding: 30px 15px; /* Further reduce padding on smaller screens */
+      max-width: 95%; /* Further expand max-width to utilize screen space */
+    }
+  }

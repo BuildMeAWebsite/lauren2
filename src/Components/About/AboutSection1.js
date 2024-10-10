@@ -16,4 +16,4 @@ const AboutSection1 = () => {
   );
 };
 
-export default AboutSection1;
+export default AboutSection1
