@@ -2,8 +2,44 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 const NavigationMenuBar = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [currentMenu, setCurrentMenu] = useState('');
+
+  const handleOpenMenu = (event, menu) => {
+    setAnchorEl(event.currentTarget);
+    setCurrentMenu(menu);
+  };
+
+  const handleCloseMenu = () => {
+    setAnchorEl(null);
+    setCurrentMenu('');
+  };
+
+  const menuItems = {
+    home: [],
+    about: [
+      { label: 'Our Story', link: '/about/our-story' },
+      { label: 'Team', link: '/about/team' },
+    ],
+    approaches: [
+      { label: 'Psychodynamic Approach', link: '/approaches/psychodynamic' },
+      { label: 'CBT', link: '/approaches/cbt' },
+      { label: 'Mindfulness', link: '/approaches/mindfulness' },
+      // More items...
+    ],
+    faq: [
+      { label: 'Insurance', link: '/faq/insurance' },
+      { label: 'Session Costs', link: '/faq/costs' },
+      { label: 'What to Expect', link: '/faq/expectations' },
+      // More items...
+    ],
+    contact: [],
+  };
+
   return (
     <header style={styles.header}>
       {/* Top Dark Bar */}
@@ -15,7 +51,7 @@ const NavigationMenuBar = () => {
               to="#"
               onClick={(e) => {
                 window.location.href = 'mailto:info@laurenmartyn.ca';
-                e.preventDefault(); 
+                e.preventDefault();
               }}
               style={styles.emailLink}
             >
@@ -28,6 +64,44 @@ const NavigationMenuBar = () => {
       {/* Main Navigation Bar */}
       <AppBar position="static" style={styles.appBar}>
         <Toolbar style={styles.toolbar}>
+          <nav style={styles.navMenu}>
+            <NavLink
+              to="/"
+              label="home"
+              handleOpenMenu={handleOpenMenu}
+              handleCloseMenu={handleCloseMenu}
+              menuItems={menuItems.home}
+            />
+            <NavLink
+              to="/about"
+              label="about"
+              handleOpenMenu={handleOpenMenu}
+              handleCloseMenu={handleCloseMenu}
+              menuItems={menuItems.about}
+            />
+            <NavLink
+              to="/approaches"
+              label="approach"
+              handleOpenMenu={handleOpenMenu}
+              handleCloseMenu={handleCloseMenu}
+              menuItems={menuItems.approaches}
+            />
+            <NavLink
+              to="/frequently-asked-questions"
+              label="faq"
+              handleOpenMenu={handleOpenMenu}
+              handleCloseMenu={handleCloseMenu}
+              menuItems={menuItems.faq}
+            />
+            <NavLink
+              to="/contact"
+              label="contact"
+              handleOpenMenu={handleOpenMenu}
+              handleCloseMenu={handleCloseMenu}
+              menuItems={menuItems.contact}
+            />
+          </nav>
+
           <div style={styles.logoContainer}>
             <img
               src={`${process.env.PUBLIC_URL}/Images/logo.png`} // Update with your logo path
@@ -35,46 +109,54 @@ const NavigationMenuBar = () => {
               style={styles.logo}
             />
           </div>
-          <nav style={styles.navMenu}>
-            <NavLink to="/" label="home" />
-            <NavLink to="/about" label="about" />
-            <NavLink to="/approaches" label="approach" />
-            <NavLink to="/frequently-asked-questions" label="faq" />
-            <NavLink to="/contact" label="contact" />
-          </nav>
         </Toolbar>
       </AppBar>
     </header>
   );
 };
 
-const NavLink = ({ to, label }) => {
-  const [hovered, setHovered] = useState(false);
+// NavLink component to handle hover and dropdowns
+const NavLink = ({ to, label, handleOpenMenu, handleCloseMenu, menuItems }) => {
+  const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleMouseEnter = () => setHovered(true);
-  const handleMouseLeave = () => setHovered(false);
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+    handleOpenMenu(event, label);
+  };
 
-  const style = {
-    fontFamily: 'Merriweather, sans-serif', // Font family for the nav items
-    fontSize: '1rem',
-    color: hovered ? '#FFD700' : '#3a3a3a',
-    textDecoration: 'none',
-    textTransform: 'lowercase',
-    margin: '0 10px', // 10px gap between each item
-    transition: 'color 0.3s ease, transform 0.3s ease',
-    whiteSpace: 'nowrap', // Prevent text wrapping
-    transform: hovered ? 'scale(1.05)' : 'scale(1)',
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    handleCloseMenu();
   };
 
   return (
-    <Link
-      to={to}
-      style={style}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      {label}
-    </Link>
+    <div>
+      <Link
+        to={to}
+        onMouseEnter={handleMenuOpen}
+        style={styles.navLink}
+        onMouseLeave={handleMenuClose}
+      >
+        {label}
+      </Link>
+
+      {menuItems.length > 0 && (
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={handleMenuClose}
+          onMouseLeave={handleMenuClose}
+        >
+          {menuItems.map((item, index) => (
+            <MenuItem key={index} onClick={handleMenuClose}>
+              <Link to={item.link} style={styles.dropdownLink}>
+                {item.label}
+              </Link>
+            </MenuItem>
+          ))}
+        </Menu>
+      )}
+    </div>
   );
 };
 
@@ -82,13 +164,6 @@ const styles = {
   header: {
     width: '100%',
     zIndex: 1000, // Ensure the header is on top
-    '@media (maxWidth: 100%)': {
-      position: 'fixed', // Fix the header at the top of the screen on smaller screens
-      top: 0,
-      left: 0,
-      right: 0,
-      backgroundColor: '#ffffff', // Ensure the header has a background when fixed
-    },
   },
   topBar: {
     backgroundColor: '#8fbc8f', // Dark color for the top bar
@@ -98,7 +173,6 @@ const styles = {
     fontSize: '.75rem',
     width: '100%',
     boxSizing: 'border-box', // Include padding in the width calculation
-  
   },
   topBarContainer: {
     maxWidth: '100%',
@@ -106,7 +180,6 @@ const styles = {
     display: 'flex',
     justifyContent: 'flex-end',
     padding: '0.25rem 1.5rem',
-    boxSizing: 'border-box', // Ensure padding is accounted for
   },
   topBarItem: {
     marginLeft: '20px',
@@ -132,9 +205,6 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     padding: '1rem', // Padding around the logo and nav items
-    '@media (max-width: 1000px)': {
-      padding: '15px 0', // Adjust padding for smaller screens
-    },
   },
   logoContainer: {
     display: 'flex',
@@ -144,15 +214,12 @@ const styles = {
   },
   logo: {
     height: '175px', // Adjust logo size as needed
-    '@media (maxWidth: 1000px)': {
-      height: '100px', // Smaller logo on small screens
-    },
   },
   navMenu: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: '0.5rem', // Space between
+    marginBottom: '0.5rem', // Space between nav and logo
   },
   navLink: {
     fontFamily: 'Lora, sans-serif', // Font family for the nav items
@@ -163,6 +230,10 @@ const styles = {
     margin: '0 10px', // 10px gap between each item
     transition: 'color 0.3s ease, transform 0.3s ease',
     whiteSpace: 'nowrap', // Prevent text wrapping
+  },
+  dropdownLink: {
+    textDecoration: 'none',
+    color: '#000', // Default link color
   },
 };
 
