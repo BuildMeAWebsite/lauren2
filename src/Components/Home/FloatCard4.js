@@ -63,7 +63,7 @@ const FloatingCard4 = () => {
   };
 
   return (
-<ParallaxSection image="https://res.cloudinary.com/dvbubqhpp/image/upload/f_auto/v1728154937/lightbackground_uxs2hg.jpg" minHeight="50vh" >
+<ParallaxSection image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1729300314/pexels-rdne-8541321_lqwnzl.jpg" minHeight="60vh" >
       <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
