@@ -39,13 +39,13 @@ const Footer = ({ onContactClick }) => {
     >
       <Grid
         container
-        spacing={1}
+        spacing={2}
         alignItems="center"
         justifyContent="center"
         direction="column"
         sx={{
-   
-          flexDirection: 'column', // Stack content in column layout
+          marginTop: '1rem',
+flexDirection: 'column', // Stack content in column layout
           justifyContent: 'center',
         }}
       >
