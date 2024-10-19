@@ -92,22 +92,7 @@ flexDirection: 'column', // Stack content in column layout
           >
             About
           </Link>
-          <Link
-            href="/approaches"
-            underline="none"
-            sx={{
-              fontFamily: 'Lora, sans-serif',
-              fontSize: '1.25rem',
-              color: '#fcfaf4',
-              transition: 'color 0.3s ease, transform 0.3s ease',
-              '&:hover': {
-                color: '#FFD700',
-                transform: 'scale(1.05)',
-              },
-            }}
-          >
-            Approach
-          </Link>
+        
           <Link
             href="/frequently-asked-questions"
             underline="none"

@@ -70,6 +70,7 @@ const FAQPage = () => {
 
       <Grid item xs={12}>
         <FAQHero />
+        
       </Grid>
 
      
