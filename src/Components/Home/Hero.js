@@ -69,7 +69,7 @@ const Hero = () => {
 
       textAlign: 'center',
       width: '100%',
-      width: '300px',
+      width: '200px',
       height: '150px',
       margin: '0 auto',
       position: 'relative',
