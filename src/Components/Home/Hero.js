@@ -115,7 +115,7 @@ const Hero = () => {
           >
           
             <h1 style={styles.title}>
-            Virtual Psychotherapy   for children, teens, <em>and</em> young adults
+            Virtual psychotherapy   for children, teens, <em>and</em> young adults
             </h1>
           </div>
         </Grid>
