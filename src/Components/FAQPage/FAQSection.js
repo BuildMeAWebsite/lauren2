@@ -12,21 +12,7 @@ const FAQSection = () => {
     <Box sx={styles.container}>
       {/* Centered Title */}
       <Box sx={styles.centeredTitle}>
-        <Box sx={styles.titleCard}>
-          <Typography
-            variant="h2"
-            sx={{
-              ...styles.title,
-              color: hoveredTitle ? '#FFD700' : '#2b2d2b',
-              transition: 'color 0.3s ease, transform 0.3s ease',
-            }}
-            onMouseEnter={handleTitleMouseEnter}
-            onMouseLeave={handleTitleMouseLeave}
-          >
-            Frequently Asked Questions
-          </Typography>
-        </Box>
-        <hr style={styles.line} />
+      
       </Box>
 
       {/* Grid Container for FAQ Items */}
@@ -54,7 +40,6 @@ const FAQSection = () => {
   );
 };
 
-// Sample FAQ Data
 const faqs = [
   [
     {
@@ -71,26 +56,16 @@ const faqs = [
         'Parent involvement varies based on the needs of the child. I believe in collaboration and may involve parents in certain aspects of therapy to support their child’s progress. This will be assessed ongoing in the therapy sessions.',
     },
     {
-      title: 'What is your rate?',
+      title: 'What is the cost per session?',
       answer: 'My rate is $170 per session.',
     },
     {
-      title: 'What are your hours?',
-      answer:
-        'Currently, I offer therapy sessions in the evening Monday-Friday to accommodate those in school and working. If you prefer another time, I will try my best to accommodate.',
-    },
-    {
-      title: 'How long are your sessions?',
-      answer:
-        'Each session is scheduled for 60 minutes. We have up to 50 minutes for counselling and 10 minutes are used for documentation and sending resources discussed.',
-    },
-    {
       title: 'Do you accept insurance?',
-      answer: '(see policy information below)',
+      answer: 'see payment and insurance below',
     },
     {
       title: 'What are the payment options?',
-      answer: '(see policy information below)',
+      answer: 'see payment and insurance below',
     },
     {
       title: 'How do I schedule an appointment?',
@@ -121,12 +96,22 @@ const faqs = [
       title: 'I haven’t attended a session in a long time, can I return?',
       answer: 'Absolutely, anytime you feel ready to return, please reach out to schedule your next appointment.',
     },
+    {
+      title: 'What are your hours?',
+      answer:
+        'Currently, I offer therapy sessions in the evening Monday-Friday to accommodate those in school and working. If you prefer another time, I will try my best to accommodate.',
+    },
+    {
+      title: 'How long are your sessions?',
+      answer:
+        'Each session is scheduled for 60 minutes. We have up to 50 minutes for counselling and 10 minutes are used for documentation and sending resources discussed.',
+    },
   ],
 ];
 
 const styles = {
   container: {
-    padding: '1rem 2rem',
+  
     fontFamily: "Quicksand, sans-serif",
     maxWidth: '100%',
     margin: '0 auto',
@@ -143,10 +128,7 @@ const styles = {
       padding: '20px 15px',
     },
   },
-  centeredTitle: {
-    textAlign: 'center',
-    marginBottom: '20px',
-  },
+ 
   titleCard: {
     padding: '1rem 2rem',
     maxWidth: '40%',
@@ -178,10 +160,10 @@ const styles = {
       width: '90%',
     },
   },
-  faqSection: {
-    marginBottom: '50px',
-  },
+
   accordion: {
+    border: '1.5px solid #2b3d2b', // Darker border to match the design
+
     marginBottom: '15px',
   },
   accordionSummary: {

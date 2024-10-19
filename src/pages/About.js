@@ -12,6 +12,8 @@ import AboutSection14 from '../Components/About/AboutSection14';
 import AboutSection1 from '../Components/About/AboutSection1';
 import FloatingCard3 from '../Components/Home/FloatCard3';
 import AboutSection2 from '../Components/About/AboutSection1';
+import WhatToExpectFloating from '../Components/Contact/WhatToExpectFloating';
+import WhatToExpectSection1 from '../Components/Contact/WhatToExpectSection1';
 
 const About = () => {
   const schemaMarkup = {
@@ -93,12 +95,23 @@ const About = () => {
       <Grid item xs={12} id="top">
         <HomeSection11 />
       </Grid>
-    
-   
- 
+      <Grid item xs={12}>
+        <WhatToExpectFloating/>
+      </Grid>
+
+      <Grid item xs={12}>
+        <WhatToExpectSection1/>
+      </Grid>
+
+      <Grid item xs={12}>
+        <HomeSection11/>
+      </Grid>
       <Grid item xs={12} id="top">
         <AboutSection14  />
       </Grid>
+   
+ 
+  
 
     
     

@@ -12,6 +12,9 @@ const AboutSection7 = () => {
             alt="Lauren Martyn"
             style={styles.image}
           />
+          <Typography variant="caption" sx={styles.caption}>
+            Lauren Martyn RP, MA
+          </Typography>
         </Grid>
         {/* Text on bottom for smaller screens */}
         <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }}>
@@ -19,9 +22,7 @@ const AboutSection7 = () => {
             <em>experience</em>
           </Typography>
           <Typography variant="body1" sx={styles.paragraph}>
-            I have been a Registered Psychotherapist since 2019, with a Master’s degree in Counselling Psychology. 
-            My experience spans both community and post-secondary settings, and I currently serve as a School Counsellor at an Independent School. 
-            I offer expertise in navigating school environments and recognize the unique challenges they present.
+            Currently serving as a School Counsellor at an Independent School, I offer specialized expertise in navigating school environments and addressing the unique challenges they present.
           </Typography>
           <Button variant="outlined" href="contact" sx={styles.button}>
             Schedule an Introductory Call
@@ -80,12 +81,20 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'column',
   },
   image: {
     maxWidth: '100%', // Make the image responsive
     height: 'auto',
     borderRadius: '8px', // Optional: Add some border radius for a softer look
     boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)', // Optional: Add a subtle shadow
+  },
+  caption: {
+    fontFamily: 'Quicksand, sans-serif',
+    fontSize: '1rem',
+    color: '#2b3d2b',
+    marginTop: '20px',
+    textAlign: 'center',
   },
 };
 

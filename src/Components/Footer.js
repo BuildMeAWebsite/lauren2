@@ -31,7 +31,7 @@ const Footer = ({ onContactClick }) => {
       sx={{
         backgroundColor: '#2b3d2b !important',
         backdropFilter: 'blur(10px) !important',
-        padding: { xs: '1rem 2rem', sm: '1.5rem 3rem', md: '2rem 5rem' }, // Adjusted padding for quicker breakpoints
+        padding: { xs: '1rem 2rem', sm: '1.5rem 3rem', md: '2rem 5rem' },
         textAlign: 'center',
         position: 'relative',
         zIndex: 9,
@@ -39,57 +39,26 @@ const Footer = ({ onContactClick }) => {
     >
       <Grid
         container
-        spacing={1}
+        spacing={2}
         alignItems="center"
-        justifyContent="space-between"
+        justifyContent="center"
+        direction="column"
         sx={{
-          flexDirection: { xs: 'column', sm: 'row' },
-          justifyContent: 'space-between',
+          marginTop: '1rem',
+          flexDirection: 'column', // Stack content in column layout
+          justifyContent: 'center',
         }}
       >
-        {/* Left Column: Pride Flag */}
-        <Grid
-          item
-          xs={12}
-          sm={4}
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            margin: '1rem auto',
-          }}
-        >
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '100%', // Ensure box takes full width to properly center content
-            }}
-          >
-            <img
-              src={`${process.env.PUBLIC_URL}/Images/prideflag.png`}
-              alt="Pride Flag"
-              style={{
-                maxWidth: '50px',
-                maxHeight: '50px',
-                borderRadius: '1px',
-                display: 'block', // Ensure the image respects its parent box for centering
-              }}
-            />
-          </Box>
-        </Grid>
-
         {/* Center Column: Quick Links */}
         <Grid
           item
           xs={12}
-          sm={4}
           sx={{
             display: 'flex',
             justifyContent: 'center',
-            gap: '1rem',
+            gap: '1.5rem',
             zIndex: 11,
+            marginBottom: '1rem', // Adds spacing between links and logos
           }}
         >
           <Link
@@ -125,8 +94,7 @@ const Footer = ({ onContactClick }) => {
             About
           </Link>
           <Link
-            href="/contact"
-            onClick={onContactClick}
+            href="/approaches"
             underline="none"
             sx={{
               fontFamily: 'Lora, sans-serif',
@@ -139,39 +107,90 @@ const Footer = ({ onContactClick }) => {
               },
             }}
           >
+            Approach
+          </Link>
+          <Link
+            href="/frequently-asked-questions"
+            underline="none"
+            sx={{
+              fontFamily: 'Lora, sans-serif',
+              fontSize: '1.25rem',
+              color: '#fcfaf4',
+              transition: 'color 0.3s ease, transform 0.3s ease',
+              '&:hover': {
+                color: '#FFD700',
+                transform: 'scale(1.05)',
+              },
+            }}
+          >
+            FAQ
+          </Link>
+          <Link
+            href="/contact"
+            underline="none"
+            sx={{
+              fontFamily: 'Lora, sans-serif',
+              fontSize: '1.25rem',
+          
+              color: '#fcfaf4',
+              transition: 'color 0.3s ease, transform 0.3s ease',
+              '&:hover': {
+                color: '#FFD700',
+                transform: 'scale(1.05)',
+              },
+            }}
+          >
             Contact
           </Link>
-        
         </Grid>
 
-        {/* Right Column: Custom Logo */}
+        {/* Logos Row */}
         <Grid
           item
           xs={12}
-          sm={4}
           sx={{
             display: 'flex',
-            justifyContent: 'center', // Changed to center for smaller screens
+            justifyContent: 'center',
             alignItems: 'center',
-            padding: '0 auto',
+            gap: '1rem', // Spacing between the two logos
           }}
         >
+          {/* Left Logo */}
           <Box
             sx={{
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              width: '100%',
             }}
           >
             <img
-              src={`${process.env.PUBLIC_URL}/Images/logolightfooter.png`}
-              alt="Custom Logo"
+              src={`${process.env.PUBLIC_URL}/Images/logonew.png`}
+              alt="Logo"
               style={{
                 maxWidth: '100px',
-                maxHeight: 'auto',
-                borderRadius: '1px',
-                display: 'block', // Display block to help centering
+                height: 'auto',
+                display: 'block',
+                borderRadius: '5px',
+              }}
+            />
+          </Box>
+
+          {/* Right Logo */}
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/Images/prideflag.png`}
+              alt="Pride Flag"
+              style={{
+                maxWidth: '50px',
+                height: 'auto',
+                display: 'block',
+                borderRadius: '5px',
               }}
             />
           </Box>
@@ -189,7 +208,7 @@ const Footer = ({ onContactClick }) => {
             flexDirection: 'column',
             alignItems: 'center',
             backgroundColor: 'transparent',
-            padding: '1rem',
+            padding: '1.5rem',
             borderRadius: '2px',
             '&:hover': {
               backgroundColor: '#FFD700',

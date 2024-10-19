@@ -33,7 +33,7 @@ const FAQBottomSection = () => {
     border: '1.5px solid #2b3d2b', // Darker border to match the design
     textAlign: 'center', // Center align the text
     width: '100%',
-    maxWidth: '30rem', // Set max width for larger screens
+    maxWidth: '25rem', // Set max width for larger screens
     aspectRatio: 'auto', // The card will adapt its height based on the content
     position: 'relative',
     fontFamily: 'Georgia, serif',
@@ -78,7 +78,7 @@ const FAQBottomSection = () => {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
-            click here to book now <ArrowForwardIcon style={iconStyle} />
+            click to schedule introductory call <ArrowForwardIcon style={iconStyle} />
           </Link>
         </div>
       </div>

@@ -81,7 +81,7 @@ const FloatingCard2 = () => {
 >      <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
-          <p style={headerTextStyle}>What to expect</p>
+          <p style={headerTextStyle}>About the process</p>
           <a href="/what-to-expect" style={arrowLinkStyle}>
             <span style={linkTextStyle}>start your journey</span> {/* Text next to the arrow */}
             <ArrowForwardIcon sx={iconStyle} /> {/* Right-facing arrow icon */}

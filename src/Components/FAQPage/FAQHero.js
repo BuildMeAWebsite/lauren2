@@ -1,11 +1,16 @@
 import React from 'react';
 import ParallaxSection from '../Home/ParallaxSection';
 import FAQSection from './FAQSection';
-import { Typography, Box } from '@mui/material';
+import { Typography, Box, Grid } from '@mui/material';
+import Hero from '../Home/faq1';
+import HomeSection11ColorChange from '../Home/HomeSection11ColorChange';
 
 const FAQHero = () => {
   return (
-<ParallaxSection image="https://res.cloudinary.com/dvbubqhpp/image/upload/f_auto/v1728154906/treebackground_tfbjel.jpg" >
+    <>
+    <Hero/>
+<HomeSection11ColorChange/>
+    <ParallaxSection image="https://res.cloudinary.com/dvbubqhpp/image/upload/f_auto/v1728154906/treebackground_tfbjel.jpg" >
       {/* Overlay and Content */}
       <Box
         sx={{
@@ -22,10 +27,13 @@ const FAQHero = () => {
         {/* Title */}
  
 
-        {/* FAQ Section */}
+       
         <FAQSection />
       </Box>
     </ParallaxSection>
+    
+    </>
+
   );
 };
 

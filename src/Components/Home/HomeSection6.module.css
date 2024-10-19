@@ -29,18 +29,27 @@
   justify-content: center; /* Centers content horizontally */
 }
 
-
-
+.imageContainer {
+  text-align: center; /* Centers the image and caption */
+}
 
 .image {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-
   border-radius: 8px;
   max-width: 275px; /* Adjusted size for better responsiveness */
   max-height: 100%;
   margin: 0 50px; /* Adds spacing around the image */
   object-fit: contain;
   flex-shrink: 0; /* Prevents the image from shrinking */
+}
+
+.caption {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  color: #2b3d2b;
+  text-align: center;
+  margin-top: 10px;
+  display: block;
 }
 
 .heroSection {
@@ -61,11 +70,6 @@
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.container .heading {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: '300'
-}
-
 .smallText:hover {
   color: #FFD700;
   transform: scale(1.05);
@@ -74,7 +78,7 @@
 .heading {
   font-size: 1.25rem;
   line-height: 1.5;
-  font-family: '"Quicksand", sans-serif';
+  font-family: 'Quicksand', sans-serif;
   font-weight: normal;
   color: #333;
 }

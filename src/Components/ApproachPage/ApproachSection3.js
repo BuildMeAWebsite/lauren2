@@ -52,6 +52,7 @@ const ApproachSection3 = () => {
           alt="Lauren Martyn"
           style={styles.image}
         />
+        <p style={styles.caption}>Lauren Martyn RP, MA</p> {/* Caption added below the image */}
       </div>
     </div>
   );
@@ -93,13 +94,22 @@ const styles = {
   imageContainer: {
     flex: 1,
     display: 'flex',
+    flexDirection: 'column', // Ensure caption is below image
     justifyContent: 'center',
+    alignItems: 'center',
   },
   image: {
     maxWidth: '100%',
     height: 'auto',
     borderRadius: '10px',
     objectFit: 'cover',
+  },
+  caption: {
+    fontFamily: 'Quicksand, sans-serif',
+    fontSize: '1rem',
+    color: '#2b3d2b',
+    textAlign: 'center',
+    marginTop: '10px',
   },
 };
 

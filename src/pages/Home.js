@@ -5,10 +5,8 @@ import { Helmet } from 'react-helmet';
 
 import HomeSection6 from '../Components/Home/HomeSection6';
 import HomeSection7 from '../Components/Home/BookASession';
-import HomeSection8 from '../Components/Home/HomeSection8';
 import HomeSection11 from '../Components/Home/HomeSection11';
 import HomeSection13 from '../Components/Home/HomeSection13';
-import HomeSection9 from '../Components/Home/HomeSection9';
 import HomeSection11ColorChange from '../Components/Home/HomeSection11ColorChange';
 import FloatingCard from '../Components/Home/FloatCard2';
 
@@ -112,7 +110,8 @@ const Home = () => {
         <HomeSection11 />
       </Grid>
   
-
+   
+    
    
     </Grid>
   );

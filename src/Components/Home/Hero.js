@@ -19,7 +19,7 @@ const Hero = () => {
 
   const styles = {
     heroContainer: {
-      minHeight: '40vh',
+      minHeight: '30vh',
       color: '#fcfaf4',
       fontFamily: "'Lora', sans-serif",
       backgroundColor: 'transparent',
@@ -39,10 +39,10 @@ const Hero = () => {
     },
     subtitle: {
       fontFamily: "'Lora', sans-serif",
-      fontSize: '0.75rem',
-      color: '#2b3d2b',
-      fontWeight: 'normal',
-      textTransform: 'uppercase',
+      fontSize: '2rem',
+      color: '#3a3a3a',
+      fontWeight: '400',
+      textTransform: 'none',
       letterSpacing: '1px',
       textShadow: '0 1px 5px rgba(0, 0, 0, 0.05)',
       '@media (max-width: 768px)': {
@@ -51,7 +51,7 @@ const Hero = () => {
     },
     title: {
       fontFamily: "'Georgia', serif",
-      fontSize: '2.25rem',
+      fontSize: '1.85rem',
       fontWeight: 100,
       color: '#2b3d2b',
       margin: 0,
@@ -64,14 +64,14 @@ const Hero = () => {
     squareCard: {
       zIndex: 2,
       backgroundColor: '#fcfaf4',
-      padding: '1rem',
+      padding: '2rem',
       border: '2px solid #2b3d2b',
 
       textAlign: 'center',
       width: '100%',
-      width: '300px',
-      height: '300px',
-      margin: '1rem auto',
+      width: '350px',
+      height: '150px',
+      margin: '0 auto',
       position: 'relative',
       fontFamily: 'Lora, sans-serif',
       fontWeight: '100',
@@ -113,9 +113,9 @@ const Hero = () => {
             onMouseLeave={() => setHovered(false)}
             ref={(el) => (textRefs.current[1] = el)}
           >
-            <h2 style={styles.subtitle}>VIRTUAL PSYCHOTHERAPY</h2>
+          
             <h1 style={styles.title}>
-              for children, teens, <em>and</em> young adults
+            Virtual Psychotherapy   for children, teens, <em>and</em> young adults
             </h1>
           </div>
         </Grid>

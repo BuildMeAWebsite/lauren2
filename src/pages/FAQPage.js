@@ -1,8 +1,6 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import ServicesOffered from '../Components/About/ServicesOffered';
-import TextBanner from '../Components/About/TextBanner';
-import FAQComponent from '../Components/FAQPage/FAQSection';
+
 import FAQHero from '../Components/FAQPage/FAQHero';
 import Policies from '../Components/Contact/Policies';
 import { Helmet } from 'react-helmet';
