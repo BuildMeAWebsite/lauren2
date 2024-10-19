@@ -6,13 +6,7 @@ const WhatToExpectSection1 = () => {
   return (
     <Box sx={styles.container}>
       <Grid container spacing={4} justifyContent="center">
-        <Grid item xs={12} sm={4} sx={styles.leftColumn}>
-          <Typography variant="h1" sx={styles.title}>
-            <span style={styles.titlePrimary}>what</span>
-            <span style={styles.titleSecondary}>to expect</span>
-          </Typography>
-          <hr style={styles.line} />
-        </Grid>
+       
         <Grid item xs={12} sm={8} sx={styles.rightColumn}>
           <Box sx={styles.serviceItem}>
             <Typography variant="h2" sx={styles.serviceNumber}>01.</Typography>
