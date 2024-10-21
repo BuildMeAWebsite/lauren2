@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
 .container {
   display: flex;
   flex-direction: row;
@@ -11,7 +14,7 @@
   background-color: transparent;
   flex: 1;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
@@ -47,31 +50,45 @@
   box-sizing: border-box;
 }
 
+/* Wrapper for the heading to add blur effect */
+.headingWrapper {
+  position: relative;
+  display: inline-block; /* Ensures the wrapper fits snugly around the heading */
+  padding: 5px 10px;
+  background-color: transparent;
+  transition: background-color 0.3s ease, backdrop-filter 0.5s ease;
+  border-radius: 20px;
+
+}
+
+.headingWrapper:hover {
+  background-color: rgba(0, 0, 0, 0.0001); /* Darkens the background slightly */
+  backdrop-filter: blur(10px); /* Adds the blur effect */
+}
+
 .smallText {
-  font-size: 3rem;
+  font-size: 2.5rem;
   letter-spacing: 0.15rem;
   text-transform: lowercase;
-  margin-bottom: 1rem;
+ margin: 0 auto;
   color: #FFD700;
   font-family: 'Lora', sans-serif;
   transition: color 0.3s ease, transform 0.3s ease;
-  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9)
-
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
 }
 
 .smallText:hover {
- color: #8EBC8F;  
-  transform: scale(1.15);
+  color: #8EBC8F;  
+  transform: scale(1.10);
 }
 
 .heading {
-  font-size: 1.5rem;
-  line-height: 1.35;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 100;
-  color: #fcfaf4;
-  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9)
+  font-size: 1.75rem;
 
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  color: #fcfaf4;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
 }
 
 /* Add responsive breakpoints */
