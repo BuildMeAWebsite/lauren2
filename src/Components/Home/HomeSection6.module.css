@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-
 .container {
   display: flex;
   flex-direction: row;
@@ -19,6 +18,11 @@
   flex-wrap: wrap;
   position: relative;
   z-index: 2;
+  transition: transform 0.5s ease; /* Adds smooth scaling effect */
+}
+
+.contentContainer:hover {
+  transform: scale(1.025); /* Scales the content container on hover */
 }
 
 .imageContainer {
@@ -58,7 +62,6 @@
   background-color: transparent;
   transition: background-color 0.3s ease, backdrop-filter 0.5s ease;
   border-radius: 20px;
-
 }
 
 .headingWrapper:hover {
@@ -70,7 +73,7 @@
   font-size: 2.5rem;
   letter-spacing: 0.15rem;
   text-transform: lowercase;
- margin: 0 auto;
+  margin: 0 auto;
   color: #FFD700;
   font-family: 'Lora', sans-serif;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -84,7 +87,6 @@
 
 .heading {
   font-size: 1.75rem;
-
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
   color: #fcfaf4;
@@ -107,11 +109,12 @@
 @media (max-width: 768px) {
   .heading {
     font-size: 1.5rem;
-    max-width: 95%;
+    max-width: 100%;
   }
 
   .smallText {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
+    margin: 0 auto;
   }
 
   .container {
@@ -130,21 +133,25 @@
 
   .heroSection {
     padding: 10px;
-    max-width: 95%;
+    margin: 10px auto;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 576px) {
   .heading {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 
   .smallText {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    margin: 0 auto;
   }
 
   .heroSection {
-    max-width: 95%;
+    padding: 10px;
+    margin: 10px auto;
+    max-width: 100%;
   }
 }
 
