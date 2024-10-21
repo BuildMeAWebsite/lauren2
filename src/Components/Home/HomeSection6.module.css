@@ -53,13 +53,13 @@
   letter-spacing: 0.25rem;
   text-transform: lowercase;
   margin-bottom: 20px;
-  color: #FFD700;
+  color: #fcfaf4;
   font-family: 'Lora', sans-serif;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .smallText:hover {
-  color: #fcfaf4;
+  color: #FFD700;
   transform: scale(1.05);
 }
 
@@ -67,7 +67,7 @@
   font-size: 1.25rem;
   line-height: 1.5;
   font-family: 'Quicksand', sans-serif;
-  font-weight: normal;
+  font-weight: 100;
   color: #fcfaf4;
 }
 
