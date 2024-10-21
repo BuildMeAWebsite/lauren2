@@ -131,13 +131,13 @@ const styles = {
   },
   titlePrimary: {
     display: 'block',
-    fontFamily: "'Lora', sans-serif",
+    fontFamily: "'Quicksand', sans-serif",
     fontWeight: 'normal',
     color: '#2B3D2B',
   },
   titleSecondary: {
     display: 'block',
-    fontFamily: "'Lora', sans-serif",
+    fontFamily: "Quicksand, sans-serif",
     fontWeight: 'normal',
     color: '#2B3D2B',
   },
@@ -199,7 +199,7 @@ const styles = {
   serviceTitle: {
     fontSize: '2rem',
     fontFamily: "'Lora', sans-serif",
-    fontWeight: 'normal',
+    fontWeight: '100',
     marginBottom: '15px',
     '@media (max-width: 1100px)': {
       fontSize: '1.8rem',
@@ -216,7 +216,7 @@ const styles = {
   },
   serviceDescription: {
     fontSize: '1.25rem',
-    fontFamily: "Georgia, sans-serif",
+    fontFamily: "Quicksand, sans-serif",
     margin: '20px 0',
     lineHeight: '1.6',
     '@media (max-width: 1100px)': {
@@ -231,11 +231,11 @@ const styles = {
   },
   serviceLink: {
     display: 'inline-block',
-    marginTop: '10px',
+    marginTop: '1rem auto',
     color: '#8FBC8F',
     textDecoration: 'none',
-    fontWeight: 'bold',
-    fontSize: '1rem',
+    fontWeight: '100',
+    fontSize: '1.25rem',
     '@media (max-width: 600px)': {
       fontSize: '0.9rem',
     },
