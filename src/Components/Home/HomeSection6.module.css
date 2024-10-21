@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: row;
-  max-height: 50vh;
+  max-height: 100vh;
   background-color: transparent;
   position: relative;
 }
@@ -13,7 +13,9 @@
   align-items: center;
   padding: 10px;
   justify-content: center;
-  flex-wrap: wrap; /* Ensures content wraps on smaller screens */
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 }
 
 .imageContainer {
@@ -24,7 +26,6 @@
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   max-width: 250px;
-  max-height: 100%;
   margin: 0 50px;
   object-fit: contain;
   flex-shrink: 0;
@@ -44,6 +45,7 @@
   text-align: left;
   max-width: 500px;
   box-sizing: border-box;
+  color: #fcfaf4;
 }
 
 .smallText {
@@ -140,4 +142,12 @@
 .contentContainer {
   position: relative;
   z-index: 2;
+}
+
+/* Adjusting container height for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    max-height: none; /* Removes the height constraint */
+    height: auto;
+  }
 }
