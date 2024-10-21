@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const WhatToExpectSection1 = () => {
   return (
     <Box sx={styles.container}>
-      <Grid container spacing={4} justifyContent="center">
+      <Grid container spacing={2} justifyContent="center">
        
         <Grid item xs={12} sm={8} sx={styles.rightColumn}>
           <Box sx={styles.serviceItem}>
@@ -88,7 +88,7 @@ const WhatToExpectSection1 = () => {
 
 const styles = {
   container: {
-    padding: '60px 80px', 
+    padding: '20px 40px', 
     fontFamily: "'Lora', sans-serif",
     maxWidth: '1300px',
     margin: '0 auto',

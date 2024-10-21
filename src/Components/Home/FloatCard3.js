@@ -12,7 +12,7 @@ const FloatingCard3 = () => {
     zIndex: 1,
   };
   const outerContentStyle = {
-    margin: '20px 20px',
+    margin: '20px 40px',
     backgroundColor: '#fcfaf4',
     boxSizing: 'border-box',
     display: 'flex',
@@ -62,7 +62,7 @@ const FloatingCard3 = () => {
 
   const subHeadingStyle = {
     fontSize: '1.25rem',
-    fontWeight: 300,
+    fontWeight: 100,
     fontFamily: 'Quicksand, sans-serif',
     color: '#2b2d2b',
     marginBottom: '1rem',
@@ -74,7 +74,7 @@ const FloatingCard3 = () => {
   return (
 <ParallaxSection
   image="https://res.cloudinary.com/dvbubqhpp/image/upload/f_auto/v1728154945/forestsunshine_vmiftm.jpg"
-  minHeight="80vh"
+  minHeight="100vh"
 >      <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
