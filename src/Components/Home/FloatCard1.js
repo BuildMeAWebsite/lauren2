@@ -14,7 +14,7 @@ const FloatingCard = () => {
   const outerContentStyle = {
     margin: '10px 20px',
         backgroundColor: '#fcfaf4',
-        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.9)',
+        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.25)',
 
         boxSizing: 'border-box',
         display: 'flex',
@@ -35,7 +35,7 @@ const FloatingCard = () => {
     maxWidth: '30rem', // Set max width for larger screens
     aspectRatio: 'auto', // The card will adapt its height based on the content
     position: 'relative',
-    fontFamily: 'Georgia, serif',
+    fontFamily: 'Quicksand, sans-serif',
     fontWeight: 'normal',
     color: '#2b2d2b', // Text color to match the border
     lineHeight: '1.5',
