@@ -3,7 +3,7 @@
 .container {
   display: flex;
   flex-direction: row;
-  min-height: 50vh;
+  min-height: 40vh;
   background-color: transparent;
   position: relative;
 }
@@ -13,7 +13,7 @@
   background-color: transparent;
   flex: 1;
   align-items: center;
-  padding: 20px;
+  padding: 50px;
   justify-content: center;
   flex-wrap: wrap;
   position: relative;

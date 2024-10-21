@@ -22,16 +22,18 @@ margin: '10px 20px',
   };
 
   const contentStyle = {
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+
     zIndex: 2,
     backgroundColor: 'transparent', // No background color inside the card
     padding: '5rem', // Adjusted padding for more space
     border: '1.5px solid #2b2d2b', // Darker border to match the design
     textAlign: 'center', // Center align the text
     width: '100%',
-    maxWidth: '30rem', // Set max width for larger screens
+    minWidth: '200px', // Set max width for larger screens
     aspectRatio: 'auto', // The card will adapt its height based on the content
     position: 'relative',
-    fontFamily: 'Georgia, serif',
+    fontFamily: 'Quicksand, sans-serif',
     fontWeight: 'normal',
     color: '#2b2d2b', // Text color to match the border
     lineHeight: '1.5',
@@ -43,18 +45,18 @@ margin: '10px 20px',
 
   const headerTextStyle = {
     fontSize: '1.75rem',
-    fontWeight: 400, // Regular font weight
+    fontWeight: 100, // Regular font weight
     letterSpacing: '0.1em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Georgia, serif',
+    fontFamily: 'Quicksand, sans-serif',
     textTransform: 'lowercase', // Make the text uppercase
   };
 
   return (
-<ParallaxSection image="https://res.cloudinary.com/dvbubqhpp/image/upload/f_auto/v1728154906/flowerfield_i9oxdn.jpg" minHeight='80vh' >   
+<ParallaxSection image="https://res.cloudinary.com/dvbubqhpp/image/upload/f_auto/v1728154906/flowerfield_i9oxdn.jpg" minHeight='50vh' >   
    <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
-          <p style={headerTextStyle}>my approach</p>
+          <p style={headerTextStyle}>approach</p>
         </div>
       </div>
     </ParallaxSection>

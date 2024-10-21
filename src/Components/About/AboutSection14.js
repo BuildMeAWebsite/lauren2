@@ -35,7 +35,7 @@ const AboutSection14 = () => {
     width: '100%',
     maxWidth: '300px', // Set max width for larger screens
     position: 'relative',
-    fontFamily: 'Georgia, serif',
+    fontFamily: 'Quicksand, sans-serif',
     fontWeight: 'normal',
     color: '#2b3d2b',
     lineHeight: '1',
@@ -50,7 +50,7 @@ const AboutSection14 = () => {
     fontSize: '1.25rem',
     fontWeight: 400, // Regular font weight
     letterSpacing: '0.1em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Georgia, serif',
+    fontFamily: 'Quicksand, sans-serif',
     textTransform: 'lowercase',
     color: hovered ? '#FFD700' : '#2b3d2b', // Change color on hover
     display: 'inline-flex',

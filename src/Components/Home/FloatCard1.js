@@ -14,7 +14,7 @@ const FloatingCard = () => {
   const outerContentStyle = {
     margin: '10px 20px',
         backgroundColor: '#fcfaf4',
-        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.25)',
+        boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
 
         boxSizing: 'border-box',
         display: 'flex',
@@ -24,7 +24,7 @@ const FloatingCard = () => {
       };
 
   const contentStyle = {
-    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.9)',
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
 
     zIndex: 2,
     backgroundColor: 'transparent', // No background color inside the card
@@ -32,7 +32,7 @@ const FloatingCard = () => {
     border: '1.5px solid #2b2d2b', // Darker border to match the design
     textAlign: 'center', // Center align the text
     width: '100%',
-    maxWidth: '30rem', // Set max width for larger screens
+    minWidth: '200px', // Set max width for larger screens
     aspectRatio: 'auto', // The card will adapt its height based on the content
     position: 'relative',
     fontFamily: 'Quicksand, sans-serif',
@@ -47,20 +47,20 @@ const FloatingCard = () => {
 
   const headerTextStyle = {
     fontSize: '1.75rem',
-    fontWeight: 400, // Regular font weight
+    fontWeight: 300, // Regular font weight
     letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Georgia, serif',
+    fontFamily: 'Quicksand, sans-serif',
     textTransform: 'lowercase', // Make the text lowercase
   };
 
   return (
 <ParallaxSection
   image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1728154938/sunshine_y8vg4l.jpg"
-  minHeight="80vh"
+  minHeight="60vh"
 >      <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
-          <p style={headerTextStyle}>about me</p>
+          <p style={headerTextStyle}>about</p>
         </div>
       </div>
     </ParallaxSection>

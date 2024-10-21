@@ -54,7 +54,7 @@ const Hero = () => {
       >
         <Grid item xs={12} md={12} style={{ ...styles.slideIn, ...styles['@keyframes slideInFromBottom'] }}>
           <h1 style={styles.title}>
-            About me
+            About
           </h1>
         </Grid>
       </Grid>
