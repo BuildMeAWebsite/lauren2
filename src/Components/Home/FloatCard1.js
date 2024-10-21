@@ -14,6 +14,8 @@ const FloatingCard = () => {
   const outerContentStyle = {
     margin: '10px 20px',
         backgroundColor: '#fcfaf4',
+        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.9)',
+
         boxSizing: 'border-box',
         display: 'flex',
         justifyContent: 'center',
@@ -22,6 +24,8 @@ const FloatingCard = () => {
       };
 
   const contentStyle = {
+    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.9)',
+
     zIndex: 2,
     backgroundColor: 'transparent', // No background color inside the card
     padding: '5rem', // Adjusted padding for more space

@@ -64,6 +64,8 @@ const styles = {
   },
   button: {
     fontFamily: "'Lora', sans-serif",
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
+
     fontWeight: '300',
     display: 'inline-block',
     padding: '10px 20px',

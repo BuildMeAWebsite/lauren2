@@ -4,7 +4,7 @@ import { Grid, Box, Typography, Button } from '@mui/material';
 const AboutSection7 = () => {
   return (
     <Box sx={styles.container}>
-      <Grid container spacing={4} alignItems="center">
+      <Grid container spacing={1} alignItems="center">
         {/* Image on top for smaller screens */}
         <Grid item xs={12} md={6} sx={{ ...styles.imageContainer, order: { xs: 1, md: 2 } }}>
           <img
@@ -42,7 +42,9 @@ const styles = {
     justifyContent: 'center',
   },
   smallText: {
-    fontSize: '2rem',
+    fontSize: '2.75rem',
+    textShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
+
     letterSpacing: '0.25rem',
     textTransform: 'lowercase',
     marginBottom: '20px',
@@ -61,21 +63,26 @@ const styles = {
     marginBottom: '30px',
   },
   button: {
-    fontFamily: 'Quicksand, sans-serif',
+    fontFamily: "'Lora', sans-serif",
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
+
+    fontWeight: '300',
     display: 'inline-block',
-    padding: '0.5rem 1rem',
-    borderColor: '#2b3d2b',
-    color: '#2b3d2b',
+    padding: '10px 20px',
+    border: '1.25px solid #8FBC8F',
+    color: '#2B3D2B',
+    textDecoration: 'none',
     textTransform: 'uppercase',
-    fontSize: '20px',
+    fontSize: '1rem',
+    margin: '0 auto',
     marginBottom: '20px',
-    textAlign: 'center',
-    transition: 'color 0.3s ease, border-color 0.3s ease, transform 0.3s ease',
-    '&:hover': {
-      color: '#FFD700', // Yellow text on hover
-      borderColor: '#FFD700', // Yellow border on hover
-      transform: 'scale(1.05)', // Slightly enlarge on hover
-    },
+    textAlign: 'right',
+    transition: 'color 0.3s ease, transform 0.3s ease, border-color 0.3s ease',
+  },
+  buttonHover: {
+    color: '#FFD700', // Yellow text color on hover
+    borderColor: '#FFD700', // Yellow border color on hover
+    transform: 'scale(1.05)', // Slightly enlarge the button on hover
   },
   imageContainer: {
     display: 'flex',
