@@ -22,7 +22,7 @@ const FloatingCard2 = () => {
   const contentStyle = {
     zIndex: 2,
     backgroundColor: '#fcfaf4',
-    padding: '5px', // Ensure padding around content
+    padding: '50px 30px', // Ensure padding around content
     textAlign: 'center',
     maxWidth: '250px', // Ensure the card stays square
     aspectRatio: '1 / 1', // Maintain square shape
@@ -80,9 +80,9 @@ const FloatingCard2 = () => {
 >      <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
-          <p style={headerTextStyle}>About the process</p>
+         
           <a href="/what-to-expect" style={arrowLinkStyle}>
-            <span style={linkTextStyle}>start your journey</span> {/* Text next to the arrow */}
+            <span style={linkTextStyle}>About the process</span> {/* Text next to the arrow */}
             <ArrowForwardIcon sx={iconStyle} /> {/* Right-facing arrow icon */}
           </a>
         </div>

@@ -52,7 +52,7 @@ const Hero = () => {
   return (
 <ParallaxSection
   image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1729297041/pexels-eye4dtail-114137_h9nkjj.jpg"
-  minHeight="80vh"
+  minHeight="100vh"
 >      <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>

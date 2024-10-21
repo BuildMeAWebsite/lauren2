@@ -75,9 +75,7 @@ const Home = () => {
         </script>
       </Helmet>
 
-      <Grid item xs={12}>
-        <Hero />
-      </Grid>
+    
 
       <Grid item xs={12}>
         <HomeSection6 />

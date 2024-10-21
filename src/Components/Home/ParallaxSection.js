@@ -5,7 +5,7 @@ const ParallaxSection = ({
   children,
   minHeight = '100vh',
   showOnMobile = true,
-  overlayColor = 'rgba(255, 255, 255, 0.3)', // Default white transparent overlay
+  overlayColor = 'rgba(255, 255, 255, 0.1)', // Default white transparent overlay
 }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 

@@ -9,7 +9,7 @@ const NavigationMenuBar = () => {
       {/* Top Dark Bar */}
       <div style={styles.topBar}>
         <div style={styles.topBarContainer}>
-          <span style={styles.topBarItem}>Now accepting clients in Ontario</span>
+          <span style={styles.topBarItem}>Online psychotherapy for children, teens, and young adults . Now accepting clients in Ontario</span>
           <span style={styles.topBarItem}>
             <Link
               to="#"

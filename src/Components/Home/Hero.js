@@ -90,7 +90,7 @@ const Hero = () => {
 <ParallaxSection
   image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1728154935/background1a1_ke54dk.jpg"
   minHeight="80vh"
-  overlayColor="rgba(255, 255, 255, 0.5)"
+  overlayColor="rgba(255, 255, 255, 0.75)"
 >
       <Grid
         container
@@ -114,9 +114,7 @@ const Hero = () => {
             ref={(el) => (textRefs.current[1] = el)}
           >
           
-            <h1 style={styles.title}>
-            Virtual psychotherapy   for children, teens, <em>and</em> young adults
-            </h1>
+           
           </div>
         </Grid>
       </Grid>
