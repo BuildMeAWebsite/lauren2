@@ -57,7 +57,7 @@ flexDirection: 'column', // Stack content in column layout
           sx={{
             display: 'flex',
             justifyContent: 'center',
-            gap: '1.5rem',
+            gap: '1rem',
             zIndex: 11,
           }}
         >
@@ -66,7 +66,7 @@ flexDirection: 'column', // Stack content in column layout
             underline="none"
             sx={{
               fontFamily: 'Lora, sans-serif',
-              fontSize: '1.25rem',
+fontSize: '1rem',
               color: '#fcfaf4',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
@@ -82,7 +82,7 @@ flexDirection: 'column', // Stack content in column layout
             underline="none"
             sx={{
               fontFamily: 'Lora, sans-serif',
-              fontSize: '1.25rem',
+fontSize: '1rem',
               color: '#fcfaf4',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
@@ -99,7 +99,7 @@ flexDirection: 'column', // Stack content in column layout
             underline="none"
             sx={{
               fontFamily: 'Lora, sans-serif',
-              fontSize: '1.25rem',
+fontSize: '1rem',
               color: '#fcfaf4',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
@@ -115,7 +115,7 @@ flexDirection: 'column', // Stack content in column layout
             underline="none"
             sx={{
               fontFamily: 'Lora, sans-serif',
-              fontSize: '1.25rem',
+fontSize: '1rem',
           
               color: '#fcfaf4',
               transition: 'color 0.3s ease, transform 0.3s ease',
@@ -132,7 +132,7 @@ flexDirection: 'column', // Stack content in column layout
             underline="none"
             sx={{
               fontFamily: 'Lora, sans-serif',
-              fontSize: '1.25rem',
+              fontSize: '1rem',
           
               color: '#fcfaf4',
               transition: 'color 0.3s ease, transform 0.3s ease',
