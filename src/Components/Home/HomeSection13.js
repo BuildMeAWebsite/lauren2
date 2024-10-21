@@ -49,7 +49,7 @@ const HomeSection13 = () => {
     fontSize: '1.25rem', // Base font size
     fontWeight: 400, // Regular font weight
     letterSpacing: '0.1em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Georgia, serif',
+    fontFamily: 'Quicksand, sans-serif',
     textTransform: 'lowercase',
     color: '#2b3d2b', // Base color
     display: 'inline-flex',

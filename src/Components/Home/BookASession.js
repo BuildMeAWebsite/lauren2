@@ -68,15 +68,15 @@ const styles = {
 
     fontWeight: '300',
     display: 'inline-block',
-    padding: '10px 20px',
+    padding: '10px 30px',
     border: '1.25px solid #8FBC8F',
     color: '#2B3D2B',
     textDecoration: 'none',
     textTransform: 'uppercase',
-    fontSize: '1rem',
+    fontSize: '0.88rem',
     margin: '0 auto',
     marginBottom: '20px',
-    textAlign: 'right',
+    textAlign: 'center',
     transition: 'color 0.3s ease, transform 0.3s ease, border-color 0.3s ease',
   },
   buttonHover: {
