@@ -31,6 +31,7 @@ const Footer = ({ onContactClick }) => {
       sx={{
         backgroundColor: '#2b3d2b !important',
         backdropFilter: 'blur(10px) !important',
+
         padding: { xs: '1rem 2rem', sm: '1.5rem 3rem', md: '2rem 5rem' },
         textAlign: 'center',
         position: 'relative',
@@ -39,7 +40,7 @@ const Footer = ({ onContactClick }) => {
     >
       <Grid
         container
-        spacing={2}
+        spacing={1}
         alignItems="center"
         justifyContent="center"
         direction="column"
@@ -126,6 +127,23 @@ flexDirection: 'column', // Stack content in column layout
           >
             Contact
           </Link>
+          <Link
+            href="/approaches"
+            underline="none"
+            sx={{
+              fontFamily: 'Lora, sans-serif',
+              fontSize: '1.25rem',
+          
+              color: '#fcfaf4',
+              transition: 'color 0.3s ease, transform 0.3s ease',
+              '&:hover': {
+                color: '#FFD700',
+                transform: 'scale(1.05)',
+              },
+            }}
+          >
+            Approach
+          </Link>
         </Grid>
 
         {/* Logos Row */}
@@ -192,8 +210,8 @@ flexDirection: 'column', // Stack content in column layout
             flexDirection: 'column',
             alignItems: 'center',
             backgroundColor: 'transparent',
-            padding: '1.5rem',
-            borderRadius: '2px',
+            padding: '1rem',
+            borderRadius: '5px',
             '&:hover': {
               backgroundColor: '#FFD700',
               color: '#2b3d2b',

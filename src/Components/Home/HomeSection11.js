@@ -12,7 +12,7 @@ const HomeSection11 = () => {
 const styles = {
   container: {
     backgroundColor: '#8FBC8F', 
-    height: '150px', // Adjust height as needed
+    height: '100px', // Adjust height as needed
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

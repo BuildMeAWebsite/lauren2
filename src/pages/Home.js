@@ -9,6 +9,7 @@ import HomeSection11 from '../Components/Home/HomeSection11';
 import HomeSection13 from '../Components/Home/HomeSection13';
 import HomeSection11ColorChange from '../Components/Home/HomeSection11ColorChange';
 import FloatingCard from '../Components/Home/FloatCard2';
+import AboutSection7 from '../Components/About/AboutSection7';
 
 const Home = () => {
   const schemaMarkup = {
@@ -81,18 +82,27 @@ const Home = () => {
         <HomeSection6 />
       </Grid>
 
-      <Grid item xs={12}>
-        <HomeSection11ColorChange />
-      </Grid>
     
+      <Grid item xs={12}>
+        <HomeSection7 />
+      </Grid>
+      <Grid item xs={12}>
+        <HomeSection11 />
+      </Grid>
 
       <Grid item xs={12}>
         <FloatingCard />
       </Grid>
-
+    
       <Grid item xs={12}>
-        <HomeSection7 />
+        <HomeSection11ColorChange />
       </Grid>
+
+      <Grid item xs={12} id="top">
+        <AboutSection7 />
+      </Grid>
+
+      
     
   
 

@@ -38,38 +38,43 @@ const styles = {
   container: {
     display: 'flex',
     justifyContent: 'center', // Center the content horizontally
-    padding: '3rem 2rem',
+
+    padding: '50px',
     backgroundColor: '#fcfaf4', // Dark background color
     color: '#2B3D2B', // Light text color
-    fontFamily: "Lora, serif",
+    fontFamily: "Lora, sans-serif",
   },
   rightColumn: {
     flex: 1,
     maxWidth: '600px', // Limit the width of the text content for better readability
   },
   header: {
-    fontSize: '2.5rem',
-    marginBottom: '1rem',
+    fontSize: '2rem',
+    fontFamily: "Quicksand, sans-serif",
+    lineHeight: '1',
+    color : '#8FBC8F',
+    margin: '10px auto',
     fontWeight: 'normal',
   },
   paragraph: {
     fontFamily: "Quicksand, sans-serif",
     lineHeight: '1.75',
     fontSize: '1.25rem',
-    marginBottom: '30px',
+    margin: '20px auto',
   },
   button: {
-    fontFamily: "Quicksand, sans-serif",
-
+    fontFamily: "'Lora', sans-serif",
+    fontWeight: '300',
     display: 'inline-block',
-    padding: '15px 30px',
-    border: '1px solid #2B3D2B',
+    padding: '10px 20px',
+    border: '1.25px solid #8FBC8F',
     color: '#2B3D2B',
     textDecoration: 'none',
     textTransform: 'uppercase',
     fontSize: '1rem',
+    margin: '0 auto',
     marginBottom: '20px',
-    textAlign: 'center',
+    textAlign: 'right',
     transition: 'color 0.3s ease, transform 0.3s ease, border-color 0.3s ease',
   },
   buttonHover: {

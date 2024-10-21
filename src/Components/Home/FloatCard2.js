@@ -22,9 +22,9 @@ const FloatingCard2 = () => {
   const contentStyle = {
     zIndex: 2,
     backgroundColor: '#fcfaf4',
-    padding: '50px 30px', // Ensure padding around content
+    padding: '100px 50px', // Ensure padding around content
     textAlign: 'center',
-    maxWidth: '250px', // Ensure the card stays square
+    maxWidth: '300px', // Ensure the card stays square
     aspectRatio: '1 / 1', // Maintain square shape
     position: 'relative',
     fontFamily: 'Lora, sans-serif',
@@ -75,7 +75,7 @@ const FloatingCard2 = () => {
 
   return (
 <ParallaxSection
-  image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1728154938/forest_iityvj.webp"
+  image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1729515911/pexels-eberhardgross-1062175_w5d8gl.jpg"
   minHeight="100vh"
 >      <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
