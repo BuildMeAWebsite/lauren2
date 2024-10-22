@@ -46,9 +46,9 @@ const HomeSection13 = () => {
   };
 
   const linkTextStyle = {
-    fontSize: '1.25rem', // Base font size
-    fontWeight: 400, // Regular font weight
-    letterSpacing: '0.1em', // Slightly increase letter spacing for a cleaner look
+    fontSize: '24px', // Base font size
+    fontWeight: 100, // Regular font weight
+    letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
     fontFamily: 'Quicksand, sans-serif',
     textTransform: 'lowercase',
     color: '#2b3d2b', // Base color
@@ -58,7 +58,6 @@ const HomeSection13 = () => {
     cursor: 'pointer',
     transition: 'transform 0.3s ease', // Smooth transition for scaling
   };
-
   const linkTextHoverStyle = {
     transform: 'scale(1.05)', // Slightly enlarge text on hover
     color: '#FFD700', // Change color on hover

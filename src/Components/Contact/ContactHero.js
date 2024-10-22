@@ -40,13 +40,12 @@ const ContactFloatingHero = () => {
   };
 
   const headerTextStyle = {
-    fontSize: '1.75rem',
-    fontWeight: 'normal', // Regular font weight
+    fontSize: '24px',
+    fontWeight: 100, // Regular font weight
     letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Georgia, serif',
+    fontFamily: 'Quicksand, sans-serif',
     textTransform: 'lowercase', // Make the text uppercase
   };
-
   return (
     <ParallaxSection image={`${process.env.PUBLIC_URL}/Images/cherryblossoms.jpg`} minHeight='80vh'>
       <div style={overlayStyle}></div> {/* Overlay */}

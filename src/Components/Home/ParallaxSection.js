@@ -3,9 +3,8 @@ import React, { useState, useEffect } from 'react';
 const ParallaxSection = ({
   image,
   children,
-  minHeight = '100vh',
+  minHeight = '90vh',
   showOnMobile = true,
-  overlayColor = 'rgba(255, 255, 255, 0.1)', // Default white transparent overlay
 }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -35,23 +34,13 @@ const ParallaxSection = ({
     position: 'relative',
   };
 
-  const overlayStyle = {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundColor: overlayColor, // Use the overlayColor prop
-    zIndex: 1,
-  };
-
   const contentStyle = {
     zIndex: 2,
   };
 
   return (
     <div style={parallaxStyle}>
-      <div style={overlayStyle}></div> {/* Overlay with adjustable color */}
+      {/* Removed the overlay */}
       <div style={contentStyle}>
         {children}
       </div>

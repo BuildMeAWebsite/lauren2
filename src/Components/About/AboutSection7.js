@@ -74,10 +74,11 @@ const styles = {
   },
   caption: {
     fontFamily: 'Lora, sans-serif',
+    fontWeight: '400',
     fontSize: '1rem',
     color: '#2b3d2b',
-    marginTop: '1rem',
     textAlign: 'center',
+    marginTop: '1rem',
   },
 };
 

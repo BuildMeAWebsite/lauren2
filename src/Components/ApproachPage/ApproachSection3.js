@@ -105,11 +105,12 @@ const styles = {
     objectFit: 'cover',
   },
   caption: {
-    fontFamily: 'Quicksand, sans-serif',
+    fontFamily: 'Lora, sans-serif',
+    fontWeight: '400',
     fontSize: '1rem',
     color: '#2b3d2b',
     textAlign: 'center',
-    marginTop: '10px',
+    marginTop: '1rem',
   },
 };
 

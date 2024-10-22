@@ -40,13 +40,13 @@ const FloatingCard2 = () => {
     border: '1.5px solid #2b2d2b', // Darker border to match the design
   };
 
+
   const headerTextStyle = {
-    fontSize: '2rem',
-    fontWeight: 'normal',
-    letterSpacing: '0.1px',
-    fontFamily: 'Georgia, serif',
-    textTransform: 'lowercase',
-    marginBottom: '2rem', // Add spacing below the header text
+    fontSize: '24px',
+    fontWeight: 100, // Regular font weight
+    letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
+    fontFamily: 'Quicksand, sans-serif',
+    textTransform: 'lowercase', // Make the text uppercase
   };
 
   const arrowLinkStyle = {
@@ -66,13 +66,18 @@ const FloatingCard2 = () => {
   };
 
   const linkTextStyle = {
-    fontSize: '1.25rem',
-    fontWeight: 100,
-    textTransform: 'lowercase',
+    fontSize: '24px', // Base font size
+    fontWeight: 100, // Regular font weight
+    letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
     fontFamily: 'Quicksand, sans-serif',
-    letterSpacing: '0.01em',
+    textTransform: 'lowercase',
+    color: '#2b3d2b', // Base color
+    display: 'inline-flex',
+    alignItems: 'center',
+    textDecoration: 'none', // Remove underline
+    cursor: 'pointer',
+    transition: 'transform 0.3s ease', // Smooth transition for scaling
   };
-
   return (
 <ParallaxSection
   image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1729515911/pexels-eberhardgross-1062175_w5d8gl.jpg"

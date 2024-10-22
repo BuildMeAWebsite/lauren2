@@ -94,7 +94,7 @@ const styles = {
     backgroundColor: '#8fbc8f', // Dark color for the top bar
     color: '#FCFAF4', // Light text color
     padding: '10px 0', // Adjust padding to prevent overflow
-    fontFamily: 'Georgia, serif', // Font family for the top bar
+    fontFamily: 'Quicksand, sans-serif', // Font family for the top bar
     fontSize: '.75rem',
     width: '100%',
     boxSizing: 'border-box', // Include padding in the width calculation

@@ -25,15 +25,15 @@ const WhatToExpectFloating = () => {
   const contentStyle = {
     zIndex: 2,
     backgroundColor: 'transparent', // No background color inside the card
-    padding: '5rem', // Adjusted padding for more space
+    padding: '3rem', // Adjusted padding for more space
     border: '1.5px solid #2b2d2b', // Darker border to match the design
     textAlign: 'center', // Center align the text
-    width: '100%',
-    minWidth: '200px', // Set max width for larger screens
+    
+    width: '200px', // Set max width for larger screens
     aspectRatio: 'auto', // The card will adapt its height based on the content
     position: 'relative',
     fontFamily: 'Quicksand, sans-serif',
-    fontWeight: 'normal',
+    fontWeight: '100',
     color: '#2b2d2b', // Text color to match the border
     lineHeight: '1.5',
     display: 'flex',
@@ -42,8 +42,9 @@ const WhatToExpectFloating = () => {
     height: 'auto', // Allow height to adjust based on content
   };
 
+ 
   const headerTextStyle = {
-    fontSize: '1.75rem',
+    fontSize: '24px',
     fontWeight: 100, // Regular font weight
     letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
     fontFamily: 'Quicksand, sans-serif',

@@ -42,13 +42,13 @@ const FloatingCard3 = () => {
     height: 'auto', // Allow height to adjust based on content
   };
 
+ 
   const headerTextStyle = {
-    fontSize: '2rem',
-    fontWeight: 400, // Regular font weight
+    fontSize: '24px',
+    fontWeight: 100, // Regular font weight
     letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Lora, sans-serif',
-    textTransform: 'none', // Use normal case for the text
-    marginBottom: '1.5rem',
+    fontFamily: 'Quicksand, sans-serif',
+    textTransform: 'lowercase', // Make the text uppercase
   };
 
   const listStyle = {

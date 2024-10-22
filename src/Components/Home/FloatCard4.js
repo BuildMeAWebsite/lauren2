@@ -32,7 +32,7 @@ const FloatingCard4 = () => {
         padding: '3rem', // Adjusted padding for more space
         border: '1.5px solid #2b2d2b', // Darker border to match the design
         textAlign: 'center', // Center align the text
-        width: '100%',
+        width: '200px',
         aspectRatio: 'auto', // The card will adapt its height based on the content
         position: 'relative',
         fontFamily: 'Quicksand, sans-serif',
@@ -45,15 +45,14 @@ const FloatingCard4 = () => {
         height: '10vh', // Allow height to adjust based on content
       };
 
-  const headerTextStyle = {
-    fontSize: '1.5rem',
-    fontWeight: 100, // Regular font weight
-    letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Quicksand, sans-serif',
-    textTransform: 'none', // Use normal case for the text
-    marginBottom: '2rem',
-  };
-
+  
+      const headerTextStyle = {
+        fontSize: '24px',
+        fontWeight: 100, // Regular font weight
+        letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
+        fontFamily: 'Quicksand, sans-serif',
+        textTransform: 'lowercase', // Make the text uppercase
+      };
   const paragraphStyle = {
     fontFamily: 'Quicksand, sans-serif',
     fontSize: '1rem',

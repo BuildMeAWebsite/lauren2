@@ -5,15 +5,16 @@ import ParallaxSection from './ParallaxSection';
 const HomeSection6 = () => {
   return (
     <ParallaxSection
-      image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1729297041/pexels-eye4dtail-114137_h9nkjj.jpg"
-      minHeight="100vh"
-    >
+    image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1729515914/pexels-valiphotos-589802_mibnwj.jpg"
+          minHeight="100vh"
+         >
+    
       {/* Overlay to darken the image */}
-      <div className={styles.overlay}></div>
+      <div className={styles.overlay}>  </div>  
+
       <div className={styles.container}>
         <div className={styles.contentContainer}>
           <div className={styles.heroSection}>
-            <br/>
             <br/>
 
             <p className={styles.smallText}>hello and <em>welcome</em>.</p>
@@ -38,6 +39,7 @@ const HomeSection6 = () => {
             <p className={styles.caption}>Lauren Martyn RP, MA</p>
           </div>
         </div>
+
       </div>
     </ParallaxSection>
   );
