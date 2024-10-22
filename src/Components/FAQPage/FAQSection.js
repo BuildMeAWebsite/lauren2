@@ -10,13 +10,10 @@ const FAQSection = () => {
 
   return (
     <Box sx={styles.container}>
-      {/* Centered Title */}
-      <Box sx={styles.centeredTitle}>
-      
-      </Box>
+     
 
       {/* Grid Container for FAQ Items */}
-      <Grid container spacing={5} justifyContent="center">
+      <Grid container spacing={0} justifyContent="center">
         {faqs.map((faqSection, index) => (
           <Grid item xs={12} md={6} key={index}>
             <Box sx={styles.faqSection}>
@@ -132,7 +129,7 @@ const styles = {
   titleCard: {
     padding: '1rem 2rem',
     maxWidth: '40%',
-    margin: '0 auto',
+    margin: 'auto',
 
     backgroundColor: '#fcfaf4',
     display: 'flex',
