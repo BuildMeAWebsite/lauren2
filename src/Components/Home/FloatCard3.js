@@ -31,8 +31,7 @@ const FloatingCard3 = () => {
     maxWidth: '30rem', // Set max width for larger screens
     aspectRatio: 'auto', // The card will adapt its height based on the content
     position: 'relative',
-    fontFamily: 'Georgia, serif',
-    fontWeight: 'normal',
+    fontWeight: '400',
     color: '#2b2d2b', // Text color to match the border
     lineHeight: '1.5',
     display: 'flex',
@@ -45,9 +44,9 @@ const FloatingCard3 = () => {
  
   const headerTextStyle = {
     fontSize: '24px',
-    fontWeight: 100, // Regular font weight
+    fontWeight: 400, // Regular font weight
     letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
-    fontFamily: 'Quicksand, sans-serif',
+    fontFamily: 'Lora, sans-serif',
     textTransform: 'lowercase', // Make the text uppercase
   };
 
@@ -63,7 +62,7 @@ const FloatingCard3 = () => {
   const subHeadingStyle = {
     fontSize: '1.25rem',
     fontWeight: 100,
-    fontFamily: 'Quicksand, sans-serif',
+    fontFamily: 'Lora, sans-serif',
     color: '#2b2d2b',
     marginBottom: '1rem',
     textAlign: 'left',
@@ -81,6 +80,8 @@ const FloatingCard3 = () => {
           <Typography variant="h2" sx={headerTextStyle}>
             Together we can navigate:
           </Typography>
+<br/>
+<br/>
 
           <div style={{ textAlign: 'left' }}>
             {/* Mental Health and Emotional Wellbeing Section */}
