@@ -24,9 +24,7 @@ const AboutSection7 = () => {
           <Typography variant="body1" sx={styles.paragraph}>
             Currently serving as a School Counsellor at an Independent School, I offer specialized expertise in navigating school environments and addressing the unique challenges they present.
           </Typography>
-          <Button variant="outlined" href="contact" sx={styles.button}>
-            Schedule an Introductory Call
-          </Button>
+         
         </Grid>
       </Grid>
     </Box>

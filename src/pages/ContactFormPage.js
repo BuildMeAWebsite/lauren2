@@ -12,18 +12,18 @@ const ContactForm = () => {
     "@type": "WebPage",
     "name": "Contact Form - Lauren Martyn Therapy",
     "description": "Fill out the contact form to get in touch with Lauren Martyn Therapy for virtual counselling services. Available for school-aged children, youth, and young adults in Ontario, Canada.",
-    "url": "https://laurenmartyn.ca/contact",
+    "url": "https://www.laurenmartyn.ca/contact",
     "publisher": {
       "@type": "Organization",
       "name": "Lauren Martyn Therapy",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://laurenmartyn.ca/Images/logo.png",
+        "url": "https://www.laurenmartyn.ca/Images/logo.png",
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://laurenmartyn.ca/contact-form",
+      "@id": "https://www.laurenmartyn.ca/contact-form",
     }
   };
 
@@ -46,7 +46,7 @@ const ContactForm = () => {
         />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://laurenmartyn.ca/contact-form" />
+        <link rel="canonical" href="https://www.laurenmartyn.ca/contact-form" />
 
         {/* Open Graph Tags */}
         <meta property="og:title" content="Contact Form - Lauren Martyn Therapy" />
@@ -54,9 +54,9 @@ const ContactForm = () => {
           property="og:description"
           content="Fill out the contact form to get in touch with Lauren Martyn Therapy for virtual ling services. Available for school-aged children, youth, and young adults in Ontario, Canada."
         />
-        <meta property="og:url" content="htcounseltps://laurenmartyn.ca/contact-form" />
+        <meta property="og:url" content="htcounseltps://www.laurenmartyn.ca/contact-form" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://laurenmartyn.ca/Images/logo.png" />
+        <meta property="og:image" content="https://www.laurenmartyn.ca/Images/logo.png" />
 
         {/* Robots Meta Tag */}
         <meta name="robots" content="index, follow" />

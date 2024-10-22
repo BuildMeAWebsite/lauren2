@@ -5,8 +5,6 @@ import GoogleFormEmbed from '../Components/GoogleForm';
 import ContactHero2 from '../Components/Contact/ContactHero2';
 import Hero from '../Components/Contact/ContactHero';
 import { Helmet } from 'react-helmet';
-import ContactFloatingHero from '../Components/Contact/ContactHero';
-import ContactSection1 from '../Components/Contact/ContactSection1';
 import ContactForm from './ContactFormPage';
 import HomeSection11 from '../Components/Home/HomeSection11';
 import HomeSection11ColorChange from '../Components/Home/HomeSection11ColorChange';
@@ -24,13 +22,13 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
     "@type": "ContactPage",
     "name": "Contact - Lauren Martyn Therapy",
     "description": "Get in touch with Lauren Martyn Therapy for virtual counselling services. Reach out to us for more information or to schedule a session.",
-    "url": "https://laurenmartyn.ca/contact",
+    "url": "https://www.laurenmartyn.ca/contact",
     "publisher": {
       "@type": "Organization",
       "name": "Lauren Martyn Therapy",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://laurenmartyn.ca/Images/logo.png",
+        "url": "https://www.laurenmartyn.ca/Images/logo.png",
       }
     },
     "contactPoint": {
@@ -59,7 +57,7 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
         />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://laurenmartyn.ca/contact" />
+        <link rel="canonical" href="https://www.laurenmartyn.ca/contact" />
 
         {/* Open Graph Tags */}
         <meta property="og:title" content="Contact - Lauren Martyn Therapy" />
@@ -67,9 +65,9 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
           property="og:description"
           content="Get in touch with Lauren Martyn Therapy for virtual counselling services. Reach out to us for more information or to schedule a session."
         />
-        <meta property="og:url" content="https://laurenmartyn.ca/contact" />
+        <meta property="og:url" content="https://www.laurenmartyn.ca/contact" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://laurenmartyn.ca/Images/logo.png" />
+        <meta property="og:image" content="https://www.laurenmartyn.ca/Images/logo.png" />
 
         {/* Robots Meta Tag */}
         <meta name="robots" content="index, follow" />
