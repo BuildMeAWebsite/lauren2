@@ -16,7 +16,14 @@ const HomeSection7 = () => {
       <div style={styles.rightColumn}>
         <p style={styles.paragraph}>
         To get started, click the button below to schedule a free, 15-minute introductory call with me. We’ll discuss your availability and preferences, and I’ll work to find the best approach to meet your needs.        </p>
-        <a
+       
+       <div
+       style = {{
+        textAlign: 'center',
+       }}
+       >
+
+<a
           href="contact"
           style={{
             ...styles.button,
@@ -27,6 +34,9 @@ const HomeSection7 = () => {
         >
           schedule your introductory call
         </a>
+
+       </div>
+       
     
       </div>
     </div>
@@ -59,7 +69,7 @@ const styles = {
     fontFamily: "Quicksand, sans-serif",
     lineHeight: '1.75',
     fontSize: '1.25rem',
-    margin: '20px auto',
+    margin: '1rem auto',
   },
   button: {
     fontFamily: "Lora, sans-serif",
@@ -75,7 +85,7 @@ const styles = {
     fontSize: '0.88rem',
     margin: '0 auto',
     marginBottom: '20px',
-    textAlign: 'center',
+    textAlign: 'right',
     transition: 'color 0.3s ease, transform 0.3s ease, border-color 0.3s ease',
   },
   buttonHover: {
