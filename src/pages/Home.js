@@ -88,19 +88,19 @@ const Home = () => {
       <Grid item xs={12}>
         <FloatingCard />
       </Grid>
-      <Grid item xs={12}>
-        <HomeSection7 />
+    
+
+      <Grid item xs={12} id="top">
+        <AboutSection7 />
       </Grid>
-
-
     
     
       <Grid item xs={12}>
         <HomeSection11ColorChange />
       </Grid>
 
-      <Grid item xs={12} id="top">
-        <AboutSection7 />
+      <Grid item xs={12}>
+        <HomeSection7 />
       </Grid>
 
       
