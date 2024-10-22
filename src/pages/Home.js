@@ -86,13 +86,14 @@ const Home = () => {
         <HomeSection11 />
       </Grid>
       <Grid item xs={12}>
+        <FloatingCard />
+      </Grid>
+      <Grid item xs={12}>
         <HomeSection7 />
       </Grid>
 
 
-      <Grid item xs={12}>
-        <FloatingCard />
-      </Grid>
+    
     
       <Grid item xs={12}>
         <HomeSection11ColorChange />

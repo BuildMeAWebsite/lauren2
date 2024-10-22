@@ -6,7 +6,7 @@ const HomeSection6 = () => {
   return (
     <ParallaxSection
     image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1729297041/pexels-eye4dtail-114137_h9nkjj.jpg"
-    minHeight="75vh"
+    minHeight="100vh"
          >
     
       {/* Overlay to darken the image */}
