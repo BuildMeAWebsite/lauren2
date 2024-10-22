@@ -113,16 +113,16 @@ const styles = {
     maxWidth: '100%',
     margin: '0 auto',
     '@media (max-width: 1100px)': {
-      padding: '50px 40px',
+      padding: '1rem',
     },
     '@media (max-width: 800px)': {
-      padding: '40px 30px',
+      padding: '1rem',
     },
     '@media (max-width: 600px)': {
-      padding: '30px 20px',
+      padding: '1rem',
     },
     '@media (max-width: 450px)': {
-      padding: '20px 15px',
+      padding: '1rem',
     },
   },
  
