@@ -76,7 +76,7 @@ const serviceItems = [
 const styles = {
   container: {
     padding: '2rem 0',
-    fontFamily: "'Lora', sans-serif",
+    fontFamily: "Lora, sans-serif",
     maxWidth: '1300px',
     margin: '0 auto',
     '@media (max-width: 1100px)': {
@@ -111,21 +111,21 @@ const styles = {
   },
   titlePrimary: {
     display: 'block',
-    fontFamily: "'Lora', sans-serif",
-    fontWeight: '400',
+    fontFamily: "'Quicksand', sans-serif",
+    fontWeight: '100',
     color: '#2B3D2B',
   },
   titleSecondary: {
     display: 'block',
-    fontFamily: "'Lora', sans-serif",
-    fontWeight: 'normal',
+    fontFamily: "'Quicksand', sans-serif",
+    fontWeight: '100',
     color: '#2B3D2B',
   },
   line: {
     borderTop: '1.25px solid #8FBC8F',
     width: '50%',
     margin: '0 auto',
-    marginTop: '20px',
+    marginTop: '40px',
     '@media (max-width: 800px)': {
       width: '75%',
     },
