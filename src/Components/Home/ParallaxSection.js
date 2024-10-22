@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const ParallaxSection = ({
   image,
   children,
-  minHeight = '90vh',
+  minHeight = '80vh',
   showOnMobile = true,
 }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
