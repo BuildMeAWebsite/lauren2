@@ -5,8 +5,8 @@ import ParallaxSection from './ParallaxSection';
 const HomeSection6 = () => {
   return (
     <ParallaxSection
-    image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1729515914/pexels-valiphotos-589802_mibnwj.jpg"
-          minHeight="80vh"
+    image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1729297041/pexels-eye4dtail-114137_h9nkjj.jpg"
+    minHeight="80vh"
          >
     
       {/* Overlay to darken the image */}

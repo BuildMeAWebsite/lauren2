@@ -1,79 +1,76 @@
-import React from 'react';
-import Grid from '@mui/material/Grid';
-import Policies from '../Components/Contact/Policies';
-import GoogleFormEmbed from '../Components/GoogleForm';
-import WhatToExpect from '../Components/Contact/WhatToExpect';
-import Hero from '../Components/Contact/ContactHero';
-import { Helmet } from 'react-helmet';
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+import './ContactForm.css'; // For external CSS (create this file)
 
 const ContactForm = () => {
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Contact Form - Lauren Martyn Therapy",
-    "description": "Fill out the contact form to get in touch with Lauren Martyn Therapy for virtual counselling services. Available for school-aged children, youth, and young adults in Ontario, Canada.",
-    "url": "https://www.laurenmartyn.ca/contact",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Lauren Martyn Therapy",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.laurenmartyn.ca/Images/logo.png",
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://www.laurenmartyn.ca/contact-form",
-    }
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .send(
+        'your_service_id', // Replace with your EmailJS service ID
+        'your_template_id', // Replace with your EmailJS template ID
+        formData,
+        'your_public_key' // Replace with your EmailJS public key
+      )
+      .then(
+        (result) => {
+          alert('Message Sent Successfully!');
+          setFormData({ name: '', email: '', message: '' });
+        },
+        (error) => {
+          alert('Failed to send the message, please try again');
+        }
+      );
   };
 
   return (
-    <Grid container spacing={0} >
-      <Helmet>
-        {/* Title Tag */}
-        <title>Contact Form - Lauren Martyn Therapy</title>
-
-        {/* Meta Description */}
-        <meta
-          name="description"
-          content="Fill out the contact form to get in touch with Lauren Martyn Therapy for virtual counselling services. Available for school-aged children, youth, and young adults in Ontario, Canada."
+    <div className="contact-container">
+      <form onSubmit={sendEmail} className="contact-form">
+        <label className="form-label">Name</label>
+        <input
+          type="text"
+          name="name"
+          className="form-input"
+          value={formData.name}
+          onChange={handleChange}
+          required
         />
 
-        {/* Meta Keywords */}
-        <meta
-          name="keywords"
-          content="contact form, therapy, counselling, virtual counselling, Ontario, Lauren Martyn, mental health support, schedule a session"
+        <label className="form-label">Email</label>
+        <input
+          type="email"
+          name="email"
+          className="form-input"
+          value={formData.email}
+          onChange={handleChange}
+          required
         />
 
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://www.laurenmartyn.ca/contact-form" />
+        <label className="form-label">Message</label>
+        <textarea
+          name="message"
+          className="form-textarea"
+          value={formData.message}
+          onChange={handleChange}
+          required
+        ></textarea>
 
-        {/* Open Graph Tags */}
-        <meta property="og:title" content="Contact Form - Lauren Martyn Therapy" />
-        <meta
-          property="og:description"
-          content="Fill out the contact form to get in touch with Lauren Martyn Therapy for virtual ling services. Available for school-aged children, youth, and young adults in Ontario, Canada."
-        />
-        <meta property="og:url" content="htcounseltps://www.laurenmartyn.ca/contact-form" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.laurenmartyn.ca/Images/logo.png" />
-
-        {/* Robots Meta Tag */}
-        <meta name="robots" content="index, follow" />
-
-        {/* Structured Data (Schema.org) */}
-        <script type="application/ld+json">
-          {JSON.stringify(schemaMarkup)}
-        </script>
-      </Helmet>
-
-      
-      <Grid item xs={12}>
-        <GoogleFormEmbed />
-      </Grid>
-
-    
-    </Grid>
+        <button type="submit" className="submit-btn">
+          Send
+        </button>
+      </form>
+    </div>
   );
 };
 

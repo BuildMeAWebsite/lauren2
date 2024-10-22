@@ -43,9 +43,8 @@ const FloatingCard3 = () => {
 
  
   const headerTextStyle = {
-    fontSize: '24px',
+    fontSize: '26px',
     fontWeight: 400, // Regular font weight
-    letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
     fontFamily: 'Lora, sans-serif',
     textTransform: 'lowercase', // Make the text uppercase
   };

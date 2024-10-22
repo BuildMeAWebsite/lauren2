@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+.contact-container {
+  background-color: #fcfaf4;
+  padding: 3rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1.5px solid #2b2d2b;
+  text-align: center;
+  max-width: 500px;
+  margin: 50px auto;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-label {
+  font-size: 18px;
+  color: #2b2d2b;
+  margin-bottom: 10px;
+  text-transform: lowercase;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1.5px solid #2b2d2b;
+  border-radius: 5px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.form-input {
+  height: 40px;
+}
+
+.form-textarea {
+  height: 100px;
+}
+
+.submit-btn {
+  background-color: #2b2d2b;
+  color: #fcfaf4;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #8ebc8f;
+  color: #2b2d2b;
+  transform: scale(1.05);
+}
