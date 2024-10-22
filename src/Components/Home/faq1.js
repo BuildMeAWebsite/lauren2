@@ -7,18 +7,18 @@ const Hero = () => {
     top: 0,
     left: 0,
     width: '100%',
-    height: '100%',  // Match the section height
+    height: '90%',  // Match the section height
     zIndex: 1,
   };
 
   const outerContentStyle = {
-    margin: '10px 20px',
+    margin: '50px auto',
         backgroundColor: '#fcfaf4',
         boxSizing: 'border-box',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100%', // Ensure the outer content fills the height of the section
+        minHeight: '100vh', // Ensure the outer content fills the height of the section
       };
 
    
