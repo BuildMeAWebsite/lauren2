@@ -14,7 +14,6 @@ const HomeSection7 = () => {
   return (
     <div style={styles.container}>
       <div style={styles.rightColumn}>
-        <h2 style={styles.header}>Book a session:</h2>
         <p style={styles.paragraph}>
         To get started, click the button below to schedule a free, 15-minute introductory call with me. We’ll discuss your availability and preferences, and I’ll work to find the best approach to meet your needs.        </p>
         <a
@@ -63,7 +62,7 @@ const styles = {
     margin: '20px auto',
   },
   button: {
-    fontFamily: "'Lora', sans-serif",
+    fontFamily: "Lora, sans-serif",
     boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
 
     fontWeight: '300',
@@ -72,7 +71,7 @@ const styles = {
     border: '1.25px solid #8FBC8F',
     color: '#2B3D2B',
     textDecoration: 'none',
-    textTransform: 'uppercase',
+    textTransform: 'none',
     fontSize: '0.88rem',
     margin: '0 auto',
     marginBottom: '20px',

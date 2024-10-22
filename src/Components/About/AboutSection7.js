@@ -8,7 +8,7 @@ const AboutSection7 = () => {
         {/* Text on top for smaller screens */}
         <Grid item xs={12} md={6} sx={{ order: { xs: 1, md: 1 } }}>
           <Typography variant="body1" sx={styles.smallText}>
-            <em>expertise</em>
+            expertise
           </Typography>
           <Typography variant="body1" sx={styles.paragraph}>
             Currently serving as a School Counsellor at an Independent School, I offer specialized expertise in navigating school environments and addressing the unique challenges they present.
@@ -39,11 +39,13 @@ const styles = {
     justifyContent: 'center',
   },
   smallText: {
-    fontSize: '2.25rem',
-    textShadow: '0 1px 2px rgba(0, 0, 0, 0.125)',
-    letterSpacing: '0.25rem',
+    fontSize: '24px',
+    fontStyle: 'italic',
+    textTransform: 'italic',
+    textShadow: '0 1px 2px rgba(0, 0, 0, 0.01)',
+    letterSpacing: '0.05em',
     textTransform: 'lowercase',
-    marginBottom: '20px',
+    marginBottom: '10px',
     color: '#2b2d2b',
     fontFamily: 'Lora, sans-serif',
     transition: 'color 0.3s ease, transform 0.3s ease',
@@ -55,7 +57,7 @@ const styles = {
   paragraph: {
     fontFamily: 'Quicksand, sans-serif',
     lineHeight: '1.5',
-    fontSize: '20px',
+    fontSize: '1.25rem',
     marginBottom: '30px',
   },
   imageContainer: {
@@ -71,10 +73,10 @@ const styles = {
     boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)', // Optional: Add a subtle shadow
   },
   caption: {
-    fontFamily: 'Quicksand, sans-serif',
+    fontFamily: 'Lora, sans-serif',
     fontSize: '1rem',
     color: '#2b3d2b',
-    marginTop: '20px',
+    marginTop: '1rem',
     textAlign: 'center',
   },
 };

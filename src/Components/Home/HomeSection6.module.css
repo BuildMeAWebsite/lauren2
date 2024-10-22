@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap');
 
 .container {
   display: flex;
   flex-direction: row;
-  min-height: 40vh;
+  min-height: 50vh;
   background-color: transparent;
   position: relative;
 }
@@ -12,8 +13,8 @@
   display: flex;
   background-color: transparent;
   flex: 1;
+  max-width: 1000px;
   align-items: center;
-  padding: 10px auto;
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
@@ -22,7 +23,7 @@
 }
 
 .contentContainer:hover {
-  transform: scale(1.025); /* Scales the content container on hover */
+  transform: scale(1.001); /* Scales the content container on hover */
 }
 
 .imageContainer {
@@ -32,15 +33,15 @@
 .image {
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  max-width: 275px;
-  margin: 0 10px;
+  max-width: 300px;
+  margin: 0 auto;
   object-fit: contain;
   flex-shrink: 0;
 }
 
 .caption {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1rem;
+  font-family: 'Lora', sans-serif;
+  font-size: 400;
   color: #fcfaf4;
   text-align: center;
   margin-top: 10px;
@@ -48,9 +49,9 @@
 
 .heroSection {
   flex: 1;
-  padding: 10px;
   text-align: left;
-  max-width: 500px;
+  max-width: 50%;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
@@ -58,10 +59,10 @@
 .headingWrapper {
   position: relative;
   display: inline-block; /* Ensures the wrapper fits snugly around the heading */
-  padding: 5px 10px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.0001); /* Darkens the background slightly */
   transition: background-color 0.3s ease, backdrop-filter 0.5s ease;
   border-radius: 20px;
+  backdrop-filter: blur(10px); /* Adds the blur effect */
 }
 
 .headingWrapper:hover {
@@ -70,50 +71,52 @@
 }
 
 .smallText {
-  font-size: 2.5rem;
+  font-size: 3rem;
   letter-spacing: 0.15rem;
   text-transform: lowercase;
-  margin: 0 auto;
-  color: #FFD700;
+  margin-top: 0px;
+  margin-right: 1rem;
+
+  color: #FFD700; /* Gold color */
   font-family: 'Lora', sans-serif;
   transition: color 0.3s ease, transform 0.3s ease;
-  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.9); /* Shadow for better readability */
 }
 
 .smallText:hover {
-  color: #8EBC8F;  
-  transform: scale(1.10);
+  color: #8EBC8F; /* Soft green on hover */
+  transform: scale(1.10); /* Scale effect on hover */
 }
 
 .heading {
   font-size: 1.25rem;
   font-family: 'Quicksand', sans-serif;
-  font-weight: 100;
-  color: #fcfaf4;
-  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+  font-weight: 400;
+  color: #fcfaf4; /* Light color */
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.9); /* Shadow for depth */
 }
 
 /* Add responsive breakpoints */
 @media (max-width: 1200px) {
   .heading {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 992px) {
   .heading {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .heading {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     max-width: 100%;
   }
 
   .smallText {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     margin: 0 auto;
   }
 
@@ -134,7 +137,7 @@
   .heroSection {
     padding: 10px;
     margin: 10px auto;
-    max-width: 100%;
+    max-width: 90%;
   }
 }
 
@@ -149,9 +152,9 @@
   }
 
   .heroSection {
-    padding: 10px;
+    padding: 20px;
     margin: 10px auto;
-    max-width: 100%;
+    max-width: 90%;
   }
 }
 

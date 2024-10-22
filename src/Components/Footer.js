@@ -65,9 +65,11 @@ flexDirection: 'column', // Stack content in column layout
             href="/"
             underline="none"
             sx={{
-              fontFamily: 'Lora, sans-serif',
-fontSize: '1rem',
-              color: '#fcfaf4',
+              fontFamily: 'Quicksand, sans-serif',
+              
+              fontWeight: '100',
+
+fontSize: '1.25rem',              color: '#fcfaf4',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
                 color: '#FFD700',
@@ -81,8 +83,10 @@ fontSize: '1rem',
             href="/about"
             underline="none"
             sx={{
-              fontFamily: 'Lora, sans-serif',
-fontSize: '1rem',
+              fontFamily: 'Quicksand, sans-serif',
+              fontWeight: '100',
+
+fontSize: '1.25rem',
               color: '#fcfaf4',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
@@ -98,9 +102,9 @@ fontSize: '1rem',
             href="/frequently-asked-questions"
             underline="none"
             sx={{
-              fontFamily: 'Lora, sans-serif',
-fontSize: '1rem',
-              color: '#fcfaf4',
+              fontFamily: 'Quicksand, sans-serif',
+              fontWeight: '100',
+fontSize: '1.25rem',              color: '#fcfaf4',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
                 color: '#FFD700',
@@ -114,9 +118,10 @@ fontSize: '1rem',
             href="/contact"
             underline="none"
             sx={{
-              fontFamily: 'Lora, sans-serif',
-fontSize: '1rem',
-          
+              fontFamily: 'Quicksand, sans-serif',
+              fontWeight: '100',
+
+fontSize: '1.25rem',          
               color: '#fcfaf4',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
@@ -131,9 +136,10 @@ fontSize: '1rem',
             href="/approaches"
             underline="none"
             sx={{
-              fontFamily: 'Lora, sans-serif',
-              fontSize: '1rem',
-          
+              fontFamily: 'Quicksand, sans-serif',
+              fontWeight: '100',
+
+              fontSize: '1.25rem',          
               color: '#fcfaf4',
               transition: 'color 0.3s ease, transform 0.3s ease',
               '&:hover': {
@@ -160,6 +166,7 @@ fontSize: '1rem',
           {/* Left Logo */}
           <Box
             sx={{
+          
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
@@ -172,7 +179,7 @@ fontSize: '1rem',
                 maxWidth: '100px',
                 height: 'auto',
                 display: 'block',
-                borderRadius: '5px',
+        
               }}
             />
           </Box>
@@ -235,7 +242,7 @@ fontSize: '1rem',
             sx={{
               fontSize: '0.75rem',
               color: '#fcfaf4',
-              fontFamily: 'Lora, sans-serif',
+              fontFamily: 'Quicksand, sans-serif',
               backgroundColor: 'none',
               zIndex: 10,
               marginTop: '1px',
