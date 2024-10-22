@@ -17,7 +17,7 @@ const AboutSection7 = () => {
           </Typography>
         </Grid>
         {/* Text on bottom for smaller screens */}
-        <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }}>
+        <Grid item xs={12} md={6} sx={{ order: { xs: 1, md: 2 } }}>
           <Typography variant="body1" sx={styles.smallText}>
             <em>expertise</em>
           </Typography>

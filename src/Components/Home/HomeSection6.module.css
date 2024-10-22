@@ -86,9 +86,9 @@
 }
 
 .heading {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-family: 'Quicksand', sans-serif;
-  font-weight: 400;
+  font-weight: 100;
   color: #fcfaf4;
   text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
 }
@@ -96,19 +96,19 @@
 /* Add responsive breakpoints */
 @media (max-width: 1200px) {
   .heading {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
 }
 
 @media (max-width: 992px) {
   .heading {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
 }
 
 @media (max-width: 768px) {
   .heading {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     max-width: 100%;
   }
 
