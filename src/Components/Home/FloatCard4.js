@@ -14,7 +14,7 @@ const FloatingCard4 = () => {
   };
 
   const outerContentStyle = {
-    margin: '10px 20px',
+    margin: '10px 30px',
         backgroundColor: '#fcfaf4',
         boxSizing: 'border-box',
         display: 'flex',
@@ -24,26 +24,26 @@ const FloatingCard4 = () => {
       };
 
 
-  const contentStyle = {
-    zIndex: 2,
-    backgroundColor: 'transparent', // No background color inside the card
-    padding: '3rem', // Adjusted padding for more space
-    border: '1.5px solid #2b2d2b', // Darker border to match the design
-    textAlign: 'center', // Center align the text
-    width: '100%',
-    minWidth: '200px', // Set max width for larger screens
-    aspectRatio: 'auto', // The card will adapt its height based on the content
-    position: 'relative',
-    fontFamily: 'Quicksand, sans-serif',
-    fontWeight: '100',
-    color: '#2b2d2b', // Text color to match the border
-    lineHeight: '1.5',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center', // Center the text within the card
-    alignItems: 'center', // Vertically center the text
-    height: 'auto', // Allow height to adjust based on content
-  };
+      const contentStyle = {
+        boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+    
+        zIndex: 2,
+        backgroundColor: 'transparent', // No background color inside the card
+        padding: '3rem', // Adjusted padding for more space
+        border: '1.5px solid #2b2d2b', // Darker border to match the design
+        textAlign: 'center', // Center align the text
+        width: '100%',
+        aspectRatio: 'auto', // The card will adapt its height based on the content
+        position: 'relative',
+        fontFamily: 'Quicksand, sans-serif',
+        fontWeight: 'normal',
+        color: '#2b2d2b', // Text color to match the border
+        lineHeight: '1.5',
+        display: 'flex',
+        justifyContent: 'center', // Center the text within the card
+        alignItems: 'center', // Vertically center the text
+        height: '10vh', // Allow height to adjust based on content
+      };
 
   const headerTextStyle = {
     fontSize: '1.5rem',
@@ -57,7 +57,7 @@ const FloatingCard4 = () => {
   const paragraphStyle = {
     fontFamily: 'Quicksand, sans-serif',
     fontSize: '1rem',
-    lineHeight: '1.6',
+    lineHeight: '1',
     textAlign: 'center',
   
   };
@@ -67,9 +67,7 @@ const FloatingCard4 = () => {
       <div style={overlayStyle}></div> {/* Overlay */}
       <div style={outerContentStyle}>
         <div style={contentStyle}>
-          <Typography variant="h2" sx={headerTextStyle}>
-            Now accepting clients for virtual therapy.
-          </Typography>
+         
           <Typography sx={paragraphStyle}>
             Fill out the form below to schedule your 15-minute introductory call. I can also be reached at{' '}
             <a href="mailto:info@laurenmartyn.ca" style={{ color: '#2b2d2b', textDecoration: 'underline' }}>
