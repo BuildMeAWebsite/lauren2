@@ -55,7 +55,7 @@ const NavLink = ({ to, label }) => {
   const handleMouseLeave = () => setHovered(false);
 
   const style = {
-    fontFamily: 'Merriweather, sans-serif', // Font family for the nav items
+    fontFamily: 'Quicksand, sans-serif', // Font family for the nav items
     fontSize: '1rem',
     color: hovered ? '#FFD700' : '#3a3a3a',
     textDecoration: 'none',

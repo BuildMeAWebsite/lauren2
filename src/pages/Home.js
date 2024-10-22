@@ -16,8 +16,8 @@ const Home = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Lauren Martyn Therapy",
-    "url": "https://laurenmartyn.ca/",
-    "logo": "https://laurenmartyn.ca/Images/logo.png",
+    "url": "https://www.laurenmartyn.ca/",
+    "logo": "https://www.laurenmartyn.ca/Images/logo.png",
   
     "description": "Lauren Martyn Therapy is dedicated to supporting school-aged children, youth, and young adults in navigating life’s challenges through virtual counselling services in Ontario, Canada.",
     "founder": {
@@ -31,7 +31,7 @@ const Home = () => {
       "email": "info@laurenmartyn.ca"
     }
   };
-
+  
   return (
     <Grid 
       container 
@@ -55,7 +55,7 @@ const Home = () => {
         />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://laurenmartyn.ca" />
+        <link rel="canonical" href="https://www.laurenmartyn.ca" />
 
         {/* Open Graph Tags */}
         <meta property="og:title" content="Home - Lauren Martyn Therapy" />
@@ -63,9 +63,9 @@ const Home = () => {
           property="og:description"
           content="Lauren Martyn Therapy offers virtual counselling services dedicated to supporting school-aged children, youth, and young adults in Ontario, Canada."
         />
-        <meta property="og:url" content="https://laurenmartyn.ca" />
+        <meta property="og:url" content="https://www.laurenmartyn.ca" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://laurenmartyn.ca/Images/logo.png" />
+        <meta property="og:image" content="https://www.laurenmartyn.ca/Images/logo.png" />
 
         {/* Robots Meta Tag */}
         <meta name="robots" content="index, follow" />
