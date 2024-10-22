@@ -18,7 +18,7 @@ const Hero = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: '100vh', // Ensure the outer content fills the height of the section
+        minHeight: '100%', // Ensure the outer content fills the height of the section
       };
 
    
