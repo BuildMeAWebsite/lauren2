@@ -33,7 +33,7 @@ const Hero = () => {
       maxWidth: '1000px',
       '@media (max-width: 768px)': {
         minHeight: '50vh',
-        margin: '0 1rem',
+        margin: '1rem auto',
         flexDirection: 'column',
       },
     },

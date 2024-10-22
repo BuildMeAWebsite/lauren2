@@ -6,7 +6,7 @@ const HomeSection6 = () => {
   return (
     <ParallaxSection
     image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1729515914/pexels-valiphotos-589802_mibnwj.jpg"
-          minHeight="100vh"
+          minHeight="80vh"
          >
     
       {/* Overlay to darken the image */}
@@ -18,7 +18,6 @@ const HomeSection6 = () => {
             <br/>
 
             <p className={styles.smallText}>hello and <em>welcome</em>.</p>
-
             {/* Heading wrapped inside headingWrapper for hover effect */}
             <div className={styles.headingWrapper}>
               <h1 className={styles.heading}>

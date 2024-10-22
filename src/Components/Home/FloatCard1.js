@@ -12,7 +12,7 @@ const FloatingCard = () => {
   };
 
   const outerContentStyle = {
-    margin: '10px 20px',
+    margin: '10px auto',
         backgroundColor: '#fcfaf4',
         boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
 

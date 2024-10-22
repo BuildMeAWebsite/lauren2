@@ -4,7 +4,7 @@
 .container {
   display: flex;
   flex-direction: row;
-  min-height: 50vh;
+  min-height: 40vh;
   background-color: transparent;
   position: relative;
 }
@@ -33,7 +33,7 @@
 .image {
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  max-width: 300px;
+  max-width: 275px;
   margin: 0 auto;
   object-fit: contain;
   flex-shrink: 0;
@@ -44,7 +44,7 @@
   font-size: 400;
   color: #fcfaf4;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 
 .heroSection {
@@ -61,52 +61,51 @@
   display: inline-block; /* Ensures the wrapper fits snugly around the heading */
   background-color: rgba(0, 0, 0, 0.0001); /* Darkens the background slightly */
   transition: background-color 0.3s ease, backdrop-filter 0.5s ease;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 10px;
-  backdrop-filter: blur(10px); /* Adds the blur effect */
+  backdrop-filter: blur(2px); /* Adds the blur effect */
 }
 
 .headingWrapper:hover {
   background-color: rgba(0, 0, 0, 0.0001); /* Darkens the background slightly */
-  backdrop-filter: blur(10px); /* Adds the blur effect */
+  backdrop-filter: blur(5px); /* Adds the blur effect */
 }
 
 .smallText {
-  font-size: 3rem;
+  font-size: 48px;
   letter-spacing: 0.15rem;
   text-transform: lowercase;
-  margin-top: 0px;
-  margin-right: 1rem;
+
 
   color: #FFD700; /* Gold color */
   font-family: 'Lora', sans-serif;
   transition: color 0.3s ease, transform 0.3s ease;
-  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.9); /* Shadow for better readability */
+  text-shadow: 1px 5px 10px rgba(0, 0, 0, 5); /* Shadow for better readability */
 }
 
 .smallText:hover {
   color: #8EBC8F; /* Soft green on hover */
-  transform: scale(1.10); /* Scale effect on hover */
+  transform: scale(1.15); /* Scale effect on hover */
 }
 
 .heading {
-  font-size: 1.25rem;
+  font-size: 24px;
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
-  color: #fcfaf4; /* Light color */
-  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.9); /* Shadow for depth */
+  color: white; /* Light color */
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 5); /* Shadow for better readability */
 }
 
 /* Add responsive breakpoints */
 @media (max-width: 1200px) {
   .heading {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 992px) {
   .heading {
-    font-size: 1.5rem;
+    font-size: 24px;
   }
 }
 
@@ -117,7 +116,9 @@
   }
 
   .smallText {
-    font-size: 1.5rem;
+    font-size: 24px;
+    text-align  : center;
+
     margin: 0 auto;
   }
 
@@ -148,14 +149,14 @@
   }
 
   .smallText {
-    font-size: 1.75rem;
-    margin: 0 auto;
+    font-size: 2.25rem;
+    text-align  : center;
+    margin: 20px auto;
   }
-
   .heroSection {
-    padding: 20px;
+    padding: 10px;
     margin: 10px auto;
-    max-width: 90%;
+    max-width: 100%;
   }
 }
 
