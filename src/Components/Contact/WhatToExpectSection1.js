@@ -89,8 +89,9 @@ const WhatToExpectSection1 = () => {
 const styles = {
   container: {
     padding: '20px 40px', 
-    fontFamily: "'Lora', sans-serif",
-    maxWidth: '1300px',
+    fontFamily: "Lora, sans-serif",
+    fontWeight: "400",
+    maxWidth: '1200px',
     margin: '0 auto',
     '@media (max-width: 1100px)': {
       padding: '50px 40px',
@@ -109,7 +110,7 @@ const styles = {
     textAlign: 'right',
     '@media (max-width: 800px)': {
       textAlign: 'center',
-      marginBottom: '40px',
+      marginBottom: '1.5rem',
     },
   },
   title: {
@@ -129,22 +130,11 @@ const styles = {
       marginBottom: '10px',
     },
   },
-  titlePrimary: {
-    display: 'block',
-    fontFamily: "'Quicksand', sans-serif",
-    fontWeight: 'normal',
-    color: '#2B3D2B',
-  },
-  titleSecondary: {
-    display: 'block',
-    fontFamily: "Quicksand, sans-serif",
-    fontWeight: 'normal',
-    color: '#2B3D2B',
-  },
+
   line: {
     borderTop: '1.25px solid #8FBC8F',
     width: '50%',
-    margin: '0 auto',
+    margin: '1rem auto',
     marginTop: '20px',
     '@media (max-width: 800px)': {
       width: '75%',
@@ -161,44 +151,55 @@ const styles = {
   serviceItem: {
     marginBottom: '50px', 
     '@media (max-width: 800px)': {
+      textAlign: 'left',
+
       marginBottom: '40px',
     },
     '@media (max-width: 600px)': {
+      textAlign: 'left',
+
       marginBottom: '30px',
     },
   },
   serviceNumber: {
-    fontSize: '1.5rem',
+    fontSize: '1.75rem',
     color: '#8FBC8F',
-    margin: '1rem 0',
+    margin: '1rem auto',
     '@media (max-width: 1100px)': {
       fontSize: '1.4rem',
+      textAlign: 'left',
+
       margin: '0.8rem 0',
     },
     '@media (max-width: 800px)': {
       fontSize: '1.3rem',
+      textAlign: 'left',
       margin: '0.6rem 0',
     },
     '@media (max-width: 600px)': {
       fontSize: '1.2rem',
+      textAlign: 'left',
+
       margin: '0.5rem 0',
     },
   },
   serviceDetails: {
-    marginLeft: '30px',
+    marginLeft: '10px',
     textAlign: 'left',
     '@media (max-width: 1100px)': {
       marginLeft: '0',
-      width: '70%', // Make the service details take up 70% of the space
+      textAlign: 'left',
+
+      width: '80%', // Make the service details take up 70% of the space
       margin: '0 auto', 
     },
     '@media (max-width: 800px)': {
-      textAlign: 'center',
+      textAlign: 'left',
     },
   },
   serviceTitle: {
-    fontSize: '2rem',
-    fontFamily: "'Lora', sans-serif",
+    fontSize: '1.75rem',
+    fontFamily: "Lora, sans-serif",
     fontWeight: '100',
     marginBottom: '15px',
     '@media (max-width: 1100px)': {
