@@ -46,13 +46,17 @@ const HomeSection6 = () => {
       width: '75%', // Adjust width for medium screens
     },
     '@media (max-width: 768px)': {
-      width: '90%', // Full width on small screens
-      marginBottom: '2rem', // Space between text and image on small screens
+      maxWidth: '100%', // Smaller padding on very small screens
+      padding: '10px',
+
+      margin: '0 auto', // Space between text and image on small screens
       order: 2, // Ensure the content is below the image on small screens
     },
     '@media (max-width: 576px)': {
-      width: '95%', // Smaller padding on very small screens
-      padding: '1.5rem',
+      maxWidth: '100%', // Smaller padding on very small screens
+      margin: '0 auto', // Space between text and image on small screens
+
+      padding: '10px',
     },
   };
 
