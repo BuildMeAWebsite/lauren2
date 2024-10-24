@@ -122,13 +122,14 @@ padding : '10px',
         {/* Image and Caption */}
         
         <div style={imageContainerStyle}>
-        <p style={captionStyle}>Lauren Martyn RP, MA</p>
 
           <img
             src="https://res.cloudinary.com/dvbubqhpp/image/upload/v1728154934/lauren1_xmyolw.webp"
             alt="Lauren Martyn"
             style={imageStyle}
           />
+                  <p style={captionStyle}>Lauren Martyn RP, MA</p>
+
           
         </div>
 
