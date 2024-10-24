@@ -12,7 +12,7 @@ const HomeSection6 = () => {
   };
 
   const outerContentStyle = {
-    margin: '1rem auto',
+    margin: '10px auto',
     backgroundColor: 'transparent', // Transparent to show parallax behind
     display: 'flex',
     justifyContent: 'space-evenly',
@@ -22,10 +22,10 @@ const HomeSection6 = () => {
     flexDirection: 'row', // Default row layout
     flexWrap: 'wrap',
     '@media (max-width: 768px)': {
-      flexDirection: 'column', // Stack in a column on small screens
+      flexDirection: 'column-reverse', // Stack with image on top on small screens
       height: '100%',
       width: 'auto',
-      margin: '1rem auto',
+      margin: '10px ',
     },
   };
 
@@ -33,11 +33,12 @@ const HomeSection6 = () => {
     boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
     zIndex: 2,
     backgroundColor: '#fcfaf4', // Background for the content inside the border
-    padding: '1.5rem',
+    padding: '1.25rem',
+    margin: '1rem',
     border: '1.75px solid #2b2d2b',
     textAlign: 'left',
-    width: '50%', // Responsive width for large screens
-    maxWidth: '500px',
+    width: '70%', // Responsive width for large screens
+    maxWidth: '400px',
     aspectRatio: 'auto',
     position: 'relative',
     color: '#2b2d2b',
@@ -47,23 +48,20 @@ const HomeSection6 = () => {
     },
     '@media (max-width: 768px)': {
       maxWidth: '100%', // Smaller padding on very small screens
-      padding: '10px',
-
+      padding: '5px',
       margin: '0 auto', // Space between text and image on small screens
-      order: 2, // Ensure the content is below the image on small screens
+      order: 2, // Content should come after the image on small screens
     },
     '@media (max-width: 576px)': {
       maxWidth: '100%', // Smaller padding on very small screens
       margin: '0 auto', // Space between text and image on small screens
-
-      padding: '10px',
+      padding: '5px',
     },
   };
 
   const headerTextStyle = {
     fontSize: '1.5rem',
     fontWeight: '400',
-  
     letterSpacing: '0.05em',
     fontFamily: 'Lora, sans-serif',
     textTransform: 'lowercase',
@@ -119,7 +117,7 @@ const HomeSection6 = () => {
   return (
     <ParallaxSection
       image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1728154935/background1a1_ke54dk.jpg"
-      minHeight="80vh"
+      minHeight="100vh"
     >
       <div style={overlayStyle}></div>
 
@@ -134,7 +132,7 @@ const HomeSection6 = () => {
           <p style={captionStyle}>Lauren Martyn RP, MA</p>
         </div>
 
-        {/* Floating Card Content */}
+        {/* Text Content */}
         <div style={contentStyle}>
           <p style={headerTextStyle}>
             hello and <em>welcome</em>.

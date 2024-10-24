@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Grid from '@mui/material/Grid';
 import Hero from '../Components/Home/Hero';
 import { Helmet } from 'react-helmet';
 
+// Regular import for HomeSection6
 import HomeSection6 from '../Components/Home/HomeSection6';
-import HomeSection7 from '../Components/Home/BookASession';
-import HomeSection11 from '../Components/Home/HomeSection11';
-import HomeSection13 from '../Components/Home/HomeSection13';
-import HomeSection11ColorChange from '../Components/Home/HomeSection11ColorChange';
-import FloatingCard from '../Components/Home/FloatCard2';
-import AboutSection7 from '../Components/About/AboutSection7';
+
+// Lazy-loaded components
+const HomeSection7 = lazy(() => import('../Components/Home/BookASession'));
+const HomeSection11 = lazy(() => import('../Components/Home/HomeSection11'));
+const HomeSection13 = lazy(() => import('../Components/Home/HomeSection13'));
+const HomeSection11ColorChange = lazy(() => import('../Components/Home/HomeSection11ColorChange'));
+const FloatingCard = lazy(() => import('../Components/Home/FloatCard2'));
+const AboutSection7 = lazy(() => import('../Components/About/AboutSection7'));
 
 const Home = () => {
   const schemaMarkup = {
@@ -18,7 +21,6 @@ const Home = () => {
     "name": "Lauren Martyn Therapy",
     "url": "https://www.laurenmartyn.ca/",
     "logo": "https://www.laurenmartyn.ca/Images/logo.png",
-  
     "description": "Lauren Martyn Therapy is dedicated to supporting school-aged children, youth, and young adults in navigating life’s challenges through virtual counselling services in Ontario, Canada.",
     "founder": {
       "@type": "Person",
@@ -31,16 +33,19 @@ const Home = () => {
       "email": "info@laurenmartyn.ca"
     }
   };
-  
+
   return (
-    <Grid 
-      container 
-      spacing={0}
-   
-    >
+    <Grid container spacing={0}>
       <Helmet>
         {/* Title Tag */}
         <title>Home - Lauren Martyn Therapy</title>
+
+        {/* Preload image for HomeSection6 */}
+        <link
+          rel="preload"
+          href="https://www.laurenmartyn.ca/Images/background1a1_ke54dk.jpg"
+          as="image"
+        />
 
         {/* Meta Description */}
         <meta
@@ -76,52 +81,41 @@ const Home = () => {
         </script>
       </Helmet>
 
-    
-
+      {/* HomeSection6 is not lazy-loaded to show up immediately */}
       <Grid item xs={12}>
         <HomeSection6 />
       </Grid>
 
-      <Grid item xs={12}>
-        <HomeSection11 />
-      </Grid>
-      <Grid item xs={12}>
-        <FloatingCard />
-      </Grid>
-    
+      {/* Lazy load the rest of the components */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <Grid item xs={12}>
+          <HomeSection11 />
+        </Grid>
 
-      <Grid item xs={12} id="top">
-        <AboutSection7 />
-      </Grid>
-    
-    
-      <Grid item xs={12}>
-        <HomeSection11ColorChange />
-      </Grid>
+        <Grid item xs={12}>
+          <FloatingCard />
+        </Grid>
 
-      <Grid item xs={12}>
-        <HomeSection7 />
-      </Grid>
+        <Grid item xs={12} id="top">
+          <AboutSection7 />
+        </Grid>
 
-      
-    
-  
+        <Grid item xs={12}>
+          <HomeSection11ColorChange />
+        </Grid>
 
-   
-     
-      <Grid item xs={12}>
-        <HomeSection13 />
-      </Grid>
-   
-    
+        <Grid item xs={12}>
+          <HomeSection7 />
+        </Grid>
 
-      <Grid item xs={12}>
-        <HomeSection11 />
-      </Grid>
-  
-   
-    
-   
+        <Grid item xs={12}>
+          <HomeSection13 />
+        </Grid>
+
+        <Grid item xs={12}>
+          <HomeSection11 />
+        </Grid>
+      </Suspense>
     </Grid>
   );
 };
