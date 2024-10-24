@@ -33,7 +33,7 @@ const HomeSection6 = () => {
     boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
     zIndex: 2,
     backgroundColor: '#fcfaf4', // Background for the content inside the border
-    padding: '2.5rem',
+    padding: '1.5rem',
     border: '1.75px solid #2b2d2b',
     textAlign: 'left',
     width: '50%', // Responsive width for large screens
