@@ -71,7 +71,9 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-container">
+    <div className="contact-container"
+   
+    >
       {isSubmitted ? (
         <div className="thank-you-message">
           Thank you! I will contact you within 1 business day.

@@ -108,7 +108,7 @@ const faqs = [
 
 const styles = {
   container: {
-  
+    
     fontFamily: "Quicksand, sans-serif",
     maxWidth: '100%',
     margin: '0 auto',

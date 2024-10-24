@@ -1,9 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import WhatToExpectComponent from '../Components/Contact/WhatToExpect';
 import GoogleFormEmbed from '../Components/GoogleForm';
-import ContactHero2 from '../Components/Contact/ContactHero2';
-import Hero from '../Components/Contact/ContactHero';
+
 import { Helmet } from 'react-helmet';
 import ContactForm from './ContactFormPage';
 import HomeSection11 from '../Components/Home/HomeSection11';
@@ -87,7 +85,11 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
           <HomeSection11ColorChange />
         </Grid>
      
-        <Grid item xs={12}>
+        <Grid item xs={12}
+        style = {{
+          backgroundColor: '#8FBC8F'
+        }}
+        >
           <ContactForm />
         </Grid>
         <Grid item xs={12}>
@@ -111,6 +113,8 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
 const styles = {
   gridContainer: {
     padding: '0rem',
+    backgroundColor : '#2b3d2b',
+
   },
   modalOverlay: {
     position: 'fixed',
@@ -126,7 +130,6 @@ const styles = {
   
   },
   modal: {
-    backgroundColor: '#fff',
     padding: '40px',
     borderRadius: '8px',
     boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
