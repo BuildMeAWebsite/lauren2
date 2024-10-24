@@ -39,11 +39,25 @@ const ContactForm = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    // Structure the data to match EmailJS template placeholders
+    const templateParams = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      phone: formData.phone,
+      email: formData.email,
+      preferredContactMethod: formData.preferredContactMethod,
+      isSafeToEmail: formData.isSafeToEmail,
+      reasonForContact: formData.reasonForContact,
+      helpWith: formData.helpWith,
+      servicesForSelf: formData.interestedIn.self ? 'Yes' : 'No',
+      servicesForChild: formData.interestedIn.child ? 'Yes' : 'No',
+    };
+
     emailjs
       .send(
         'service_1rfipk5', // Replace with your EmailJS service ID
         'template_7rso3dm', // Replace with your EmailJS template ID
-        formData,
+        templateParams,
         'XFlC5uPb-LLkpIwdr' // Replace with your EmailJS public key
       )
       .then(
@@ -71,9 +85,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-container"
-   
-    >
+    <div className="contact-container">
       {isSubmitted ? (
         <div className="thank-you-message">
           Thank you! I will contact you within 1 business day.
@@ -150,8 +162,8 @@ const ContactForm = () => {
           ></textarea>
 
           <label className="form-label">I am interested in help with..</label>
-        
-<br/>
+
+          <br />
           <div className="checkbox-group">
             <label>
               <input
@@ -162,8 +174,7 @@ const ContactForm = () => {
               />
               Services for myself
             </label>
-            <br/>
-
+            <br />
             <label>
               <input
                 type="checkbox"
