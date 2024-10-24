@@ -18,10 +18,10 @@ const ContactForm = () => {
     e.preventDefault();
     emailjs
       .send(
-        'your_service_id', // Replace with your EmailJS service ID
-        'your_template_id', // Replace with your EmailJS template ID
+        'service_a2ll4np', // Replace with your EmailJS service ID
+        'template_7rso3dm', // Replace with your EmailJS template ID
         formData,
-        'your_public_key' // Replace with your EmailJS public key
+        'XFlC5uPb-LLkpIwdr' // Replace with your EmailJS public key
       )
       .then(
         (result) => {
