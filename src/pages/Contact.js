@@ -87,7 +87,7 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
      
         <Grid item xs={12}
         style = {{
-          backgroundColor: '#8FBC8F'
+          backgroundColor: '#2b2d2b'
         }}
         >
           <ContactForm />

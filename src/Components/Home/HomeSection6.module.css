@@ -61,7 +61,7 @@
   background-color: rgba(0, 0, 0, 0.0001); /* Darkens the background slightly */
   transition: background-color 0.3s ease, backdrop-filter 0.5s ease;
   border-radius: 10px;
-  padding: 1rem auto;
+  padding: 1rem;
   backdrop-filter: blur(5px); /* Adds the blur effect */
 }
 
