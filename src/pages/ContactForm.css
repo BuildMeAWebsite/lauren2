@@ -1,61 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-
 .contact-container {
-  background-color: #fcfaf4;
-  padding: 3rem;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1.5px solid #2b2d2b;
-  text-align: center;
-  max-width: 500px;
-  margin: 50px auto;
-  font-family: 'Quicksand', sans-serif;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.form-label {
-  font-size: 18px;
-  color: #2b2d2b;
-  margin-bottom: 10px;
-  text-transform: lowercase;
-}
-
-.form-input,
-.form-textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1.5px solid #2b2d2b;
-  border-radius: 5px;
-  font-family: 'Quicksand', sans-serif;
-}
-
-.form-input {
-  height: 40px;
-}
-
-.form-textarea {
-  height: 100px;
-}
-
-.submit-btn {
-  background-color: #2b2d2b;
-  color: #fcfaf4;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-family: 'Quicksand', sans-serif;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.submit-btn:hover {
-  background-color: #8ebc8f;
-  color: #2b2d2b;
-  transform: scale(1.05);
-}
+    max-width: 600px;
+    margin: 2rem auto;
+    font-family: 'Quicksand', sans-serif; /* Ensure Quicksand is applied to the entire container */
+    padding: 1.5rem; /* Constant padding around the form */
+    background-color: #fcfaf4;
+    border: 1px solid #2b2d2b;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .contact-content {
+    min-height: 400px; /* Ensures that the container keeps a height to prevent CLS */
+    font-family: 'Quicksand', sans-serif; /* Quicksand font applied to the content */
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Quicksand', sans-serif; /* Quicksand font applied to the form */
+  }
+  
+  .form-label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #2b2d2b;
+    font-family: 'Quicksand', sans-serif; /* Quicksand font for labels */
+  }
+  
+  .form-input, .form-textarea {
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif; /* Quicksand font for input and textarea */
+  }
+  
+  .form-textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .submit-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #2b2d2b;
+    color: #fcfaf4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif; /* Quicksand font for submit button */
+  }
+  
+  .submit-btn:hover {
+    background-color: #8fbc8f;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Quicksand', sans-serif; /* Quicksand font for checkbox group */
+  }
+  
+  .thank-you-message {
+    font-size: 1.5rem;
+    color: #2b2d2b;
+    text-align: center;
+    padding: 2rem;
+    background-color: #f0f0f0;
+    border: 1px solid #2b2d2b;
+    border-radius: 5px;
+    font-family: 'Quicksand', sans-serif; /* Quicksand font for thank you message */
+  }
