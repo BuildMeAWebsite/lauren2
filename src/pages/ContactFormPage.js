@@ -44,9 +44,9 @@ const ContactForm = () => {
       firstName: formData.firstName,
       lastName: formData.lastName,
       phone: formData.phone,
-      email: formData.email,
-      preferredContactMethod: formData.preferredContactMethod,
-      isSafeToEmail: formData.isSafeToEmail,
+      email: formData.email, // Add email if it is missing
+      preferredContactMethod: formData.preferredContactMethod, // This needs to match the EmailJS template placeholder
+      isSafeToEmail: formData.isSafeToEmail, // This also must match the template
       reasonForContact: formData.reasonForContact,
       helpWith: formData.helpWith,
       servicesForSelf: formData.interestedIn.self ? 'Yes' : 'No',
@@ -92,74 +92,83 @@ const ContactForm = () => {
         </div>
       ) : (
         <form onSubmit={sendEmail} className="contact-form">
-          <label className="form-label">First Name</label>
-          <input
-            type="text"
-            name="firstName"
-            className="form-input"
-            value={formData.firstName}
-            onChange={handleChange}
-            required
-          />
+   <label className="form-label">First Name</label>
+<input
+  type="text"
+  name="firstName"
+  className="form-input"
+  value={formData.firstName}
+  onChange={handleChange}
+  required
+/>
 
-          <label className="form-label">Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            className="form-input"
-            value={formData.lastName}
-            onChange={handleChange}
-            required
-          />
+<label className="form-label">Last Name</label>
+<input
+  type="text"
+  name="lastName"
+  className="form-input"
+  value={formData.lastName}
+  onChange={handleChange}
+  required
+/>
 
-          <label className="form-label">Phone Number</label>
-          <input
-            type="text"
-            name="phone"
-            className="form-input"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-          />
+<label className="form-label">Phone Number</label>
+<input
+  type="text"
+  name="phone"
+  className="form-input"
+  value={formData.phone}
+  onChange={handleChange}
+  required
+/>
 
-          <label className="form-label">Email</label>
-          <input
-            type="email"
-            name="email"
-            className="form-input"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+<label className="form-label">Email</label>
+<input
+  type="email"
+  name="email"
+  className="form-input"
+  value={formData.email}
+  onChange={handleChange}
+  required
+/>
 
-          <label className="form-label">Which do you prefer to be contacted at? (Email or Phone)</label>
-          <input
-            type="text"
-            name="preferredContactMethod"
-            className="form-input"
-            value={formData.preferredContactMethod}
-            onChange={handleChange}
-            required
-          />
+<label className="form-label">Which do you prefer to be contacted at? (Email or Phone)</label>
+<input
+  type="text"
+  name="preferredContactMethod"
+  className="form-input"
+  value={formData.preferredContactMethod}
+  onChange={handleChange}
+  required
+/>
 
-          <label className="form-label">Is it safe to email you at this address?</label>
-          <input
-            type="text"
-            name="isSafeToEmail"
-            className="form-input"
-            value={formData.isSafeToEmail}
-            onChange={handleChange}
-            required
-          />
+<label className="form-label">Is it safe to email you at this address?</label>
+<input
+  type="text"
+  name="isSafeToEmail"
+  className="form-input"
+  value={formData.isSafeToEmail}
+  onChange={handleChange}
+  required
+/>
 
-          <label className="form-label">What brings you here today?</label>
-          <textarea
-            name="reasonForContact"
-            className="form-textarea"
-            value={formData.reasonForContact}
-            onChange={handleChange}
-            required
-          ></textarea>
+<label className="form-label">What brings you here today?</label>
+<textarea
+  name="reasonForContact"
+  className="form-textarea"
+  value={formData.reasonForContact}
+  onChange={handleChange}
+  required
+></textarea>
+
+<label className="form-label">I am interested in help with...</label>
+<textarea
+  name="helpWith"
+  className="form-textarea"
+  value={formData.helpWith}
+  onChange={handleChange}
+  required
+></textarea>
 
           <label className="form-label">I am interested in help with..</label>
 
