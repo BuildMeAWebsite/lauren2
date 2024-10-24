@@ -68,10 +68,10 @@
   
   .thank-you-message {
     font-size: 1.75rem;
-    color: #2b2d2b;
+    color: #fcfaf4;
     text-align: center;
     padding: 2rem;
-    background-color: #f0f0f0;
+    background-color: #2b2d2b;
     border: 1px solid #2b2d2b;
     border-radius: 5px;
     font-family: 'Lora', sans-serif; /* Lora font for thank you message */
