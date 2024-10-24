@@ -12,52 +12,67 @@ const HomeSection6 = () => {
   };
 
   const outerContentStyle = {
-    margin: '10px auto',
-    backgroundColor: '#fcfaf4',
-    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
-    boxSizing: 'border-box',
+    margin: '1rem auto',
+    backgroundColor: 'transparent', // Transparent to show parallax behind
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
     height: '100%',
-    padding: '3rem',
+    width: 'auto',
+    flexDirection: 'row', // Default row layout
+    flexWrap: 'wrap',
+    '@media (max-width: 768px)': {
+      flexDirection: 'column', // Stack in a column on small screens
+      height: '100%',
+      width: 'auto',
+      margin: '1rem auto',
+    },
   };
 
   const contentStyle = {
-    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
     zIndex: 2,
-    backgroundColor: 'transparent',
-    padding: '3rem',
-    border: '1.5px solid #2b2d2b',
+    backgroundColor: '#fcfaf4', // Background for the content inside the border
+    padding: '2.5rem',
+    border: '1.75px solid #2b2d2b',
     textAlign: 'left',
-    width: '50%', // Adjust for more space
+    width: '50%', // Responsive width for large screens
+    maxWidth: '500px',
     aspectRatio: 'auto',
     position: 'relative',
-    fontFamily: 'Quicksand, sans-serif',
-    fontWeight: 'normal',
     color: '#2b2d2b',
     lineHeight: '1.8',
+    '@media (max-width: 1200px)': {
+      width: '75%', // Adjust width for medium screens
+    },
+    '@media (max-width: 768px)': {
+      width: '90%', // Full width on small screens
+      marginBottom: '2rem', // Space between text and image on small screens
+      order: 2, // Ensure the content is below the image on small screens
+    },
+    '@media (max-width: 576px)': {
+      width: '95%', // Smaller padding on very small screens
+      padding: '1.5rem',
+    },
   };
 
   const headerTextStyle = {
-    fontSize: '24px',
-    fontWeight: 100,
-    fontStyle: 'italic',
+    fontSize: '1.5rem',
+    fontWeight: '400',
+  
     letterSpacing: '0.05em',
-    fontFamily: 'Quicksand, sans-serif',
+    fontFamily: 'Lora, sans-serif',
     textTransform: 'lowercase',
     color: '#2b2d2b',
-    marginBottom: '1.5rem',
   };
 
   const headingStyle = {
-    fontSize: '1.5rem',
+    fontSize: '1.25rem',
     lineHeight: '1.5',
     textAlign: 'left',
     fontFamily: 'Quicksand, sans-serif',
-    fontWeight: 400,
-    color: '#333',
-    marginBottom: '1rem',
+    fontWeight: 100,
+    color: '#2b2d2b',
   };
 
   const imageContainerStyle = {
@@ -65,31 +80,60 @@ const HomeSection6 = () => {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    marginLeft: '2rem',
+    '@media (max-width: 768px)': {
+      marginLeft: '0', // Reset margin on small screens
+      order: 1, // Ensure the image is on top on small screens
+    },
   };
 
   const imageStyle = {
-    maxWidth: '200px',
-    borderRadius: '8px',
+    maxWidth: '275px',
+    padding: '1rem',  
+    border: '0.075px solid #2b2d2b',
+    borderRadius: '0px',
     boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)',
+    '@media (max-width: 768px)': {
+      maxWidth: '100%', // Full width on small screens
+    },
   };
 
   const captionStyle = {
-    fontFamily: 'Quicksand, sans-serif',
-    fontSize: '1rem',
-    color: '#2b2d2b',
-    marginTop: '10px',
+    fontFamily: 'Lora, sans-serif',
+    boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)',
+
+    border: '2.5px solid #fcfaf4',
+padding : '10px',
+    fontSize: '400',
+    backgroundColor: '#2b2d2b',
+
+    color: '#fcfaf4',
+    margin: '1rem auto',
     textAlign: 'center',
   };
 
   return (
     <ParallaxSection
-      image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1729297041/pexels-eye4dtail-114137_h9nkjj.jpg"
+      image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1728154935/background1a1_ke54dk.jpg"
       minHeight="80vh"
     >
       <div style={overlayStyle}></div>
 
       <div style={outerContentStyle}>
+        {/* Image and Caption */}
+        
+        <div style={imageContainerStyle}>
+        <p style={captionStyle}>Lauren Martyn RP, MA</p>
+
+          <img
+            src="https://res.cloudinary.com/dvbubqhpp/image/upload/v1728154934/lauren1_xmyolw.webp"
+            alt="Lauren Martyn"
+            style={imageStyle}
+          />
+          
+        </div>
+
+        
+
         {/* Floating Card Content */}
         <div style={contentStyle}>
           <p style={headerTextStyle}>
@@ -98,16 +142,6 @@ const HomeSection6 = () => {
           <h1 style={headingStyle}>
             If you are reading this, you have already taken the biggest step in the therapeutic journey. My name is Lauren Martyn, I am a registered psychotherapist and I have dedicated myself to supporting school-aged children, youth, and young adults as they navigate life’s challenges. I currently offer virtual counselling to those residing in Ontario, Canada.
           </h1>
-        </div>
-
-        {/* Image and Caption to the side */}
-        <div style={imageContainerStyle}>
-          <img
-            src="https://res.cloudinary.com/dvbubqhpp/image/upload/v1728154934/lauren1_xmyolw.webp"
-            alt="Lauren Martyn"
-            style={imageStyle}
-          />
-          <p style={captionStyle}>Lauren Martyn RP, MA</p>
         </div>
       </div>
     </ParallaxSection>
