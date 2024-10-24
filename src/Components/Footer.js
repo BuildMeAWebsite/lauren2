@@ -32,7 +32,7 @@ const Footer = ({ onContactClick }) => {
         backgroundColor: '#2b3d2b !important',
         backdropFilter: 'blur(10px) !important',
 
-        padding: { xs: '1rem 2rem', sm: '1.5rem 3rem', md: '2rem 5rem' },
+        padding: { xs: '1rem ', sm: '1.5rem ', md: '2rem ' },
         textAlign: 'center',
         position: 'relative',
         zIndex: 9,
@@ -40,12 +40,13 @@ const Footer = ({ onContactClick }) => {
     >
       <Grid
         container
-        spacing={1}
+        spacing={0}
         alignItems="center"
         justifyContent="center"
         direction="column"
         sx={{
-          marginTop: '1rem',
+          width: '100%',
+          margin: '2rem auto',
 flexDirection: 'column', // Stack content in column layout
           justifyContent: 'center',
         }}

@@ -161,16 +161,9 @@ const ContactForm = () => {
   required
 ></textarea>
 
-<label className="form-label">I am interested in help with...</label>
-<textarea
-  name="helpWith"
-  className="form-textarea"
-  value={formData.helpWith}
-  onChange={handleChange}
-  required
-></textarea>
 
-          <label className="form-label">I am interested in help with..</label>
+
+          <label className="form-label">I am interested in help for..</label>
 
           <br />
           <div className="checkbox-group">
