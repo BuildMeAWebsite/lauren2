@@ -81,13 +81,13 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
           <FloatingCard4 />
         </Grid>
 
-        <Grid item xs={12}>
-          <HomeSection11ColorChange />
-        </Grid>
      
+        <Grid item xs={12}>
+          <HomeSection11/>
+        </Grid>
         <Grid item xs={12}
         style = {{
-          backgroundColor: '#2b2d2b'
+          backgroundColor: '#8FBC8F'
         }}
         >
           <ContactForm />

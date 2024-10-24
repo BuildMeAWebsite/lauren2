@@ -5,16 +5,16 @@ import { Box, Typography } from '@mui/material';
 const FloatingCard4 = () => {
   const overlayStyle = {
     position: 'absolute',
-    padding: '1rem 2rem',
+    padding: '1rem',
     top: 0,
     left: 0,
-    width: '100%',
+    width: 'auto',
     height: '100%', // Match the section height
     zIndex: 1,
   };
 
   const outerContentStyle = {
-    margin: '10px 30px',
+    margin: '10px auto',
         backgroundColor: '#fcfaf4',
         boxSizing: 'border-box',
         display: 'flex',
