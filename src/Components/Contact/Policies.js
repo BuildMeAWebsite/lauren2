@@ -10,6 +10,7 @@ const Policies = () => {
   return (
     <Box sx={styles.container}>
       {/* Centered Title */}
+      <br/>
       <Box sx={styles.centeredTitle}>
         <Typography
           variant="h1"
@@ -75,18 +76,18 @@ const serviceItems = [
 
 const styles = {
   container: {
-    padding: '2rem 0',
+    padding: '10px',
     fontFamily: "Lora, sans-serif",
     maxWidth: '1300px',
     margin: '0 auto',
     '@media (max-width: 1100px)': {
-      padding: '1rem 5rem',    },
+      padding: '1rem 2.5rem',    },
     '@media (max-width: 800px)': {
-      padding: '1rem 5rem',    },
+      padding: '1rem 2.5rem',    },
     '@media (max-width: 600px)': {
-      padding: '1rem 5rem',    },
+      padding: '1rem 2.5rem',    },
     '@media (max-width: 450px)': {
-      padding: '1rem 5rem',    },
+      padding: '1rem 2.5rem',    },
   },
   centeredTitle: {
     textAlign: 'center',

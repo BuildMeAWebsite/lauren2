@@ -31,8 +31,9 @@ const Footer = ({ onContactClick }) => {
       sx={{
         backgroundColor: '#2b3d2b !important',
         backdropFilter: 'blur(10px) !important',
+        margin: '0 auto !important',
 
-        padding: { xs: '1rem ', sm: '1.5rem ', md: '2rem ' },
+        padding: { xs: '5rem 2rem', sm: '5rem 1rem', md: '5rem 1rem' },
         textAlign: 'center',
         position: 'relative',
         zIndex: 9,
@@ -46,7 +47,7 @@ const Footer = ({ onContactClick }) => {
         direction="column"
         sx={{
           width: '100%',
-          margin: '2rem auto',
+          margin: '0 auto',
 flexDirection: 'column', // Stack content in column layout
           justifyContent: 'center',
         }}
@@ -62,24 +63,7 @@ flexDirection: 'column', // Stack content in column layout
             zIndex: 11,
           }}
         >
-          <Link
-            href="/"
-            underline="none"
-            sx={{
-              fontFamily: 'Quicksand, sans-serif',
-              
-              fontWeight: '100',
-
-fontSize: '1.25rem',              color: '#fcfaf4',
-              transition: 'color 0.3s ease, transform 0.3s ease',
-              '&:hover': {
-                color: '#FFD700',
-                transform: 'scale(1.05)',
-              },
-            }}
-          >
-            Home
-          </Link>
+         
           <Link
             href="/about"
             underline="none"
