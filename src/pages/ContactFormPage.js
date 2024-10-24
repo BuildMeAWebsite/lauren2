@@ -150,14 +150,8 @@ const ContactForm = () => {
           ></textarea>
 
           <label className="form-label">I am interested in help with..</label>
-          <textarea
-            name="helpWith"
-            className="form-textarea"
-            value={formData.helpWith}
-            onChange={handleChange}
-            required
-          ></textarea>
-
+        
+<br/>
           <div className="checkbox-group">
             <label>
               <input
@@ -168,6 +162,7 @@ const ContactForm = () => {
               />
               Services for myself
             </label>
+            <br/>
 
             <label>
               <input
