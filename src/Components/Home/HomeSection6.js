@@ -77,9 +77,11 @@ const HomeSection6 = () => {
 
   const imageContainerStyle = {
     display: 'flex',
+    backgroundColor: 'transparent',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    position: 'relative', // To make the blur effect relative to the image
     '@media (max-width: 768px)': {
       marginLeft: '0', // Reset margin on small screens
       order: 1, // Ensure the image is on top on small screens
@@ -88,10 +90,11 @@ const HomeSection6 = () => {
 
   const imageStyle = {
     maxWidth: '275px',
-    padding: '1rem',  
-    border: '0.075px solid #2b2d2b',
+    backgroundColor: 'transparent',
+    padding: '5px', // Space between the image and the border
+    border: '0.075px solid #fcfaf4',
     borderRadius: '0px',
-    boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)',
+    boxShadow: '0px 0px 15px 10px rgba(0, 0, 0, 0.2)', // 10px blur effect
     '@media (max-width: 768px)': {
       maxWidth: '100%', // Full width on small screens
     },
@@ -100,12 +103,10 @@ const HomeSection6 = () => {
   const captionStyle = {
     fontFamily: 'Lora, sans-serif',
     boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)',
-
-    border: '2.5px solid #fcfaf4',
-padding : '10px',
+    border: '1.25px solid #fcfaf4',
+    padding: '10px',
     fontSize: '400',
     backgroundColor: '#2b2d2b',
-
     color: '#fcfaf4',
     margin: '1rem auto',
     textAlign: 'center',
@@ -120,20 +121,14 @@ padding : '10px',
 
       <div style={outerContentStyle}>
         {/* Image and Caption */}
-        
         <div style={imageContainerStyle}>
-
           <img
             src="https://res.cloudinary.com/dvbubqhpp/image/upload/v1728154934/lauren1_xmyolw.webp"
             alt="Lauren Martyn"
             style={imageStyle}
           />
-                  <p style={captionStyle}>Lauren Martyn RP, MA</p>
-
-          
+          <p style={captionStyle}>Lauren Martyn RP, MA</p>
         </div>
-
-        
 
         {/* Floating Card Content */}
         <div style={contentStyle}>
