@@ -47,18 +47,17 @@ const AboutSection14 = () => {
   };
 
   const linkTextStyle = {
-    fontSize: '1.25rem',
-    fontWeight: 400, // Regular font weight
-    letterSpacing: '0.1em', // Slightly increase letter spacing for a cleaner look
+    fontSize: '24px', // Base font size
+    fontWeight: 100, // Regular font weight
+    letterSpacing: '0.05em', // Slightly increase letter spacing for a cleaner look
     fontFamily: 'Quicksand, sans-serif',
     textTransform: 'lowercase',
-    color: hovered ? '#FFD700' : '#2b3d2b', // Change color on hover
+    color: '#2b3d2b', // Base color
     display: 'inline-flex',
     alignItems: 'center',
     textDecoration: 'none', // Remove underline
     cursor: 'pointer',
-    transform: hovered ? 'scale(1.05)' : 'scale(1)', // Slightly enlarge on hover
-    transition: 'color 0.3s ease, transform 0.3s ease', // Smooth transition effect
+    transition: 'transform 0.3s ease', // Smooth transition for scaling
   };
 
   const iconStyle = {

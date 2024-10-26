@@ -116,22 +116,23 @@ const HomeSection6 = () => {
 
   return (
     <ParallaxSection
-      image="https://res.cloudinary.com/dvbubqhpp/image/upload/v1728154935/background1a1_ke54dk.jpg"
+      image="https://res.cloudinary.com/dvbubqhpp/image/upload/f_auto/v1729515914/pexels-valiphotos-589802_mibnwj.jpg"
       minHeight="100vh"
     >
       <div style={overlayStyle}></div>
-
+  
       <div style={outerContentStyle}>
         {/* Image and Caption */}
         <div style={imageContainerStyle}>
           <img
-            src="https://res.cloudinary.com/dvbubqhpp/image/upload/v1728154934/lauren1_xmyolw.webp"
+            src="https://res.cloudinary.com/dvbubqhpp/image/upload/f_auto/v1728154934/lauren1_xmyolw.webp"
             alt="Lauren Martyn"
             style={imageStyle}
           />
           <p style={captionStyle}>Lauren Martyn RP, MA</p>
         </div>
-
+    
+  
         {/* Text Content */}
         <div style={contentStyle}>
           <p style={headerTextStyle}>
