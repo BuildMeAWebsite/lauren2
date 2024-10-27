@@ -60,6 +60,8 @@ const Footer = ({ onContactClick }) => {
           xs={12}
           sx={{
             margin: '0 auto',
+            padding: '10px',  
+            fontSize: '16px',
 
             display: 'flex',
             justifyContent: isMobile ? 'center' : 'space-around', // Adjust for mobile
@@ -146,7 +148,7 @@ const Footer = ({ onContactClick }) => {
           <Box
             sx={{
               position: 'fixed',
-              bottom: '25%', // Position pride flag above scroll-to-top
+              bottom: '30%', // Position pride flag above scroll-to-top
               right: '1.5rem',
               display: 'flex',
               justifyContent: 'center',
@@ -198,7 +200,7 @@ const Footer = ({ onContactClick }) => {
             </IconButton>
             <Typography
               sx={{
-                fontSize: '0.75rem',
+             
                 color: '#fcfaf4',
                 fontFamily: 'Quicksand, sans-serif',
                 backgroundColor: 'none',
@@ -222,7 +224,7 @@ const Footer = ({ onContactClick }) => {
 const linkStyles = {
   fontFamily: 'Quicksand, sans-serif',
   fontWeight: '100',
-  fontSize: '1.25rem',
+  fontSize: '1.5rem',
   color: '#fcfaf4',
   transition: 'color 0.3s ease, transform 0.3s ease',
   '&:hover': {
