@@ -91,14 +91,16 @@ const HomeSection6 = () => {
   };
 
   const imageStyle = {
-    maxWidth: '275px',
+    maxWidth: '300px',
+    width: '300px',
     backgroundColor: 'transparent',
     padding: '10px', // Space between the image and the border
     border: '0.075px solid #fcfaf4',
     borderRadius: '0px',
     boxShadow: '0px 0px 15px 10px rgba(0, 0, 0, 0.2)', // 10px blur effect
     '@media (max-width: 768px)': {
-      maxWidth: '80%', // Full width on small screens
+      maxWidth: '200px',
+
     },
   };
 
