@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Box, Link, Grid, IconButton } from '@mui/material';
+import { Typography, Box, Link, Grid, IconButton, useMediaQuery } from '@mui/material';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 const Footer = ({ onContactClick }) => {
   const [showButton, setShowButton] = useState(false);
+  const isMobile = useMediaQuery('(max-width:600px)'); // Detect mobile screen sizes
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +33,6 @@ const Footer = ({ onContactClick }) => {
         backgroundColor: '#2b3d2b !important',
         backdropFilter: 'blur(10px) !important',
         margin: '0 auto !important',
-
         padding: { xs: '5rem 2rem', sm: '5rem 1rem', md: '5rem 1rem' },
         textAlign: 'center',
         position: 'relative',
@@ -47,91 +47,59 @@ const Footer = ({ onContactClick }) => {
         direction="column"
         sx={{
           width: '100%',
-          margin: '0 auto',
-flexDirection: 'column', // Stack content in column layout
+          flexDirection: 'column', // Stack content in column layout
           justifyContent: 'center',
         }}
       >
         {/* Center Column: Quick Links */}
         <Grid
           item
-          xs={12}
+          xs={10}
           sx={{
             display: 'flex',
-            justifyContent: 'center',
-            gap: '1rem',
+            justifyContent: isMobile ? 'center' : 'space-around', // Adjust for mobile
+            flexDirection: isMobile ? 'column' : 'row', // Stack links vertically on mobile
+            alignItems: 'center',
+            gap: isMobile ? '1rem' : '2rem', // Adjust spacing between links
             zIndex: 11,
           }}
         >
-         
+          <Link
+            href="/"
+            underline="none"
+            sx={linkStyles}
+          >
+            Home
+          </Link>
+
           <Link
             href="/about"
             underline="none"
-            sx={{
-              fontFamily: 'Quicksand, sans-serif',
-              fontWeight: '100',
-
-fontSize: '1.25rem',
-              color: '#fcfaf4',
-              transition: 'color 0.3s ease, transform 0.3s ease',
-              '&:hover': {
-                color: '#FFD700',
-                transform: 'scale(1.05)',
-              },
-            }}
+            sx={linkStyles}
           >
             About
           </Link>
-        
+
           <Link
             href="/frequently-asked-questions"
             underline="none"
-            sx={{
-              fontFamily: 'Quicksand, sans-serif',
-              fontWeight: '100',
-fontSize: '1.25rem',              color: '#fcfaf4',
-              transition: 'color 0.3s ease, transform 0.3s ease',
-              '&:hover': {
-                color: '#FFD700',
-                transform: 'scale(1.05)',
-              },
-            }}
+            sx={linkStyles}
           >
             FAQ
           </Link>
+
           <Link
             href="/contact"
             underline="none"
-            sx={{
-              fontFamily: 'Quicksand, sans-serif',
-              fontWeight: '100',
-
-fontSize: '1.25rem',          
-              color: '#fcfaf4',
-              transition: 'color 0.3s ease, transform 0.3s ease',
-              '&:hover': {
-                color: '#FFD700',
-                transform: 'scale(1.05)',
-              },
-            }}
+            sx={linkStyles}
           >
             Contact
           </Link>
+
           <Link
             href="/approaches"
             underline="none"
-            sx={{
-              fontFamily: 'Quicksand, sans-serif',
-              fontWeight: '100',
-
-              fontSize: '1.25rem',          
-              color: '#fcfaf4',
-              transition: 'color 0.3s ease, transform 0.3s ease',
-              '&:hover': {
-                color: '#FFD700',
-                transform: 'scale(1.05)',
-              },
-            }}
+            sx={linkStyles}
           >
             Approach
           </Link>
@@ -151,7 +119,6 @@ fontSize: '1.25rem',
           {/* Left Logo */}
           <Box
             sx={{
-          
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
@@ -164,7 +131,6 @@ fontSize: '1.25rem',
                 maxWidth: '100px',
                 height: 'auto',
                 display: 'block',
-        
               }}
             />
           </Box>
@@ -182,6 +148,24 @@ fontSize: '1.25rem',
               alt="Pride Flag"
               style={{
                 maxWidth: '50px',
+                height: 'auto',
+                display: 'block',
+                borderRadius: '5px',
+              }}
+            />
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/Images/buildmelogo.png`}
+              alt="Pride Flag"
+              style={{
+                maxWidth: '100px',
                 height: 'auto',
                 display: 'block',
                 borderRadius: '5px',
@@ -242,6 +226,20 @@ fontSize: '1.25rem',
       )}
     </Box>
   );
+};
+
+// Link styles for reuse
+const linkStyles = {
+  fontFamily: 'Quicksand, sans-serif',
+  fontWeight: '100',
+  fontSize: '1.25rem',
+  color: '#fcfaf4',
+  transition: 'color 0.3s ease, transform 0.3s ease',
+  '&:hover': {
+    color: '#FFD700',
+    transform: 'scale(1.05)',
+  },
+  textAlign: 'center',
 };
 
 export default Footer;
