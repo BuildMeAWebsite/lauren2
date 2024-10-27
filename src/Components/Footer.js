@@ -30,10 +30,11 @@ const Footer = ({ onContactClick }) => {
     <Box
       component="footer"
       sx={{
+        padding: { xs: '2rem ', sm: '2rem', md: '2rem' },
+
         backgroundColor: '#2b3d2b !important',
         backdropFilter: 'blur(10px) !important',
-        margin: '0 auto !important',
-        padding: { xs: '5rem 2rem', sm: '5rem 1rem', md: '5rem 1rem' },
+        margin: '0 auto',
         textAlign: 'center',
         position: 'relative',
         zIndex: 9,
@@ -46,6 +47,8 @@ const Footer = ({ onContactClick }) => {
         justifyContent="center"
         direction="column"
         sx={{
+          margin: '0 auto',
+
           width: '100%',
           flexDirection: 'column', // Stack content in column layout
           justifyContent: 'center',
@@ -54,8 +57,10 @@ const Footer = ({ onContactClick }) => {
         {/* Center Column: Quick Links */}
         <Grid
           item
-          xs={10}
+          xs={12}
           sx={{
+            margin: '0 auto',
+
             display: 'flex',
             justifyContent: isMobile ? 'center' : 'space-around', // Adjust for mobile
             flexDirection: isMobile ? 'column' : 'row', // Stack links vertically on mobile
@@ -64,48 +69,43 @@ const Footer = ({ onContactClick }) => {
             zIndex: 11,
           }}
         >
-          <Link
-            href="/"
-            underline="none"
-            sx={linkStyles}
-          >
+          <Link href="/" underline="none" sx={linkStyles}>
             Home
           </Link>
-
-          <Link
-            href="/about"
-            underline="none"
-            sx={linkStyles}
-          >
+          <Link href="/about" underline="none" sx={linkStyles}>
             About
           </Link>
-
-          <Link
-            href="/frequently-asked-questions"
-            underline="none"
-            sx={linkStyles}
-          >
+          <Link href="/frequently-asked-questions" underline="none" sx={linkStyles}>
             FAQ
           </Link>
-
-          <Link
-            href="/contact"
-            underline="none"
-            sx={linkStyles}
-          >
+          <Link href="/contact" underline="none" sx={linkStyles}>
             Contact
           </Link>
-
-          <Link
-            href="/approaches"
-            underline="none"
-            sx={linkStyles}
-          >
+          <Link href="/approaches" underline="none" sx={linkStyles}>
             Approach
           </Link>
         </Grid>
 
-        {/* Logos Row */}
+        {/* Main logo below the links */}
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <img
+            src={`${process.env.PUBLIC_URL}/Images/logonew.png`}
+            alt="Logo"
+            style={{
+              maxWidth: '150px',
+              height: 'auto',
+              display: 'block',
+            }}
+          />
+        </Box>
+
+        {/* Build Me A Website logo */}
         <Grid
           item
           xs={12}
@@ -113,10 +113,10 @@ const Footer = ({ onContactClick }) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            gap: '1rem', // Spacing between the two logos
+            flexDirection: 'column', // Ensure logos are stacked vertically
+            gap: '1rem', // Spacing between the logo sets
           }}
         >
-          {/* Left Logo */}
           <Box
             sx={{
               display: 'flex',
@@ -124,20 +124,30 @@ const Footer = ({ onContactClick }) => {
               alignItems: 'center',
             }}
           >
-            <img
-              src={`${process.env.PUBLIC_URL}/Images/logonew.png`}
-              alt="Logo"
-              style={{
-                maxWidth: '100px',
-                height: 'auto',
-                display: 'block',
-              }}
-            />
+            <a href="http://www.buildmeawebsite.ca" target="_blank" rel="noreferrer">
+              <img
+                src={`${process.env.PUBLIC_URL}/Images/buildmelogo.png`}
+                alt="Build Me A Website Logo"
+                style={{
+                  maxWidth: '100px',
+                  height: 'auto',
+                  display: 'block',
+                  borderRadius: '5px',
+                }}
+              />
+            </a>
           </Box>
+        </Grid>
+      </Grid>
 
-          {/* Right Logo */}
+      {/* Pride flag section - above the scroll to top */}
+      {showButton && (
+        <>
           <Box
             sx={{
+              position: 'fixed',
+              bottom: '25%', // Position pride flag above scroll-to-top
+              right: '1.5rem',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
@@ -154,75 +164,55 @@ const Footer = ({ onContactClick }) => {
               }}
             />
           </Box>
+
+          {/* Back to Top Button */}
           <Box
             sx={{
+              position: 'fixed',
+              bottom: '1rem',
+              right: '1rem',
               display: 'flex',
-              justifyContent: 'center',
+              flexDirection: 'column',
               alignItems: 'center',
+              backgroundColor: 'transparent',
+              padding: '1rem',
+              borderRadius: '5px',
+              '&:hover': {
+                backgroundColor: '#FFD700',
+                color: '#2b3d2b',
+              },
+              transition: 'background-color 0.3s ease, transform 0.3s ease',
             }}
+            onClick={handleScrollToTop}
           >
-            <img
-              src={`${process.env.PUBLIC_URL}/Images/buildmelogo.png`}
-              alt="Pride Flag"
-              style={{
-                maxWidth: '100px',
-                height: 'auto',
-                display: 'block',
-                borderRadius: '5px',
+            <IconButton
+              sx={{
+                color: '#fcfaf4',
+                '&:hover': {
+                  color: '#2b3d2b',
+                  background: 'none',
+                },
               }}
-            />
+            >
+              <ArrowUpwardIcon />
+            </IconButton>
+            <Typography
+              sx={{
+                fontSize: '0.75rem',
+                color: '#fcfaf4',
+                fontFamily: 'Quicksand, sans-serif',
+                backgroundColor: 'none',
+                zIndex: 10,
+                marginTop: '1px',
+                '&:hover': {
+                  color: '#2b3d2b',
+                },
+              }}
+            >
+              Top
+            </Typography>
           </Box>
-        </Grid>
-      </Grid>
-
-      {/* Back to Top Button */}
-      {showButton && (
-        <Box
-          sx={{
-            position: 'fixed',
-            bottom: '1rem',
-            right: '1rem',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            backgroundColor: 'transparent',
-            padding: '1rem',
-            borderRadius: '5px',
-            '&:hover': {
-              backgroundColor: '#FFD700',
-              color: '#2b3d2b',
-            },
-            transition: 'background-color 0.3s ease, transform 0.3s ease',
-          }}
-          onClick={handleScrollToTop}
-        >
-          <IconButton
-            sx={{
-              color: '#fcfaf4',
-              '&:hover': {
-                color: '#2b3d2b',
-                background: 'none',
-              },
-            }}
-          >
-            <ArrowUpwardIcon />
-          </IconButton>
-          <Typography
-            sx={{
-              fontSize: '0.75rem',
-              color: '#fcfaf4',
-              fontFamily: 'Quicksand, sans-serif',
-              backgroundColor: 'none',
-              zIndex: 10,
-              marginTop: '1px',
-              '&:hover': {
-                color: '#2b3d2b',
-              },
-            }}
-          >
-            Top
-          </Typography>
-        </Box>
+        </>
       )}
     </Box>
   );
