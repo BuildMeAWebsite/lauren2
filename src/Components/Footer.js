@@ -77,15 +77,16 @@ const Footer = ({ onContactClick }) => {
           <Link href="/about" underline="none" sx={linkStyles}>
             About
           </Link>
+          <Link href="/approaches" underline="none" sx={linkStyles}>
+            Approach
+          </Link>
           <Link href="/frequently-asked-questions" underline="none" sx={linkStyles}>
             FAQ
           </Link>
           <Link href="/contact" underline="none" sx={linkStyles}>
             Contact
           </Link>
-          <Link href="/approaches" underline="none" sx={linkStyles}>
-            Approach
-          </Link>
+         
         </Grid>
 
         {/* Main logo below the links */}
