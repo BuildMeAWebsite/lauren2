@@ -149,7 +149,7 @@ const Footer = ({ onContactClick }) => {
           <Box
             sx={{
               position: 'fixed',
-              bottom: '30%', // Position pride flag above scroll-to-top
+              bottom: '50%', // Position pride flag above scroll-to-top
               right: '1.5rem',
               display: 'flex',
               justifyContent: 'center',
