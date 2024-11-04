@@ -33,8 +33,8 @@ const HomeSection6 = () => {
     boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
     zIndex: 2,
     backgroundColor: '#fcfaf4', // Background for the content inside the border
-    padding: '1.25rem',
-    margin: '1rem',
+    padding: '1.5rem',
+    margin: '1rem auto',
     border: '1.75px solid #2b2d2b',
     textAlign: 'left',
     width: '70%', // Responsive width for large screens
@@ -47,15 +47,16 @@ const HomeSection6 = () => {
       width: '75%', // Adjust width for medium screens
     },
     '@media (max-width: 768px)': {
-      maxWidth: '100%', // Smaller padding on very small screens
+      maxWidth: '90%', // Smaller padding on very small screens
       padding: '5px',
       margin: '0 auto', // Space between text and image on small screens
       order: 2, // Content should come after the image on small screens
     },
     '@media (max-width: 576px)': {
-      maxWidth: '100%', // Smaller padding on very small screens
+      maxWidth: '90%', // Smaller padding on very small screens
       margin: '0 auto', // Space between text and image on small screens
-      padding: '5px',
+      paddingTop: '10px',
+
     },
   };
 

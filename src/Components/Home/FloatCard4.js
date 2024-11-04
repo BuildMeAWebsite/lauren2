@@ -17,6 +17,7 @@ const FloatingCard4 = () => {
     margin: '10px auto',
         backgroundColor: '#fcfaf4',
         boxSizing: 'border-box',
+        
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -29,10 +30,10 @@ const FloatingCard4 = () => {
     
         zIndex: 2,
         backgroundColor: 'transparent', // No background color inside the card
-        padding: '3rem', // Adjusted padding for more space
+        padding: '3.5rem 2rem ', // Adjusted padding for more space
         border: '1.5px solid #2b2d2b', // Darker border to match the design
         textAlign: 'center', // Center align the text
-        width: '200px',
+        width: '250px',
         aspectRatio: 'auto', // The card will adapt its height based on the content
         position: 'relative',
         fontFamily: 'Quicksand, sans-serif',
@@ -58,7 +59,7 @@ const FloatingCard4 = () => {
     fontSize: '1rem',
     lineHeight: '1',
     textAlign: 'center',
-  
+    padding: '0 0.5rem'
   };
 
   return (
