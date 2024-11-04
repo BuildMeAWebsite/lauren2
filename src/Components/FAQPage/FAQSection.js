@@ -10,9 +10,6 @@ const FAQSection = () => {
 
   return (
     <Box sx={styles.container}>
-     
-
-      {/* Grid Container for FAQ Items */}
       <Grid container spacing={0} justifyContent="center">
         {faqs.map((faqSection, index) => (
           <Grid item xs={12} md={6} key={index}>
@@ -40,6 +37,53 @@ const FAQSection = () => {
 const faqs = [
   [
     {
+      title: 'What is the cost per session?',
+      answer: 'My rate is $180 per 50 minute session.',
+    },
+    {
+      title: 'Do you accept insurance?',
+      answer: 'I do not bill insurance companies directly. You will receive a receipt to submit to your insurer after each session.',
+    },
+    {
+      title: 'What are the payment options?',
+      answer: 'I accept email transfers and credit card payments.',
+    },
+    {
+      title: 'What are your hours?',
+      answer:
+        'Currently, I offer therapy sessions in the evening Monday-Friday to accommodate those in school and working. If you prefer another time, I will try my best to accommodate.',
+    },
+    {
+      title: 'How long are your sessions?',
+      answer:
+        'Each session is 50 minutes long. Appointments will be scheduled for 60 minutes to allow time for documentation and resource sending after the session is completed.',
+    },
+    {
+      title: 'How do I schedule an appointment?',
+      answer:
+        'You can contact me <a href="mailto:info@laurenmartyn.ca" style="text-decoration: underline; color: inherit;">here</a> by email to schedule your initial or returning appointment.',
+    },
+    {
+      title: 'What can I expect in the first session?',
+      answer:
+        'The first session is an opportunity to begin to get to know each other, review the consent and confidentiality form, begin to understand your reasons for seeking support, and discuss your hopes for therapy.',
+    },
+    {
+      title: 'How often are therapy sessions?',
+      answer:
+        'The frequency of therapy sessions depends on individual needs, goals, and budget. Initially, I recommend weekly sessions and then transition to bi-weekly or monthly as progress is made.',
+    },
+    {
+      title: 'How many therapy sessions can I have?',
+      answer:
+        'There is no limit to how many therapy sessions you can have. Some people may be seeking brief support, others may be looking for ongoing support over a longer period of their life.',
+    },
+    {
+      title: 'Can I schedule an appointment if I live or am travelling outside of Ontario?',
+      answer:
+        'Unfortunately, I am only able to offer services to those residing in Ontario and are located in Ontario at the time of our sessions.',
+    },
+    {
       title: 'Do you offer in-person therapy sessions?',
       answer: 'At this time no, I offer video sessions. You can also request phone sessions.',
     },
@@ -53,92 +97,38 @@ const faqs = [
         'Parent involvement varies based on the needs of the child. I believe in collaboration and may involve parents in certain aspects of therapy to support their child’s progress. This will be assessed ongoing in the therapy sessions.',
     },
     {
-      title: 'What is the cost per session?',
-      answer: 'My rate is $170 per session.',
-    },
-    {
-      title: 'Do you accept insurance?',
-      answer: 'see payment and insurance below',
-    },
-    {
-      title: 'What are the payment options?',
-      answer: 'see payment and insurance below',
-    },
-    {
-      title: 'How do I schedule an appointment?',
-      answer:
-        'You can contact me <a href="mailto:info@laurenmartyn.ca" style="text-decoration: underline; color: inherit;">here</a> by email to schedule your initial or returning appointment.',
-    },
-    {
-      title: 'Can I schedule an appointment if I live or am travelling outside of Ontario?',
-      answer:
-        'Unfortunately, I am only able to offer services to those residing in Ontario and are located in Ontario at the time of our sessions.',
-    },
-    {
-      title: 'How often are therapy sessions?',
-      answer:
-        'The frequency of therapy sessions depends on individual needs, goals, and budget. Initially, I recommend weekly sessions and then transition to bi-weekly or monthly as progress is made.',
-    },
-    {
-      title: 'How many therapy sessions can I have?',
-      answer:
-        'There is no limit to how many therapy sessions you can have. Some people may be seeking brief support, others may be looking for ongoing support over a longer period of their life.',
-    },
-    {
-      title: 'What can I expect in the first session?',
-      answer:
-        'The first session is an opportunity to get to know you or your child, understand your concerns, and discuss goals for therapy.',
-    },
-    {
       title: 'I haven’t attended a session in a long time, can I return?',
       answer: 'Absolutely, anytime you feel ready to return, please reach out to schedule your next appointment.',
-    },
-    {
-      title: 'What are your hours?',
-      answer:
-        'Currently, I offer therapy sessions in the evening Monday-Friday to accommodate those in school and working. If you prefer another time, I will try my best to accommodate.',
-    },
-    {
-      title: 'How long are your sessions?',
-      answer:
-        'Each session is scheduled for 60 minutes. We have up to 50 minutes for counselling and 10 minutes are used for documentation and sending resources discussed.',
     },
   ],
 ];
 
 const styles = {
   container: {
-    
     fontFamily: "Quicksand, sans-serif",
     maxWidth: '100%',
     margin: '0 auto',
     '@media (max-width: 1100px)': {
       padding: '2rem',
       margin: '0 auto',
-
     },
     '@media (max-width: 800px)': {
       padding: '2rem',
       margin: '0 auto',
-
     },
     '@media (max-width: 600px)': {
       padding: '2.5rem',
       margin: '0 auto',
-
     },
     '@media (max-width: 450px)': {
       padding: '2.5rem',
       margin: '0 auto',
-
     },
   },
- 
   titleCard: {
     padding: '1rem 2rem',
     maxWidth: '40%',
     margin: 'auto',
-
     backgroundColor: '#fcfaf4',
     display: 'flex',
     justifyContent: 'center',
@@ -165,15 +155,13 @@ const styles = {
       width: '90%',
     },
   },
-
   accordion: {
-    border: '1.5px solid #2b3d2b', // Darker border to match the design
-
+    border: '1.5px solid #2b3d2b',
     marginBottom: '15px',
   },
   accordionSummary: {
     backgroundColor: '#fcfaf4',
-    transition: 'none', // Ensure no background transition occurs
+    transition: 'none',
   },
   question: {
     fontFamily: "'Lora', sans-serif",
