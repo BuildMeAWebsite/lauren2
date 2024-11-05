@@ -46,7 +46,7 @@ const faqs = [
     },
     {
       title: 'What are the payment options?',
-      answer: 'I accept email transfers and credit card payments.',
+      answer: 'I accept E-transfers and credit card payments.',
     },
     {
       title: 'What are your hours?',
