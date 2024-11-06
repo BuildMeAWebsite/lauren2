@@ -139,7 +139,7 @@ const HomeSection6 = () => {
         {/* Text Content */}
         <div style={contentStyle}>
           <p style={headerTextStyle}>
-            hello and <em>welcome</em>.
+            Hello and <em>Welcome</em>.
           </p>
           <h1 style={headingStyle}>
             If you are reading this, you have already taken the biggest step in the therapeutic journey. My name is Lauren Martyn, I am a registered psychotherapist and I have dedicated myself to supporting school-aged children, youth, and young adults as they navigate life’s challenges. I currently offer virtual counselling to those residing in Ontario, Canada.
