@@ -8,7 +8,7 @@ const AboutSection7 = () => {
         {/* Text on top for smaller screens */}
         <Grid item xs={12} md={6} sx={{ order: { xs: 1, md: 1 } }}>
           <Typography variant="body1" sx={styles.smallText}>
-            expertise
+            Expertise
           </Typography>
           <Typography variant="body1" sx={styles.paragraph}>
             Currently serving as a School Counsellor at an Independent School, I offer specialized expertise in navigating school environments and addressing the unique challenges they present.
