@@ -38,7 +38,7 @@ const ApproachSection3 = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          approach
+          Approach
         </p>
         <h1 style={styles.heading}>
           My approach is rooted in offering a warm, genuine, approachable, playful and optimistic space. I customize my approach to best fit each client's unique needs and goals. I use a variety of therapeutic interventions:
