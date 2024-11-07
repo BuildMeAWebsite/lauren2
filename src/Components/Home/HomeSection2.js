@@ -4,7 +4,7 @@ const HomeSection2 = () => {
   return (
     <div style={styles.container}>
       <div style={{ ...styles.sideBar, border: '2px solid #8FBC8F' }}>
-        <p style={styles.sideText}>hello and <em>welcome</em></p>
+        <p style={styles.sideText}>Hello and <em>Welcome</em></p>
       </div>
       <div style={styles.contentWrapper}>
         <p style={styles.smallText}>Ontario <em>Psychotherapy</em></p>
