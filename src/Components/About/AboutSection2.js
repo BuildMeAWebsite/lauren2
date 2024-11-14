@@ -5,7 +5,7 @@ const AboutSection2 = () => {
   return (
     <div className={styles.container1}>
       <div className={styles.heroSection1}>
-        <p className={styles.smallText1}> <em>experience</em> </p>
+        <p className={styles.smallText1}> <em>Experience</em> </p>
         <h1 className={styles.heading1}>
           I have been a Registered Psychotherapist since 2019, with a Master’s degree in Counselling Psychology. 
           My experience spans both community and post-secondary settings, and I currently serve as a School Counsellor at an Independent School. 
