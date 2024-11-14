@@ -65,7 +65,6 @@ const HomeSection6 = () => {
     fontWeight: '400',
     letterSpacing: '0.05em',
     fontFamily: 'Lora, sans-serif',
-    textTransform: 'lowercase',
     color: '#2b2d2b',
   };
 
