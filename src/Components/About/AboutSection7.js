@@ -44,7 +44,6 @@ const styles = {
     textTransform: 'italic',
     textShadow: '0 1px 2px rgba(0, 0, 0, 0.01)',
     letterSpacing: '0.05em',
-    textTransform: 'lowercase',
     marginBottom: '10px',
     color: '#2b2d2b',
     fontFamily: 'Lora, sans-serif',
