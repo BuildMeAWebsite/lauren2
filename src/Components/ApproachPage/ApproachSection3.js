@@ -78,11 +78,10 @@ const styles = {
   smallText: {
     fontSize: '2rem',
     letterSpacing: '0.1rem',
-    textTransform: 'lowercase',
     marginBottom: '20px',
     transition: 'color 0.3s ease, transform 0.3s ease',
     fontFamily: 'Lora, sans-serif',
-    fontStyle: 'italic', // This makes the text italic
+    fontStyle: 'italic', // This keeps the text italic
   },
   heading: {
     fontFamily: 'Quicksand, sans-serif',
