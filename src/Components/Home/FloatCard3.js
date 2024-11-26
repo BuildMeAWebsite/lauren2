@@ -46,7 +46,6 @@ const FloatingCard3 = () => {
     fontSize: '26px',
     fontWeight: 400, // Regular font weight
     fontFamily: 'Lora, sans-serif',
-    textTransform: 'lowercase', // Make the text uppercase
   };
 
   const listStyle = {
