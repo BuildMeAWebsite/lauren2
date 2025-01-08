@@ -38,40 +38,50 @@ const ContactForm = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    // Structure the data to match EmailJS template placeholders
+  
+    // Custom validation for email and phone
+    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+  
+    if (!formData.phone || !/^\d{10,15}$/.test(formData.phone)) {
+      alert("Please enter a valid phone number (10-15 digits).");
+      return;
+    }
+  
+    // Rest of the EmailJS logic
     const templateParams = {
       firstName: formData.firstName,
       lastName: formData.lastName,
       phone: formData.phone,
-      email: formData.email, // Add email if it is missing
-      preferredContactMethod: formData.preferredContactMethod, // This needs to match the EmailJS template placeholder
-      isSafeToEmail: formData.isSafeToEmail, // This also must match the template
+      email: formData.email,
+      preferredContactMethod: formData.preferredContactMethod,
+      isSafeToEmail: formData.isSafeToEmail,
       reasonForContact: formData.reasonForContact,
-      helpWith: formData.helpWith,
-      servicesForSelf: formData.interestedIn.self ? 'Yes' : 'No',
-      servicesForChild: formData.interestedIn.child ? 'Yes' : 'No',
+      servicesForSelf: formData.interestedIn.self ? "Yes" : "No",
+      servicesForChild: formData.interestedIn.child ? "Yes" : "No",
     };
-
+  
     emailjs
       .send(
-        'service_1rfipk5', // Replace with your EmailJS service ID
-        'template_7rso3dm', // Replace with your EmailJS template ID
+        "service_1rfipk5",
+        "template_7rso3dm",
         templateParams,
-        'XFlC5uPb-LLkpIwdr' // Replace with your EmailJS public key
+        "XFlC5uPb-LLkpIwdr"
       )
       .then(
         () => {
           setIsSubmitted(true);
           setFormData({
-            firstName: '',
-            lastName: '',
-            phone: '',
-            email: '',
-            preferredContactMethod: '',
-            isSafeToEmail: '',
-            reasonForContact: '',
-            helpWith: '',
+            firstName: "",
+            lastName: "",
+            phone: "",
+            email: "",
+            preferredContactMethod: "",
+            isSafeToEmail: "",
+            reasonForContact: "",
+            helpWith: "",
             interestedIn: {
               self: false,
               child: false,
@@ -79,11 +89,10 @@ const ContactForm = () => {
           });
         },
         (error) => {
-          alert('Failed to send the message, please try again');
+          alert("Failed to send the message, please try again");
         }
       );
   };
-
   return (
     <div className="contact-container">
       {isSubmitted ? (
