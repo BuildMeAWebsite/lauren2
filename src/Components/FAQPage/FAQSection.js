@@ -61,7 +61,7 @@ const faqs = [
     {
       title: 'How do I schedule an appointment?',
       answer:
-        'You can contact me <a href="mailto:info@laurenmartyn.ca" style="text-decoration: underline; color: inherit;">here</a> by email to schedule your initial or returning appointment.',
+        'You can contact me <a href="mailto:laurenmpsychotherapy@gmail.com" style="text-decoration: underline; color: inherit;">here</a> by email to schedule your initial or returning appointment.',
     },
     {
       title: 'What can I expect in the first session?',

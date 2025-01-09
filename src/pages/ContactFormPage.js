@@ -38,18 +38,18 @@ const ContactForm = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-  
+
     // Custom validation for email and phone
     if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
-      alert("Please enter a valid email address.");
+      alert('Please enter a valid email address.');
       return;
     }
-  
+
     if (!formData.phone || !/^\d{10,15}$/.test(formData.phone)) {
-      alert("Please enter a valid phone number (10-15 digits).");
+      alert('Please enter a valid phone number (10-15 digits).');
       return;
     }
-  
+
     // Rest of the EmailJS logic
     const templateParams = {
       firstName: formData.firstName,
@@ -59,29 +59,29 @@ const ContactForm = () => {
       preferredContactMethod: formData.preferredContactMethod,
       isSafeToEmail: formData.isSafeToEmail,
       reasonForContact: formData.reasonForContact,
-      servicesForSelf: formData.interestedIn.self ? "Yes" : "No",
-      servicesForChild: formData.interestedIn.child ? "Yes" : "No",
+      servicesForSelf: formData.interestedIn.self ? 'Yes' : 'No',
+      servicesForChild: formData.interestedIn.child ? 'Yes' : 'No',
     };
-  
+
     emailjs
       .send(
-        "service_1rfipk5",
-        "template_7rso3dm",
+        'service_1rfipk5',
+        'template_7rso3dm',
         templateParams,
-        "XFlC5uPb-LLkpIwdr"
+        'XFlC5uPb-LLkpIwdr'
       )
       .then(
         () => {
           setIsSubmitted(true);
           setFormData({
-            firstName: "",
-            lastName: "",
-            phone: "",
-            email: "",
-            preferredContactMethod: "",
-            isSafeToEmail: "",
-            reasonForContact: "",
-            helpWith: "",
+            firstName: '',
+            lastName: '',
+            phone: '',
+            email: '',
+            preferredContactMethod: '',
+            isSafeToEmail: '',
+            reasonForContact: '',
+            helpWith: '',
             interestedIn: {
               self: false,
               child: false,
@@ -89,10 +89,11 @@ const ContactForm = () => {
           });
         },
         (error) => {
-          alert("Failed to send the message, please try again");
+          alert('Failed to send the message, please try again');
         }
       );
   };
+
   return (
     <div className="contact-container">
       {isSubmitted ? (
@@ -101,80 +102,77 @@ const ContactForm = () => {
         </div>
       ) : (
         <form onSubmit={sendEmail} className="contact-form">
-   <label className="form-label">First Name</label>
-<input
-  type="text"
-  name="firstName"
-  className="form-input"
-  value={formData.firstName}
-  onChange={handleChange}
-  required
-/>
+          <label className="form-label">First Name</label>
+          <input
+            type="text"
+            name="firstName"
+            className="form-input"
+            value={formData.firstName}
+            onChange={handleChange}
+            required
+          />
 
-<label className="form-label">Last Name</label>
-<input
-  type="text"
-  name="lastName"
-  className="form-input"
-  value={formData.lastName}
-  onChange={handleChange}
-  required
-/>
+          <label className="form-label">Last Name</label>
+          <input
+            type="text"
+            name="lastName"
+            className="form-input"
+            value={formData.lastName}
+            onChange={handleChange}
+            required
+          />
 
-<label className="form-label">Phone Number</label>
-<input
-  type="text"
-  name="phone"
-  className="form-input"
-  value={formData.phone}
-  onChange={handleChange}
-  required
-/>
+          <label className="form-label">Phone Number</label>
+          <input
+            type="text"
+            name="phone"
+            className="form-input"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
 
-<label className="form-label">Email</label>
-<input
-  type="email"
-  name="email"
-  className="form-input"
-  value={formData.email}
-  onChange={handleChange}
-  required
-/>
+          <label className="form-label">Email</label>
+          <input
+            type="email"
+            name="email"
+            className="form-input"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
 
-<label className="form-label">Which do you prefer to be contacted at? (Email or Phone)</label>
-<input
-  type="text"
-  name="preferredContactMethod"
-  className="form-input"
-  value={formData.preferredContactMethod}
-  onChange={handleChange}
-  required
-/>
+          <label className="form-label">
+            Which do you prefer to be contacted at? (Email or Phone)
+          </label>
+          <input
+            type="text"
+            name="preferredContactMethod"
+            className="form-input"
+            value={formData.preferredContactMethod}
+            onChange={handleChange}
+            required
+          />
 
-<label className="form-label">Is it safe to email you at this address?</label>
-<input
-  type="text"
-  name="isSafeToEmail"
-  className="form-input"
-  value={formData.isSafeToEmail}
-  onChange={handleChange}
-  required
-/>
+          <label className="form-label">Is it safe to call you at this number?</label>
+          <input
+            type="text"
+            name="isSafeToEmail"
+            className="form-input"
+            value={formData.isSafeToEmail}
+            onChange={handleChange}
+            required
+          />
 
-<label className="form-label">What brings you here today?</label>
-<textarea
-  name="reasonForContact"
-  className="form-textarea"
-  value={formData.reasonForContact}
-  onChange={handleChange}
-  required
-></textarea>
-
-
+          <label className="form-label">What brings you here today?</label>
+          <textarea
+            name="reasonForContact"
+            className="form-textarea"
+            value={formData.reasonForContact}
+            onChange={handleChange}
+          ></textarea>
 
           <label className="form-label">I am interested in help for..</label>
-
-          <br />
           <div className="checkbox-group">
             <label>
               <input
@@ -182,6 +180,7 @@ const ContactForm = () => {
                 name="self"
                 checked={formData.interestedIn.self}
                 onChange={handleChange}
+                required
               />
               Services for myself
             </label>
@@ -192,6 +191,7 @@ const ContactForm = () => {
                 name="child"
                 checked={formData.interestedIn.child}
                 onChange={handleChange}
+                required
               />
               Services for my child
             </label>

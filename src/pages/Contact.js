@@ -32,7 +32,7 @@ const Contact = ({ isFormOpen, handleFormClose }) => {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Service",
-      "email": "info@laurenmartyn.ca"
+      "email": "laurenmpsychotherapy@gmail.com"
     }
   };
 
