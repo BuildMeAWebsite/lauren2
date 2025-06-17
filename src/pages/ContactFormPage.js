@@ -39,18 +39,24 @@ const ContactForm = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    // Custom validation for email and phone
+    // Validate email
     if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
       alert('Please enter a valid email address.');
       return;
     }
 
+    // Validate phone number
     if (!formData.phone || !/^\d{10,15}$/.test(formData.phone)) {
       alert('Please enter a valid phone number (10-15 digits).');
       return;
     }
 
-    // Rest of the EmailJS logic
+    // Validate at least one checkbox is selected
+    if (!formData.interestedIn.self && !formData.interestedIn.child) {
+      alert('Please select at least one option for "I am interested in help for..."');
+      return;
+    }
+
     const templateParams = {
       firstName: formData.firstName,
       lastName: formData.lastName,
@@ -154,16 +160,6 @@ const ContactForm = () => {
             required
           />
 
-          <label className="form-label">Is it safe to call you at this number?</label>
-          <input
-            type="text"
-            name="isSafeToEmail"
-            className="form-input"
-            value={formData.isSafeToEmail}
-            onChange={handleChange}
-            required
-          />
-
           <label className="form-label">What brings you here today?</label>
           <textarea
             name="reasonForContact"
@@ -172,7 +168,7 @@ const ContactForm = () => {
             onChange={handleChange}
           ></textarea>
 
-          <label className="form-label">I am interested in help for..</label>
+          <label className="form-label">I am interested in help for...</label>
           <div className="checkbox-group">
             <label>
               <input
@@ -180,7 +176,6 @@ const ContactForm = () => {
                 name="self"
                 checked={formData.interestedIn.self}
                 onChange={handleChange}
-                required
               />
               Services for myself
             </label>
@@ -191,7 +186,6 @@ const ContactForm = () => {
                 name="child"
                 checked={formData.interestedIn.child}
                 onChange={handleChange}
-                required
               />
               Services for my child
             </label>
